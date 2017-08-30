@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JenkinsFile", "JenkinsFile"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoFile", "DemoFile", "{73C230F2-FD91-43FD-9612-11DC23A081D2}"
 	ProjectSection(SolutionItems) = preProject
-		JenkinsFile.txt = JenkinsFile.txt
+		JenkinsFile.groovy = JenkinsFile.groovy
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GroovyScripts", "GroovyScripts", "{4392F170-1C95-43E8-B24D-BAA451E1F3EC}"
