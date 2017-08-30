@@ -1,4 +1,4 @@
-class demoBuildSteps implements Serializable {
+class buildSteps implements Serializable {
     def createBuildSteps(val) { 
         List<String> list = new ArrayList<String>();
         switch (val) {
