@@ -21,10 +21,18 @@ node{
     
     def buildStepsClass = new demoBuildSteps();
     def buildSteps = buildStepsClass.createBuildSteps("${action}")
+	def actionStringClass = new actionString();
 
     for (String buildStep : buildSteps) {
         stage("${buildStep}"){
-
+			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", "${projectName}", buildStep, "${tfsUsername}", "${tfsPassword}")
+            echo "${actionString}"
+            
+            def result = bat(returnStatus: true, script: "${actionString}");
+            if(result != 0){
+                failureMessage = "${buildStep} ${failureMessageSuffix}";
+                echo failureMessage;
+                error(failureMessage);
         }
     }
 }
