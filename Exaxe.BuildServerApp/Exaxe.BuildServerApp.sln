@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exaxe.BuildServerApp", "Exaxe.BuildServerApp\Exaxe.BuildServerApp.csproj", "{9B8BF606-F26C-4D07-97BE-7E842A825004}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vars", "vars", "{814D5F6C-AEEF-41ED-84EE-4A7D83808859}"
+	ProjectSection(SolutionItems) = preProject
+		buildDemoSteps.groovy = buildDemoSteps.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
