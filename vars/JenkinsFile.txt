@@ -19,7 +19,7 @@ node{
     def action = "#";
     action = actionInput;   //// Input parameter
     
-    def buildStepsClass = new buildSteps();
+    def buildStepsClass = new demoBuildSteps();
     def buildSteps = buildStepsClass.createBuildSteps("${action}")
 
     def actionStringClass = new actionString();
