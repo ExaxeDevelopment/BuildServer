@@ -1,6 +1,16 @@
 class deployCommonBuildSteps implements Serializable {
     def getDeployCommonBuildSteps() { 
 
+		def emptyMap = [:];
+		Map<String,String> deployMap  = new HashMap<String,String>();
+		deployMap.put("Initialisation", "Initialisation"); 
+		deployMap.put("GetAllCodeLatestVersion", "GetAllCodeLatestVersion"); 
+		deployMap.put("Exaxe.SolutionManager", "GetCodeLatestVersion"); 
+		deployMap.put("Exaxe.SolutionManager", "RestoreNuGetPackages"); 
+		deployMap.put("Exaxe.SolutionManager", "BuildSolution"); 
+		deployMap.put("Exaxe.SolutionManager", "PublishInstallApp"); 
+
+
         List<String> deployCommonSteps = new ArrayList<String>();
 		deployCommonSteps.add("Initialisation"); 
 		deployCommonSteps.add("GetAllCodeLatestVersion");
@@ -19,6 +29,6 @@ class deployCommonBuildSteps implements Serializable {
 		deployCommonSteps.add("Release Content");
 		deployCommonSteps.add("Success Notification");
 
-        deployCommonSteps
+        deployMap
     }
 }
