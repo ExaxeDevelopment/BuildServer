@@ -29,7 +29,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckInFiles"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("PublishNuGetPackages"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckNuGetFeed"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("DistributeSQLScripts")}};
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("DistributeSQLScripts");
 		
 		List<String> buildWithoutDB = new ArrayList<String>()
 		buildWithoutDB.add("GetCodeLatestVersion"); 
@@ -41,7 +41,7 @@ class buildStepsByBuildType implements Serializable {
 		buildWithoutDB.add("PerformUnitTests"); 
 		buildWithoutDB.add("CheckInFiles"); 
 		buildWithoutDB.add("PublishNuGetPackages"); 
-		buildWithoutDB.add("CheckNuGetFeed")}};
+		buildWithoutDB.add("CheckNuGetFeed");
 		
 		List<String> buildUI = new ArrayList<String>()
 		buildUI.add("GetCodeLatestVersion"); 
@@ -51,7 +51,7 @@ class buildStepsByBuildType implements Serializable {
 		buildUI.add("UpdateNuGetPackages"); 
 		buildUI.add("BuildSolution"); 
 		buildUI.add("PerformUnitTests"); 
-		buildUI.add("CheckInFiles")}};
+		buildUI.add("CheckInFiles");
 
 		List<String> buildDBSyncService = new ArrayList<String>()
 		buildDBSyncService.add("GetAllCodeLatestVersion"); 
@@ -64,7 +64,7 @@ class buildStepsByBuildType implements Serializable {
 		buildDBSyncService.add("Synchronize"); 
 		buildDBSyncService.add("InstallAllDatabases"); 
 		buildDBSyncService.add("Reprovision"); 
-		buildDBSyncService.add("Synchronize")}};
+		buildDBSyncService.add("Synchronize");
 		
 		List<String> buildSteps = new ArrayList<String>();
         switch (val) {
