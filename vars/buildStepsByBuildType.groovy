@@ -16,17 +16,55 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("CheckNuGetFeed"); 
 		fullBuild.add("DistributeSQLScripts");
 
-        List<String> fullBuildWithoutGetAllCodeLatestVersionStage = 
-		new ArrayList<String>{{ add("GetAllCodeLatestVersion"); add("ClearDatabases"); add("InstallAllDatabases"); add("CheckOutFiles"); add("UpdateAssemblyVersion"); add("RestoreNuGetPackages"); add("UpdateNuGetPackages"); add("BuildSolution"); add("PerformUnitTests"); add("CheckInFiles"); add("PublishNuGetPackages"); add("CheckNuGetFeed"); add("DistributeSQLScripts")}};
+        List<String> fullBuildWithoutGetAllCodeLatestVersionStage = new ArrayList<String>();
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("GetAllCodeLatestVersion"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("ClearDatabases"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("InstallAllDatabases"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckOutFiles"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("UpdateAssemblyVersion"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("RestoreNuGetPackages"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("UpdateNuGetPackages"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("BuildSolution"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("PerformUnitTests"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckInFiles"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("PublishNuGetPackages"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckNuGetFeed"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("DistributeSQLScripts")}};
 		
-		List<String> buildWithoutDB = 
-		new ArrayList<String>{{add("GetCodeLatestVersion"); add("CheckOutFiles"); add("UpdateAssemblyVersion"); add("RestoreNuGetPackages"); add("UpdateNuGetPackages"); add("BuildSolution"); add("PerformUnitTests"); add("CheckInFiles"); add("PublishNuGetPackages"); add("CheckNuGetFeed")}};
+		List<String> buildWithoutDB = new ArrayList<String>()
+		buildWithoutDB.add("GetCodeLatestVersion"); 
+		buildWithoutDB.add("CheckOutFiles"); 
+		buildWithoutDB.add("UpdateAssemblyVersion"); 
+		buildWithoutDB.add("RestoreNuGetPackages"); 
+		buildWithoutDB.add("UpdateNuGetPackages"); 
+		buildWithoutDB.add("BuildSolution"); 
+		buildWithoutDB.add("PerformUnitTests"); 
+		buildWithoutDB.add("CheckInFiles"); 
+		buildWithoutDB.add("PublishNuGetPackages"); 
+		buildWithoutDB.add("CheckNuGetFeed")}};
 		
-		List<String> buildUI = 
-		new ArrayList<String>{{add("GetCodeLatestVersion"); add("CheckOutFiles"); add("UpdateAssemblyVersion"); add("RestoreNuGetPackages"); add("UpdateNuGetPackages"); add("BuildSolution"); add("PerformUnitTests"); add("CheckInFiles")}};
+		List<String> buildUI = new ArrayList<String>()
+		buildUI.add("GetCodeLatestVersion"); 
+		buildUI.add("CheckOutFiles"); 
+		buildUI.add("UpdateAssemblyVersion"); 
+		buildUI.add("RestoreNuGetPackages"); 
+		buildUI.add("UpdateNuGetPackages"); 
+		buildUI.add("BuildSolution"); 
+		buildUI.add("PerformUnitTests"); 
+		buildUI.add("CheckInFiles")}};
 
-		List<String> buildDBSyncService =
-		new ArrayList<String>{{add("GetAllCodeLatestVersion"); add("GetCodeLatestVersion"); add("CheckOutFiles"); add("RestoreNuGetPackages") ;add("BuildSolution"); add("PerformUnitTests"); add("Provision"); add("Synchronize"); add("InstallAllDatabases"); add("Reprovision"); add("Synchronize")}};
+		List<String> buildDBSyncService = new ArrayList<String>()
+		buildDBSyncService.add("GetAllCodeLatestVersion"); 
+		buildDBSyncService.add("GetCodeLatestVersion"); 
+		buildDBSyncService.add("CheckOutFiles"); 
+		buildDBSyncService.add("RestoreNuGetPackages");
+		buildDBSyncService.add("BuildSolution"); 
+		buildDBSyncService.add("PerformUnitTests"); 
+		buildDBSyncService.add("Provision"); 
+		buildDBSyncService.add("Synchronize"); 
+		buildDBSyncService.add("InstallAllDatabases"); 
+		buildDBSyncService.add("Reprovision"); 
+		buildDBSyncService.add("Synchronize")}};
 		
 		List<String> buildSteps = new ArrayList<String>();
         switch (val) {
