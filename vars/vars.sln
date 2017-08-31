@@ -15,6 +15,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{EBCAA7D9-3C49-4745-AE4A-6556F35091C7}"
 	ProjectSection(SolutionItems) = preProject
 		actionString.groovy = actionString.groovy
+		buildStepsByBuildType.groovy = buildStepsByBuildType.groovy
 		demoBuildSteps.groovy = demoBuildSteps.groovy
 	EndProjectSection
 EndProject
