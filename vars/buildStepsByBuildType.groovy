@@ -1,8 +1,20 @@
 class buildStepsByBuildType implements Serializable {
     def createBuildStepsByBuildType(val) { 
 
-        List<String> fullBuild = 
-		new ArrayList<String>{{add("GetAllCodeLatestVersion"); add("ClearDatabases"); add("InstallAllDatabases"); add("CheckOutFiles"); add("UpdateAssemblyVersion"); add("RestoreNuGetPackages"); add("UpdateNuGetPackages"); add("BuildSolution"); add("PerformUnitTests"); add("CheckInFiles"); add("PublishNuGetPackages"); add("CheckNuGetFeed"); add("DistributeSQLScripts")}};
+        List<String> fullBuild = new ArrayList<String>()
+		fullBuild.add("GetAllCodeLatestVersion"); 
+		fullBuild.add("ClearDatabases"); 
+		fullBuild.add("InstallAllDatabases"); 
+		fullBuild.add("CheckOutFiles"); 
+		fullBuild.add("UpdateAssemblyVersion"); 
+		fullBuild.add("RestoreNuGetPackages"); 
+		fullBuild.add("UpdateNuGetPackages"); 
+		fullBuild.add("BuildSolution");
+		fullBuild.add("PerformUnitTests"); 
+		fullBuild.add("CheckInFiles"); 
+		fullBuild.add("PublishNuGetPackages"); 
+		fullBuild.add("CheckNuGetFeed"); 
+		fullBuild.add("DistributeSQLScripts");
 
         List<String> fullBuildWithoutGetAllCodeLatestVersionStage = 
 		new ArrayList<String>{{ add("GetAllCodeLatestVersion"); add("ClearDatabases"); add("InstallAllDatabases"); add("CheckOutFiles"); add("UpdateAssemblyVersion"); add("RestoreNuGetPackages"); add("UpdateNuGetPackages"); add("BuildSolution"); add("PerformUnitTests"); add("CheckInFiles"); add("PublishNuGetPackages"); add("CheckNuGetFeed"); add("DistributeSQLScripts")}};
