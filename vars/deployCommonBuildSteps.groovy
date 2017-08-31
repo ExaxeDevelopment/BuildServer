@@ -2,13 +2,17 @@ class deployCommonBuildSteps implements Serializable {
     def getDeployCommonBuildSteps() { 
 
 		def emptyMap = [:];
-		Map<String,String> deployMap  = new HashMap<String,String>();
-		deployMap.put("Initialisation", "Initialisation"); 
-		deployMap.put("GetAllCodeLatestVersion", "GetAllCodeLatestVersion"); 
-		deployMap.put("Exaxe.SolutionManager", "GetCodeLatestVersion"); 
-		deployMap.put("Exaxe.SolutionManager", "RestoreNuGetPackages"); 
-		deployMap.put("Exaxe.SolutionManager", "BuildSolution"); 
-		deployMap.put("Exaxe.SolutionManager", "PublishInstallApp"); 
+		Map<String,String> deployMap1  = new HashMap<String,String>();
+		deployMap1.put("Initialisation", "Initialisation"); 
+		Map<String,String> deployMap2  = new HashMap<String,String>();
+		deployMap2.put("GetAllCodeLatestVersion", "GetAllCodeLatestVersion"); 
+		Map<String,String> deployMap3  = new HashMap<String,String>();
+		deployMap3.put("Exaxe.SolutionManager", "GetCodeLatestVersion"); 
+		Map<String,String> deployMap4  = new HashMap<String,String>();
+		deployMap4.put("Exaxe.SolutionManager", "RestoreNuGetPackages"); 
+		Map<String,String> deployMap5  = new HashMap<String,String>();
+		deployMap5.put("Exaxe.SolutionManager", "BuildSolution"); 
+
 
 		List l1 = ["Initialisation", "Initialisation"]
 		List l2 = ["GetAllCodeLatestVersion", "GetAllCodeLatestVersion"]
@@ -16,7 +20,7 @@ class deployCommonBuildSteps implements Serializable {
 		List l4 = ["Exaxe.SolutionManager", "RestoreNuGetPackages"]
 		List l5 = ["Exaxe.SolutionManager", "BuildSolution"]
 
-		List deploySteps = [l1, l2, l3, l4, l5]
+		List deploySteps = [deployMap1, deployMap2, deployMap3, deployMap4, deployMap5]
 
         List<String> deployCommonSteps = new ArrayList<String>();
 		deployCommonSteps.add("Initialisation"); 
