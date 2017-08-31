@@ -15,8 +15,17 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{EBCAA7D9-3C49-4745-AE4A-6556F35091C7}"
 	ProjectSection(SolutionItems) = preProject
 		actionString.groovy = actionString.groovy
-		buildStepsByBuildType.groovy = buildStepsByBuildType.groovy
 		demoBuildSteps.groovy = demoBuildSteps.groovy
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{3E72EA8F-6E77-460B-AE1D-68A7B18879D8}"
+	ProjectSection(SolutionItems) = preProject
+		buildStepsByBuildType.groovy = buildStepsByBuildType.groovy
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{84BCD817-5BCC-4C83-BAB2-C6C7E7DABFDB}"
+	ProjectSection(SolutionItems) = preProject
+		deployCommonBuildSteps.groovy = deployCommonBuildSteps.groovy
 	EndProjectSection
 EndProject
 Global
@@ -26,5 +35,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{73C230F2-FD91-43FD-9612-11DC23A081D2} = {46C9246D-9EFE-4F4D-AC4B-E285D86FE584}
 		{EBCAA7D9-3C49-4745-AE4A-6556F35091C7} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
+		{3E72EA8F-6E77-460B-AE1D-68A7B18879D8} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
+		{84BCD817-5BCC-4C83-BAB2-C6C7E7DABFDB} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
 	EndGlobalSection
 EndGlobal

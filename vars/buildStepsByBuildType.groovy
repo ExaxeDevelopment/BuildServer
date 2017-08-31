@@ -3,6 +3,7 @@ class buildStepsByBuildType implements Serializable {
 
         List<String> fullBuild = new ArrayList<String>()
 		fullBuild.add("GetAllCodeLatestVersion"); 
+		fullBuild.add("GetCodeLatestVersion");
 		fullBuild.add("ClearDatabases"); 
 		fullBuild.add("InstallAllDatabases"); 
 		fullBuild.add("CheckOutFiles"); 
