@@ -1,5 +1,5 @@
 class deployCommonBuildSteps implements Serializable {
-    def getDeployCommonBuildSteps(val) { 
+    def getDeployCommonBuildSteps() { 
 
         List<String> deployCommonSteps = new ArrayList<String>();
 		deployCommonSteps.add("Initialisation"); 
