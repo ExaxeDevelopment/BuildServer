@@ -4,13 +4,13 @@ class mBePOSDev002 implements Serializable {
 		List<String> masterBuildSteps = new ArrayList<String>();
 
 		List<String> allSteps = new ArrayList<String>();
-        list.add("Build-Exaxe.Client-Dev003");
-        list.add("Build-Exaxe.FactFind-Dev002");
-        list.add("Build-Exaxe.Quote.Rules-Dev001");
-        list.add("Build-Exaxe.Quote-Dev002");
-        list.add("Build-Exaxe.ExistingBusiness-Dev001");
-        list.add("Build-PointOfSaleUI-Dev001");
-        list.add("Deploy-ePOS-Dev002-ACORN");
+        allSteps.add("Build-Exaxe.Client-Dev003");
+        allSteps.add("Build-Exaxe.FactFind-Dev002");
+        allSteps.add("Build-Exaxe.Quote.Rules-Dev001");
+        allSteps.add("Build-Exaxe.Quote-Dev002");
+        allSteps.add("Build-Exaxe.ExistingBusiness-Dev001");
+        allSteps.add("Build-PointOfSaleUI-Dev001");
+        allSteps.add("Deploy-ePOS-Dev002-ACORN");
 		
 		def indexOfStartStep = allSteps.findIndexOf { name -> name == val };
         
