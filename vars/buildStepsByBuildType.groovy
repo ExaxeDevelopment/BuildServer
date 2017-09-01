@@ -15,7 +15,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("CheckInFiles"); 
 		fullBuild.add("PublishNuGetPackages"); 
 		fullBuild.add("CheckNuGetFeed"); 
-		fullBuild.add("DistributeSQLScripts");
+		//fullBuild.add("DistributeSQLScripts");
 
         List<String> fullBuildWithoutGetAllCodeLatestVersionStage = new ArrayList<String>();
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("GetAllCodeLatestVersion"); 
@@ -30,7 +30,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckInFiles"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("PublishNuGetPackages"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckNuGetFeed"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("DistributeSQLScripts");
+		//fullBuildWithoutGetAllCodeLatestVersionStage.add("DistributeSQLScripts");
 		
 		List<String> buildWithoutDB = new ArrayList<String>()
 		buildWithoutDB.add("GetCodeLatestVersion"); 
