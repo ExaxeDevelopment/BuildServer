@@ -62,6 +62,11 @@ try{
 					}
 				}
 			}
+
+			if(buildStep == buildSteps.last()){
+				undoChanges = false;
+			}
+
 		}		
            
         currentBuild.result = "SUCCESS";
