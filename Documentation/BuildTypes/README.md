@@ -1,6 +1,20 @@
 # Build Types
 
-| Build Name| Build Type | Stage 1 | Stage 2 | Stage 3 | Stage 4 | Stage 5 | Stage 6 | Stage 7 | Stage 8 | Stage 9 | Stage 10 | Stage 11 | Stage 12 | Stage 13 | Stage 14 | Stage 15 |
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-|__Full_Build__| 1 | GetAllCodeLatestVersion | ClearDatabases | InstallAllDatabases | CheckOutFiles | UpdateAssemblyVersion | RestoreNuGetPackages | UpdateNuGetPackages | BuildSolution | PerformUnitTests | CheckInFiles | PublishNuGetPackages |	CheckNuGetFeed | DistributeSQLScripts | Success Notification |
-|__BoldKey__| Value2 |
+| Stage | Build Name | Build Type |
+|-|-|-|
+||__Full_Build__| 1 |
+|1|	GetAllCodeLatestVersion|
+|2|	GetCodeLatestVersion|
+|3|	ClearDatabases|
+|4|	InstallAllDatabases|
+|5|	CheckOutFiles|
+|6|	UpdateAssemblyVersion|
+|7|	RestoreNuGetPackages|
+|8|	UpdateNuGetPackages|
+|9|	BuildSolution|
+|10|	PerformUnitTests|
+|11|	CheckInFiles|
+|12|	PublishNuGetPackages|
+|13|	CheckNuGetFeed|
+|14|	DistributeSQLScripts|
+
