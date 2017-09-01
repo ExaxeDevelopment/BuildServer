@@ -21,7 +21,6 @@ class mBePOSDev002 implements Serializable {
 		masterBuildSteps = 
 			allSteps.subList(Math.max(allSteps.size() - indexOfStartStep, 0), allSteps.size());
 		
-		masterBuildSteps.add(val);
 		// Return Selected MasterBuildSteps
 		masterBuildSteps
     }
