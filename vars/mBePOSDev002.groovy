@@ -18,10 +18,7 @@ class mBePOSDev002 implements Serializable {
 			indexOfStartStep = allSteps.size();
 		}
 
-		masterBuildSteps = 
-			allSteps.subList(Math.max(allSteps.size() - indexOfStartStep, 0), allSteps.size());
-		
 		// Return Selected MasterBuildSteps
-		masterBuildSteps
+		allSteps.subList(Math.max(allSteps.size() - indexOfStartStep, 0), allSteps.size());
     }
 }
