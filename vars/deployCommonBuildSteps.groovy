@@ -1,49 +1,75 @@
 class deployCommonBuildSteps implements Serializable {
     def getDeployCommonBuildSteps() { 
+		
+		List commonDeploySteps = new List();
 
-		def emptyMap = [:];
+		//Initialisation
 		Map<String,String> deployMap1  = new HashMap<String,String>();
 		deployMap1.put("Project", "Initialisation"); 
 		deployMap1.put("Operation", "Initialisation"); 
+		commonDeploySteps.add(deployMap1);
+
+		//GetAllCodeLatestVersion
 		Map<String,String> deployMap2  = new HashMap<String,String>();
 		deployMap2.put("Project", "GetAllCodeLatestVersion"); 
 		deployMap2.put("Operation", "GetAllCodeLatestVersion"); 
+		commonDeploySteps.add(deployMap2);
+
+		//Exaxe.SolutionManager - GetCodeLatestVersion
 		Map<String,String> deployMap3  = new HashMap<String,String>();
 		deployMap3.put("Project", "Exaxe.SolutionManager"); 
 		deployMap3.put("Operation", "GetCodeLatestVersion"); 
+		commonDeploySteps.add(deployMap3);
+
+		//Exaxe.SolutionManager - RestoreNuGetPackages
 		Map<String,String> deployMap4  = new HashMap<String,String>();
 		deployMap4.put("Project", "Exaxe.SolutionManager"); 
 		deployMap4.put("Operation", "RestoreNuGetPackages"); 
+		commonDeploySteps.add(deployMap4);
+
+		//Exaxe.SolutionManager - BuildSolution
 		Map<String,String> deployMap5  = new HashMap<String,String>();
 		deployMap5.put("Project", "Exaxe.SolutionManager"); 
 		deployMap5.put("Operation", "BuildSolution"); 
+		commonDeploySteps.add(deployMap5);
 
-		List l1 = ["Initialisation", "Initialisation"]
-		List l2 = ["GetAllCodeLatestVersion", "GetAllCodeLatestVersion"]
-		List l3 = ["Exaxe.SolutionManager", "GetCodeLatestVersion"]
-		List l4 = ["Exaxe.SolutionManager", "RestoreNuGetPackages"]
-		List l5 = ["Exaxe.SolutionManager", "BuildSolution"]
+		//Exaxe.SolutionManager - PublishInstallApp
+		Map<String,String> deployMap6  = new HashMap<String,String>();
+		deployMap5.put("Project", "Exaxe.SolutionManager"); 
+		deployMap5.put("Operation", "PublishInstallApp"); 
+		commonDeploySteps.add(deployMap6);
 
-		List deploySteps = [deployMap1, deployMap2, deployMap3, deployMap4, deployMap5]
+		//Exaxe.Agent - BuildDatabase
+		Map<String,String> deployMap7  = new HashMap<String,String>();
+		deployMap5.put("Project", "Exaxe.Agent"); 
+		deployMap5.put("Operation", "BuildDatabase"); 
+		commonDeploySteps.add(deployMap7);
 
-        List<String> deployCommonSteps = new ArrayList<String>();
-		deployCommonSteps.add("Initialisation"); 
-		deployCommonSteps.add("GetAllCodeLatestVersion");
-		deployCommonSteps.add("Exaxe.SolutionManager - GetCodeLatestVersion"); 
-		deployCommonSteps.add("Exaxe.SolutionManager - RestoreNuGetPackages"); 
-		deployCommonSteps.add("Exaxe.SolutionManager - BuildSolution"); 
-		deployCommonSteps.add("Exaxe.SolutionManager - PublishInstallApp"); 
-		deployCommonSteps.add("Exaxe.Agent - BuildDatabase"); 
-		deployCommonSteps.add("Exaxe.App - BuildDatabase"); 
-		deployCommonSteps.add("Exaxe.Product.DatabaseModel - BuildDatabase");
-		deployCommonSteps.add("Exaxe.Common - BuildDatabase"); 
-		deployCommonSteps.add("Exaxe.Configuration-Configuration - BuildDatabase"); 
-		deployCommonSteps.add("Exaxe.SystemConfiguration - BuildDatabase"); 
-		deployCommonSteps.add("Exaxe.Accounting - BuildDatabase"); 
-		deployCommonSteps.add("Exaxe.Client - BuildDatabase");
-		deployCommonSteps.add("Release Content");
-		deployCommonSteps.add("Success Notification");
+		//Exaxe.App - BuildDatabase
+		Map<String,String> deployMap8  = new HashMap<String,String>();
+		deployMap5.put("Project", "Exaxe.App"); 
+		deployMap5.put("Operation", "BuildDatabase"); 
+		commonDeploySteps.add(deployMap8);
 
-        deploySteps
+		//Exaxe.Product.DatabaseModel - BuildDatabase
+		Map<String,String> deployMap9  = new HashMap<String,String>();
+		deployMap5.put("Project", "Exaxe.Product.DatabaseModel"); 
+		deployMap5.put("Operation", "BuildDatabase"); 
+		commonDeploySteps.add(deployMap9);
+
+		//Exaxe.Common - BuildSolution
+		Map<String,String> deployMap10  = new HashMap<String,String>();
+		deployMap5.put("Project", "Exaxe.Common"); 
+		deployMap5.put("Operation", "BuildSolution"); 
+		commonDeploySteps.add(deployMap10);
+
+		//Exaxe.Configuration-Configuration - BuildSolution
+		Map<String,String> deployMap11  = new HashMap<String,String>();
+		deployMap5.put("Project", "Exaxe.Configuration-Configuration"); 
+		deployMap5.put("Operation", "BuildSolution"); 
+		commonDeploySteps.add(deployMap11);
+
+		//Return All of the defined steps
+		commonDeploySteps
     }
 }
