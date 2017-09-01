@@ -15,7 +15,7 @@ class mBePOSDev002 implements Serializable {
 		int indexOfStartStep = allSteps.indexOf(val);
         
 		if(indexOfStartStep == -1){
-			indexOfStartStep = 0;
+			indexOfStartStep = allSteps.size();
 		}
 
 		masterBuildSteps = 
