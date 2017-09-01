@@ -1,7 +1,7 @@
 # Build Types
 
 | Stages	| FullBuild	| FullBuildWithoutGetAllCodeLatestVersionStage	| BuildDBSyncService	| BuildWithoutDB	| BuildUI| 
-| -	| -	| -	| -	| -	| - | 
+|:----:|:----:|:----:|:----:|:----:|:----:| 
 | Stage 1	| GetAllCodeLatestVersion	| GetAllCodeLatestVersion	| GetAllCodeLatestVersion	| GetCodeLatestVersion	| GetCodeLatestVersion | 
 | Stage 2	| GetCodeLatestVersion	| ClearDatabases	| GetCodeLatestVersion	| CheckOutFiles	| CheckOutFiles | 
 | Stage 3	| ClearDatabases	| InstallAllDatabases	| CheckOutFiles	| UpdateAssemblyVersion	| UpdateAssemblyVersion | 
