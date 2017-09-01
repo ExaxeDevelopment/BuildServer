@@ -12,7 +12,7 @@ class mBePOSDev002 implements Serializable {
         allSteps.add("Build-PointOfSaleUI-Dev001");
         allSteps.add("Deploy-ePOS-Dev002-ACORN");
 		
-		def indexOfStartStep = allSteps.findIndexOf { name -> name == val };
+		int indexOfStartStep = allSteps.indexOf(val);
         
 		masterBuildSteps = 
 			allSteps.subList(Math.max(allSteps.size() - indexOfStartStep, 0), allSteps.size());
