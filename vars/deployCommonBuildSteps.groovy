@@ -1,7 +1,7 @@
 class deployCommonBuildSteps implements Serializable {
     def getDeployCommonBuildSteps() { 
 		
-		List commonDeploySteps;
+		List commonDeploySteps = new ArrayList<Map<String,String>>();
 
 		//Initialisation
 		Map<String,String> deployMap1  = new HashMap<String,String>();
