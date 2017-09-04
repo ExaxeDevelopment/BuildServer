@@ -1,4 +1,6 @@
-# Build Types
+# Build Types                       
+
+[Home](../../README.md)
 
 | Stages	| FullBuild	| FullBuildWithoutGetAllCodeLatestVersionStage	| BuildDBSyncService	| BuildWithoutDB	| BuildUI| 
 |:----:|:----:|:----:|:----:|:----:|:----:| 
