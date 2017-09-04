@@ -71,8 +71,8 @@ class deployCommonBuildSteps implements Serializable {
 
 		switch (val) {
             case "DeployEposDev002ACORN":
-                List eposDev002Steps = new deployEposDev002ACORN();
-				eposDev002Steps.getDeploySteps();
+                def eposDev002Class = new deployEposDev002ACORN();
+				List eposDev002Steps = eposDev002Class.getDeploySteps();
 				commonDeploySteps = commonDeploySteps + eposDev002Steps;
                 break
             default:             
