@@ -15,8 +15,8 @@ Repository for groovy scripts
 ## Action String Types 
 | Type | Params | Usage |
 |:------:|--------------------------------|--------------------------------|
-| 1 | ${appRootPath} ${configFile} 'N/A' ${operation} ${tfsUsername} ${tfsPassword}| GetAllCodeLatestVersion |
-| 2 | ${appRootPath} ${configFile} ${projectName} ${operation} ${tfsUsername} ${tfsPassword}")| GetCodeLatestVersion, __CheckOutFiles__, UpdateAssemblyVersion, __CheckInFiles__ |
+| 1 | ${appRootPath} ${configFile} 'N/A' ${operation} ${Username} ${Password}| GetAllCodeLatestVersion |
+| 2 | ${appRootPath} ${configFile} ${projectName} ${operation} ${Username} ${Password}")| GetCodeLatestVersion, __CheckOutFiles__, UpdateAssemblyVersion, __CheckInFiles__ |
 | 3 | ${appRootPath} ${configFile} ${projectName} ${operation}"| Everything else|
 
 
