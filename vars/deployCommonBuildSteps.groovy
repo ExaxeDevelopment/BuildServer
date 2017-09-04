@@ -1,5 +1,5 @@
 class deployCommonBuildSteps implements Serializable {
-    def getDeployCommonBuildSteps() { 
+    def getDeployCommonBuildSteps(val) { 
 		
 		List commonDeploySteps = new ArrayList<Map<String,String>>();
 
@@ -60,14 +60,36 @@ class deployCommonBuildSteps implements Serializable {
 		//Exaxe.Common - BuildSolution
 		Map<String,String> deployMap10  = new HashMap<String,String>();
 		deployMap10.put("Project", "Exaxe.Common"); 
-		deployMap10.put("Operation", "BuildSolution"); 
+		deployMap10.put("Operation", "BuildDatabase"); 
 		commonDeploySteps.add(deployMap10);
 
 		//Exaxe.Configuration-Configuration - BuildSolution
 		Map<String,String> deployMap11  = new HashMap<String,String>();
 		deployMap11.put("Project", "Exaxe.Configuration-Configuration"); 
-		deployMap11.put("Operation", "BuildSolution"); 
+		deployMap11.put("Operation", "BuildDatabase"); 
 		commonDeploySteps.add(deployMap11);
+
+		switch (val) {
+            case "DeployEposDev002ACORN":
+                List eposDev002Steps = new deployEposDev002ACORN();
+				eposDev002Steps.getDeploySteps();
+				commonDeploySteps = commonDeploySteps + eposDev002Steps;
+                break
+            default:             
+                break
+        }  
+
+		//Release Content
+		Map<String,String> deployMap12  = new HashMap<String,String>();
+		deployMap12.put("Project", "Release Content"); 
+		deployMap12.put("Operation", "Release Content"); 
+		commonDeploySteps.add(deployMap12);
+
+		//Success Notification
+		Map<String,String> deployMap13  = new HashMap<String,String>();
+		deployMap13.put("Project", "Success Notification"); 
+		deployMap13.put("Operation", "Success Notification"); 
+		commonDeploySteps.add(deployMap13);
 
 		//Return All of the defined steps
 		commonDeploySteps
