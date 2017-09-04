@@ -2,4 +2,21 @@
 Repository for groovy scripts
 
 ## Build Types 
-see documentation [here](Documentation/BuildTypes/README.md)
+
+| BuildType                                       | You should use this type when: | Stages |
+|-------------------------------------------------|--------------------------------|--------|
+| FullBuild                                       |                                |[here](Documentation/BuildTypes/README.md)|
+| FullBuildWithoutGetAllCodeLatestVersionStage    |                                |[here](Documentation/BuildTypes/README.md)|
+| BuildDBSyncService                              |                                |[here](Documentation/BuildTypes/README.md)|
+| BuildWithoutDB                                  |                                |[here](Documentation/BuildTypes/README.md)|
+| BuildUI                                         |                                |[here](Documentation/BuildTypes/README.md)|
+
+
+## Action String Types 
+| Type | Params | Usage |
+|:------:|--------------------------------|--------------------------------|
+| 1 | ${appRootPath} ${configFile} 'N/A' ${operation} ${Username} ${Password}| GetAllCodeLatestVersion |
+| 2 | ${appRootPath} ${configFile} ${projectName} ${operation} ${Username} ${Password}")| GetCodeLatestVersion, __CheckOutFiles__, UpdateAssemblyVersion, __CheckInFiles__ |
+| 3 | ${appRootPath} ${configFile} ${projectName} ${operation}"| Everything else|
+
+
