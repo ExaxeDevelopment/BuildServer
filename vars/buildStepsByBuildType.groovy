@@ -67,6 +67,21 @@ class buildStepsByBuildType implements Serializable {
 		buildDBSyncService.add("Reprovision"); 
 		buildDBSyncService.add("Synchronize");
 		
+		List<String> updatePackagesWithoutBuild = new ArrayList<String>()
+		updatePackagesWithoutBuild.add("GetCodeLatestVersion"); 
+		updatePackagesWithoutBuild.add("CheckOutFiles"); 
+		updatePackagesWithoutBuild.add("RestoreNuGetPackages"); 
+		updatePackagesWithoutBuild.add("UpdateNuGetPackages");
+		updatePackagesWithoutBuild.add("CheckInFiles"); 
+
+		List<String> updatePackagesWithBuild = new ArrayList<String>()
+		updatePackagesWithBuild.add("GetCodeLatestVersion"); 
+		updatePackagesWithBuild.add("CheckOutFiles"); 
+		updatePackagesWithBuild.add("RestoreNuGetPackages"); 
+		updatePackagesWithBuild.add("UpdateNuGetPackages");
+		updatePackagesWithBuild.add("BuildSolution");
+		updatePackagesWithBuild.add("CheckInFiles"); 
+
 		List<String> buildSteps = new ArrayList<String>();
         switch (val) {
             case "FullBuild":
@@ -83,6 +98,12 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "BuildDBSyncService":
                 buildSteps = buildDBSyncService;
+                break
+			case "UpdatePackagesWithoutBuild":
+                buildSteps = updatePackagesWithoutBuild;
+                break
+			case "UpdatePackagesWithBuild":
+                buildSteps = updatePackagesWithBuild;
                 break
             default:
                 buildSteps.add("BuildTypeNotDefined");
