@@ -2,6 +2,7 @@ class actionString implements Serializable {
   
   def stagesWithSixParams = ["GetCodeLatestVersion", "CheckOutFiles", "UpdateAssemblyVersion", "CheckInFiles"]
   def stagesWithCustomParams = ["GetAllCodeLatestVersion"] 
+  def stagesWithFourCustomParans = ["Initialisation", "ReleaseContent"]
 
   def createActionString(appRootPath, configFile, projectName, operation, userName, userPassword) {
     private String actionString;
@@ -11,6 +12,9 @@ class actionString implements Serializable {
     }
     else if (stagesWithCustomParams.contains(operation)) {
       actionString = appRootPath + " " + configFile + " " + "'N/A'" + " " + operation + " " + userName + " " + userPassword;
+    }
+	else if (stagesWithFourCustomParans.contains(operation)) {
+      actionString = appRootPath + " " + configFile + " " + "'N/A'" + " " + operation;
     }
     else {
       // action string with four params      
