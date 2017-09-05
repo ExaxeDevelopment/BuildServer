@@ -86,8 +86,8 @@ class deployCommonBuildSteps implements Serializable {
 
 		//Release Content
 		Map<String,String> deployMap12  = new HashMap<String,String>();
-		deployMap12.put("Project", "Release Content"); 
-		deployMap12.put("Operation", "Release Content"); 
+		deployMap12.put("Project", "ReleaseContent"); 
+		deployMap12.put("Operation", "ReleaseContent"); 
 		commonDeploySteps.add(deployMap12);
 
 		//Return All of the defined steps
