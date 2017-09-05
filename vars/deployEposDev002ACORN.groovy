@@ -45,11 +45,17 @@ class deployEposDev002ACORN implements Serializable {
 		eposDev002DeployMap7.put("Operation", "PublishWebService"); 
 		deploySteps.add(eposDev002DeployMap7);
 
-		//Exaxe.SystemConfigurationUI - PublishWebSite
+		//Exaxe.SystemConfigurationUI - GetCodeLatestVersion
 		Map<String,String> eposDev002DeployMap8  = new HashMap<String,String>();
 		eposDev002DeployMap8.put("Project", "SystemConfigurationUI"); 
-		eposDev002DeployMap8.put("Operation", "PublishWebSite"); 
+		eposDev002DeployMap8.put("Operation", "GetCodeLatestVersion"); 
 		deploySteps.add(eposDev002DeployMap8);
+
+		//Exaxe.SystemConfigurationUI - PublishWebSite
+		Map<String,String> eposDev002DeployMap9  = new HashMap<String,String>();
+		eposDev002DeployMap9.put("Project", "SystemConfigurationUI"); 
+		eposDev002DeployMap9.put("Operation", "PublishWebSite"); 
+		deploySteps.add(eposDev002DeployMap9);
 
 		//Return All of the defined steps
 		deploySteps
