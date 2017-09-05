@@ -75,6 +75,11 @@ class deployCommonBuildSteps implements Serializable {
 				List eposDev002Steps = eposDev002Class.getDeploySteps();
 				commonDeploySteps = commonDeploySteps + eposDev002Steps;
                 break
+			case "DeployEposPilotACORN":
+                def eposPilotClass = new deployEposPilotACORN();
+				List eposPilotSteps = eposPilotClass.getDeploySteps();
+				commonDeploySteps = commonDeploySteps + eposPilotSteps;
+                break
             default:             
                 break
         }  
@@ -84,12 +89,6 @@ class deployCommonBuildSteps implements Serializable {
 		deployMap12.put("Project", "Release Content"); 
 		deployMap12.put("Operation", "Release Content"); 
 		commonDeploySteps.add(deployMap12);
-
-		//Success Notification
-		Map<String,String> deployMap13  = new HashMap<String,String>();
-		deployMap13.put("Project", "Success Notification"); 
-		deployMap13.put("Operation", "Success Notification"); 
-		commonDeploySteps.add(deployMap13);
 
 		//Return All of the defined steps
 		commonDeploySteps

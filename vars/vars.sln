@@ -78,6 +78,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeployBuildSteps", "DeployBuildSteps", "{10C3AD8F-B6D1-46AB-A39E-FFEBEF1F9869}"
 	ProjectSection(SolutionItems) = preProject
 		deployEposDev002ACORN.groovy = deployEposDev002ACORN.groovy
+		deployEposPilotACORN.groovy = deployEposPilotACORN.groovy
 	EndProjectSection
 EndProject
 Global
