@@ -51,9 +51,9 @@ class deployEposPilotACORN implements Serializable {
 		eposPilotDeployMap8.put("Operation", "GetCodeLatestVersion"); 
 		deploySteps.add(eposPilotDeployMap8);
 
-		//RestoreNuGetPackages
+		//Exaxe.SystemConfigurationUI - RestoreNuGetPackages
 		Map<String,String> eposPilotDeployMap9  = new HashMap<String,String>();
-		eposPilotDeployMap9.put("Project", "RestoreNuGetPackages"); 
+		eposPilotDeployMap9.put("Project", "SystemConfigurationUI"); 
 		eposPilotDeployMap9.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(eposPilotDeployMap9);
 
