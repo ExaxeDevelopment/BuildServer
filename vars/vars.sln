@@ -32,6 +32,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CE151E7E-65B8-4445-865F-07B998A36D39}"
 	ProjectSection(SolutionItems) = preProject
 		CommonBuild.groovy = CommonBuild.groovy
+		CommonDeployBuild.groovy = CommonDeployBuild.groovy
 		CommonMasterBuild.groovy = CommonMasterBuild.groovy
 	EndProjectSection
 EndProject

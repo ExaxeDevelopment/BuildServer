@@ -73,7 +73,7 @@ class masterBuildStepsByProject implements Serializable {
                 break
         }   
 
-		int indexOfStartStep = buildSteps.indexOf(val);
+		int indexOfStartStep = buildSteps.indexOf(firstProject);
         
 		if(indexOfStartStep == -1){
 			indexOfStartStep = 0;
