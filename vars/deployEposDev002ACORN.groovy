@@ -53,23 +53,35 @@ class deployEposDev002ACORN implements Serializable {
 		eposDev002DeployMap8.put("Operation", "GetCodeLatestVersion"); 
 		deploySteps.add(eposDev002DeployMap8);
 
-		//PointOfSaleUI- GetCodeLatestVersion
-		Map<String,String> eposDev002DeployMap9  = new HashMap<String,String>();
-		eposDev002DeployMap9.put("Project", "PointOfSaleUI"); 
-		eposDev002DeployMap9.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(eposDev002DeployMap9);
+		//Exaxe.SystemConfigurationUI - RestoreNuGetPackages
+		Map<String,String> eposPilotDeployMap10  = new HashMap<String,String>();
+		eposPilotDeployMap10.put("Project", "SystemConfigurationUI"); 
+		eposPilotDeployMap10.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(eposPilotDeployMap10);
 
 		//Exaxe.SystemConfigurationUI - PublishWebSite
-		Map<String,String> eposDev002DeployMap10  = new HashMap<String,String>();
-		eposDev002DeployMap10.put("Project", "SystemConfigurationUI"); 
-		eposDev002DeployMap10.put("Operation", "PublishWebSite"); 
-		deploySteps.add(eposDev002DeployMap10);
-
-		//PointOfSaleUI - PublishWebSite
 		Map<String,String> eposDev002DeployMap11  = new HashMap<String,String>();
-		eposDev002DeployMap11.put("Project", "PointOfSaleUI"); 
+		eposDev002DeployMap11.put("Project", "SystemConfigurationUI"); 
 		eposDev002DeployMap11.put("Operation", "PublishWebSite"); 
 		deploySteps.add(eposDev002DeployMap11);
+
+		//PointOfSaleUI- GetCodeLatestVersion
+		Map<String,String> eposDev002DeployMap12  = new HashMap<String,String>();
+		eposDev002DeployMap12.put("Project", "PointOfSaleUI"); 
+		eposDev002DeployMap12.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(eposDev002DeployMap12);
+
+		//PointOfSaleUI - RestoreNuGetPackages
+		Map<String,String> eposDev002DeployMap13  = new HashMap<String,String>();
+		eposDev002DeployMap13.put("Project", "PointOfSaleUI"); 
+		eposDev002DeployMap13.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(eposDev002DeployMap13);
+
+		//PointOfSaleUI - PublishWebSite
+		Map<String,String> eposDev002DeployMap14  = new HashMap<String,String>();
+		eposDev002DeployMap14.put("Project", "PointOfSaleUI"); 
+		eposDev002DeployMap14.put("Operation", "PublishWebSite"); 
+		deploySteps.add(eposDev002DeployMap14);
 
 		//Return All of the defined steps
 		deploySteps
