@@ -63,6 +63,18 @@ class deployEposPilotACORN implements Serializable {
 		eposPilotDeployMap10.put("Operation", "PublishWebSite"); 
 		deploySteps.add(eposPilotDeployMap10);
 
+		//PointOfSaleUI- GetCodeLatestVersion
+		Map<String,String> eposPilotDeployMap11  = new HashMap<String,String>();
+		eposPilotDeployMap11.put("Project", "PointOfSaleUI"); 
+		eposPilotDeployMap11.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(eposPilotDeployMap11);
+
+		//PointOfSaleUI - PublishWebSite
+		Map<String,String> eposPilotDeployMap12  = new HashMap<String,String>();
+		eposPilotDeployMap12.put("Project", "PointOfSaleUI"); 
+		eposPilotDeployMap12.put("Operation", "PublishWebSite"); 
+		deploySteps.add(eposPilotDeployMap12);
+
 		//Return All of the defined steps
 		deploySteps
     }
