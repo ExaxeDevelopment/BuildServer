@@ -21,7 +21,7 @@ try{
 		for (String buildStep : buildSteps) {
 			stage("${buildStep}")
 			{
-				build jobBuild;
+				build buildStep;
 			}
 		}
 
