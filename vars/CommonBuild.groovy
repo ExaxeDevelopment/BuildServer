@@ -70,16 +70,15 @@ try{
            
         currentBuild.result = "SUCCESS";
 		
-        //duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
+        duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
 		
         try{
             stage("Success Notification"){
-                //echo duration;
+                echo duration;
 				
                 mail to: "${DEV_TEAM_EMAIL}", 
                 subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-                //body: "${env.BUILD_URL} \r\n ${duration}" 
-				body: "${env.BUILD_URL} \r\n" 
+                body: "${env.BUILD_URL} \r\n ${duration}" 
             }
         }
         catch(err){

@@ -26,7 +26,7 @@ try{
 		}
 
 		currentBuild.result = "SUCCESS";
-		//duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
+		duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
 
 		try{
 			stage("Success Notification"){
