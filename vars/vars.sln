@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JenkinsFile", "JenkinsFile", "{46C9246D-9EFE-4F4D-AC4B-E285D86FE584}"
+	ProjectSection(SolutionItems) = preProject
+		TempDurationTest.groovy = TempDurationTest.groovy
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GroovyScripts", "GroovyScripts", "{4392F170-1C95-43E8-B24D-BAA451E1F3EC}"
 EndProject
