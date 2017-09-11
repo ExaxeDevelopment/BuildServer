@@ -66,7 +66,34 @@ class buildStepsByBuildType implements Serializable {
 		buildDBSyncService.add("InstallAllDatabases"); 
 		buildDBSyncService.add("Reprovision"); 
 		buildDBSyncService.add("Synchronize");
+
+        List<String> buildWithoutPublishNugGet = new ArrayList<String>()
+		fullBuild.add("GetAllCodeLatestVersion"); 
+		fullBuild.add("ClearDatabases"); 
+		fullBuild.add("InstallAllDatabases"); 
+		fullBuild.add("CheckOutFiles"); 
+		fullBuild.add("UpdateAssemblyVersion"); 
+		fullBuild.add("RestoreNuGetPackages"); 
+		fullBuild.add("UpdateNuGetPackages"); 
+		fullBuild.add("BuildSolution");
+		fullBuild.add("PerformUnitTests"); 
+		fullBuild.add("CheckInFiles"); 
 		
+        List<String> buildApexServer = new ArrayList<String>()
+		fullBuild.add("GetAllCodeLatestVersion"); 
+		fullBuild.add("GetCodeLatestVersion");
+		fullBuild.add("ClearDatabases"); 
+		fullBuild.add("InstallAllDatabases"); 
+		fullBuild.add("CheckOutFiles"); 
+		fullBuild.add("UpdateAssemblyVersion"); 
+		fullBuild.add("RestoreNuGetPackages"); 
+		fullBuild.add("UpdateNuGetPackages"); 
+		fullBuild.add("BuildSolution");
+		fullBuild.add("PublishWebService");
+		fullBuild.add("CheckWorkflowsAsync");
+		fullBuild.add("PerformUnitTests"); 
+		fullBuild.add("CheckInFiles"); 
+
 		List<String> updatePackagesWithoutBuild = new ArrayList<String>()
 		updatePackagesWithoutBuild.add("GetCodeLatestVersion"); 
 		updatePackagesWithoutBuild.add("CheckOutFiles"); 
@@ -92,6 +119,12 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "BuildWithoutDB":
                 buildSteps = buildWithoutDB;
+                break
+			case "BuildWithoutPublishNugGet":
+                buildSteps = buildWithoutPublishNugGet;
+                break
+			case "BuildApexServer":
+                buildSteps = buildApexServer;
                 break
 			case "BuildUI":
                 buildSteps = buildUI;
