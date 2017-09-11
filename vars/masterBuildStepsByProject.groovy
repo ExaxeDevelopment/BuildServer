@@ -1,26 +1,6 @@
 class masterBuildStepsByProject implements Serializable {
     def getMasterBuildStepsByProject(masterBuildType, firstProject) { 
 
-        List<String> masterBuildAdminPlusDev001 = new ArrayList<String>()
-		masterBuildAdminPlusDev001.add("Build-Exaxe.AdminPlus-Dev001"); 
-		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex-Dev001");
-		masterBuildAdminPlusDev001.add("Build-Exaxe.Aggregate-Dev001"); 
-		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex.Activities-Dev001"); 
-		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex.Server-Dev001"); 
-		masterBuildAdminPlusDev001.add("Build-AdminPlusUI-Dev001"); 
-		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-SalesDemo"); 
-
-        List<String> masterBuildAdminPlusDev002 = new ArrayList<String>();
-		masterBuildAdminPlusDev002.add("Build-Exaxe.Client-Dev002"); 
-		masterBuildAdminPlusDev002.add("Build-Exaxe.AdminPlus-Dev002"); 
-		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex-Dev002"); 
-		masterBuildAdminPlusDev002.add("Build-Exaxe.Aggregate-Dev002"); 
-		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex.Activities-Dev002"); 
-		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex.Server-Dev002"); 
-		masterBuildAdminPlusDev002.add("Build-AdminPlusUI-Dev002"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-SalesDemo"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily"); 
-		
 		List<String> masterBuildBaseDev001 = new ArrayList<String>()
 		masterBuildBaseDev001.add("Build-Exaxe.Types-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Libraries-Dev001"); 
@@ -36,6 +16,38 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildBaseDev001.add("Build-Exaxe.UIElements-Dev001");
 		masterBuildBaseDev001.add("Build-SystemConfigurationUI-Dev001");
 		masterBuildBaseDev001.add("Build-Exaxe.Calculations-Dev001");
+
+        List<String> masterBuildAdminPlusDev001 = new ArrayList<String>()
+		masterBuildAdminPlusDev001.add("Build-Exaxe.Client-Dev001"); 
+		masterBuildAdminPlusDev001.add("Build-Exaxe.AdminPlus-Dev001"); 
+		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex-Dev001");
+		masterBuildAdminPlusDev001.add("Build-Exaxe.Aggregate-Dev001"); 
+		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex.Activities-Dev001"); 
+		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex.Server-Dev001"); 
+		masterBuildAdminPlusDev001.add("Build-AdminPlusUI-Dev001"); 
+		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-PoliceMutual"); 
+
+        List<String> masterBuildAdminPlusDev002 = new ArrayList<String>();
+		masterBuildAdminPlusDev002.add("Build-Exaxe.Client-Dev002"); 
+		masterBuildAdminPlusDev002.add("Build-Exaxe.AdminPlus-Dev002"); 
+		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex-Dev002"); 
+		masterBuildAdminPlusDev002.add("Build-Exaxe.Aggregate-Dev002"); 
+		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex.Activities-Dev002"); 
+		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex.Server-Dev002"); 
+		masterBuildAdminPlusDev002.add("Build-AdminPlusUI-Dev002"); 
+		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-SalesDemo"); 
+		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily"); 
+
+        List<String> masterBuildAdminPlusDev004 = new ArrayList<String>();
+		masterBuildAdminPlusDev004.add("Build-Exaxe.Client-Dev004"); 
+		masterBuildAdminPlusDev004.add("Build-Exaxe.AdminPlus-Dev004"); 
+		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex-Dev004"); 
+		masterBuildAdminPlusDev004.add("Build-Exaxe.Aggregate-Dev004"); 
+		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Activities-Dev004"); 
+		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Server-Dev004"); 
+		masterBuildAdminPlusDev004.add("Build-AdminPlusUI-Dev004"); 
+		masterBuildAdminPlusDev004.add("Deploy-AdminPlus-Dev004-SalesDemo"); 
+		masterBuildAdminPlusDev004.add("Deploy-AdminPlus-Dev004-OneFamily"); 
 		
 		List<String> masterBuildePOSDev002 = new ArrayList<String>()
         masterBuildePOSDev002.add("Build-Exaxe.Client-Dev003");
@@ -53,14 +65,17 @@ class masterBuildStepsByProject implements Serializable {
 		
 		List<String> buildSteps = new ArrayList<String>();
         switch (masterBuildType) {
+			case "MasterBuildBaseDev001":
+                buildSteps = masterBuildBaseDev001;
+                break
             case "MasterBuildAdminPlusDev001":
                 buildSteps = masterBuildAdminPlusDev001;
                 break
             case "MasterBuildAdminPlusDev002":
                 buildSteps = masterBuildAdminPlusDev002;
                 break
-			case "MasterBuildBaseDev001":
-                buildSteps = masterBuildBaseDev001;
+            case "MasterBuildAdminPlusDev004":
+                buildSteps = masterBuildAdminPlusDev004;
                 break
 			case "MasterBuildePOSDev002":
                 buildSteps = masterBuildePOSDev002;
