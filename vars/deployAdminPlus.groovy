@@ -118,9 +118,9 @@ class deployAdminPlus implements Serializable {
 		clientWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(clientWsPublishMap);
 
-		//Exaxe.Policy  - PublishWebService
+		//Exaxe.AdminPlus  - PublishWebService
 		Map<String,String> policyWsPublishMap = new HashMap<String,String>();
-		policyWsPublishMap.put("Project", "Exaxe.Policy"); 
+		policyWsPublishMap.put("Project", "Exaxe.AdminPlus"); 
 		policyWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(policyWsPublishMap);
 
