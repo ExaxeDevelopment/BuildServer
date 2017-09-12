@@ -68,31 +68,31 @@ class buildStepsByBuildType implements Serializable {
 		buildDBSyncService.add("Synchronize");
 
         List<String> buildWithoutPublishNugGet = new ArrayList<String>()
-		fullBuild.add("GetAllCodeLatestVersion"); 
-		fullBuild.add("ClearDatabases"); 
-		fullBuild.add("InstallAllDatabases"); 
-		fullBuild.add("CheckOutFiles"); 
-		fullBuild.add("UpdateAssemblyVersion"); 
-		fullBuild.add("RestoreNuGetPackages"); 
-		fullBuild.add("UpdateNuGetPackages"); 
-		fullBuild.add("BuildSolution");
-		fullBuild.add("PerformUnitTests"); 
-		fullBuild.add("CheckInFiles"); 
+		buildWithoutPublishNugGet.add("GetAllCodeLatestVersion"); 
+		buildWithoutPublishNugGet.add("ClearDatabases"); 
+		buildWithoutPublishNugGet.add("InstallAllDatabases"); 
+		buildWithoutPublishNugGet.add("CheckOutFiles"); 
+		buildWithoutPublishNugGet.add("UpdateAssemblyVersion"); 
+		buildWithoutPublishNugGet.add("RestoreNuGetPackages"); 
+		buildWithoutPublishNugGet.add("UpdateNuGetPackages"); 
+		buildWithoutPublishNugGet.add("BuildSolution");
+		buildWithoutPublishNugGet.add("PerformUnitTests"); 
+		buildWithoutPublishNugGet.add("CheckInFiles"); 
 		
         List<String> buildApexServer = new ArrayList<String>()
-		fullBuild.add("GetAllCodeLatestVersion"); 
-		fullBuild.add("GetCodeLatestVersion");
-		fullBuild.add("ClearDatabases"); 
-		fullBuild.add("InstallAllDatabases"); 
-		fullBuild.add("CheckOutFiles"); 
-		fullBuild.add("UpdateAssemblyVersion"); 
-		fullBuild.add("RestoreNuGetPackages"); 
-		fullBuild.add("UpdateNuGetPackages"); 
-		fullBuild.add("BuildSolution");
-		fullBuild.add("PublishWebService");
-		fullBuild.add("CheckWorkflowsAsync");
-		fullBuild.add("PerformUnitTests"); 
-		fullBuild.add("CheckInFiles"); 
+		buildApexServer.add("GetAllCodeLatestVersion"); 
+		buildApexServer.add("GetCodeLatestVersion");
+		buildApexServer.add("ClearDatabases"); 
+		buildApexServer.add("InstallAllDatabases"); 
+		buildApexServer.add("CheckOutFiles"); 
+		buildApexServer.add("UpdateAssemblyVersion"); 
+		buildApexServer.add("RestoreNuGetPackages"); 
+		buildApexServer.add("UpdateNuGetPackages"); 
+		buildApexServer.add("BuildSolution");
+		buildApexServer.add("PublishWebService");
+		buildApexServer.add("CheckWorkflowsAsync");
+		buildApexServer.add("PerformUnitTests"); 
+		buildApexServer.add("CheckInFiles"); 
 
 		List<String> updatePackagesWithoutBuild = new ArrayList<String>()
 		updatePackagesWithoutBuild.add("GetCodeLatestVersion"); 
