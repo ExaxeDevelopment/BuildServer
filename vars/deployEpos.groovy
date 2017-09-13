@@ -17,27 +17,33 @@ class deployEpos implements Serializable {
 
 		//Exaxe.SolutionManager - GetCodeLatestVersion
 		Map<String,String> solutionManagerGetCodeMap  = new HashMap<String,String>();
-		solutionManagerGetCodeMap.put("Project", "Exaxe.SolutionManager"); 
+		solutionManagerGetCodeMap.put("Project", "Exaxe.SolutionManager-Update"); 
 		solutionManagerGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
 		deploySteps.add(solutionManagerGetCodeMap);
 
 		//Exaxe.SolutionManager - RestoreNuGetPackages
 		Map<String,String> solutionManagerRestoreNuGetMap  = new HashMap<String,String>();
-		solutionManagerRestoreNuGetMap.put("Project", "Exaxe.SolutionManager"); 
+		solutionManagerRestoreNuGetMap.put("Project", "Exaxe.SolutionManager-Update"); 
 		solutionManagerRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(solutionManagerRestoreNuGetMap);
 
 		//Exaxe.SolutionManager - BuildSolution
 		Map<String,String> solutionManagerBuildMap  = new HashMap<String,String>();
-		solutionManagerBuildMap.put("Project", "Exaxe.SolutionManager"); 
+		solutionManagerBuildMap.put("Project", "Exaxe.SolutionManager-Update"); 
 		solutionManagerBuildMap.put("Operation", "BuildSolution"); 
 		deploySteps.add(solutionManagerBuildMap);
 
-		//Exaxe.SolutionManager - PublishInstallApp
-		Map<String,String> solutionManagerPublishMap  = new HashMap<String,String>();
-		solutionManagerPublishMap.put("Project", "Exaxe.SolutionManager"); 
-		solutionManagerPublishMap.put("Operation", "PublishInstallApp"); 
-		deploySteps.add(solutionManagerPublishMap);
+		//Exaxe.SolutionManager - PublishInstallApp (UPDATE)
+		Map<String,String> solutionManagerPublishUpdateMap  = new HashMap<String,String>();
+		solutionManagerPublishUpdateMap.put("Project", "Exaxe.SolutionManager-Update"); 
+		solutionManagerPublishUpdateMap.put("Operation", "PublishInstallApp"); 
+		deploySteps.add(solutionManagerPublishUpdateMap);
+
+		//Exaxe.SolutionManager - PublishInstallApp (CREATE)
+		Map<String,String> solutionManagerPublishCreateMap  = new HashMap<String,String>();
+		solutionManagerPublishCreateMap.put("Project", "Exaxe.SolutionManager-Create"); 
+		solutionManagerPublishCreateMap.put("Operation", "PublishInstallApp"); 
+		deploySteps.add(solutionManagerPublishCreateMap);
 
 		//Exaxe.Agent - BuildDatabase
 		Map<String,String> agentDbMap  = new HashMap<String,String>();
