@@ -91,6 +91,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdminPlus", "AdminPlus", "{E00BCCA7-8AF3-4C4D-88E0-5C194A3DB9D6}"
 	ProjectSection(SolutionItems) = preProject
 		deployAdminPlus.groovy = deployAdminPlus.groovy
+		deployAdminPlusPM.groovy = deployAdminPlusPM.groovy
 	EndProjectSection
 EndProject
 Global
