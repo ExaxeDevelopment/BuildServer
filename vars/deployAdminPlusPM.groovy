@@ -125,10 +125,10 @@ class deployAdminPlusPM implements Serializable {
 		deploySteps.add(apexWsPublishMap);
 
 		//Exaxe.Aggregate  - PublishWebService
-		Map<String,String> apexWsPublishMap = new HashMap<String,String>();
-		apexWsPublishMap.put("Project", "Exaxe.Aggregate"); 
-		apexWsPublishMap.put("Operation", "PublishWebService"); 
-		deploySteps.add(apexWsPublishMap);
+		Map<String,String> aggregateWsPublishMap = new HashMap<String,String>();
+		aggregateWsPublishMap.put("Project", "Exaxe.Aggregate"); 
+		aggregateWsPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(aggregateWsPublishMap);
 
 		//Exaxe.Apex.Server  - PublishWebService
 		Map<String,String> apexServerWsPublishMap = new HashMap<String,String>();
