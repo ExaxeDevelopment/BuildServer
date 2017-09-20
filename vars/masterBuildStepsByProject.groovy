@@ -35,8 +35,8 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex.Activities-Dev002"); 
 		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex.Server-Dev002"); 
 		masterBuildAdminPlusDev002.add("Build-AdminPlusUI-Dev002"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-SalesDemo"); 
 		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily"); 
+		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-SalesDemo"); 
 
         List<String> masterBuildAdminPlusDev004 = new ArrayList<String>();
 		masterBuildAdminPlusDev004.add("Build-Exaxe.Client-Dev004"); 
@@ -46,8 +46,8 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Activities-Dev004"); 
 		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Server-Dev004"); 
 		masterBuildAdminPlusDev004.add("Build-AdminPlusUI-Dev004"); 
-		masterBuildAdminPlusDev004.add("Deploy-AdminPlus-Dev004-SalesDemo"); 
 		masterBuildAdminPlusDev004.add("Deploy-AdminPlus-Dev004-OneFamily"); 
+		masterBuildAdminPlusDev004.add("Deploy-AdminPlus-Dev004-SalesDemo"); 
 		
 		List<String> masterBuildePOSDev002 = new ArrayList<String>()
         masterBuildePOSDev002.add("Build-Exaxe.Client-Dev003");
