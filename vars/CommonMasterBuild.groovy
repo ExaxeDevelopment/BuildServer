@@ -19,7 +19,7 @@ try{
 		def sequentialBuildSteps;
 
 		//// First try to get using the parallel. It may also contain the sequential.
-		def allBuildSteps = masterBuildStepsClass.getMasterBuildParallelStepsByProject(masterBuildName, action);
+		def allBuildSteps = masterBuildStepsClass.getMasterBuildParallelStepsByProject(masterBuildName);
 
 		if(allBuildSteps.size() > 0){
 			echo "We have parallel jobs to execute!";
