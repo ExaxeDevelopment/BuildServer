@@ -36,7 +36,7 @@ try{
 		//// #####################################
 		//// ######## PARALLEL PROCESSING ########
 		//// #####################################
-		if(parallelBuildSteps.size() > 0){
+		if(parallelBuildSteps != null && parallelBuildSteps.size() > 0){
 			def parallelBuildJobs = [:] 
 			for (String buildStep : parallelBuildSteps) {
 				def _buildStep = buildStep; // This is necessary to prevent modified closure, when it's executing in parallel
