@@ -15,8 +15,8 @@ try{
 
 		def masterBuildStepsClass = new masterBuildStepsByProject();
 
-		List<String> parallelBuildSteps = new ArrayList<String>();
-		List<String> sequentialBuildSteps = new ArrayList<String>();
+		def parallelBuildSteps;
+		def sequentialBuildSteps;
 
 		//// First try to get using the parallel. It may also contain the sequential.
 		def allBuildSteps = masterBuildStepsClass.getMasterBuildParallelStepsByProject(masterBuildName, action);
