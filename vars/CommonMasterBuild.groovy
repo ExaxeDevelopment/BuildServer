@@ -19,6 +19,8 @@ try{
 
 		// STEPS EXECUTION
 		for (String buildStep : buildSteps) {
+			jobBuild = buildStep;
+
 			stage("${buildStep}")
 			{
 				build buildStep;

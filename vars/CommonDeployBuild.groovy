@@ -34,6 +34,8 @@ try{
         def deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 		
 		for(Map<String,String>step : deployCommonSteps){
+			operation = step.get("Operation");
+
 			if(step.get("Project") == step.get("Operation")){
 				stage(step.get("Operation")){
 					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"), "${tfsUsername}", "${tfsPassword}")

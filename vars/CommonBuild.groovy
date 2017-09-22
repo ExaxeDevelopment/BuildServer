@@ -37,6 +37,8 @@ try{
 		def buildSteps = buildStepsClass.createBuildStepsByBuildType("${buildTypeAction}")
     
 		for (String buildStep : buildSteps) {
+			operation = buildStep;
+
 			if(buildStep == "PublishNuGetPackages"){
 				undoChanges = false;	//// No need to worry about changes
 			}
