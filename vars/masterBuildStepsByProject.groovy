@@ -1,4 +1,6 @@
 class masterBuildStepsByProject implements Serializable {
+	//// Returns the build steps based on the 'masterBuildType'
+	//// The 'firstProject' indicates from where in the list the build will start
     def getMasterBuildStepsByProject(masterBuildType, firstProject) { 
 
 		List<String> masterBuildBaseDev001 = new ArrayList<String>()
@@ -99,4 +101,31 @@ class masterBuildStepsByProject implements Serializable {
 		
 		steps
     }
+
+	//// Returns the build steps to be executed in parallel and in sequence, based on the 'masterBuildType'
+	def getMasterBuildParallelStepsByProject(masterBuildType) { 
+
+		List<String> masterBuildParallelAdminPlusDev004 = new ArrayList<String>();
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Client-Dev004"); 
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.AdminPlus-Dev004"); 
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Apex-Dev004"); 
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Aggregate-Dev004"); 
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Apex.Activities-Dev004"); 
+
+        List<String> masterBuildAdminPlusDev004 = new ArrayList<String>();
+		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Server-Dev004"); 
+		masterBuildAdminPlusDev004.add("Build-AdminPlusUI-Dev004"); 
+
+		List<List<String>> buildSteps = new ArrayList<ArrayList<String>>();
+        switch (masterBuildType) {
+            case "MasterBuildParallelAdminPlusDev004":
+				buildSteps.add(masterBuildParallelAdminPlusDev004);
+				buildSteps.add(masterBuildAdminPlusDev004);
+                break
+            default:
+                break
+		}
+
+		buildSteps
+	}
 }
