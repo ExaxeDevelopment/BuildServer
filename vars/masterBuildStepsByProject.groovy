@@ -106,11 +106,11 @@ class masterBuildStepsByProject implements Serializable {
 	def getMasterBuildParallelStepsByProject(masterBuildType) { 
 
 		List<String> masterBuildParallelAdminPlusDev004 = new ArrayList<String>();
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Client-Dev004"); 
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.AdminPlus-Dev004"); 
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Apex-Dev004"); 
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Aggregate-Dev004"); 
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Apex.Activities-Dev004"); 
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Client-Dev004-Intermediate"); 
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.AdminPlus-Dev004-Intermediate"); 
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Apex-Dev004-Intermediate"); 
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Aggregate-Dev004-Intermediate"); 
+		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Apex.Activities-Dev004-Intermediate"); 
 
         List<String> masterBuildAdminPlusDev004 = new ArrayList<String>();
 		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Server-Dev004"); 
