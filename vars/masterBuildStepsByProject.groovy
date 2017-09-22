@@ -118,7 +118,7 @@ class masterBuildStepsByProject implements Serializable {
 
 		List<List<String>> buildSteps = new ArrayList<ArrayList<String>>();
         switch (masterBuildType) {
-            case "MasterBuildParallelAdminPlusDev004":
+            case "MasterBuildAdminPlusDev004Intermediate":
 				buildSteps.add(masterBuildParallelAdminPlusDev004);
 				buildSteps.add(masterBuildAdminPlusDev004);
                 break
