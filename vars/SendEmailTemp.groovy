@@ -7,7 +7,7 @@ node{
 		// EXECUTE
 		List<String> issueKeys = jiraSearch(jql: "project = EPOS AND status in (Resolved)")	
 
-		def temp  = "${env.BUILD_URL} \r\n ${duration} \r\n";
+		def temp  = "${env.BUILD_URL}";
 		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 		if(issueKeys != null){
 			for(String key : issueKeys){
