@@ -1,10 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PipelineBase", "PipelineBase", "{46C9246D-9EFE-4F4D-AC4B-E285D86FE584}"
 	ProjectSection(SolutionItems) = preProject
+		SendEmailTemp.groovy = SendEmailTemp.groovy
 		TempDurationTest.groovy = TempDurationTest.groovy
 	EndProjectSection
 EndProject
@@ -94,6 +95,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdminPlus", "AdminPlus", "{
 		deployAdminPlusPM.groovy = deployAdminPlusPM.groovy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Email", "Email", "{CC7C8321-2C2D-4001-8C26-8C556299EF7A}"
+	ProjectSection(SolutionItems) = preProject
+		emailJiraAttachment.groovy = emailJiraAttachment.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +118,7 @@ Global
 		{10C3AD8F-B6D1-46AB-A39E-FFEBEF1F9869} = {6BF976ED-901F-42CE-81C1-B1F2351A31D9}
 		{DBF2434F-D941-4F03-9FBF-93832A13329D} = {26042AB3-DA41-4A99-94A1-F3CBA6734988}
 		{E00BCCA7-8AF3-4C4D-88E0-5C194A3DB9D6} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
+		{CC7C8321-2C2D-4001-8C26-8C556299EF7A} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
