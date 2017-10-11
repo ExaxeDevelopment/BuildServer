@@ -5,7 +5,7 @@ node{
     stage("Success Notification"){
         
 		// EXECUTE
-		def issueKeys = List<String> issueKeys = jiraSearch(jql: "project = EPOS AND status in (Resolved)")	
+		List<String> issueKeys = jiraSearch(jql: "project = EPOS AND status in (Resolved)")	
 
 		def temp  = "${env.BUILD_URL} \r\n ${duration} \r\n";
 		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
