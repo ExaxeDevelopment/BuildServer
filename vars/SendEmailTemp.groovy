@@ -4,11 +4,8 @@ node{
 
     stage("Success Notification"){
         
-		// PREPARE CLASS OBJECTS
-		def emailJiraAttachmentClass = new emailJiraAttachment();
-
 		// EXECUTE
-		def issueKeys = emailJiraAttachmentClass.getJiraIssueKey()
+		def issueKeys = List<String> issueKeys = jiraSearch(jql: "project = EPOS AND status in (Resolved)")	
 
 		def temp  = "${env.BUILD_URL} \r\n ${duration} \r\n";
 		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
