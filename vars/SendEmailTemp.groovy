@@ -43,7 +43,7 @@ node{
 			tempJiraSummary = tempJiraSummary + issue.fields.assignee.displayName + endRow;
 
 			tempJiraSummary = tempJiraSummary + "Create Date: ";
-			tempJiraSummary = tempJiraSummary + issue.fields.created + endRow;
+			tempJiraSummary = tempJiraSummary + issue.fields.created + endRow + endRow;
 			
 			tempJiraSummary = tempJiraSummary + "Last Update Date: ";
 			tempJiraSummary = tempJiraSummary + issue.fields.updated + endRow;
