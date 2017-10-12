@@ -16,6 +16,7 @@ node{
 		switch (selectedJiraProjectKey) {
 			case "OF":
                 jiraStatuses = "status in ('Dev Complete', 'Tester Assigned')";
+				selectedJiraProjectKey = "'OF'";
                 break
 			default:
 				jiraStatuses = "status = Resolved";
