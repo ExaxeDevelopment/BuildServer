@@ -24,8 +24,8 @@ node{
 			println "=============================================="
 		}
     
-        wrap([$class: 'hudson.plugins.jira.JiraCreateReleaseNotes', jiraProjectKey: 'ALEUAT',
-        jiraRelease: 'Next 1.2.X Release', jiraEnvironmentVariable: 'notes', jiraFilter: 'status in (Resolved")']) 
+        wrap([$class: 'hudson.plugins.jira.JiraCreateReleaseNotes', jiraProjectKey: selectedJiraProjectKey,
+        jiraRelease: selectedJiraRelease, jiraEnvironmentVariable: 'notes', jiraFilter: 'status in (Resolved")']) 
 		{
 	    
 			println "=============================================="
@@ -38,7 +38,13 @@ node{
 
         mail to: "filip.ludma@exaxe.com", 
         subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-		body: temp + devJiraTickets + "\r\n" + "\r\n" + resolvedJiraTickets; 
+		body: 
+			temp 
+			+ "JIRA TICKETS IN DEV"
+			+ devJiraTickets 
+			+ "\r\n\r\n" 
+			+ "RESOLVED JIRA TICKETS TO TEST"
+			+ resolvedJiraTickets; 
     }
 }
 
