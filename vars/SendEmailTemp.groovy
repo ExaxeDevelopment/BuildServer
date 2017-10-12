@@ -20,7 +20,8 @@ node{
 			default:
 				jiraStatuses = "status = Resolved";
 				break
-		
+		}
+
 		def jql = "project = " + selectedJiraProjectKey + " AND " + jiraStatuses;
 		def issues = jiraJqlSearch jql: jql, site: 'exaxejira', failOnError: true;
 		
