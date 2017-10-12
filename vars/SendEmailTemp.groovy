@@ -38,7 +38,7 @@ node{
 
         mail to: "filip.ludma@exaxe.com", 
         subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-		body: temp + "JIRA TICKETS IN DEV\r\n" + devJiraTickets  + "\r\n\r\n" + "RESOLVED JIRA TICKETS TO TEST\r\n" + resolvedJiraTickets; 
+		body: temp + "RELEASE VERSION: " + selectedJiraRelease+ "\r\nJIRA TICKETS IN DEV\r\n" + devJiraTickets  + "\r\n\r\n" + "RESOLVED JIRA TICKETS TO TEST\r\n" + resolvedJiraTickets; 
     }
 }
 
