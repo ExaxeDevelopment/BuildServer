@@ -15,13 +15,13 @@ node{
 		def jql = "project = " + selectedJiraProjectKey + " AND status not in (Closed, Resolved, 'Client Test')";
 		def issues = jiraJqlSearch jql: jql, site: 'exaxejira', failOnError: true;
 		
-		def body = "${env.BUILD_URL}" + "\r\n\r\n";
+		def body = "${env.BUILD_URL}" + "\r\n\r\n" + "JIRA RELEASE NOTES" + "\r\n\r\n";
 		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 
 		for(def issue in issues.data.issues){
 			def tempJiraSummary = "";   
 			tempJiraSummary = "Summary: ";
-			tempJiraSummary = tempJiraSummary + issue.key + " - " + issue.fields.summary + endRow;
+			tempJiraSummary = tempJiraSummary + issue.key + ": " + issue.fields.summary + endRow;
 
 			tempJiraSummary = tempJiraSummary + "Status: ";
 			tempJiraSummary = tempJiraSummary +  issue.fields.status.name + endRow;			
@@ -39,7 +39,7 @@ node{
 			tempJiraSummary = tempJiraSummary + issue.fields.updated + endRow;
 
 			tempJiraSummary = tempJiraSummary + "Link: ";
-			tempJiraSummary = tempJiraSummary + jiraUrl + issue.key;
+			tempJiraSummary = tempJiraSummary + jiraUrl + issue.key + endRow + endRow;
 
 			body = body + tempJiraSummary;
 		}
