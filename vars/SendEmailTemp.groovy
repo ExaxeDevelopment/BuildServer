@@ -1,5 +1,6 @@
 import hudson.Util;
 
+def endRow = "\r\n";
 def selectedJiraRelease = "";
 def selectedJiraProjectKey = "";
 
@@ -10,48 +11,42 @@ node{
 		// INPUT PARAMS
 		selectedJiraRelease = SelectedJiraRelease;
 		selectedJiraProjectKey = SelectedJiraProjectKey; 
+		
+		def jql = "project = " + selectedJiraProjectKey + " AND status not in (Closed, Resolved, 'Client Test')";
+		def issues = jiraJqlSearch jql: jql, site: 'exaxejira', failOnError: true;
+		
+		def body = "${env.BUILD_URL}" + "\r\n\r\n";
+		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 
-		// JIRAT TICKETS
-		def devJiraTickets;
-		def resolvedJiraTickets;
+		for(def issue in issues.data.issues{
+			def tempJiraSummary = "";   
+			tempJiraSummary = "Summary: ";
+			tempJiraSummary = tempJiraSummary + issue.key + " - " + issue.fields.summary + endRow;
 
-		def jql = "project = " + selectedJiraProjectKey + " AND status in (Resolved)";
+			tempJiraSummary = tempJiraSummary + "Status: ";
+			tempJiraSummary = tempJiraSummary +  issue.fields.status.name + endRow;			
 
-		List<String> issueKeys = jiraSearch(jql: jql)	
+			tempJiraSummary = tempJiraSummary + "Created By: ";
+			tempJiraSummary = tempJiraSummary + issue.fields.creator.displayName + endRow;
 
-		wrap([$class: 'hudson.plugins.jira.JiraCreateReleaseNotes', jiraProjectKey: selectedJiraProjectKey,
-        jiraRelease: selectedJiraRelease, jiraEnvironmentVariable: 'notes', jiraFilter: 'status in (Open, Review, "To Do")']) 
-		{
-			println "=============================================="
-			println "GET JIRA TICKETS IN DEV"
-			devJiraTickets =  env.notes
-			println "=============================================="
-		}
-    
-        wrap([$class: 'hudson.plugins.jira.JiraCreateReleaseNotes', jiraProjectKey: selectedJiraProjectKey,
-        jiraRelease: selectedJiraRelease, jiraEnvironmentVariable: 'notes', jiraFilter: 'status in (Resolved")']) 
-		{
-	    
-			println "=============================================="
-			println "GET RESOLVED JIRA TICKETS TO TEST"
-			resolvedJiraTickets = env.notes
-			println "=============================================="
-	    }
+			tempJiraSummary = tempJiraSummary + "Assigned To: ";
+			tempJiraSummary = tempJiraSummary + issue.fields.assignee.displayName + endRow;
 
-		def temp  = "${env.BUILD_URL}" + "\r\n";
+			tempJiraSummary = tempJiraSummary + "Create Date: ";
+			tempJiraSummary = tempJiraSummary + issue.fields.created + endRow;
+			
+			tempJiraSummary = tempJiraSummary + "Last Update Date: ";
+			tempJiraSummary = tempJiraSummary + issue.fields.updated + endRow;
 
-		temp = temp  + "RELEASE VERSION: " + selectedJiraRelease+ "\r\nJIRA TICKETS IN DEV\r\n" + devJiraTickets  + "\r\n\r\n" + "RESOLVED JIRA TICKETS TO TEST\r\n" + resolvedJiraTickets + "\r\n\r\n\r\n"; 
-	
-		def jiraUrl = "<li>[<a href='https://exaxejira.atlassian.net/browse/"
-		if(issueKeys != null){
-			for(String key : issueKeys){
-				temp = temp + jiraUrl + key + "'>" + key + "</a>]</li>" + "\r\n";
-			}
+			tempJiraSummary = tempJiraSummary + "Link: ";
+			tempJiraSummary = tempJiraSummary + jiraUrl + issue.key;
+
+			body = body + tempJiraSummary;
 		}
 
         mail to: "filip.ludma@exaxe.com", 
         subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-		body: temp; 
+		body: body; 
     }
 }
 
