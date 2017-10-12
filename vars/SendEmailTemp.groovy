@@ -15,6 +15,10 @@ node{
 		def devJiraTickets;
 		def resolvedJiraTickets;
 
+		def jql = "project = " + selectedJiraProjectKey + " AND status in (Resolved)";
+
+		List<String> issueKeys = jiraSearch(jql: jql)	
+
 		wrap([$class: 'hudson.plugins.jira.JiraCreateReleaseNotes', jiraProjectKey: selectedJiraProjectKey,
         jiraRelease: selectedJiraRelease, jiraEnvironmentVariable: 'notes', jiraFilter: 'status in (Open, Review, "To Do")']) 
 		{
@@ -36,9 +40,18 @@ node{
 
 		def temp  = "${env.BUILD_URL}" + "\r\n";
 
+		temp = temp  + "RELEASE VERSION: " + selectedJiraRelease+ "\r\nJIRA TICKETS IN DEV\r\n" + devJiraTickets  + "\r\n\r\n" + "RESOLVED JIRA TICKETS TO TEST\r\n" + resolvedJiraTickets + "\r\n\r\n\r\n"; 
+	
+		def jiraUrl = "<li>[<a href='https://exaxejira.atlassian.net/browse/"
+		if(issueKeys != null){
+			for(String key : issueKeys){
+				temp = temp + jiraUrl + key + "'>" + key + "</a>]</li>" + "\r\n";
+			}
+		}
+
         mail to: "filip.ludma@exaxe.com", 
         subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-		body: temp + "RELEASE VERSION: " + selectedJiraRelease+ "\r\nJIRA TICKETS IN DEV\r\n" + devJiraTickets  + "\r\n\r\n" + "RESOLVED JIRA TICKETS TO TEST\r\n" + resolvedJiraTickets; 
+		body: temp; 
     }
 }
 
