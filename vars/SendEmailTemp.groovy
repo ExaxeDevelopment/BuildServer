@@ -10,7 +10,7 @@ node{
         
 		def body = "${env.BUILD_URL}"; 
 
-		if(SelectedJiraProjectKey != null && SelectedJiraProjectKey != ""){
+		if(SelectedJiraProjectKey != undefined && SelectedJiraProjectKey != null && SelectedJiraProjectKey != ""){
 			// INPUT PARAMS
 			selectedJiraProjectKey = SelectedJiraProjectKey; 
 
