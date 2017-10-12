@@ -18,7 +18,7 @@ node{
 		def body = "${env.BUILD_URL}" + "\r\n\r\n";
 		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 
-		for(def issue in issues.data.issues{
+		for(def issue in issues.data.issues){
 			def tempJiraSummary = "";   
 			tempJiraSummary = "Summary: ";
 			tempJiraSummary = tempJiraSummary + issue.key + " - " + issue.fields.summary + endRow;
