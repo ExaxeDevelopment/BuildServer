@@ -15,7 +15,7 @@ node{
 		def jiraStatuses = "";
 		switch (selectedJiraProjectKey) {
 			case "OF":
-                jiraStatuses = "status in ('Dev Complete', 'Tester In Progress')";
+                jiraStatuses = "status in ('Dev Complete', 'Test In Progress')";
 				selectedJiraProjectKey = "'OF'";
                 break
 			default:
