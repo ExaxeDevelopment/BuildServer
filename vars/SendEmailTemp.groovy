@@ -7,10 +7,10 @@ def selectedJiraProjectKey = "";
 node{
 
     stage("Success Notification"){
-        
 		def body = "${env.BUILD_URL}"; 
 
-		if(SelectedJiraProjectKey != undefined && SelectedJiraProjectKey != null && SelectedJiraProjectKey != ""){
+		envVars = env.getEnvironment()
+		if(envVars.containsKey("SelectedJiraProjectKey")){
 			// INPUT PARAMS
 			selectedJiraProjectKey = SelectedJiraProjectKey; 
 
