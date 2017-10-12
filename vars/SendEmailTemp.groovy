@@ -17,11 +17,11 @@ node{
 			case "OF":
                 jiraStatuses = "status in ('Dev Complete', 'Tester Assigned')";
                 break
-			default
+			default:
 				jiraStatuses = "status = Resolved";
 				break
 		
-		def jql = "project = " + selectedJiraProjectKey + " AND" + jiraStatuses;
+		def jql = "project = " + selectedJiraProjectKey + " AND " + jiraStatuses;
 		def issues = jiraJqlSearch jql: jql, site: 'exaxejira', failOnError: true;
 		
 		def body = "${env.BUILD_URL}" + "\r\n\r\n" + "JIRA RELEASE NOTES" + "\r\n\r\n";
