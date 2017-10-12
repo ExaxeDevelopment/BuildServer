@@ -8,13 +8,12 @@ node{
 
     stage("Success Notification"){
         
-		// INPUT PARAMS
-		selectedJiraRelease = SelectedJiraRelease;
-		selectedJiraProjectKey = SelectedJiraProjectKey; 
-
 		def body = "${env.BUILD_URL}"; 
 
-		if(selectedJiraProjectKey != null || selectedJiraProjectKey != ""){
+		if(SelectedJiraProjectKey != null && SelectedJiraProjectKey != ""){
+			// INPUT PARAMS
+			selectedJiraProjectKey = SelectedJiraProjectKey; 
+
 			def jiraStatuses = "";
 			switch (selectedJiraProjectKey) {
 				case "OF":
