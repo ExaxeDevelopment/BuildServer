@@ -87,6 +87,12 @@ class deployEpos implements Serializable {
 		configurationQuestionDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(configurationQuestionDbMap);
 
+		//Exaxe.Configuration-Reference - BuildDatabase
+		Map<String,String> configurationReferenceDbMap = new HashMap<String,String>();
+		configurationReferenceDbMap.put("Project", "Exaxe.Configuration-Reference"); 
+		configurationReferenceDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(configurationReferenceDbMap);
+
 		//Exaxe.SystemConfiguration - BuildDatabase
 		Map<String,String> systemConfigurationDbMap = new HashMap<String,String>();
 		systemConfigurationDbMap.put("Project", "Exaxe.SystemConfiguration"); 
