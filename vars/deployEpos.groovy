@@ -45,6 +45,12 @@ class deployEpos implements Serializable {
 		solutionManagerPublishCreateMap.put("Operation", "PublishInstallApp"); 
 		deploySteps.add(solutionManagerPublishCreateMap);
 
+		//Exaxe.SolutionManager - PublishInstallApp (UPDATE-OFFLINE)
+		Map<String,String> solutionManagerPublishUpdateOfflineMap  = new HashMap<String,String>();
+		solutionManagerPublishUpdateOfflineMap.put("Project", "Exaxe.SolutionManager-UpdateOffline"); 
+		solutionManagerPublishUpdateOfflineMap.put("Operation", "PublishInstallApp"); 
+		deploySteps.add(solutionManagerPublishUpdateOfflineMap);
+
 		//Exaxe.Agent - BuildDatabase
 		Map<String,String> agentDbMap  = new HashMap<String,String>();
 		agentDbMap.put("Project", "Exaxe.Agent"); 
