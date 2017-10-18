@@ -1,4 +1,4 @@
-import groovy.transform.BaseScript
+import JiraReleaseNotesTemplate;
 
 class jiraReleaseNotificationEmail implements Serializable {
     def createJiraReleaseNotes(buildUrl, selectedJiraProjectKey, issues) {
@@ -9,7 +9,8 @@ class jiraReleaseNotificationEmail implements Serializable {
 		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 
 		// read the file from path
-		println "$jiraReleaseNotesTemplateString"
+		def template = new JiraReleaseNotesTemplate()
+		println template.jiraReleaseNotesTemplateString;
 		
 		for(def issue in issues.data.issues){
 			def tempJiraSummary = "";   
