@@ -97,8 +97,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdminPlus", "AdminPlus", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Email", "Email", "{F2420EDC-E90A-4B3E-A3E2-E37C0BABE520}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Desktop\JiraReleaseNotesTemplate.groovy = ..\..\..\..\Desktop\JiraReleaseNotesTemplate.groovy
 		jiraReleaseNotificationEmail.groovy = jiraReleaseNotificationEmail.groovy
+		releaseJiraEmailTemplate.groovy = releaseJiraEmailTemplate.groovy
 	EndProjectSection
 EndProject
 Global
