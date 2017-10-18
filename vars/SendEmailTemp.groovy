@@ -1,7 +1,4 @@
 import hudson.Util;
-import org.thoughtslive.jenkins.plugins.jira.api.Component;
-import org.thoughtslive.jenkins.plugins.jira.api.Version;
-import org.thoughtslive.jenkins.plugins.jira.Site;
 
 def endRow = "\r\n";
 def selectedJiraRelease = "";
@@ -36,7 +33,7 @@ node{
 			def jiraReleaseNotificationEmailClass = new jiraReleaseNotificationEmail();
 	    
 	    	// START EXECUTION
-			body = jiraReleaseNotificationEmailClass.createJiraReleaseNotes(selectedJiraProjectKey, issues)
+			body = jiraReleaseNotificationEmailClass.createJiraReleaseNotes("${env.BUILD_URL}", selectedJiraProjectKey, issues)
 		}
 
         mail to: "filip.ludma@exaxe.com", 

@@ -1,6 +1,6 @@
 class jiraReleaseNotificationEmail implements Serializable {
-    def createJiraReleaseNotes(selectedJiraProjectKey, issues) {
-		def body = "${env.BUILD_URL}" + "\r\n\r\n" + "JIRA RELEASE NOTES" + "\r\n\r\n";
+    def createJiraReleaseNotes(buildUrl, selectedJiraProjectKey, issues) {
+		def body = "$" + buildUrl + "\r\n\r\n" + "JIRA RELEASE NOTES" + "\r\n\r\n";
 		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 
 		for(def issue in issues.data.issues){
