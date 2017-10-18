@@ -1,6 +1,5 @@
 import hudson.Util;
 
-def endRow = "\r\n";
 def selectedJiraRelease = "";
 def selectedJiraProjectKey = "";
 
