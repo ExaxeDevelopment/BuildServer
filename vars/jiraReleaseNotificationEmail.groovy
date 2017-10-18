@@ -1,4 +1,4 @@
-import JiraReleaseNotesTemplate;
+//import JiraReleaseNotesTemplate;
 
 class jiraReleaseNotificationEmail implements Serializable {
     def createJiraReleaseNotes(buildUrl, selectedJiraProjectKey, issues) {
