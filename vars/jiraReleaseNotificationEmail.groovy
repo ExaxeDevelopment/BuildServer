@@ -1,19 +1,5 @@
 class jiraReleaseNotificationEmail implements Serializable {
-    def createJiraReleaseNotes(selectedJiraProjectKey) {
-		def jiraStatuses = "";
-		switch (selectedJiraProjectKey) {
-			case "OF":
-				jiraStatuses = "status in ('Dev Complete', 'Test In Progress')";
-				selectedJiraProjectKey = "'OF'";
-				break
-			default:
-				jiraStatuses = "status = Resolved";
-				break
-		}
-
-		def jql = "project = " + selectedJiraProjectKey + " AND " + jiraStatuses;
-		def issues = jiraJqlSearch jql: jql, site: 'exaxejira', failOnError: true;
-		
+    def createJiraReleaseNotes(selectedJiraProjectKey, issues) {
 		def body = "${env.BUILD_URL}" + "\r\n\r\n" + "JIRA RELEASE NOTES" + "\r\n\r\n";
 		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 

@@ -14,14 +14,29 @@ node{
 
 		envVars = env.getEnvironment()
 		if(envVars.containsKey("SelectedJiraProjectKey")){
+			
 			// INPUT PARAMS
 			selectedJiraProjectKey = SelectedJiraProjectKey; 
+
+			def jiraStatuses = "";
+			switch (selectedJiraProjectKey) {
+				case "OF":
+					jiraStatuses = "status in ('Dev Complete', 'Test In Progress')";
+					selectedJiraProjectKey = "'OF'";
+					break
+				default:
+					jiraStatuses = "status = Resolved";
+					break
+			}
+
+			def jql = "project = " + selectedJiraProjectKey + " AND " + jiraStatuses;
+			def issues = jiraJqlSearch jql: jql, site: 'exaxejira', failOnError: true;
 
 			// PREPARE CLASS OBJECT
 			def jiraReleaseNotificationEmailClass = new jiraReleaseNotificationEmail();
 	    
 	    	// START EXECUTION
-			body = jiraReleaseNotificationEmailClass.createJiraReleaseNotes(selectedJiraProjectKey)
+			body = jiraReleaseNotificationEmailClass.createJiraReleaseNotes(selectedJiraProjectKey, issues)
 		}
 
         mail to: "filip.ludma@exaxe.com", 
