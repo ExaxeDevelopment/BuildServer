@@ -99,6 +99,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Email", "Email", "{F2420EDC
 	ProjectSection(SolutionItems) = preProject
 		jiraReleaseNotificationEmail.groovy = jiraReleaseNotificationEmail.groovy
 		releaseJiraEmailTemplate.groovy = releaseJiraEmailTemplate.groovy
+		temTemplate.html = temTemplate.html
 	EndProjectSection
 EndProject
 Global
