@@ -1,7 +1,7 @@
 class releaseJiraEmailTemplate implements Serializable {
 	def getReleaseNotesTemplate(){
 		def jiraReleaseNotesTemplateString = 
-		StringEscapeUtils.escapeHtml("${<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40">
+		StringEscapeUtils.escapeHtml("${<html>
 		   <head>
 			  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
 			  <meta name=Generator content="Microsoft Word 15 (filtered medium)">
