@@ -7,8 +7,8 @@ class jiraReleaseNotificationEmail implements Serializable {
 		def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 
 		// read the file from path
-		def template = new releaseJiraEmailTemplate()
-		println template.getReleaseNotesTemplate();
+		String fileContents = new File('temTemplate.html').getText('UTF-8')
+		println fileContents;
 		
 		for(def issue in issues.data.issues){
 			def tempJiraSummary = "";   
