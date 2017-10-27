@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PipelineBase", "PipelineBase", "{46C9246D-9EFE-4F4D-AC4B-E285D86FE584}"
-	ProjectSection(SolutionItems) = preProject
-		SendEmailTemp.groovy = SendEmailTemp.groovy
-		TempDurationTest.groovy = TempDurationTest.groovy
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PipelineSteps", "PipelineSteps", "{4392F170-1C95-43E8-B24D-BAA451E1F3EC}"
 EndProject
@@ -39,49 +35,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CE151E
 		CommonMasterBuild.groovy = CommonMasterBuild.groovy
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ePos", "ePos", "{2E09FFC1-CACA-4160-9A60-21C9946D5CA9}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OldJenkinsFiles", "OldJenkinsFiles", "{26042AB3-DA41-4A99-94A1-F3CBA6734988}"
-	ProjectSection(SolutionItems) = preProject
-		Build-DBSyncService-Dev001.groovy = Build-DBSyncService-Dev001.groovy
-		Build-Exaxe.Client-Dev003.groovy = Build-Exaxe.Client-Dev003.groovy
-		Build-Exaxe.FactFind-Dev002.groovy = Build-Exaxe.FactFind-Dev002.groovy
-		Build-Exaxe.Quote-Dev002.groovy = Build-Exaxe.Quote-Dev002.groovy
-		Build-Exaxe.Quote.Rules-Dev001.groovy = Build-Exaxe.Quote.Rules-Dev001.groovy
-		Build-PointOfSaleUI-Dev001.groovy = Build-PointOfSaleUI-Dev001.groovy
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BaseBuilds", "BaseBuilds", "{C36DE212-7EF5-4A92-9D4C-7F7B793A7A96}"
-	ProjectSection(SolutionItems) = preProject
-		Build-Exaxe.Accounting-Dev001.groovy = Build-Exaxe.Accounting-Dev001.groovy
-		Build-Exaxe.Agent-Dev001.groovy = Build-Exaxe.Agent-Dev001.groovy
-		Build-Exaxe.App-Dev001.groovy = Build-Exaxe.App-Dev001.groovy
-		Build-Exaxe.Calculations-Dev001.groovy = Build-Exaxe.Calculations-Dev001.groovy
-		Build-Exaxe.Common-Dev001.groovy = Build-Exaxe.Common-Dev001.groovy
-		Build-Exaxe.Configuration-Dev001.groovy = Build-Exaxe.Configuration-Dev001.groovy
-		Build-Exaxe.External-Dev001.groovy = Build-Exaxe.External-Dev001.groovy
-		Build-Exaxe.Libraries-Dev001.groovy = Build-Exaxe.Libraries-Dev001.groovy
-		Build-Exaxe.Rules-Dev001.groovy = Build-Exaxe.Rules-Dev001.groovy
-		Build-Exaxe.SystemConfiguration-Dev001.groovy = Build-Exaxe.SystemConfiguration-Dev001.groovy
-		Build-Exaxe.Types-Dev001.groovy = Build-Exaxe.Types-Dev001.groovy
-		Build-Exaxe.UIElements-Dev001.groovy = Build-Exaxe.UIElements-Dev001.groovy
-		Build-Exaxe.Users-Dev001.groovy = Build-Exaxe.Users-Dev001.groovy
-		Build-SystemConfigurationUI-Dev001.groovy = Build-SystemConfigurationUI-Dev001.groovy
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MasterBuilds", "MasterBuilds", "{3516CD88-DCDC-43D6-BF20-E438E7DA742F}"
-	ProjectSection(SolutionItems) = preProject
-		OLD-MasterBuild-ePOS-Dev002.groovy = OLD-MasterBuild-ePOS-Dev002.groovy
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MasterBuild", "MasterBuild", "{D256FD06-5C05-4B5B-85A8-EE030D7EFB7F}"
 	ProjectSection(SolutionItems) = preProject
 		masterBuildStepsByProject.groovy = masterBuildStepsByProject.groovy
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeployBuilds", "DeployBuilds", "{DBF2434F-D941-4F03-9FBF-93832A13329D}"
-	ProjectSection(SolutionItems) = preProject
-		Deploy-ePOS-Dev002-Acorn.groovy = Deploy-ePOS-Dev002-Acorn.groovy
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdminPlus", "AdminPlus", "{E00BCCA7-8AF3-4C4D-88E0-5C194A3DB9D6}"
@@ -90,9 +46,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdminPlus", "AdminPlus", "{
 		deployAdminPlusPM.groovy = deployAdminPlusPM.groovy
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Email", "Email", "{CC7C8321-2C2D-4001-8C26-8C556299EF7A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Email", "Email", "{F2420EDC-E90A-4B3E-A3E2-E37C0BABE520}"
 	ProjectSection(SolutionItems) = preProject
-		emailJiraAttachment.groovy = emailJiraAttachment.groovy
+		jiraReleaseNotificationEmail.groovy = jiraReleaseNotificationEmail.groovy
+		releaseJiraEmailTemplate.groovy = releaseJiraEmailTemplate.groovy
+		temTemplate.html = temTemplate.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{58621D0C-B5B3-4A83-BA8B-98220CEE2B54}"
+	ProjectSection(SolutionItems) = preProject
+		SendEmailTemp.groovy = SendEmailTemp.groovy
+		TempDurationTest.groovy = TempDurationTest.groovy
 	EndProjectSection
 EndProject
 Global
@@ -105,14 +69,11 @@ Global
 		{84BCD817-5BCC-4C83-BAB2-C6C7E7DABFDB} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
 		{6BF976ED-901F-42CE-81C1-B1F2351A31D9} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{CE151E7E-65B8-4445-865F-07B998A36D39} = {46C9246D-9EFE-4F4D-AC4B-E285D86FE584}
-		{2E09FFC1-CACA-4160-9A60-21C9946D5CA9} = {46C9246D-9EFE-4F4D-AC4B-E285D86FE584}
-		{26042AB3-DA41-4A99-94A1-F3CBA6734988} = {2E09FFC1-CACA-4160-9A60-21C9946D5CA9}
-		{C36DE212-7EF5-4A92-9D4C-7F7B793A7A96} = {26042AB3-DA41-4A99-94A1-F3CBA6734988}
-		{3516CD88-DCDC-43D6-BF20-E438E7DA742F} = {26042AB3-DA41-4A99-94A1-F3CBA6734988}
 		{D256FD06-5C05-4B5B-85A8-EE030D7EFB7F} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
+		{10C3AD8F-B6D1-46AB-A39E-FFEBEF1F9869} = {6BF976ED-901F-42CE-81C1-B1F2351A31D9}
 		{DBF2434F-D941-4F03-9FBF-93832A13329D} = {26042AB3-DA41-4A99-94A1-F3CBA6734988}
 		{E00BCCA7-8AF3-4C4D-88E0-5C194A3DB9D6} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
-		{CC7C8321-2C2D-4001-8C26-8C556299EF7A} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
+		{F2420EDC-E90A-4B3E-A3E2-E37C0BABE520} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
