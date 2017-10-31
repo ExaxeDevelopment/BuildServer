@@ -64,10 +64,10 @@ class masterBuildStepsByProject implements Serializable {
         masterBuildePOSDev002.add("Deploy-ePOS-Dev002-ACORN");
 
 		List<String> masterBuildePOSDev001 = new ArrayList<String>()
-        masterBuildePOSDev001.add("Build-Exaxe.FactFind-Dev002");
-        masterBuildePOSDev001.add("Build-Exaxe.Quote-Dev002");
-        masterBuildePOSDev001.add("Build-PointOfSaleUI-Dev001");
-        masterBuildePOSDev001.add("Deploy-ePOS-Dev002-ACORN");
+        masterBuildePOSDev001.add("Build-Exaxe.FactFind-Dev001");
+        masterBuildePOSDev001.add("Build-Exaxe.Quote-Dev001");
+        masterBuildePOSDev001.add("Build-PointOfSaleUI-Rel_1.2.46");
+        masterBuildePOSDev001.add("Deploy-ePOS-Rel_1.2.46-ACORN");
 
 		List<String> masterBuildPolicyEBIDev001 = new ArrayList<String>()
 		masterBuildPolicyEBIDev001.add("Build-Exaxe.PolicyEBI-Dev001"); 
