@@ -38,7 +38,31 @@ class deployEpos_1_2_46 implements Serializable {
 		solutionManagerPublishUpdateMap.put("Project", "Exaxe.SolutionManager-Update"); 
 		solutionManagerPublishUpdateMap.put("Operation", "PublishInstallApp"); 
 		deploySteps.add(solutionManagerPublishUpdateMap);
-		
+
+		//Exaxe.Agent - BuildDatabase
+		Map<String,String> agentDbMap  = new HashMap<String,String>();
+		agentDbMap.put("Project", "Exaxe.Agent"); 
+		agentDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(agentDbMap);
+
+		//Exaxe.App - BuildDatabase
+		Map<String,String> appDbMap  = new HashMap<String,String>();
+		appDbMap.put("Project", "Exaxe.App"); 
+		appDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(appDbMap);
+
+		//Exaxe.Product.DatabaseModel - BuildDatabase
+		Map<String,String> productDbMap  = new HashMap<String,String>();
+		productDbMap.put("Project", "Exaxe.Product.DatabaseModel"); 
+		productDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(productDbMap);
+
+		//Exaxe.Common - BuildSolution
+		Map<String,String> commonDbMap  = new HashMap<String,String>();
+		commonDbMap.put("Project", "Exaxe.Common"); 
+		commonDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(commonDbMap);
+
 		//Exaxe.Configuration-Configuration - BuildSolution
 		Map<String,String> configurationDbMap  = new HashMap<String,String>();
 		configurationDbMap.put("Project", "Exaxe.Configuration-Configuration"); 
@@ -56,6 +80,18 @@ class deployEpos_1_2_46 implements Serializable {
 		configurationReferenceDbMap.put("Project", "Exaxe.Configuration-Reference"); 
 		configurationReferenceDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(configurationReferenceDbMap);
+
+		//Exaxe.SystemConfiguration - BuildDatabase
+		Map<String,String> systemConfigurationDbMap = new HashMap<String,String>();
+		systemConfigurationDbMap.put("Project", "Exaxe.SystemConfiguration"); 
+		systemConfigurationDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(systemConfigurationDbMap);
+
+		//Exaxe.Client  - BuildDatabase
+		Map<String,String> clientDbMap = new HashMap<String,String>();
+		clientDbMap.put("Project", "Exaxe.Client "); 
+		clientDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(clientDbMap);
 
 		//Exaxe.FactFind - BuildDatabase
 		Map<String,String> factFindDbMap = new HashMap<String,String>();
