@@ -1,5 +1,13 @@
-# BuildServer
-Repository for groovy scripts
+# BuildServer - Groovy Scripts Repository
+
+## Build Server Execution Options
+![Stage](/Documentation/Images/BuildServer_Queris.PNG)
+
+## Build Server Node Creation Logic 
+![Node Creation](/Documentation/Images/BuildServer_NodeCreation.PNG)
+
+## Node example 
+![Node Example](/Documentation/Images/NodeExample.PNG)
 
 ## Build Types 
 
