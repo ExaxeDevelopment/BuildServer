@@ -1,4 +1,4 @@
-class deployEpos implements Serializable {
+class deployAdvicePlus implements Serializable {
     def getDeploySteps() { 
 
 		List deploySteps = new ArrayList<Map<String,String>>();

@@ -60,14 +60,14 @@ class masterBuildStepsByProject implements Serializable {
         masterBuildePOSDev002.add("Build-Exaxe.Quote.Rules-Dev001");
         masterBuildePOSDev002.add("Build-Exaxe.Quote-Dev002");
         masterBuildePOSDev002.add("Build-Exaxe.ExistingBusiness-Dev001");
-        masterBuildePOSDev002.add("Build-PointOfSaleUI-Dev001");
-        masterBuildePOSDev002.add("Deploy-ePOS-Dev002-ACORN");
+        masterBuildePOSDev002.add("Build-PointOfSaleUI-Dev002");
+        masterBuildePOSDev002.add("Deploy-AdvicePlus-Dev002-ACORN");
 
 		List<String> masterBuildePOSDev001 = new ArrayList<String>()
         masterBuildePOSDev001.add("Build-Exaxe.FactFind-Dev001");
         masterBuildePOSDev001.add("Build-Exaxe.Quote-Dev001");
-        masterBuildePOSDev001.add("Build-PointOfSaleUI-Rel_1.2.46");
-        masterBuildePOSDev001.add("Deploy-ePOS-Rel_1.2.46-ACORN");
+        masterBuildePOSDev001.add("Build-PointOfSaleUI-Dev001");
+        masterBuildePOSDev001.add("Deploy-AdvicePlus-Dev001");
 
 		List<String> masterBuildPolicyEBIDev001 = new ArrayList<String>()
 		masterBuildPolicyEBIDev001.add("Build-Exaxe.PolicyEBI-Dev001"); 
@@ -88,10 +88,10 @@ class masterBuildStepsByProject implements Serializable {
             case "MasterBuildAdminPlusDev004":
                 buildSteps = masterBuildAdminPlusDev004;
                 break
-			case "MasterBuildePOSDev002":
+			case "MasterBuilderAdvicePlusDev002":
                 buildSteps = masterBuildePOSDev002;
                 break
-			case "MasterBuildePOSDev001":
+			case "MasterBuilderAdvicePlusDev001":
                 buildSteps = masterBuildePOSDev001;
                 break
 			case "MasterBuildPolicyEBIDev001":
