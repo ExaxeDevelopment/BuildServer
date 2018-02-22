@@ -74,6 +74,26 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildPolicyEBIDev001.add("Build-Exaxe.PolicyEBI-Dev001"); 
 		masterBuildPolicyEBIDev001.add("Build-ExistingBusinessUI"); 
 		masterBuildPolicyEBIDev001.add("Deploy-PolicyEBI-Dev001-Aviva"); 
+
+		List<String> masterBuildAdvicePlusRelease = new ArrayList<String>()
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Types-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Libraries-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Agent-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.App-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Common-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Configuration-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Rules-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.SystemConfiguration-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Users-AdvicePlus-Release");
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.UIElements-AdvicePlus-Release");
+		masterBuildAdvicePlusRelease.add("Build-SystemConfigurationUI-AdvicePlus-Release");
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Calculations-AdvicePlus-Release");
+        masterBuildAdvicePlusRelease.add("Build-Exaxe.Client-AdvicePlus-Release");
+        masterBuildAdvicePlusRelease.add("Build-Exaxe.FactFind-AdvicePlus-Release");
+        masterBuildAdvicePlusRelease.add("Build-Exaxe.Quote.Rules-AdvicePlus-Release");
+        masterBuildAdvicePlusRelease.add("Build-Exaxe.Quote-AdvicePlus-Release");
+        masterBuildAdvicePlusRelease.add("Build-PointOfSaleUI-AdvicePlus-Release");
+        masterBuildAdvicePlusRelease.add("Deploy-AdvicePlus-Release-ACORN");
 		
 		List<String> buildSteps = new ArrayList<String>();
         switch (masterBuildType) {
@@ -94,6 +114,9 @@ class masterBuildStepsByProject implements Serializable {
                 break
 			case "MasterBuilderAdvicePlusDev001":
                 buildSteps = masterBuildePOSDev001;
+                break
+			case "MasterBuilderAdvicePlusRelease":
+                buildSteps = masterBuildAdvicePlusRelease;
                 break
 			case "MasterBuildPolicyEBIDev001":
                 buildSteps = masterBuildPolicyEBIDev001;

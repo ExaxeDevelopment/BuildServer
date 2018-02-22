@@ -14,8 +14,22 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("PerformUnitTests"); 
 		fullBuild.add("CheckInFiles"); 
 		fullBuild.add("PublishNuGetPackages"); 
+		fullBuild.add("CheckNuGetFeed");
+
+        List<String> fullBuildRevision = new ArrayList<String>()
+		fullBuild.add("GetAllCodeLatestVersion"); 
+		fullBuild.add("GetCodeLatestVersion");
+		fullBuild.add("ClearDatabases"); 
+		fullBuild.add("InstallAllDatabases"); 
+		fullBuild.add("CheckOutFiles"); 
+		fullBuild.add("UpdateAssemblyVersionRevision"); 
+		fullBuild.add("RestoreNuGetPackages"); 
+		fullBuild.add("UpdateNuGetPackages"); 
+		fullBuild.add("BuildSolution");
+		fullBuild.add("PerformUnitTests"); 
+		fullBuild.add("CheckInFiles"); 
+		fullBuild.add("PublishNuGetPackages"); 
 		fullBuild.add("CheckNuGetFeed"); 
-		//fullBuild.add("DistributeSQLScripts");
 
         List<String> fullBuildWithoutGetAllCodeLatestVersionStage = new ArrayList<String>();
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("GetAllCodeLatestVersion"); 
@@ -30,12 +44,23 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckInFiles"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("PublishNuGetPackages"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckNuGetFeed"); 
-		//fullBuildWithoutGetAllCodeLatestVersionStage.add("DistributeSQLScripts");
 		
 		List<String> buildWithoutDB = new ArrayList<String>()
 		buildWithoutDB.add("GetCodeLatestVersion"); 
 		buildWithoutDB.add("CheckOutFiles"); 
 		buildWithoutDB.add("UpdateAssemblyVersion"); 
+		buildWithoutDB.add("RestoreNuGetPackages"); 
+		buildWithoutDB.add("UpdateNuGetPackages"); 
+		buildWithoutDB.add("BuildSolution"); 
+		buildWithoutDB.add("PerformUnitTests"); 
+		buildWithoutDB.add("CheckInFiles"); 
+		buildWithoutDB.add("PublishNuGetPackages"); 
+		buildWithoutDB.add("CheckNuGetFeed");
+
+		List<String> buildWithoutDBRevision = new ArrayList<String>()
+		buildWithoutDB.add("GetCodeLatestVersion"); 
+		buildWithoutDB.add("CheckOutFiles"); 
+		buildWithoutDB.add("UpdateAssemblyVersionRevision"); 
 		buildWithoutDB.add("RestoreNuGetPackages"); 
 		buildWithoutDB.add("UpdateNuGetPackages"); 
 		buildWithoutDB.add("BuildSolution"); 
@@ -64,6 +89,17 @@ class buildStepsByBuildType implements Serializable {
 		buildUI.add("BuildSolution"); 
 		buildUI.add("PerformUnitTests"); 
 		buildUI.add("CheckInFiles");
+
+		List<String> buildUIRevision = new ArrayList<String>()
+		buildUI.add("GetCodeLatestVersion"); 
+		buildUI.add("CheckOutFiles"); 
+		buildUI.add("UpdateAssemblyVersionRevision"); 
+		buildUI.add("RestoreNuGetPackages"); 
+		buildUI.add("UpdateNuGetPackages"); 
+		buildUI.add("BuildSolution"); 
+		buildUI.add("PerformUnitTests"); 
+		buildUI.add("CheckInFiles");
+
 
 		List<String> buildDBSyncService = new ArrayList<String>()
 		buildDBSyncService.add("GetAllCodeLatestVersion"); 
@@ -151,6 +187,15 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "UpdatePackagesWithBuild":
                 buildSteps = updatePackagesWithBuild;
+                break
+            case "FullBuildRevision":
+                buildSteps = fullBuild;
+                break
+			case "BuildWithoutDBRevision":
+                buildSteps = buildWithoutDB;
+                break
+			case "BuildUIRevision":
+                buildSteps = buildUI;
                 break
             default:
                 buildSteps.add("BuildTypeNotDefined");
