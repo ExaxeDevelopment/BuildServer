@@ -17,19 +17,19 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("CheckNuGetFeed");
 
         List<String> fullBuildRevision = new ArrayList<String>()
-		fullBuild.add("GetAllCodeLatestVersion"); 
-		fullBuild.add("GetCodeLatestVersion");
-		fullBuild.add("ClearDatabases"); 
-		fullBuild.add("InstallAllDatabases"); 
-		fullBuild.add("CheckOutFiles"); 
-		fullBuild.add("UpdateAssemblyVersionRevision"); 
-		fullBuild.add("RestoreNuGetPackages"); 
-		fullBuild.add("UpdateNuGetPackages"); 
-		fullBuild.add("BuildSolution");
-		fullBuild.add("PerformUnitTests"); 
-		fullBuild.add("CheckInFiles"); 
-		fullBuild.add("PublishNuGetPackages"); 
-		fullBuild.add("CheckNuGetFeed"); 
+		fullBuildRevision.add("GetAllCodeLatestVersion"); 
+		fullBuildRevision.add("GetCodeLatestVersion");
+		fullBuildRevision.add("ClearDatabases"); 
+		fullBuildRevision.add("InstallAllDatabases"); 
+		fullBuildRevision.add("CheckOutFiles"); 
+		fullBuildRevision.add("UpdateAssemblyVersionRevision"); 
+		fullBuildRevision.add("RestoreNuGetPackages"); 
+		fullBuildRevision.add("UpdateNuGetPackages"); 
+		fullBuildRevision.add("BuildSolution");
+		fullBuildRevision.add("PerformUnitTests"); 
+		fullBuildRevision.add("CheckInFiles"); 
+		fullBuildRevision.add("PublishNuGetPackages"); 
+		fullBuildRevision.add("CheckNuGetFeed"); 
 
         List<String> fullBuildWithoutGetAllCodeLatestVersionStage = new ArrayList<String>();
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("GetAllCodeLatestVersion"); 
@@ -58,16 +58,16 @@ class buildStepsByBuildType implements Serializable {
 		buildWithoutDB.add("CheckNuGetFeed");
 
 		List<String> buildWithoutDBRevision = new ArrayList<String>()
-		buildWithoutDB.add("GetCodeLatestVersion"); 
-		buildWithoutDB.add("CheckOutFiles"); 
-		buildWithoutDB.add("UpdateAssemblyVersionRevision"); 
-		buildWithoutDB.add("RestoreNuGetPackages"); 
-		buildWithoutDB.add("UpdateNuGetPackages"); 
-		buildWithoutDB.add("BuildSolution"); 
-		buildWithoutDB.add("PerformUnitTests"); 
-		buildWithoutDB.add("CheckInFiles"); 
-		buildWithoutDB.add("PublishNuGetPackages"); 
-		buildWithoutDB.add("CheckNuGetFeed");
+		buildWithoutDBRevision.add("GetCodeLatestVersion"); 
+		buildWithoutDBRevision.add("CheckOutFiles"); 
+		buildWithoutDBRevision.add("UpdateAssemblyVersionRevision"); 
+		buildWithoutDBRevision.add("RestoreNuGetPackages"); 
+		buildWithoutDBRevision.add("UpdateNuGetPackages"); 
+		buildWithoutDBRevision.add("BuildSolution"); 
+		buildWithoutDBRevision.add("PerformUnitTests"); 
+		buildWithoutDBRevision.add("CheckInFiles"); 
+		buildWithoutDBRevision.add("PublishNuGetPackages"); 
+		buildWithoutDBRevision.add("CheckNuGetFeed");
 
 		List<String> buildWithoutDBAndUnitTests = new ArrayList<String>()
 		buildWithoutDBAndUnitTests.add("GetCodeLatestVersion"); 
@@ -91,14 +91,14 @@ class buildStepsByBuildType implements Serializable {
 		buildUI.add("CheckInFiles");
 
 		List<String> buildUIRevision = new ArrayList<String>()
-		buildUI.add("GetCodeLatestVersion"); 
-		buildUI.add("CheckOutFiles"); 
-		buildUI.add("UpdateAssemblyVersionRevision"); 
-		buildUI.add("RestoreNuGetPackages"); 
-		buildUI.add("UpdateNuGetPackages"); 
-		buildUI.add("BuildSolution"); 
-		buildUI.add("PerformUnitTests"); 
-		buildUI.add("CheckInFiles");
+		buildUIRevision.add("GetCodeLatestVersion"); 
+		buildUIRevision.add("CheckOutFiles"); 
+		buildUIRevision.add("UpdateAssemblyVersionRevision"); 
+		buildUIRevision.add("RestoreNuGetPackages"); 
+		buildUIRevision.add("UpdateNuGetPackages"); 
+		buildUIRevision.add("BuildSolution"); 
+		buildUIRevision.add("PerformUnitTests"); 
+		buildUIRevision.add("CheckInFiles");
 
 
 		List<String> buildDBSyncService = new ArrayList<String>()
@@ -189,13 +189,13 @@ class buildStepsByBuildType implements Serializable {
                 buildSteps = updatePackagesWithBuild;
                 break
             case "FullBuildRevision":
-                buildSteps = fullBuild;
+                buildSteps = fullBuildRevision;
                 break
 			case "BuildWithoutDBRevision":
-                buildSteps = buildWithoutDB;
+                buildSteps = buildWithoutDBRevision;
                 break
 			case "BuildUIRevision":
-                buildSteps = buildUI;
+                buildSteps = buildUIRevision;
                 break
             default:
                 buildSteps.add("BuildTypeNotDefined");
