@@ -100,7 +100,6 @@ class buildStepsByBuildType implements Serializable {
 		buildUIRevision.add("PerformUnitTests"); 
 		buildUIRevision.add("CheckInFiles");
 
-
 		List<String> buildDBSyncService = new ArrayList<String>()
 		buildDBSyncService.add("GetAllCodeLatestVersion"); 
 		buildDBSyncService.add("GetCodeLatestVersion"); 
@@ -140,6 +139,21 @@ class buildStepsByBuildType implements Serializable {
 		buildApexServer.add("CheckWorkflowsAsync");
 		buildApexServer.add("PerformUnitTests"); 
 		buildApexServer.add("CheckInFiles"); 
+
+        List<String> buildApexServerRevision = new ArrayList<String>()
+		buildApexServerRevision.add("GetAllCodeLatestVersion"); 
+		buildApexServerRevision.add("GetCodeLatestVersion");
+		buildApexServerRevision.add("ClearDatabases"); 
+		buildApexServerRevision.add("InstallAllDatabases"); 
+		buildApexServerRevision.add("CheckOutFiles"); 
+		buildApexServerRevision.add("UpdateAssemblyVersionRevision"); 
+		buildApexServerRevision.add("RestoreNuGetPackages"); 
+		buildApexServerRevision.add("UpdateNuGetPackages"); 
+		buildApexServerRevision.add("BuildSolution");
+		buildApexServerRevision.add("PublishWebService");
+		buildApexServerRevision.add("CheckWorkflowsAsync");
+		buildApexServerRevision.add("PerformUnitTests"); 
+		buildApexServerRevision.add("CheckInFiles"); 
 
 		List<String> updatePackagesWithoutBuild = new ArrayList<String>()
 		updatePackagesWithoutBuild.add("GetCodeLatestVersion"); 
@@ -193,6 +207,9 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "BuildWithoutDBRevision":
                 buildSteps = buildWithoutDBRevision;
+                break
+			case "BuildApexServerRevision":
+                buildSteps = buildApexServerRevision;
                 break
 			case "BuildUIRevision":
                 buildSteps = buildUIRevision;

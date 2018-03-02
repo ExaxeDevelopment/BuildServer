@@ -94,6 +94,28 @@ class masterBuildStepsByProject implements Serializable {
         masterBuildAdvicePlusRelease.add("Build-Exaxe.Quote-AdvicePlus-Release");
         masterBuildAdvicePlusRelease.add("Build-PointOfSaleUI-AdvicePlus-Release");
         masterBuildAdvicePlusRelease.add("Deploy-AdvicePlus-Release-ACORN");
+
+		List<String> masterBuildAdminPlusRelease = new ArrayList<String>()
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Types-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Libraries-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Agent-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.App-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Common-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Configuration-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Rules-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.SystemConfiguration-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Users-AdminPlus-Release");
+		masterBuildAdminPlusRelease.add("Build-Exaxe.UIElements-AdminPlus-Release");
+		masterBuildAdminPlusRelease.add("Build-SystemConfigurationUI-AdminPlus-Release");
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Calculations-AdminPlus-Release");
+        masterBuildAdminPlusRelease.add("Build-Exaxe.Client-AdminPlus-Release");
+		masterBuildAdminPlusRelease.add("Build-Exaxe.AdminPlus-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Apex-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Aggregate-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Apex.Activities-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Apex.Server-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-AdminPlusUI-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily"); 
 		
 		List<String> buildSteps = new ArrayList<String>();
         switch (masterBuildType) {
@@ -109,11 +131,14 @@ class masterBuildStepsByProject implements Serializable {
             case "MasterBuildAdminPlusDev004":
                 buildSteps = masterBuildAdminPlusDev004;
                 break
-			case "MasterBuilderAdvicePlusDev002":
-                buildSteps = masterBuildePOSDev002;
+            case "MasterBuildAdminPlusRelease":
+                buildSteps = masterBuildAdminPlusRelease;
                 break
 			case "MasterBuilderAdvicePlusDev001":
                 buildSteps = masterBuildePOSDev001;
+                break
+			case "MasterBuilderAdvicePlusDev002":
+                buildSteps = masterBuildePOSDev002;
                 break
 			case "MasterBuilderAdvicePlusRelease":
                 buildSteps = masterBuildAdvicePlusRelease;
