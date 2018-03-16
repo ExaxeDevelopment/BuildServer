@@ -13,6 +13,7 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildBaseDev001.add("Build-Exaxe.Configuration-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Rules-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Comment-Dev001"); 
+		masterBuildBaseDev001.add("Build-Exaxe.Document-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.SystemConfiguration-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Users-Dev001");
 		masterBuildBaseDev001.add("Build-Exaxe.Accounting-Dev001");
