@@ -63,17 +63,29 @@ class deployAdminPlusPM implements Serializable {
 		productDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(productDbMap);
 
-		//Exaxe.Common - BuildSolution
+		//Exaxe.Common - BuildDatabase
 		Map<String,String> commonDbMap  = new HashMap<String,String>();
 		commonDbMap.put("Project", "Exaxe.Common"); 
 		commonDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(commonDbMap);
 
-		//Exaxe.Configuration-Configuration - BuildSolution
+		//Exaxe.Configuration-Configuration - BuildDatabase
 		Map<String,String> configurationDbMap  = new HashMap<String,String>();
 		configurationDbMap.put("Project", "Exaxe.Configuration-Configuration"); 
 		configurationDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(configurationDbMap);
+
+		//Exaxe.Comment - BuildDatabase
+		Map<String,String> commentDbMap  = new HashMap<String,String>();
+		commentDbMap.put("Project", "Exaxe.Comment"); 
+		commentDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(commentDbMap);
+
+		//Exaxe.Document - BuildDatabase
+		Map<String,String> documentDbMap  = new HashMap<String,String>();
+		documentDbMap.put("Project", "Exaxe.Document"); 
+		documentDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(documentDbMap);
 
 		//Exaxe.SystemConfiguration - BuildDatabase
 		Map<String,String> systemConfigurationDbMap = new HashMap<String,String>();
