@@ -101,13 +101,17 @@ class masterBuildStepsByProject implements Serializable {
 		List<String> masterBuildAdminPlusRelease = new ArrayList<String>()
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Types-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Libraries-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Common-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.External-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Agent-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.App-AdminPlus-Release"); 
-		masterBuildAdminPlusRelease.add("Build-Exaxe.Common-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Configuration-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Rules-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Comment-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Document-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.SystemConfiguration-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Users-AdminPlus-Release");
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Accounting-AdminPlus-Release");
 		masterBuildAdminPlusRelease.add("Build-Exaxe.UIElements-AdminPlus-Release");
 		masterBuildAdminPlusRelease.add("Build-SystemConfigurationUI-AdminPlus-Release");
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Calculations-AdminPlus-Release");
@@ -119,6 +123,7 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Apex.Server-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-AdminPlusUI-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily"); 
+		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-PoliceMutual"); 
 		
 		List<String> buildSteps = new ArrayList<String>();
         switch (masterBuildType) {
