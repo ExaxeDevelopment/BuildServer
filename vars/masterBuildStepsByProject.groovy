@@ -29,7 +29,13 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex.Activities-Dev001"); 
 		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex.Server-Dev001"); 
 		masterBuildAdminPlusDev001.add("Build-AdminPlusUI-Dev001"); 
+		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily"); 
+		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Exaxe"); 
+		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Test"); 
+		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Staging"); 
+		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Production"); 
 		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-PoliceMutual"); 
+		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-SalesDemo"); 
 
         List<String> masterBuildAdminPlusDev002 = new ArrayList<String>();
 		masterBuildAdminPlusDev002.add("Build-Exaxe.Client-Dev002"); 
@@ -40,11 +46,6 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex.Server-Dev002"); 
 		masterBuildAdminPlusDev002.add("Build-AdminPlusUI-Dev002"); 
 		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily-Exaxe"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily-Test"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily-Staging"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily-Production"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-PoliceMutual"); 
 		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-SalesDemo"); 
 
         List<String> masterBuildAdminPlusDev004 = new ArrayList<String>();
@@ -55,8 +56,6 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Activities-Dev004"); 
 		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Server-Dev004"); 
 		masterBuildAdminPlusDev004.add("Build-AdminPlusUI-Dev004"); 
-		masterBuildAdminPlusDev004.add("Deploy-AdminPlus-Dev004-OneFamily"); 
-		masterBuildAdminPlusDev004.add("Deploy-AdminPlus-Dev004-SalesDemo"); 
 		
 		List<String> masterBuildePOSDev002 = new ArrayList<String>()
         masterBuildePOSDev002.add("Build-Exaxe.Client-Dev003");
@@ -172,22 +171,22 @@ class masterBuildStepsByProject implements Serializable {
 	//// Returns the build steps to be executed in parallel and in sequence, based on the 'masterBuildType'
 	def getMasterBuildParallelStepsByProject(masterBuildType) { 
 
-		List<String> masterBuildParallelAdminPlusDev004 = new ArrayList<String>();
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Client-Dev004-Intermediate"); 
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.AdminPlus-Dev004-Intermediate"); 
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Apex-Dev004-Intermediate"); 
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Aggregate-Dev004-Intermediate"); 
-		masterBuildParallelAdminPlusDev004.add("Build-Exaxe.Apex.Activities-Dev004-Intermediate"); 
+		List<String> masterBuildParallelAdminPlusIntermediate = new ArrayList<String>();
+		masterBuildParallelAdminPlusIntermediate.add("Build-Exaxe.Client-Dev-Intermediate"); 
+		masterBuildParallelAdminPlusIntermediate.add("Build-Exaxe.AdminPlus-Dev-Intermediate"); 
+		masterBuildParallelAdminPlusIntermediate.add("Build-Exaxe.Apex-Dev-Intermediate"); 
+		masterBuildParallelAdminPlusIntermediate.add("Build-Exaxe.Aggregate-Dev-Intermediate"); 
+		masterBuildParallelAdminPlusIntermediate.add("Build-Exaxe.Apex.Activities-Dev-Intermediate"); 
 
-        List<String> masterBuildAdminPlusDev004 = new ArrayList<String>();
-		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Server-Dev004"); 
-		masterBuildAdminPlusDev004.add("Build-AdminPlusUI-Dev004"); 
+        List<String> masterBuildSequenceAdminPlusIntermediate = new ArrayList<String>();
+		masterBuildSequenceAdminPlusIntermediate.add("Build-Exaxe.Apex.Server-Dev002"); 
+		masterBuildSequenceAdminPlusIntermediate.add("Build-AdminPlusUI-Dev002"); 
 
 		List<List<String>> buildSteps = new ArrayList<ArrayList<String>>();
         switch (masterBuildType) {
-            case "MasterBuildAdminPlusDev004Intermediate":
-				buildSteps.add(masterBuildParallelAdminPlusDev004);
-				buildSteps.add(masterBuildAdminPlusDev004);
+            case "MasterBuildAdminPlusDevIntermediate":
+				buildSteps.add(masterBuildParallelAdminPlusIntermediate);
+				buildSteps.add(masterBuildSequenceAdminPlusIntermediate);
                 break
             default:
                 break
