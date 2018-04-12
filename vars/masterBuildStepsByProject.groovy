@@ -69,9 +69,9 @@ class masterBuildStepsByProject implements Serializable {
 
 		List<String> masterBuildAdvicePlusDev001 = new ArrayList<String>()
         masterBuildAdvicePlusDev001.add("Build-Exaxe.FactFind-Dev001");
-        masterBuildAdvicePlusDev002.add("Build-Exaxe.Quote.Rules-Dev001");
+        masterBuildAdvicePlusDev001.add("Build-Exaxe.Quote.Rules-Dev001");
         masterBuildAdvicePlusDev001.add("Build-Exaxe.Quote-Dev001");
-        masterBuildAdvicePlusDev002.add("Build-Exaxe.ExistingBusiness-Dev001");
+        masterBuildAdvicePlusDev001.add("Build-Exaxe.ExistingBusiness-Dev001");
         masterBuildAdvicePlusDev001.add("Build-PointOfSaleUI-Dev001");
         masterBuildAdvicePlusDev001.add("Deploy-AdvicePlus-Dev001");
 
