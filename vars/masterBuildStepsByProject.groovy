@@ -58,20 +58,20 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Server-Dev004"); 
 		masterBuildAdminPlusDev004.add("Build-AdminPlusUI-Dev004"); 
 		
-		List<String> masterBuildePOSDev002 = new ArrayList<String>()
-        masterBuildePOSDev002.add("Build-Exaxe.Client-Dev003");
-        masterBuildePOSDev002.add("Build-Exaxe.FactFind-Dev002");
-        masterBuildePOSDev002.add("Build-Exaxe.Quote.Rules-Dev001");
-        masterBuildePOSDev002.add("Build-Exaxe.Quote-Dev002");
-        masterBuildePOSDev002.add("Build-Exaxe.ExistingBusiness-Dev001");
-        masterBuildePOSDev002.add("Build-PointOfSaleUI-Dev002");
-        masterBuildePOSDev002.add("Deploy-AdvicePlus-Dev002-ACORN");
+		List<String> masterBuildAdvicePlusDev002 = new ArrayList<String>()
+        masterBuildAdvicePlusDev002.add("Build-Exaxe.Client-Dev003");
+        masterBuildAdvicePlusDev002.add("Build-Exaxe.FactFind-Dev002");
+        masterBuildAdvicePlusDev002.add("Build-Exaxe.Quote.Rules-Dev001");
+        masterBuildAdvicePlusDev002.add("Build-Exaxe.Quote-Dev002");
+        masterBuildAdvicePlusDev002.add("Build-Exaxe.ExistingBusiness-Dev002");
+        masterBuildAdvicePlusDev002.add("Build-PointOfSaleUI-Dev002");
+        masterBuildAdvicePlusDev002.add("Deploy-AdvicePlus-Dev002-ACORN");
 
-		List<String> masterBuildePOSDev001 = new ArrayList<String>()
-        masterBuildePOSDev001.add("Build-Exaxe.FactFind-Dev001");
-        masterBuildePOSDev001.add("Build-Exaxe.Quote-Dev001");
-        masterBuildePOSDev001.add("Build-PointOfSaleUI-Dev001");
-        masterBuildePOSDev001.add("Deploy-AdvicePlus-Dev001");
+		List<String> masterBuildAdvicePlusDev001 = new ArrayList<String>()
+        masterBuildAdvicePlusDev001.add("Build-Exaxe.FactFind-Dev001");
+        masterBuildAdvicePlusDev001.add("Build-Exaxe.Quote-Dev001");
+        masterBuildAdvicePlusDev001.add("Build-PointOfSaleUI-Dev001");
+        masterBuildAdvicePlusDev001.add("Deploy-AdvicePlus-Dev001");
 
 		List<String> masterBuildPolicyEBIDev001 = new ArrayList<String>()
 		masterBuildPolicyEBIDev001.add("Build-Exaxe.PolicyEBI-Dev001"); 
@@ -141,10 +141,10 @@ class masterBuildStepsByProject implements Serializable {
                 buildSteps = masterBuildAdminPlusRelease;
                 break
 			case "MasterBuilderAdvicePlusDev001":
-                buildSteps = masterBuildePOSDev001;
+                buildSteps = masterBuildAdvicePlusDev001;
                 break
 			case "MasterBuilderAdvicePlusDev002":
-                buildSteps = masterBuildePOSDev002;
+                buildSteps = masterBuildAdvicePlusDev002;
                 break
 			case "MasterBuilderAdvicePlusRelease":
                 buildSteps = masterBuildAdvicePlusRelease;
