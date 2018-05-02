@@ -124,6 +124,10 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Apex.Activities-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Apex.Server-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-AdminPlusUI-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily-Exaxe"); 
+		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily-Test"); 
+		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily-Staging"); 
+		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily-Production"); 
 		
 		List<String> buildSteps = new ArrayList<String>();
         switch (masterBuildType) {
