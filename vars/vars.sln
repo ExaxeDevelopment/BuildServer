@@ -59,6 +59,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{58621D0C-B
 		TempDurationTest.groovy = TempDurationTest.groovy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PolicyEBI", "PolicyEBI", "{0A4FE1B3-75FE-426F-9473-BA33ECA5593D}"
+	ProjectSection(SolutionItems) = preProject
+		deployPolicyEbi.groovy = deployPolicyEbi.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +77,7 @@ Global
 		{D256FD06-5C05-4B5B-85A8-EE030D7EFB7F} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
 		{E00BCCA7-8AF3-4C4D-88E0-5C194A3DB9D6} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{F2420EDC-E90A-4B3E-A3E2-E37C0BABE520} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
+		{0A4FE1B3-75FE-426F-9473-BA33ECA5593D} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
