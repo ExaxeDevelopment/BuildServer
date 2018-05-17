@@ -39,12 +39,6 @@ class deployPolicyEbi implements Serializable {
 		solutionManagerPublishUpdateMap.put("Operation", "PublishInstallApp"); 
 		deploySteps.add(solutionManagerPublishUpdateMap);
 
-		//Exaxe.SolutionManager - PublishInstallApp (CREATE)
-		Map<String,String> solutionManagerPublishCreateMap  = new HashMap<String,String>();
-		solutionManagerPublishCreateMap.put("Project", "Exaxe.SolutionManager-Create"); 
-		solutionManagerPublishCreateMap.put("Operation", "PublishInstallApp"); 
-		deploySteps.add(solutionManagerPublishCreateMap);
-
 		//Exaxe.Common - BuildDatabase
 		Map<String,String> commonDbMap  = new HashMap<String,String>();
 		commonDbMap.put("Project", "Exaxe.Common"); 
