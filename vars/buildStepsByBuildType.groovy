@@ -170,6 +170,9 @@ class buildStepsByBuildType implements Serializable {
 		updatePackagesWithBuild.add("BuildSolution");
 		updatePackagesWithBuild.add("CheckInFiles"); 
 
+		List<String> buildDataScriptsReconciliation new ArrayList<String>()
+		buildDataScriptsReconciliation.add("DataScriptsReconciliation"); 
+
 		List<String> buildSteps = new ArrayList<String>();
         switch (val) {
             case "FullBuild":
@@ -213,6 +216,9 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "BuildUIRevision":
                 buildSteps = buildUIRevision;
+                break
+			case "DataScriptsReconciliation":
+                buildSteps = buildDataScriptsReconciliation;
                 break
             default:
                 buildSteps.add("BuildTypeNotDefined");
