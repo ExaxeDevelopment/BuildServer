@@ -173,6 +173,9 @@ class buildStepsByBuildType implements Serializable {
 		List<String> buildDataScriptsReconciliation = new ArrayList<String>()
 		buildDataScriptsReconciliation.add("DataScriptsReconciliation"); 
 
+		List<String> buildUpdateQualityGates = new ArrayList<String>()
+		buildUpdateQualityGates.add("UpdateQualityGates"); 
+
 		List<String> buildSteps = new ArrayList<String>();
         switch (val) {
             case "FullBuild":
@@ -219,6 +222,9 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "DataScriptsReconciliation":
                 buildSteps = buildDataScriptsReconciliation;
+                break
+			case "UpdateQualityGates":
+                buildSteps = buildUpdateQualityGates;
                 break
             default:
                 buildSteps.add("BuildTypeNotDefined");
