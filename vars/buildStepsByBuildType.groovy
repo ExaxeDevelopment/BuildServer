@@ -170,7 +170,7 @@ class buildStepsByBuildType implements Serializable {
 		updatePackagesWithBuild.add("BuildSolution");
 		updatePackagesWithBuild.add("CheckInFiles"); 
 
-		List<String> buildDataScriptsReconciliation new ArrayList<String>()
+		List<String> buildDataScriptsReconciliation = new ArrayList<String>()
 		buildDataScriptsReconciliation.add("DataScriptsReconciliation"); 
 
 		List<String> buildSteps = new ArrayList<String>();
