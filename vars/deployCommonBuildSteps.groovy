@@ -24,6 +24,10 @@ class deployCommonBuildSteps implements Serializable {
                 def deployPolicyEbiClass = new deployPolicyEbi();
 				commonDeploySteps = deployPolicyEbiClass.getDeploySteps();
                 break
+			case "DeployChannelPlus":
+                def deployChannelPlusClass = new deployChannelPlus();
+				commonDeploySteps = deployChannelPlusClass.getDeploySteps();
+                break
             default:             
                 break
         }  

@@ -130,6 +130,11 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily-Test"); 
 		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily-Staging"); 
 		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily-Production"); 
+
+        List<String> masterBuildChannelPlusDev001 = new ArrayList<String>();
+		masterBuildChannelPlusDev001.add("Build-Exaxe.ChannelPlus-Dev001"); 
+		masterBuildChannelPlusDev001.add("Build-ChannelPlusUI-Dev001"); 
+		masterBuildChannelPlusDev001.add("Deploy-ChannelPlus-Dev001-SalesDemo"); 
 		
 		List<String> buildSteps = new ArrayList<String>();
         switch (masterBuildType) {
@@ -159,6 +164,9 @@ class masterBuildStepsByProject implements Serializable {
                 break
 			case "MasterBuildPolicyEBIDev001":
                 buildSteps = masterBuildPolicyEBIDev001;
+                break
+			case "MasterBuildChannelPlusDev001":
+                buildSteps = masterBuildChannelPlusDev001;
                 break
             default:
                 buildSteps.add("MasterBuildNotDefined");
