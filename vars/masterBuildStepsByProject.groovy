@@ -7,7 +7,6 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildBaseDev001.add("Build-Exaxe.Types-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Libraries-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Rest-Dev001"); 
-		masterBuildBaseDev001.add("Build-Exaxe.Auth-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Common-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.External-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Agent-Dev001"); 
@@ -18,6 +17,7 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildBaseDev001.add("Build-Exaxe.Document-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.SystemConfiguration-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Users-Dev001");
+		masterBuildBaseDev001.add("Build-Exaxe.Auth-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Accounting-Dev001");
 		masterBuildBaseDev001.add("Build-Exaxe.UIElements-Dev001");
 		masterBuildBaseDev001.add("Build-SystemConfigurationUI-Dev001");
