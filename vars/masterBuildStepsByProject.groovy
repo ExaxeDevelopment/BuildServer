@@ -37,8 +37,6 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Test"); 
 		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Staging"); 
 		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Production"); 
-		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-PoliceMutual"); 
-		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-SalesDemo"); 
 
         List<String> masterBuildAdminPlusDev002 = new ArrayList<String>();
 		masterBuildAdminPlusDev002.add("Build-Exaxe.Client-Dev002"); 
