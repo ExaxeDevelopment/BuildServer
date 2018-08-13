@@ -81,6 +81,8 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildPolicyEBIDev001.add("Build-Exaxe.PolicyEBI-Dev001"); 
 		masterBuildPolicyEBIDev001.add("Build-ExistingBusinessUI-Dev001"); 
 		masterBuildPolicyEBIDev001.add("Deploy-PolicyEBI-Dev001-Aviva"); 
+		masterBuildPolicyEBIDev001.add("Deploy-PolicyEBI-Dev001-Aviva-Test"); 
+		masterBuildPolicyEBIDev001.add("Deploy-PolicyEBI-Dev001-Aviva-Production"); 
 
 		List<String> masterBuildAdvicePlusRelease = new ArrayList<String>()
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Types-AdvicePlus-Release"); 
