@@ -31,6 +31,38 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildRevision.add("PublishNuGetPackages"); 
 		fullBuildRevision.add("CheckNuGetFeed"); 
 
+		List<String> fullBuildWithWebService = new ArrayList<String>()
+		fullBuildWithWebService.add("GetAllCodeLatestVersion"); 
+		fullBuildWithWebService.add("GetCodeLatestVersion");
+		fullBuildWithWebService.add("ClearDatabases"); 
+		fullBuildWithWebService.add("InstallAllDatabases"); 
+		fullBuildWithWebService.add("CheckOutFiles"); 
+		fullBuildWithWebService.add("UpdateAssemblyVersion"); 
+		fullBuildWithWebService.add("RestoreNuGetPackages"); 
+		fullBuildWithWebService.add("UpdateNuGetPackages"); 
+		fullBuildWithWebService.add("BuildSolution");
+		fullBuildWithWebService.add("PublishWebService");
+		fullBuildWithWebService.add("PerformUnitTests"); 
+		fullBuildWithWebService.add("CheckInFiles"); 
+		fullBuildWithWebService.add("PublishNuGetPackages"); 
+		fullBuildWithWebService.add("CheckNuGetFeed");
+
+		List<String> fullBuildWithWebServiceRevision = new ArrayList<String>()
+		fullBuildWithWebServiceRevision.add("GetAllCodeLatestVersion"); 
+		fullBuildWithWebServiceRevision.add("GetCodeLatestVersion");
+		fullBuildWithWebServiceRevision.add("ClearDatabases"); 
+		fullBuildWithWebServiceRevision.add("InstallAllDatabases"); 
+		fullBuildWithWebServiceRevision.add("CheckOutFiles"); 
+		fullBuildWithWebServiceRevision.add("UpdateAssemblyVersion"); 
+		fullBuildWithWebServiceRevision.add("RestoreNuGetPackages"); 
+		fullBuildWithWebServiceRevision.add("UpdateNuGetPackages"); 
+		fullBuildWithWebServiceRevision.add("BuildSolution");
+		fullBuildWithWebServiceRevision.add("PublishWebService");
+		fullBuildWithWebServiceRevision.add("PerformUnitTests"); 
+		fullBuildWithWebServiceRevision.add("CheckInFiles"); 
+		fullBuildWithWebServiceRevision.add("PublishNuGetPackages"); 
+		fullBuildWithWebServiceRevision.add("CheckNuGetFeed");
+
         List<String> fullBuildWithoutGetAllCodeLatestVersionStage = new ArrayList<String>();
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("GetAllCodeLatestVersion"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("ClearDatabases"); 
@@ -225,6 +257,12 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "UpdateQualityGates":
                 buildSteps = buildUpdateQualityGates;
+                break
+			case "FullBuildWithWebService":
+                buildSteps = fullBuildWithWebService;
+                break
+			case "FullBuildWithWebServiceRevision":
+                buildSteps = fullBuildWithWebServiceRevision;
                 break
             default:
                 buildSteps.add("BuildTypeNotDefined");
