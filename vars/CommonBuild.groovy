@@ -39,7 +39,7 @@ try{
 		for (String buildStep : buildSteps) {
 			operation = buildStep;
 
-			if(buildStep == "PublishNuGetPackages" || buildStep == "UpdateQualityGates" || buildStep == "DataScriptsReconciliation" || buildStep == "ShrinkDatabaseLogs"){
+			if(buildStep == "PublishNuGetPackages" || buildStep == "UpdateQualityGates" || buildStep == "DataScriptsReconciliation" || buildStep == "ShrinkDatabaseLogs" || buildStep == "CheckExtendedProperties"){
 				undoChanges = false;	//// No need to worry about changes
 			}
 			
