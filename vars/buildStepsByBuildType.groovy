@@ -205,6 +205,9 @@ class buildStepsByBuildType implements Serializable {
 		List<String> buildDataScriptsReconciliation = new ArrayList<String>()
 		buildDataScriptsReconciliation.add("DataScriptsReconciliation"); 
 
+		List<String> buildShrinkDatabaseLogs = new ArrayList<String>()
+		buildShrinkDatabaseLogs.add("ShrinkDatabaseLogs");
+
 		List<String> buildUpdateQualityGates = new ArrayList<String>()
 		buildUpdateQualityGates.add("UpdateQualityGates"); 
 
@@ -263,6 +266,9 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "FullBuildWithWebServiceRevision":
                 buildSteps = fullBuildWithWebServiceRevision;
+                break
+			case "ShrinkDatabaseLogs":
+                buildSteps = buildShrinkDatabaseLogs;
                 break
             default:
                 buildSteps.add("BuildTypeNotDefined");
