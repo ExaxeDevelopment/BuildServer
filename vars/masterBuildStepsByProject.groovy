@@ -137,7 +137,6 @@ class masterBuildStepsByProject implements Serializable {
         List<String> masterBuildChannelPlusDev001 = new ArrayList<String>();
 		masterBuildChannelPlusDev001.add("Build-Exaxe.ChannelPlus-Dev001"); 
 		masterBuildChannelPlusDev001.add("Build-ChannelPlusUI-Dev001"); 
-		masterBuildChannelPlusDev001.add("Deploy-ChannelPlus-Dev001-SalesDemo"); 
 		
 		List<String> buildSteps = new ArrayList<String>();
         switch (masterBuildType) {
