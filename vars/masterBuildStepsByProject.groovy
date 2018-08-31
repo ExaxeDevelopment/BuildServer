@@ -101,6 +101,7 @@ class masterBuildStepsByProject implements Serializable {
         masterBuildAdvicePlusRelease.add("Build-Exaxe.FactFind-AdvicePlus-Release");
         masterBuildAdvicePlusRelease.add("Build-Exaxe.Quote.Rules-AdvicePlus-Release");
         masterBuildAdvicePlusRelease.add("Build-Exaxe.Quote-AdvicePlus-Release");
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.ExistingBusiness-AdvicePlus-Release");
         masterBuildAdvicePlusRelease.add("Build-PointOfSaleUI-AdvicePlus-Release");
         masterBuildAdvicePlusRelease.add("Deploy-AdvicePlus-Release-ACORN");
 
