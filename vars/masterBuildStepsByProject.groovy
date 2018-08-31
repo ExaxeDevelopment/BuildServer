@@ -92,6 +92,7 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Common-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Configuration-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Rules-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Comment-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.SystemConfiguration-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Users-AdvicePlus-Release");
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.UIElements-AdvicePlus-Release");
