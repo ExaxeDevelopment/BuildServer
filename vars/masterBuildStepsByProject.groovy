@@ -107,6 +107,8 @@ class masterBuildStepsByProject implements Serializable {
 		List<String> masterBuildAdminPlusRelease = new ArrayList<String>()
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Types-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Libraries-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Rest-AdminPlus-Release"); 
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Web-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Common-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.External-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Agent-AdminPlus-Release"); 
@@ -118,6 +120,7 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusRelease.add("Build-Exaxe.SystemConfiguration-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Users-AdminPlus-Release");
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Accounting-AdminPlus-Release");
+		masterBuildAdminPlusRelease.add("Build-Exaxe.Auth-AdminPlus-Release");
 		masterBuildAdminPlusRelease.add("Build-Exaxe.UIElements-AdminPlus-Release");
 		masterBuildAdminPlusRelease.add("Build-SystemConfigurationUI-AdminPlus-Release");
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Calculations-AdminPlus-Release");
