@@ -69,13 +69,13 @@ class deployAdvicePlusRelease implements Serializable {
 		productDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(productDbMap);
 
-		//Exaxe.Common - BuildSolution
+		//Exaxe.Common - BuildDatabase
 		Map<String,String> commonDbMap  = new HashMap<String,String>();
 		commonDbMap.put("Project", "Exaxe.Common"); 
 		commonDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(commonDbMap);
 
-		//Exaxe.Configuration-Configuration - BuildSolution
+		//Exaxe.Configuration-Configuration - BuildDatabase
 		Map<String,String> configurationDbMap  = new HashMap<String,String>();
 		configurationDbMap.put("Project", "Exaxe.Configuration-Configuration"); 
 		configurationDbMap.put("Operation", "BuildDatabase"); 
@@ -92,6 +92,12 @@ class deployAdvicePlusRelease implements Serializable {
 		configurationReferenceDbMap.put("Project", "Exaxe.Configuration-Reference"); 
 		configurationReferenceDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(configurationReferenceDbMap);
+		
+		//Exaxe.Comment - BuildDatabase
+		Map<String,String> commentDbMap  = new HashMap<String,String>();
+		commentDbMap.put("Project", "Exaxe.Comment"); 
+		commentDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(commentDbMap);
 
 		//Exaxe.SystemConfiguration - BuildDatabase
 		Map<String,String> systemConfigurationDbMap = new HashMap<String,String>();
@@ -116,6 +122,12 @@ class deployAdvicePlusRelease implements Serializable {
 		quoteDbMap.put("Project", "Exaxe.Quote "); 
 		quoteDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(quoteDbMap);
+		
+		//Exaxe.ExistingBusiness - BuildDatabase
+		Map<String,String> existingBusinessDbMap = new HashMap<String,String>();
+		existingBusinessDbMap.put("Project", "Exaxe.ExistingBusiness"); 
+		existingBusinessDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(existingBusinessDbMap);
 
 		/// WEB SERVICES
 		//Exaxe.FactFind  - PublishWebService
