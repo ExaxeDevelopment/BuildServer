@@ -71,6 +71,18 @@ class deployPolicyEbi implements Serializable {
 		deploySteps.add(policyEbiWsPublishMap);
 
 		/// WEB SITES
+		//Exaxe.SystemConfigurationUI - GetCodeLatestVersion
+		Map<String,String> systemConfigurationWsGetCodeMap  = new HashMap<String,String>();
+		systemConfigurationWsGetCodeMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigurationWsGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(systemConfigurationWsGetCodeMap);
+
+		//Exaxe.SystemConfigurationUI - PublishWebSite
+		Map<String,String> systemConfigurationWsPublishMap  = new HashMap<String,String>();
+		systemConfigurationWsPublishMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigurationWsPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(systemConfigurationWsPublishMap);
+
 		//ExistingBusinessUI - GetCodeLatestVersion
 		Map<String,String> existingBusinessUIGetCodeMap  = new HashMap<String,String>();
 		existingBusinessUIGetCodeMap.put("Project", "ExistingBusinessUI"); 
