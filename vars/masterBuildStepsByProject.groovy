@@ -5,6 +5,7 @@ class masterBuildStepsByProject implements Serializable {
 
 		List<String> masterBuildBaseDev001 = new ArrayList<String>()
 		masterBuildBaseDev001.add("Build-Exaxe.Types-Dev001"); 
+		masterBuildBaseDev001.add("Build-Exaxe.Security-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Libraries-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Rest-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Web-Dev001"); 
