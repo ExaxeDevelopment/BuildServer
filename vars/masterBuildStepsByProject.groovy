@@ -89,6 +89,8 @@ class masterBuildStepsByProject implements Serializable {
 		List<String> masterBuildAdvicePlusRelease = new ArrayList<String>()
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Types-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Libraries-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Rest-AdvicePlus-Release"); 
+		masterBuildAdvicePlusRelease.add("Build-Exaxe.Web-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Agent-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.App-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Common-AdvicePlus-Release"); 
