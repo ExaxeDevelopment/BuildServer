@@ -62,6 +62,7 @@ try{
 
 			stage("${buildStep}")
 			{
+				echo "Building: ${buildStep}";
 				build buildStep;
 			}
 		}
