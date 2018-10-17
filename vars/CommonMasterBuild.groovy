@@ -60,9 +60,10 @@ try{
 		for (String buildStep : sequentialBuildSteps) {
 			jobBuild = buildStep; //// So it can be included in the failure notification
 
+			echo "Building: ${buildStep}";
+
 			stage("${buildStep}")
 			{
-				echo "Building: ${buildStep}";
 				build buildStep;
 			}
 		}
