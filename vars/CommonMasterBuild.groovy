@@ -30,6 +30,10 @@ try{
 			// GET SEQUENTIAL MASTER BUILD STEPS
 			echo "No parallel jobs to execute!";
 			echo "Get the sequential jobs to execute!";
+
+			echo "Master build: ${masterBuildName}";
+			echo "Action/Project: ${action}";
+
 			sequentialBuildSteps = masterBuildStepsClass.getMasterBuildStepsByProject(masterBuildName, action);
 		}
 

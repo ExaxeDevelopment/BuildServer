@@ -3,9 +3,6 @@ class masterBuildStepsByProject implements Serializable {
 	//// The 'firstProject' indicates from where in the list the build will start
     def getMasterBuildStepsByProject(masterBuildType, firstProject) { 
 
-		echo "Master build type: ${masterBuildType}";
-		echo "First project: ${firstProject}";
-
 		List<String> masterBuildBaseDev001 = new ArrayList<String>()
 		masterBuildBaseDev001.add("Build-Exaxe.Types-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Security-Dev001"); 
@@ -194,15 +191,9 @@ class masterBuildStepsByProject implements Serializable {
 			indexOfStartStep = 0;
 		}
 
-		echo "Index of first step: ${indexOfStartStep}";
-
 		// Return Selected MasterBuildSteps
 		def steps = buildSteps.subList(Math.max(indexOfStartStep, 0), buildSteps.size()).collect();
 		
-		for (String step : steps) {
-			echo "Step: ${step}";
-		}
-
 		steps
     }
 
