@@ -53,7 +53,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildWithWebServiceRevision.add("ClearDatabases"); 
 		fullBuildWithWebServiceRevision.add("InstallAllDatabases"); 
 		fullBuildWithWebServiceRevision.add("CheckOutFiles"); 
-		fullBuildWithWebServiceRevision.add("UpdateAssemblyVersion"); 
+		fullBuildWithWebServiceRevision.add("UpdateAssemblyVersionRevision"); 
 		fullBuildWithWebServiceRevision.add("RestoreNuGetPackages"); 
 		fullBuildWithWebServiceRevision.add("UpdateNuGetPackages"); 
 		fullBuildWithWebServiceRevision.add("BuildSolution");
