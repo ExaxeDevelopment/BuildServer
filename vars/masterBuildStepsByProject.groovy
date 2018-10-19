@@ -86,6 +86,11 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildPolicyEBIDev001.add("Deploy-PolicyEBI-Dev001-Aviva-Test"); 
 		masterBuildPolicyEBIDev001.add("Deploy-PolicyEBI-Dev001-Aviva-Production"); 
 
+		List<String> masterBuildHansardPortalsDev001 = new ArrayList<String>()
+		masterBuildHansardPortalsDev001.add("Build-HansardPortals-Dev001"); 
+		masterBuildHansardPortalsDev001.add("Deploy-HansardPortals-Dev001-Broker"); 
+		masterBuildHansardPortalsDev001.add("Deploy-HansardPortals-Dev001-Client"); 
+
 		List<String> masterBuildAdvicePlusRelease = new ArrayList<String>()
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Types-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Libraries-AdvicePlus-Release"); 
@@ -179,6 +184,9 @@ class masterBuildStepsByProject implements Serializable {
                 break
 			case "MasterBuildChannelPlusDev001":
                 buildSteps = masterBuildChannelPlusDev001;
+                break
+			case "MasterBuildHansardPortalsDev001":
+                buildSteps = masterBuildHansardPortalsDev001;
                 break
             default:
                 buildSteps.add("MasterBuildNotDefined");

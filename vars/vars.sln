@@ -68,6 +68,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChannelPlus", "ChannelPlus"
 		deployChannelPlus.groovy = deployChannelPlus.groovy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portals", "Portals", "{E3BD8F7E-A75C-4A3D-8A80-C70AE9325205}"
+	ProjectSection(SolutionItems) = preProject
+		deployHansardPortals.groovy = deployHansardPortals.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +88,7 @@ Global
 		{F2420EDC-E90A-4B3E-A3E2-E37C0BABE520} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
 		{0A4FE1B3-75FE-426F-9473-BA33ECA5593D} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{A07CA428-CD8C-40C5-82F4-6C4CE0B4C1D4} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
+		{E3BD8F7E-A75C-4A3D-8A80-C70AE9325205} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
