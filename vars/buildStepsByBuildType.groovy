@@ -121,6 +121,7 @@ class buildStepsByBuildType implements Serializable {
 		buildUI.add("BuildSolution"); 
 		buildUI.add("PerformUnitTests"); 
 		buildUI.add("CheckInFiles");
+		buildUI.add("PublishNuGetPackagesAzureDevOps");
 
 		List<String> buildUIRevision = new ArrayList<String>()
 		buildUIRevision.add("GetCodeLatestVersion"); 
@@ -193,6 +194,7 @@ class buildStepsByBuildType implements Serializable {
 		updatePackagesWithoutBuild.add("RestoreNuGetPackages"); 
 		updatePackagesWithoutBuild.add("UpdateNuGetPackages");
 		updatePackagesWithoutBuild.add("CheckInFiles"); 
+		updatePackagesWithoutBuild.add("PublishNuGetPackagesAzureDevOps"); 
 
 		List<String> updatePackagesWithBuild = new ArrayList<String>()
 		updatePackagesWithBuild.add("GetCodeLatestVersion"); 
@@ -201,6 +203,7 @@ class buildStepsByBuildType implements Serializable {
 		updatePackagesWithBuild.add("UpdateNuGetPackages");
 		updatePackagesWithBuild.add("BuildSolution");
 		updatePackagesWithBuild.add("CheckInFiles"); 
+		updatePackagesWithBuild.add("PublishNuGetPackagesAzureDevOps"); 
 
 		List<String> buildDataScriptsReconciliation = new ArrayList<String>()
 		buildDataScriptsReconciliation.add("DataScriptsReconciliation"); 
