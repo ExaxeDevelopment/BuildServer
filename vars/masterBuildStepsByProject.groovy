@@ -3,6 +3,7 @@ class masterBuildStepsByProject implements Serializable {
 	//// The 'firstProject' indicates from where in the list the build will start
     def getMasterBuildStepsByProject(masterBuildType, firstProject) { 
 
+		//// **** COMMON/BASE build + deployment ****
 		List<String> masterBuildBaseDev001 = new ArrayList<String>()
 		masterBuildBaseDev001.add("Build-Exaxe.Types-Dev001"); 
 		masterBuildBaseDev001.add("Build-Exaxe.Security-Dev001"); 
@@ -24,7 +25,10 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildBaseDev001.add("Build-Exaxe.UIElements-Dev001");
 		masterBuildBaseDev001.add("Build-SystemConfigurationUI-Dev001");
 		masterBuildBaseDev001.add("Build-Exaxe.Calculations-Dev001");
+		//// ********************************************************
 
+		//// **** ADMIN PLUS UAT/INTEGRATION build + deployment **** 
+		//// Commented deployments can be re-added if the customer/environment must be included.
         List<String> masterBuildAdminPlusDev001 = new ArrayList<String>()
 		masterBuildAdminPlusDev001.add("Build-Exaxe.Client-Dev001"); 
 		masterBuildAdminPlusDev001.add("Build-Exaxe.AdminPlus-Dev001"); 
@@ -33,12 +37,23 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex.Activities-Dev001"); 
 		masterBuildAdminPlusDev001.add("Build-Exaxe.Apex.Server-Dev001"); 
 		masterBuildAdminPlusDev001.add("Build-AdminPlusUI-Dev001"); 
-		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily"); 
-		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Exaxe"); 
-		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Test"); 
-		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Staging"); 
-		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Production"); 
+		//// ONE FAMILY SECTION
+		// masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily"); 
+		// masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Exaxe"); 
+		// masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Test"); 
+		// masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Staging"); 
+		// masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-OneFamily-Production"); 
+		//// HANSARD SECTION
+		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-Hansard"); 
+		masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-Hansard-Single"); 
+		//// POLICE MUTUAL SECTION
+		// masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-PoliceMutual"); 
+		//// SALES DEMO SECTION
+		// masterBuildAdminPlusDev001.add("Deploy-AdminPlus-Dev001-SalesDemo"); 
+		//// ********************************************************
 
+		//// **** ADMIN PLUS DEVELOPMENT build + deployment ****
+		//// Commented deployments can be re-added if the customer/environment must be included.
         List<String> masterBuildAdminPlusDev002 = new ArrayList<String>();
 		masterBuildAdminPlusDev002.add("Build-Exaxe.Client-Dev002"); 
 		masterBuildAdminPlusDev002.add("Build-Exaxe.AdminPlus-Dev002"); 
@@ -47,22 +62,32 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex.Activities-Dev002"); 
 		masterBuildAdminPlusDev002.add("Build-Exaxe.Apex.Server-Dev002"); 
 		masterBuildAdminPlusDev002.add("Build-AdminPlusUI-Dev002"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-Hansard"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-Hansard-Single"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-SalesDemo"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily"); 
-		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-PoliceMutual"); 
+		//// ONE FAMILY SECTION
+		// masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-OneFamily"); 
+		//// HANSARD SECTION
+		// masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-Hansard"); 
+		// masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-Hansard-Single"); 
+		//// POLICE MUTUAL SECTION
+		// masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-PoliceMutual"); 
+		//// FORESTERS SECTION
 		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-Foresters"); 
+		//// SALES DEMO SECTION
+		masterBuildAdminPlusDev002.add("Deploy-AdminPlus-Dev002-SalesDemo"); 
+		//// ********************************************************
 
-        List<String> masterBuildAdminPlusDev004 = new ArrayList<String>();
-		masterBuildAdminPlusDev004.add("Build-Exaxe.Client-Dev004"); 
-		masterBuildAdminPlusDev004.add("Build-Exaxe.AdminPlus-Dev004"); 
-		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex-Dev004"); 
-		masterBuildAdminPlusDev004.add("Build-Exaxe.Aggregate-Dev004"); 
-		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Activities-Dev004"); 
-		masterBuildAdminPlusDev004.add("Build-Exaxe.Apex.Server-Dev004"); 
-		masterBuildAdminPlusDev004.add("Build-AdminPlusUI-Dev004"); 
-		
+		//// **** ADVICE PLUS UAT/INTEGRATION build + deployment ****
+		//// Commented deployments can be re-added if the customer/environment must be included.
+		List<String> masterBuildAdvicePlusDev001 = new ArrayList<String>()
+        masterBuildAdvicePlusDev001.add("Build-Exaxe.FactFind-Dev001");
+        masterBuildAdvicePlusDev001.add("Build-Exaxe.Quote.Rules-Dev001");
+        masterBuildAdvicePlusDev001.add("Build-Exaxe.Quote-Dev001");
+        masterBuildAdvicePlusDev001.add("Build-Exaxe.ExistingBusiness-Dev001");
+        masterBuildAdvicePlusDev001.add("Build-PointOfSaleUI-Dev001");
+        masterBuildAdvicePlusDev001.add("Deploy-AdvicePlus-Dev001");
+		//// ********************************************************
+
+		//// **** ADVICE PLUS DEVELOPMENT build + deployment ****
+		//// Commented deployments can be re-added if the customer/environment must be included.
 		List<String> masterBuildAdvicePlusDev002 = new ArrayList<String>()
         masterBuildAdvicePlusDev002.add("Build-Exaxe.Client-Dev003");
         masterBuildAdvicePlusDev002.add("Build-Exaxe.FactFind-Dev002");
@@ -71,27 +96,26 @@ class masterBuildStepsByProject implements Serializable {
         masterBuildAdvicePlusDev002.add("Build-Exaxe.ExistingBusiness-Dev002");
         masterBuildAdvicePlusDev002.add("Build-PointOfSaleUI-Dev002");
         masterBuildAdvicePlusDev002.add("Deploy-AdvicePlus-Dev002-ACORN");
+		//// ********************************************************
 
-		List<String> masterBuildAdvicePlusDev001 = new ArrayList<String>()
-        masterBuildAdvicePlusDev001.add("Build-Exaxe.FactFind-Dev001");
-        masterBuildAdvicePlusDev001.add("Build-Exaxe.Quote.Rules-Dev001");
-        masterBuildAdvicePlusDev001.add("Build-Exaxe.Quote-Dev001");
-        masterBuildAdvicePlusDev001.add("Build-Exaxe.ExistingBusiness-Dev001");
-        masterBuildAdvicePlusDev001.add("Build-PointOfSaleUI-Dev001");
-        masterBuildAdvicePlusDev001.add("Deploy-AdvicePlus-Dev001");
-
+		//// **** POLICY EBI (Aviva) build + deployment ****
+		//// Commented deployments can be re-added if the customer/environment must be included.
 		List<String> masterBuildPolicyEBIDev001 = new ArrayList<String>()
 		masterBuildPolicyEBIDev001.add("Build-Exaxe.PolicyEBI-Dev001"); 
 		masterBuildPolicyEBIDev001.add("Build-ExistingBusinessUI-Dev001"); 
 		masterBuildPolicyEBIDev001.add("Deploy-PolicyEBI-Dev001-Aviva"); 
 		masterBuildPolicyEBIDev001.add("Deploy-PolicyEBI-Dev001-Aviva-Test"); 
 		masterBuildPolicyEBIDev001.add("Deploy-PolicyEBI-Dev001-Aviva-Production"); 
+		//// ********************************************************
 
+		//// **** HANSARD PORTALS build + deployment ****
 		List<String> masterBuildHansardPortalsDev001 = new ArrayList<String>()
 		masterBuildHansardPortalsDev001.add("Build-Hansard.Portals-Dev001"); 
 		masterBuildHansardPortalsDev001.add("Deploy-Hansard.Portals-Dev001-Broker"); 
 		masterBuildHansardPortalsDev001.add("Deploy-Hansard.Portals-Dev001-Client"); 
+		//// ********************************************************
 
+		//// **** ADVICE PLUS PRODUCTION RELEASE build + deployment ****
 		List<String> masterBuildAdvicePlusRelease = new ArrayList<String>()
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Types-AdvicePlus-Release"); 
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.Libraries-AdvicePlus-Release"); 
@@ -115,7 +139,9 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdvicePlusRelease.add("Build-Exaxe.ExistingBusiness-AdvicePlus-Release");
         masterBuildAdvicePlusRelease.add("Build-PointOfSaleUI-AdvicePlus-Release");
         masterBuildAdvicePlusRelease.add("Deploy-AdvicePlus-Release-ACORN");
+		//// ********************************************************
 
+		//// **** ADMIN PLUS PRODUCTION RELEASE build + deployment ****
 		List<String> masterBuildAdminPlusRelease = new ArrayList<String>()
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Types-AdminPlus-Release"); 
 		masterBuildAdminPlusRelease.add("Build-Exaxe.Libraries-AdminPlus-Release"); 
@@ -149,11 +175,14 @@ class masterBuildStepsByProject implements Serializable {
 		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily-Staging"); 
 		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-OneFamily-Production"); 
 		masterBuildAdminPlusRelease.add("Deploy-AdminPlus-Release-PoliceMutual"); 
+		//// ********************************************************
 
+		//// **** CHANNEL PLUS build + deployment ****
         List<String> masterBuildChannelPlusDev001 = new ArrayList<String>();
 		masterBuildChannelPlusDev001.add("Build-Exaxe.ChannelPlus-Dev001"); 
 		masterBuildChannelPlusDev001.add("Build-ChannelPlusUI-Dev001"); 
-		
+		//// ********************************************************
+
 		List<String> buildSteps = new ArrayList<String>();
         switch (masterBuildType) {
 			case "MasterBuildBaseDev001":
@@ -164,9 +193,6 @@ class masterBuildStepsByProject implements Serializable {
                 break
             case "MasterBuildAdminPlusDev002":
                 buildSteps = masterBuildAdminPlusDev002;
-                break
-            case "MasterBuildAdminPlusDev004":
-                buildSteps = masterBuildAdminPlusDev004;
                 break
             case "MasterBuildAdminPlusRelease":
                 buildSteps = masterBuildAdminPlusRelease;
