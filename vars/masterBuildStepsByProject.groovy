@@ -163,7 +163,7 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-AdminPlus-Dev002-Hansard-Single"); 
 
 		//// ONE FAMILY SECTION
-		// buildItems.add("Deploy-AdminPlus-Dev002-OneFamily"); 
+		buildItems.add("Deploy-AdminPlus-Dev002-OneFamily"); 
 
 		//// POLICE MUTUAL SECTION
 		// buildItems.add("Deploy-AdminPlus-Dev002-PoliceMutual"); 
