@@ -42,8 +42,8 @@ class deployChannelPlusUI implements Serializable {
 	
 		//ChannelPlusUI - BuildSolution
 		Map<String,String> ChannelPlusUISolutionMap  = new HashMap<String,String>();
-		documentDbMap.put("Project", "ChannelPlusUI"); 
-		documentDbMap.put("Operation", "BuildSolution"); 
+		ChannelPlusUISolutionMap.put("Project", "ChannelPlusUI"); 
+		ChannelPlusUISolutionMap.put("Operation", "BuildSolution"); 
 		deploySteps.add(ChannelPlusUISolutionMap);
 		
 		//ChannelPlusUI - PublishWebSite
