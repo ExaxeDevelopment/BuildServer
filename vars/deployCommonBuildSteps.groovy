@@ -29,12 +29,12 @@ class deployCommonBuildSteps implements Serializable {
 				commonDeploySteps = deployChannelPlusUIClass.getDeploySteps();
                 break
 			case "DeployPortalsBroker":
-                def deployHansardsPortalsBrokerClass = new deployHansardsPortalsBroker();
-				commonDeploySteps = deployHansardsPortalsBrokerClass.getDeploySteps();
+                def deployHansardPortalsBrokerClass = new deployHansardPortalsBroker();
+				commonDeploySteps = deployHansardPortalsBrokerClass.getDeploySteps();
                 break
 			case "DeployPortalsClient":
-                def deployHansardsPortalsClientClass = new deployHansardsPortalsClient();
-				commonDeploySteps = deployHansardsPortalsClientClass.getDeploySteps();
+                def deployHansardsPortalClientClass = new deployHansardPortalsClient();
+				commonDeploySteps = deployHansardsPortalClientClass.getDeploySteps();
                 break
             default:             
                 break
