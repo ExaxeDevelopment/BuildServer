@@ -42,7 +42,7 @@ class deployHansardPortalsClient implements Serializable {
 		
 		//Hansard.Portals.Client - PublishWebSite
 		Map<String,String> hansardPortalClientPublishMap  = new HashMap<String,String>();
-		hansardPortalClientPublishMap.put("Project", "Hansard.Portals.Client"); 
+		hansardPortalClientPublishMap.put("Project", "Hansard.Portals"); 
 		hansardPortalClientPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(hansardPortalClientPublishMap);
 
