@@ -1,4 +1,4 @@
-class deployAdminPlus implements Serializable {
+class deployPortalsClient implements Serializable {
     def getDeploySteps() { 
 		
 		List deploySteps = new ArrayList<Map<String,String>>();
