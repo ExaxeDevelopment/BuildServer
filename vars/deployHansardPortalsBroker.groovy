@@ -41,7 +41,7 @@ class deployHansardsPortalsBroker implements Serializable {
 		deploySteps.add(hansardPortalBrokerRestoreNugetMap);
 		
 		//Hansard.Portals.Broker - PublishWebSite
-		Map<String,String> hansardPortalBrokePublishMap  = new HashMap<String,String>();
+		Map<String,String> hansardPortalBrokerPublishMap  = new HashMap<String,String>();
 		hansardPortalBrokerPublishMap.put("Project", "Hansard.Portals.Broker"); 
 		hansardPortalBrokerPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(hansardPortalBrokerPublishMap);
