@@ -29,22 +29,22 @@ class deployAdminPlus implements Serializable {
 
 		/// WEB SITES
 		//Hansard.Portals - GetCodeLatestVersion
-		Map<String,String> hansardPortalGetCodeMap  = new HashMap<String,String>();
-		hansardPortalGetCodeMap.put("Project", "Hansard.Portals"); 
-		hansardPortalGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(hansardPortalGetCodeMap);
+		Map<String,String> hansardPortalBrokerGetCodeMap  = new HashMap<String,String>();
+		hansardPortalBrokerGetCodeMap.put("Project", "Hansard.Portals"); 
+		hansardPortalBrokerGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(hansardPortalBrokerGetCodeMap);
 
 		//Hansard.Portals - RestoreNuGetPackages
-		Map<String,String> hansardPortalRestoreNugetMap  = new HashMap<String,String>();
-		hansardPortalRestoreNugetMap.put("Project", "Hansard.Portals"); 
-		hansardPortalRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(hansardPortalRestoreNugetMap);
+		Map<String,String> hansardPortalBrokerRestoreNugetMap  = new HashMap<String,String>();
+		hansardPortalBrokerRestoreNugetMap.put("Project", "Hansard.Portals"); 
+		hansardPortalBrokerRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(hansardPortalBrokerRestoreNugetMap);
 		
-		//Hansard.Portals.Client - PublishWebSite
-		Map<String,String> hansardPortalClientPublishMap  = new HashMap<String,String>();
-		hansardPortalClientPublishMap.put("Project", "Hansard.Portals.Client"); 
-		hansardPortalClientPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(hansardPortalClientPublishMap);
+		//Hansard.Portals.Broker - PublishWebSite
+		Map<String,String> hansardPortalBrokePublishMap  = new HashMap<String,String>();
+		hansardPortalBrokerPublishMap.put("Project", "Hansard.Portals.Broker"); 
+		hansardPortalBrokerPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(hansardPortalBrokerPublishMap);
 
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
