@@ -52,7 +52,7 @@ class deployHansardsPortalsBroker implements Serializable {
 		releaseContentMap.put("Operation", "ReleaseContent"); 
 		deploySteps.add(releaseContentMap);
 		
-		//Return All of the defined steps
+		//Return All of the defined steps (Broker)
 		deploySteps
     }
 }
