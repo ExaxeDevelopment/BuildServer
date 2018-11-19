@@ -1,4 +1,4 @@
-class deployPortalsClient implements Serializable {
+class deployHansardsPortalsClient implements Serializable {
     def getDeploySteps() { 
 		
 		List deploySteps = new ArrayList<Map<String,String>>();
