@@ -68,6 +68,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChannelPlus", "ChannelPlus"
 	ProjectSection(SolutionItems) = preProject
 		deployChannelPlus.groovy = deployChannelPlus.groovy
 		deployChannelPlusUI.groovy = deployChannelPlusUI.groovy
+		deployChannelPlusWebApi.groovy = deployChannelPlusWebApi.groovy
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portals", "Portals", "{E3BD8F7E-A75C-4A3D-8A80-C70AE9325205}"
