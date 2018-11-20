@@ -29,22 +29,22 @@ class deployAuthWebApi implements Serializable {
 
 		/// WEB SITES
 		//Exaxe.Auth - GetCodeLatestVersion
-		Map<String,String> AuthWebApiGetCodeMap  = new HashMap<String,String>();
-		AuthWebApiGetCodeMap.put("Project", "Exaxe.Auth"); 
-		AuthWebApiGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(AuthWebApiGetCodeMap);
+		Map<String,String> authWebApiGetCodeMap  = new HashMap<String,String>();
+		authWebApiGetCodeMap.put("Project", "Exaxe.Auth"); 
+		authWebApiGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(authWebApiGetCodeMap);
 
 		//Exaxe.Auth - RestoreNuGetPackages
-		Map<String,String> AuthWebApiRestoreNugetMap  = new HashMap<String,String>();
-		AuthWebApiRestoreNugetMap.put("Project", "Exaxe.Auth"); 
-		AuthWebApiRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(AuthWebApiRestoreNugetMap);
+		Map<String,String> authWebApiRestoreNugetMap  = new HashMap<String,String>();
+		authWebApiRestoreNugetMap.put("Project", "Exaxe.Auth"); 
+		authWebApiRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(authWebApiRestoreNugetMap);
 		
 		//Hansard.Portals.Broker - PublishWebSite
-		Map<String,String> AuthWebApiPublishMap  = new HashMap<String,String>();
-		AuthWebApiPublishMap.put("Project", "Exaxe.Auth"); 
-		AuthWebApiPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(AuthWebApiPublishMap);
+		Map<String,String> authWebApiPublishMap  = new HashMap<String,String>();
+		authWebApiPublishMap.put("Project", "Exaxe.Auth"); 
+		authWebApiPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(authWebApiPublishMap);
 
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
