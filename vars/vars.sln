@@ -103,6 +103,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{55
 		deployDocumentWebApi.groovy = deployDocumentWebApi.groovy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aggregate", "Aggregate", "{F1072F24-EDA6-4058-8978-68367A6A0864}"
+	ProjectSection(SolutionItems) = preProject
+		deployAggregateWebApi.groovy = deployAggregateWebApi.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +129,7 @@ Global
 		{E32424E2-AFD6-4C14-B2BB-FFB2A99693CD} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{1130C6B6-1A4A-4275-8DF7-E73BE4F2AEC0} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{5579C93B-179E-4A83-9A05-A0D75D294009} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
+		{F1072F24-EDA6-4058-8978-68367A6A0864} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
