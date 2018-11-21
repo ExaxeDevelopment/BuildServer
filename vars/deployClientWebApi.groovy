@@ -1,4 +1,4 @@
-class deployAuthWebApi implements Serializable {
+class deployClientWebApi implements Serializable {
     def getDeploySteps() { 
 		
 		List deploySteps = new ArrayList<Map<String,String>>();
@@ -28,23 +28,23 @@ class deployAuthWebApi implements Serializable {
 		deploySteps.add(solutionManagerRestoreNuGetMap);
 
 		/// WEB SITES
-		//Exaxe.Auth - GetCodeLatestVersion
-		Map<String,String> authWebApiGetCodeMap  = new HashMap<String,String>();
-		authWebApiGetCodeMap.put("Project", "Exaxe.Auth"); 
-		authWebApiGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(authWebApiGetCodeMap);
+		//Exaxe.Client - GetCodeLatestVersion
+		Map<String,String> clientWebApiGetCodeMap  = new HashMap<String,String>();
+		clientWebApiGetCodeMap.put("Project", "Exaxe.Client"); 
+		clientWebApiGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(clientWebApiGetCodeMap);
 
-		//Exaxe.Auth - RestoreNuGetPackages
-		Map<String,String> authWebApiRestoreNugetMap  = new HashMap<String,String>();
-		authWebApiRestoreNugetMap.put("Project", "Exaxe.Auth"); 
-		authWebApiRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(authWebApiRestoreNugetMap);
+		//Exaxe.Client - RestoreNuGetPackages
+		Map<String,String> clientWebApiRestoreNugetMap  = new HashMap<String,String>();
+		clientWebApiRestoreNugetMap.put("Project", "Exaxe.Client"); 
+		clientWebApiRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(clientWebApiRestoreNugetMap);
 		
-		//Exaxe.Auth - PublishWebSite
-		Map<String,String> authWebApiPublishMap  = new HashMap<String,String>();
-		authWebApiPublishMap.put("Project", "Exaxe.Auth"); 
-		authWebApiPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(authWebApiPublishMap);
+		//Hansard.Portals.Broker - PublishWebSite
+		Map<String,String> clientWebApiPublishMap  = new HashMap<String,String>();
+		clientWebApiPublishMap.put("Project", "Exaxe.Client"); 
+		clientWebApiPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(clientWebApiPublishMap);
 
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();

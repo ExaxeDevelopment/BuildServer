@@ -83,6 +83,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{0806D523-7
 		deployAuthWebApi.groovy = deployAuthWebApi.groovy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{0D2148B2-66EC-4BE5-BA14-8DA3322E98F8}"
+	ProjectSection(SolutionItems) = preProject
+		deployClientWebApi.groovy = deployClientWebApi.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +105,7 @@ Global
 		{A07CA428-CD8C-40C5-82F4-6C4CE0B4C1D4} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{E3BD8F7E-A75C-4A3D-8A80-C70AE9325205} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{0806D523-7165-4B3F-ACA7-8D88FA143755} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
+		{0D2148B2-66EC-4BE5-BA14-8DA3322E98F8} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
