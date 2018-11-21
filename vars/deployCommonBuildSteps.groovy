@@ -52,6 +52,10 @@ class deployCommonBuildSteps implements Serializable {
                 def deployClientWebApiClass = new deployClientWebApi();
 				commonDeploySteps = deployClientWebApiClass.getDeploySteps();
                 break
+			case "DeployConfigurationWebApi":
+                def deployConfigurationWebApiClass = new deployConfigurationWebApi();
+				commonDeploySteps = deployConfigurationWebApiClass.getDeploySteps();
+                break
             default:             
                 break
         }  

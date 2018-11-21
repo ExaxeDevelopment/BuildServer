@@ -1,4 +1,4 @@
-class deployClientWebApi implements Serializable {
+class deployConfigurationWebApi implements Serializable {
     def getDeploySteps() { 
 		
 		List deploySteps = new ArrayList<Map<String,String>>();
@@ -28,23 +28,23 @@ class deployClientWebApi implements Serializable {
 		deploySteps.add(solutionManagerRestoreNuGetMap);
 
 		/// WEB SITES
-		//Exaxe.Client - GetCodeLatestVersion
-		Map<String,String> clientWebApiGetCodeMap  = new HashMap<String,String>();
-		clientWebApiGetCodeMap.put("Project", "Exaxe.Client"); 
-		clientWebApiGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(clientWebApiGetCodeMap);
+		//Exaxe.Configuration - GetCodeLatestVersion
+		Map<String,String> configurationWebApiGetCodeMap  = new HashMap<String,String>();
+		configurationWebApiGetCodeMap.put("Project", "Exaxe.Configuration"); 
+		configurationWebApiGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(configurationWebApiGetCodeMap);
 
-		//Exaxe.Client - RestoreNuGetPackages
-		Map<String,String> clientWebApiRestoreNugetMap  = new HashMap<String,String>();
-		clientWebApiRestoreNugetMap.put("Project", "Exaxe.Client"); 
-		clientWebApiRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(clientWebApiRestoreNugetMap);
+		//Exaxe.Configuration - RestoreNuGetPackages
+		Map<String,String> configurationWebApiRestoreNugetMap  = new HashMap<String,String>();
+		configurationWebApiRestoreNugetMap.put("Project", "Exaxe.Configuration"); 
+		configurationWebApiRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(configurationWebApiRestoreNugetMap);
 		
-		//Exaxe.Client - PublishWebSite
-		Map<String,String> clientWebApiPublishMap  = new HashMap<String,String>();
-		clientWebApiPublishMap.put("Project", "Exaxe.Client"); 
-		clientWebApiPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(clientWebApiPublishMap);
+		//Exaxe.Configuration - PublishWebSite
+		Map<String,String> configurationWebApiPublishMap  = new HashMap<String,String>();
+		configurationWebApiPublishMap.put("Project", "Exaxe.Configuration"); 
+		configurationWebApiPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(configurationWebApiPublishMap);
 
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
