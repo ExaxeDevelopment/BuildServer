@@ -117,6 +117,12 @@ class deployWebApi implements Serializable {
 		apexDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(apexDbMap);
 
+		//Exaxe.ChannelPlus - BuildDatabase
+		Map<String,String> channelPlusDbMap  = new HashMap<String,String>();
+		channelPlusDbMap.put("Project", "Exaxe.ChannelPlus"); 
+		channelPlusDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(channelPlusDbMap);
+
 		/// WEB SERVICES
 		//Exaxe.Configuration  - PublishWebService
 		Map<String,String> configurationWsPublishMap = new HashMap<String,String>();
