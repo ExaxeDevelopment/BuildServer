@@ -148,11 +148,11 @@ class deployWebApi implements Serializable {
 		aggregateWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(aggregateWsPublishMap);
 
-		//Exaxe.Apex.Server  - PublishWebService
-		Map<String,String> apexServerWsPublishMap = new HashMap<String,String>();
-		apexServerWsPublishMap.put("Project", "Exaxe.Apex.Server"); 
-		apexServerWsPublishMap.put("Operation", "PublishWebService"); 
-		deploySteps.add(apexServerWsPublishMap);
+		//Exaxe.ChannelPlus - PublishWebSite
+		Map<String,String> channelPlusWebApiPublishMap  = new HashMap<String,String>();
+		channelPlusWebApiPublishMap.put("Project", "Exaxe.ChannelPlus"); 
+		channelPlusWebApiPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(channelPlusWebApiPublishMap);
 	
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
