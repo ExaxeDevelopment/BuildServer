@@ -118,6 +118,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quote", "Quote", "{630BADA0
 		deployQuoteWebApi.groovy = deployQuoteWebApi.groovy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{F3ED9BDA-0B7D-4E0B-804C-7443F267D42D}"
+	ProjectSection(SolutionItems) = preProject
+		deployWebApi.groovy = deployWebApi.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +147,7 @@ Global
 		{F1072F24-EDA6-4058-8978-68367A6A0864} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{995A1CDE-29A5-4FB7-A47C-7D253D492C3E} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{630BADA0-70A3-439C-A789-12530C1E588D} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
+		{F3ED9BDA-0B7D-4E0B-804C-7443F267D42D} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
