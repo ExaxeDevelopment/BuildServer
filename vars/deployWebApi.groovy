@@ -71,7 +71,7 @@ class deployWebApi implements Serializable {
 
 		//Exaxe.Configuration-Configuration - BuildDatabase
 		Map<String,String> configurationDbMap  = new HashMap<String,String>();
-		configurationDbMap.put("Project", "Exaxe.Configuration-Configuration"); 
+		configurationDbMap.put("Project", "Exaxe.Configuration"); 
 		configurationDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(configurationDbMap);
 
@@ -150,7 +150,7 @@ class deployWebApi implements Serializable {
 
 		//Exaxe.Configuration - PublishWebService
 		Map<String,String> configurationWsPublishMap = new HashMap<String,String>();
-		configurationWsPublishMap.put("Project", "Exaxe.Configuration-Configuration"); 
+		configurationWsPublishMap.put("Project", "Exaxe.Configuration"); 
 		configurationWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(configurationWsPublishMap);
 
