@@ -27,18 +27,36 @@ class deployHansardPortalsBroker implements Serializable {
 		solutionManagerRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(solutionManagerRestoreNuGetMap);
 
-		/// WEB SITES
-		//Hansard.Portals - GetCodeLatestVersion
-		Map<String,String> hansardPortalBrokerGetCodeMap  = new HashMap<String,String>();
-		hansardPortalBrokerGetCodeMap.put("Project", "Hansard.Portals"); 
-		hansardPortalBrokerGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(hansardPortalBrokerGetCodeMap);
+		//Exaxe.SolutionManager - BuildSolution
+		Map<String,String> solutionManagerBuildMap  = new HashMap<String,String>();
+		solutionManagerBuildMap.put("Project", "Exaxe.SolutionManager-Update"); 
+		solutionManagerBuildMap.put("Operation", "BuildSolution"); 
+		deploySteps.add(solutionManagerBuildMap);
 
+		//Exaxe.SolutionManager - PublishInstallApp (UPDATE)
+		Map<String,String> solutionManagerPublishUpdateMap  = new HashMap<String,String>();
+		solutionManagerPublishUpdateMap.put("Project", "Exaxe.SolutionManager-Update"); 
+		solutionManagerPublishUpdateMap.put("Operation", "PublishInstallApp"); 
+		deploySteps.add(solutionManagerPublishUpdateMap);
+
+		//Exaxe.SolutionManager - PublishInstallApp (CREATE)
+		Map<String,String> solutionManagerPublishCreateMap  = new HashMap<String,String>();
+		solutionManagerPublishCreateMap.put("Project", "Exaxe.SolutionManager-Create"); 
+		solutionManagerPublishCreateMap.put("Operation", "PublishInstallApp"); 
+		deploySteps.add(solutionManagerPublishCreateMap);
+
+		/// WEB SITES
 		//Hansard.Portals - RestoreNuGetPackages
 		Map<String,String> hansardPortalBrokerRestoreNugetMap  = new HashMap<String,String>();
 		hansardPortalBrokerRestoreNugetMap.put("Project", "Hansard.Portals"); 
 		hansardPortalBrokerRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(hansardPortalBrokerRestoreNugetMap);
+	
+		//ChannelPlusUI - BuildSolution
+		Map<String,String> hansardPortalBrokerSolutionMap  = new HashMap<String,String>();
+		hansardPortalBrokerSolutionMap.put("Project", "Hansard.Portals"); 
+		hansardPortalBrokerSolutionMap.put("Operation", "BuildSolution"); 
+		deploySteps.add(hansardPortalBrokerSolutionMap);
 		
 		//Hansard.Portals.Broker - PublishWebSite
 		Map<String,String> hansardPortalBrokerPublishMap  = new HashMap<String,String>();

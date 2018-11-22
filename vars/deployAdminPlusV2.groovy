@@ -27,12 +27,6 @@ class deployAdminPlusV2 implements Serializable {
 		solutionManagerRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(solutionManagerRestoreNuGetMap);
 
-		//Exaxe.SolutionManager - BuildSolution
-		Map<String,String> solutionManagerBuildMap  = new HashMap<String,String>();
-		solutionManagerBuildMap.put("Project", "Exaxe.SolutionManager-Update"); 
-		solutionManagerBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(solutionManagerBuildMap);
-
 		//Exaxe.SolutionManager - PublishInstallApp (UPDATE)
 		Map<String,String> solutionManagerPublishUpdateMap  = new HashMap<String,String>();
 		solutionManagerPublishUpdateMap.put("Project", "Exaxe.SolutionManager-Update"); 
@@ -124,12 +118,6 @@ class deployAdminPlusV2 implements Serializable {
 		configurationWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(configurationWsRestoreNuGetMap);
 
-		//Exaxe.Configuration - BuildSolution
-		Map<String,String> configurationWsBuildMap  = new HashMap<String,String>();
-		configurationWsBuildMap.put("Project", "Exaxe.Configuration-Configuration"); 
-		configurationWsBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(configurationWsBuildMap);
-
 		//Exaxe.Configuration  - PublishWebService
 		Map<String,String> configurationWsPublishMap = new HashMap<String,String>();
 		configurationWsPublishMap.put("Project", "Exaxe.Configuration-Configuration"); 
@@ -141,12 +129,6 @@ class deployAdminPlusV2 implements Serializable {
 		clientWsRestoreNuGetMap.put("Project", "Exaxe.Client"); 
 		clientWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(clientWsRestoreNuGetMap);
-
-		//Exaxe.Client - BuildSolution
-		Map<String,String> clientWsBuildMap  = new HashMap<String,String>();
-		clientWsBuildMap.put("Project", "Exaxe.Client"); 
-		clientWsBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(clientWsBuildMap);
 
 		//Exaxe.Client  - PublishWebService
 		Map<String,String> clientWsPublishMap = new HashMap<String,String>();
@@ -160,12 +142,6 @@ class deployAdminPlusV2 implements Serializable {
 		policyWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(policyWsRestoreNuGetMap);
 
-		//Exaxe.AdminPlus - BuildSolution
-		Map<String,String> policyWsBuildMap  = new HashMap<String,String>();
-		policyWsBuildMap.put("Project", "Exaxe.AdminPlus"); 
-		policyWsBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(policyWsBuildMap);
-
 		//Exaxe.AdminPlus  - PublishWebService
 		Map<String,String> policyWsPublishMap = new HashMap<String,String>();
 		policyWsPublishMap.put("Project", "Exaxe.AdminPlus"); 
@@ -177,12 +153,6 @@ class deployAdminPlusV2 implements Serializable {
 		apexWsRestoreNuGetMap.put("Project", "Exaxe.Apex"); 
 		apexWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(apexWsRestoreNuGetMap);
-
-		//Exaxe.Apex - BuildSolution
-		Map<String,String> apexWsBuildMap  = new HashMap<String,String>();
-		apexWsBuildMap.put("Project", "Exaxe.Apex"); 
-		apexWsBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(apexWsBuildMap);
 
 		//Exaxe.Apex  - PublishWebService
 		Map<String,String> apexWsPublishMap = new HashMap<String,String>();
@@ -196,12 +166,6 @@ class deployAdminPlusV2 implements Serializable {
 		aggregateWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(aggregateWsRestoreNuGetMap);
 
-		//Exaxe.Aggregate - BuildSolution
-		Map<String,String> aggregateWsBuildMap  = new HashMap<String,String>();
-		aggregateWsBuildMap.put("Project", "Exaxe.Aggregate"); 
-		aggregateWsBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(aggregateWsBuildMap);
-
 		//Exaxe.Aggregate  - PublishWebService
 		Map<String,String> aggregateWsPublishMap = new HashMap<String,String>();
 		aggregateWsPublishMap.put("Project", "Exaxe.Aggregate"); 
@@ -213,12 +177,6 @@ class deployAdminPlusV2 implements Serializable {
 		apexServerWsRestoreNuGetMap.put("Project", "Exaxe.Apex.Server"); 
 		apexServerWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(apexServerWsRestoreNuGetMap);
-
-		//Exaxe.Apex.Server - BuildSolution
-		Map<String,String> apexServerWsBuildMap  = new HashMap<String,String>();
-		apexServerWsBuildMap.put("Project", "Exaxe.Apex.Server"); 
-		apexServerWsBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(apexServerWsBuildMap);
 
 		//Exaxe.Apex.Server  - PublishWebService
 		Map<String,String> apexServerWsPublishMap = new HashMap<String,String>();
@@ -232,12 +190,6 @@ class deployAdminPlusV2 implements Serializable {
 		adminPlusUIRestoreNuGetMap.put("Project", "AdminPlusUI"); 
 		adminPlusUIRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(adminPlusUIRestoreNuGetMap);
-
-		//AdminPlusUI - BuildSolution
-		Map<String,String> adminPlusUIBuildMap  = new HashMap<String,String>();
-		adminPlusUIBuildMap.put("Project", "AdminPlusUI"); 
-		adminPlusUIBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(adminPlusUIBuildMap);
 
 		//AdminPlusUI - PublishWebSite
 		Map<String,String> adminPlusUIPublishMap  = new HashMap<String,String>();
