@@ -95,16 +95,16 @@ class deploySystemConfiguration implements Serializable {
 
 		/// WEB SITES
 		//SystemConfigurationUI - RestoreNuGetPackages
-		Map<String,String> solutionManagerRestoreNuGetMap  = new HashMap<String,String>();
-		solutionManagerRestoreNuGetMap.put("Project", "SystemConfigurationUI"); 
-		solutionManagerRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(solutionManagerRestoreNuGetMap);
+		Map<String,String> systemConfigUIRestoreNuGetMap  = new HashMap<String,String>();
+		systemConfigUIRestoreNuGetMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigUIRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(systemConfigUIRestoreNuGetMap);
 
 		//SystemConfigurationUI - BuildSolution
-		Map<String,String> solutionManagerBuildMap  = new HashMap<String,String>();
-		solutionManagerBuildMap.put("Project", "SystemConfigurationUI"); 
-		solutionManagerBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(solutionManagerBuildMap);
+		Map<String,String> systemConfigUIBuildMap  = new HashMap<String,String>();
+		systemConfigUIBuildMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigUIBuildMap.put("Operation", "BuildSolution"); 
+		deploySteps.add(systemConfigUIBuildMap);
 
 		//SystemConfigurationUI - PublishWebSite
 		Map<String,String> systemConfigUIPublishMap  = new HashMap<String,String>();
