@@ -32,46 +32,6 @@ class deployCommonBuildSteps implements Serializable {
                 def deployHansardPortalsClass = new deployHansardPortals();
 				commonDeploySteps = deployHansardPortalsClass.getDeploySteps();
                 break
-			case "DeployAdminPlusWebApi":
-                def deployAdminPlusWebApiClass = new deployAdminPlusWebApi();
-				commonDeploySteps = deployAdminPlusWebApiClass.getDeploySteps();
-                break
-			case "DeployAuthWebApi":
-                def deployAuthWebApiClass = new deployAuthWebApi();
-				commonDeploySteps = deployAuthWebApiClass.getDeploySteps();
-                break
-			case "DeployChannelPlusWebApi":
-                def deployChannelPlusWebApiClass = new deployChannelPlusWebApi();
-				commonDeploySteps = deployChannelPlusWebApiClass.getDeploySteps();
-                break
-			case "DeployClientWebApi":
-                def deployClientWebApiClass = new deployClientWebApi();
-				commonDeploySteps = deployClientWebApiClass.getDeploySteps();
-                break
-			case "DeployConfigurationWebApi":
-                def deployConfigurationWebApiClass = new deployConfigurationWebApi();
-				commonDeploySteps = deployConfigurationWebApiClass.getDeploySteps();
-                break
-			case "DeployUsersWebApi":
-                def deployUsersWebApiClass = new deployUsersWebApi();
-				commonDeploySteps = deployUsersWebApiClass.getDeploySteps();
-                break
-			case "DeployDocumentWebApi":
-                def deployDocumentWebApiClass = new deployDocumentWebApi();
-				commonDeploySteps = deployDocumentWebApiClass.getDeploySteps();
-                break
-			case "DeployAggregateWebApi":
-                def deployAggregateWebApiClass = new deployAggregateWebApi();
-				commonDeploySteps = deployAggregateWebApiClass.getDeploySteps();
-                break
-			case "DeployApexWebApi":
-                def deployApexWebApiClass = new deployApexWebApi();
-				commonDeploySteps = deployApexWebApiClass.getDeploySteps();
-                break
-			case "DeployQuoteWebApi":
-                def deployQuoteWebApiClass = new deployQuoteWebApi();
-				commonDeploySteps = deployQuoteWebApiClass.getDeploySteps();
-                break
 			case "DeployWebApi":
                 def deployWebApiClass = new deployWebApi();
 				commonDeploySteps = deployWebApiClass.getDeploySteps();
