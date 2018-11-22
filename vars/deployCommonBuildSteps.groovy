@@ -16,6 +16,10 @@ class deployCommonBuildSteps implements Serializable {
                 def deployAdminPlusClass = new deployAdminPlus();
 				commonDeploySteps = deployAdminPlusClass.getDeploySteps();
                 break
+			case "DeployAdminPlusV2":
+                def deployAdminPlusV2Class = new deployAdminPlusV2();
+				commonDeploySteps = deployAdminPlusV2Class.getDeploySteps();
+                break
 			case "DeployPolicyEBI":
                 def deployPolicyEbiClass = new deployPolicyEbi();
 				commonDeploySteps = deployPolicyEbiClass.getDeploySteps();
