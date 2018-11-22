@@ -27,85 +27,19 @@ class deployChannelPlus implements Serializable {
 		solutionManagerRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(solutionManagerRestoreNuGetMap);
 
-		//Exaxe.SolutionManager - BuildSolution
-		Map<String,String> solutionManagerBuildMap  = new HashMap<String,String>();
-		solutionManagerBuildMap.put("Project", "Exaxe.SolutionManager-Update"); 
-		solutionManagerBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(solutionManagerBuildMap);
-
-		//Exaxe.SolutionManager - PublishInstallApp (UPDATE)
-		Map<String,String> solutionManagerPublishUpdateMap  = new HashMap<String,String>();
-		solutionManagerPublishUpdateMap.put("Project", "Exaxe.SolutionManager-Update"); 
-		solutionManagerPublishUpdateMap.put("Operation", "PublishInstallApp"); 
-		deploySteps.add(solutionManagerPublishUpdateMap);
-
-		//Exaxe.SolutionManager - PublishInstallApp (CREATE)
-		Map<String,String> solutionManagerPublishCreateMap  = new HashMap<String,String>();
-		solutionManagerPublishCreateMap.put("Project", "Exaxe.SolutionManager-Create"); 
-		solutionManagerPublishCreateMap.put("Operation", "PublishInstallApp"); 
-		deploySteps.add(solutionManagerPublishCreateMap);
-
-		//Exaxe.Product.DatabaseModel - BuildDatabase
-		Map<String,String> productDbMap  = new HashMap<String,String>();
-		productDbMap.put("Project", "Exaxe.Product.DatabaseModel"); 
-		productDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(productDbMap);
-
-		//Exaxe.Common - BuildDatabase
-		Map<String,String> commonDbMap  = new HashMap<String,String>();
-		commonDbMap.put("Project", "Exaxe.Common"); 
-		commonDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(commonDbMap);
-
-		//Exaxe.Configuration-Configuration - BuildDatabase
-		Map<String,String> configurationDbMap  = new HashMap<String,String>();
-		configurationDbMap.put("Project", "Exaxe.Configuration-Configuration"); 
-		configurationDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(configurationDbMap);
-
-		//Exaxe.SystemConfiguration - BuildDatabase
-		Map<String,String> systemConfigurationDbMap = new HashMap<String,String>();
-		systemConfigurationDbMap.put("Project", "Exaxe.SystemConfiguration"); 
-		systemConfigurationDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(systemConfigurationDbMap);
-
-		//Exaxe.ChannelPlus  - BuildDatabase
-		Map<String,String> clientDbMap = new HashMap<String,String>();
-		clientDbMap.put("Project", "Exaxe.ChannelPlus "); 
-		clientDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(clientDbMap);
-
 		/// WEB SITES
-		//Exaxe.SystemConfigurationUI - GetCodeLatestVersion
-		Map<String,String> systemConfigurationWsGetCodeMap  = new HashMap<String,String>();
-		systemConfigurationWsGetCodeMap.put("Project", "SystemConfigurationUI"); 
-		systemConfigurationWsGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(systemConfigurationWsGetCodeMap);
-
-		//Exaxe.SystemConfigurationUI - RestoreNuGetPackages
-		Map<String,String> systemConfigurationWsRestoreNuGetMap  = new HashMap<String,String>();
-		systemConfigurationWsRestoreNuGetMap.put("Project", "SystemConfigurationUI"); 
-		systemConfigurationWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(systemConfigurationWsRestoreNuGetMap);
-
-		//Exaxe.SystemConfigurationUI - PublishWebSite
-		Map<String,String> systemConfigurationWsPublishMap  = new HashMap<String,String>();
-		systemConfigurationWsPublishMap.put("Project", "SystemConfigurationUI"); 
-		systemConfigurationWsPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(systemConfigurationWsPublishMap);
-
-		//ChannelPlusUI- GetCodeLatestVersion
-		Map<String,String> channelPlusUIWsGetCodeMap  = new HashMap<String,String>();
-		channelPlusUIWsGetCodeMap.put("Project", "ChannelPlusUI"); 
-		channelPlusUIWsGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(channelPlusUIWsGetCodeMap);
-
 		//ChannelPlusUI - RestoreNuGetPackages
 		Map<String,String> channelPlusUIWsRestoreNuGetMap  = new HashMap<String,String>();
 		channelPlusUIWsRestoreNuGetMap.put("Project", "ChannelPlusUI"); 
 		channelPlusUIWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(channelPlusUIWsRestoreNuGetMap);
-
+	
+		//ChannelPlusUI - BuildSolution
+		Map<String,String> channelPlusUISolutionMap  = new HashMap<String,String>();
+		channelPlusUISolutionMap.put("Project", "ChannelPlusUI"); 
+		channelPlusUISolutionMap.put("Operation", "BuildSolution"); 
+		deploySteps.add(channelPlusUISolutionMap);
+		
 		//ChannelPlusUI - PublishWebSite
 		Map<String,String> channelPlusUIWsPublishMap  = new HashMap<String,String>();
 		channelPlusUIWsPublishMap.put("Project", "ChannelPlusUI"); 
