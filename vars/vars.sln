@@ -123,6 +123,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{F3ED9B
 		deployWebApi.groovy = deployWebApi.groovy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemConfiguration", "SystemConfiguration", "{F51D6CC3-2527-4B0D-87F6-87A62C70C23C}"
+	ProjectSection(SolutionItems) = preProject
+		deploySystemConfiguration.groovy = deploySystemConfiguration.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,6 +153,7 @@ Global
 		{995A1CDE-29A5-4FB7-A47C-7D253D492C3E} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{630BADA0-70A3-439C-A789-12530C1E588D} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{F3ED9BDA-0B7D-4E0B-804C-7443F267D42D} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
+		{F51D6CC3-2527-4B0D-87F6-87A62C70C23C} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
