@@ -237,7 +237,7 @@ class deployAdminPlusV2 implements Serializable {
 		Map<String,String> adminPlusUIBuildMap  = new HashMap<String,String>();
 		adminPlusUIBuildMap.put("Project", "AdminPlusUI"); 
 		adminPlusUIBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(systemConfigUIBuildMap);
+		deploySteps.add(adminPlusUIBuildMap);
 
 		//AdminPlusUI - PublishWebSite
 		Map<String,String> adminPlusUIPublishMap  = new HashMap<String,String>();
