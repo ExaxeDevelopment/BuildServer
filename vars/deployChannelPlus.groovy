@@ -27,6 +27,24 @@ class deployChannelPlus implements Serializable {
 		solutionManagerRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(solutionManagerRestoreNuGetMap);
 
+		//Exaxe.SolutionManager - BuildSolution
+		Map<String,String> solutionManagerBuildMap  = new HashMap<String,String>();
+		solutionManagerBuildMap.put("Project", "Exaxe.SolutionManager-Update"); 
+		solutionManagerBuildMap.put("Operation", "BuildSolution"); 
+		deploySteps.add(solutionManagerBuildMap);
+
+		//Exaxe.SolutionManager - PublishInstallApp (UPDATE)
+		Map<String,String> solutionManagerPublishUpdateMap  = new HashMap<String,String>();
+		solutionManagerPublishUpdateMap.put("Project", "Exaxe.SolutionManager-Update"); 
+		solutionManagerPublishUpdateMap.put("Operation", "PublishInstallApp"); 
+		deploySteps.add(solutionManagerPublishUpdateMap);
+
+		//Exaxe.SolutionManager - PublishInstallApp (CREATE)
+		Map<String,String> solutionManagerPublishCreateMap  = new HashMap<String,String>();
+		solutionManagerPublishCreateMap.put("Project", "Exaxe.SolutionManager-Create"); 
+		solutionManagerPublishCreateMap.put("Operation", "PublishInstallApp"); 
+		deploySteps.add(solutionManagerPublishCreateMap);
+
 		/// WEB SITES
 		//ChannelPlusUI - RestoreNuGetPackages
 		Map<String,String> channelPlusUIWsRestoreNuGetMap  = new HashMap<String,String>();
