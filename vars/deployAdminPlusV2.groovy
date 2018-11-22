@@ -27,6 +27,12 @@ class deployAdminPlusV2 implements Serializable {
 		solutionManagerRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(solutionManagerRestoreNuGetMap);
 
+		//Exaxe.SolutionManager - BuildSolution
+		Map<String,String> solutionManagerBuildMap  = new HashMap<String,String>();
+		solutionManagerBuildMap.put("Project", "Exaxe.SolutionManager-Update"); 
+		solutionManagerBuildMap.put("Operation", "BuildSolution"); 
+		deploySteps.add(solutionManagerBuildMap);
+
 		//Exaxe.SolutionManager - PublishInstallApp (UPDATE)
 		Map<String,String> solutionManagerPublishUpdateMap  = new HashMap<String,String>();
 		solutionManagerPublishUpdateMap.put("Project", "Exaxe.SolutionManager-Update"); 

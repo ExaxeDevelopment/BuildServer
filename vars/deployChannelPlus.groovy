@@ -51,12 +51,6 @@ class deployChannelPlus implements Serializable {
 		channelPlusUIWsRestoreNuGetMap.put("Project", "ChannelPlusUI"); 
 		channelPlusUIWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(channelPlusUIWsRestoreNuGetMap);
-	
-		//ChannelPlusUI - BuildSolution
-		Map<String,String> channelPlusUISolutionMap  = new HashMap<String,String>();
-		channelPlusUISolutionMap.put("Project", "ChannelPlusUI"); 
-		channelPlusUISolutionMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(channelPlusUISolutionMap);
 		
 		//ChannelPlusUI - PublishWebSite
 		Map<String,String> channelPlusUIWsPublishMap  = new HashMap<String,String>();
