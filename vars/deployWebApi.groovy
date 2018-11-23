@@ -130,10 +130,10 @@ class deployWebApi implements Serializable {
 		deploySteps.add(authDbMap);
 
 		//Exaxe.FactFind - BuildDatabase
-		Map<String,String> quoteDbMap  = new HashMap<String,String>();
-		quoteDbMap.put("Project", "Exaxe.FactFind"); 
-		quoteDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(quoteDbMap);
+		Map<String,String> factFindDbMap  = new HashMap<String,String>();
+		factFindDbMap.put("Project", "Exaxe.FactFind"); 
+		factFindDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(factFindDbMap);
 
 		//Exaxe.Quote - BuildDatabase
 		Map<String,String> quoteDbMap  = new HashMap<String,String>();
