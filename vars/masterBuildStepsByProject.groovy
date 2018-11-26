@@ -120,10 +120,6 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-AdminPlusUI-Dev001"); 
 
 		//// NOTE: Commented deployments can be re-added if the customer/environment must be included.
-		
-		//// HANSARD DEPLOYMENT SECTION
-		buildItems.add("Deploy-AdminPlus-Dev001-Hansard"); 
-		buildItems.add("Deploy-AdminPlus-Dev001-Hansard-Single"); 
 
 		//// ONE FAMILY DEPLOYMENT SECTION
 		// buildItems.add("Deploy-AdminPlus-Dev001-OneFamily"); 
@@ -157,10 +153,6 @@ class masterBuildStepsByProject implements Serializable {
 
 		//// FORESTERS SECTION
 		buildItems.add("Deploy-AdminPlus-Dev002-Foresters"); 
-
-		//// HANSARD SECTION
-		buildItems.add("Deploy-AdminPlus-Dev002-Hansard"); 
-		buildItems.add("Deploy-AdminPlus-Dev002-Hansard-Single"); 
 
 		//// ONE FAMILY SECTION
 		buildItems.add("Deploy-AdminPlus-Dev002-OneFamily"); 
@@ -296,16 +288,11 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;
 	}
 
-	//// Returns the build + deploy items for "HANSARD PORTALS" solutions @ DEV001 (UAT/INTEGRATION build)
+	//// Returns the build for "HANSARD PORTALS" solutions @ DEV001 (UAT/INTEGRATION build)
 	private List<String> getMasterBuildHansardPortalsDev001(){
 		List<String> buildItems = new ArrayList<String>()
 		buildItems.add("Build-Hansard.Portals-Dev001"); 
 		
-		//// Commented deployments can be re-added if the customer/environment must be included.
-	
-		buildItems.add("Deploy-Hansard.Portals-Dev001-Broker"); 
-		buildItems.add("Deploy-Hansard.Portals-Dev001-Client"); 
-
 		return buildItems;		
 	}
 
@@ -314,8 +301,6 @@ class masterBuildStepsByProject implements Serializable {
 		List<String> buildItems = new ArrayList<String>();
 		buildItems.add("Build-Exaxe.ChannelPlus-Dev001"); 
 		buildItems.add("Build-ChannelPlusUI-Dev001"); 	
-
-		//// Commented deployments can be re-added if the customer/environment must be included.
 
 		return buildItems;		
 	}
