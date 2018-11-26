@@ -33,8 +33,14 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildChannelPlusDev001":
                 buildSteps = getMasterBuildChannelPlusDev001();
                 break
+			case "MasterBuildChannelPlusDev002":
+                buildSteps = getMasterBuildChannelPlusDev002();
+                break
 			case "MasterBuildHansardPortalsDev001":
                 buildSteps = getMasterBuildHansardPortalsDev001();
+                break
+			case "MasterBuildHansardPortalsDev002":
+                buildSteps = getMasterBuildHansardPortalsDev002();
                 break
             default:
                 buildSteps.add("MasterBuildNotDefined");
@@ -288,7 +294,7 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;
 	}
 
-	//// Returns the build for "HANSARD PORTALS" solutions @ DEV001 (UAT/INTEGRATION build)
+	//// Returns the build items for "HANSARD PORTALS" solutions @ DEV001 (UAT/INTEGRATION build)
 	private List<String> getMasterBuildHansardPortalsDev001(){
 		List<String> buildItems = new ArrayList<String>()
 		buildItems.add("Build-Hansard.Portals-Dev001"); 
@@ -296,11 +302,29 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;		
 	}
 
-	//// Returns the build + deploy items for "CHANNEL PLUS" solutions @ Dev001 (UAT/INTEGRATION build)
+
+	//// Returns the build items for "HANSARD PORTALS" solutions @ DEV002 (DEVELOPMENT build)
+	private List<String> getMasterBuildHansardPortalsDev002(){
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Hansard.Portals-Dev002"); 
+		
+		return buildItems;		
+	}
+
+	//// Returns the build items for "CHANNEL PLUS" solutions @ Dev001 (UAT/INTEGRATION build)
 	private List<String> getMasterBuildChannelPlusDev001(){
 		List<String> buildItems = new ArrayList<String>();
 		buildItems.add("Build-Exaxe.ChannelPlus-Dev001"); 
 		buildItems.add("Build-ChannelPlusUI-Dev001"); 	
+
+		return buildItems;		
+	}
+
+	//// Returns the build items for "CHANNEL PLUS" solutions @ Dev002 (DEVELOPMENT build)
+	private List<String> getMasterBuildChannelPlusDev002(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Build-Exaxe.ChannelPlus-Dev002"); 
+		buildItems.add("Build-ChannelPlusUI-Dev002"); 	
 
 		return buildItems;		
 	}
