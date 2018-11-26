@@ -42,6 +42,13 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildHansardPortalsDev002":
                 buildSteps = getMasterBuildHansardPortalsDev002();
                 break
+			case "MasterDeployDev002Hansard":
+                buildSteps = getMasterDeployDev002Hansard();
+                break
+			case "MasterDeployDev002HansardSingle":
+                buildSteps = getMasterDeployDev002HansardSingle();
+                break	
+
             default:
                 buildSteps.add("MasterBuildNotDefined");
                 break
@@ -325,6 +332,35 @@ class masterBuildStepsByProject implements Serializable {
 		List<String> buildItems = new ArrayList<String>();
 		buildItems.add("Build-Exaxe.ChannelPlus-Dev002"); 
 		buildItems.add("Build-ChannelPlusUI-Dev002"); 	
+
+		return buildItems;		
+	}
+
+
+	//// Returns the deployment items for "HANSARD" solutions @ DEV002 (DEVELOPMENT build)
+	private List<String> getMasterDeployDev002Hansard(){
+		List<String> buildItems = new ArrayList<String>()
+		
+		buildItems.add("Deploy-WebApi-Dev002-Hansard"); 
+		buildItems.add("Deploy-AdminPlus-Dev002-Hansard"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard"); 
+		buildItems.add("Deploy-ChannelPlus-Dev002-Hansard"); 
+		buildItems.add("Deploy-Portals.Broker-Dev002-Hansard"); 
+		buildItems.add("Deploy-Portals.Client-Dev002-Hansard"); 
+
+		return buildItems;		
+	}
+
+	//// Returns the deployment items for "HANSARD - Single" solutions @ DEV002 (DEVELOPMENT build)
+	private List<String> getMasterDeployDev002HansardSingle(){
+		List<String> buildItems = new ArrayList<String>()
+		
+		buildItems.add("Deploy-WebApi-Dev002-Hansard-Single"); 
+		buildItems.add("Deploy-AdminPlus-Dev002-Hansard-Single"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard-Single"); 
+		buildItems.add("Deploy-ChannelPlus-Dev002-Hansard-Single"); 
+		buildItems.add("Deploy-Portals.Broker-Dev002-Hansard-Single"); 
+		buildItems.add("Deploy-Portals.Client-Dev002-Hansard-Single"); 
 
 		return buildItems;		
 	}
