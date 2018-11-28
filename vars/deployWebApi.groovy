@@ -237,7 +237,19 @@ class deployWebApi implements Serializable {
 		usershWebApiPublishMap.put("Project", "Exaxe.Users"); 
 		usershWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(usershWebApiPublishMap);
-	
+
+		//Exaxe.External - RestoreNuGetPackages
+		Map<String,String> externalWebApiRestoreMap  = new HashMap<String,String>();
+		externalWebApiRestoreMap.put("Project", "Exaxe.External"); 
+		externalWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(externalWebApiRestoreMap);
+
+		//Exaxe.Users - PublishWebService
+		Map<String,String> externalWebApiPublishMap  = new HashMap<String,String>();
+		externalWebApiPublishMap.put("Project", "Exaxe.External"); 
+		externalWebApiPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(externalWebApiPublishMap);
+
 		//Exaxe.Document - RestoreNuGetPackages
 		Map<String,String> documentWebApiRestoreMap  = new HashMap<String,String>();
 		documentWebApiRestoreMap.put("Project", "Exaxe.Document"); 
