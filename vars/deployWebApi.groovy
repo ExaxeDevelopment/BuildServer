@@ -179,6 +179,18 @@ class deployWebApi implements Serializable {
 		configurationWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(configurationWsPublishMap);
 
+		//Exaxe.SystemConfiguration - RestoreNuGetPackages
+		Map<String,String> sysConfigurationWebApiRestoreMap  = new HashMap<String,String>();
+		sysConfigurationWebApiRestoreMap.put("Project", "Exaxe.SystemConfiguration"); 
+		sysConfigurationWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(sysConfigurationWebApiRestoreMap);
+
+		//Exaxe.SystemConfiguration - PublishWebService
+		Map<String,String> sysConfigurationWebApiPublishMap  = new HashMap<String,String>();
+		sysConfigurationWebApiPublishMap.put("Project", "Exaxe.SystemConfiguration"); 
+		sysConfigurationWebApiPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(sysConfigurationWebApiPublishMap);
+
 		//Exaxe.Users - RestoreNuGetPackages
 		Map<String,String> usersWebApiRestoreMap  = new HashMap<String,String>();
 		usersWebApiRestoreMap.put("Project", "Exaxe.Users"); 
@@ -186,10 +198,10 @@ class deployWebApi implements Serializable {
 		deploySteps.add(usersWebApiRestoreMap);
 
 		//Exaxe.Users - PublishWebService
-		Map<String,String> usershWebApiPublishMap  = new HashMap<String,String>();
-		usershWebApiPublishMap.put("Project", "Exaxe.Users"); 
-		usershWebApiPublishMap.put("Operation", "PublishWebService"); 
-		deploySteps.add(usershWebApiPublishMap);
+		Map<String,String> usersWebApiPublishMap  = new HashMap<String,String>();
+		usersWebApiPublishMap.put("Project", "Exaxe.Users"); 
+		usersWebApiPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(usersWebApiPublishMap);
 
 		//Exaxe.Client  - RestoreNuGetPackages
 		Map<String,String> clientWsRestoreMap = new HashMap<String,String>();
