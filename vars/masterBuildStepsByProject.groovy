@@ -42,6 +42,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildHansardPortalsDev002":
                 buildSteps = getMasterBuildHansardPortalsDev002();
                 break
+			case "MasterBuildProductDevelopmentDev001":
+                buildSteps = getMasterBuildProductDevelopmentDev001();
+                break
 			case "MasterDeployDev002Hansard":
                 buildSteps = getMasterDeployDev002Hansard();
                 break
@@ -361,6 +364,15 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-ChannelPlus-Dev002-Hansard-Single"); 
 		buildItems.add("Deploy-Portals.Broker-Dev002-Hansard-Single"); 
 		buildItems.add("Deploy-Portals.Client-Dev002-Hansard-Single"); 
+
+		return buildItems;		
+	}
+	
+	//// Returns the build items for "Product Development Application" solutions @ Dev001 
+	private List<String> getMasterBuildProductDevelopmentDev001(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Build-ProductDevelopment-Dev001"); 
+		buildItems.add("Build-ProductDevelopmentUI-Dev001"); 	
 
 		return buildItems;		
 	}

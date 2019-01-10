@@ -40,6 +40,10 @@ class deployCommonBuildSteps implements Serializable {
                 def deploySystemConfigurationClass = new deploySystemConfiguration();
 				commonDeploySteps = deploySystemConfigurationClass.getDeploySteps();
                 break
+			case "DeployProductDevelopment":
+                def deployProductDevelopmentClass = new deployProductDevelopment();
+				commonDeploySteps = deployProductDevelopmentClass.getDeploySteps();
+                break
             default:             
                 break
         }  
