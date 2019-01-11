@@ -51,6 +51,21 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterDeployDev002HansardSingle":
                 buildSteps = getMasterDeployDev002HansardSingle();
                 break	
+			case "MasterDeployDev001HansardSingle":
+                buildSteps = getMasterDeployDev001HansardSingle();
+                break	
+			case "MasterDeployDev001HansardExaxe":
+                buildSteps = getMasterDeployDev001HansardExaxe();
+                break	
+			case "MasterDeployDev001HansardTest":
+                buildSteps = getMasterDeployDev001HansardTest();
+                break	
+			case "MasterDeployDev001HansardStaging":
+                buildSteps = getMasterDeployDev001HansardStaging();
+                break	
+			case "MasterDeployDev001HansardProduction":
+                buildSteps = getMasterDeployDev001HansardProduction();
+                break	
 
             default:
                 buildSteps.add("MasterBuildNotDefined");
@@ -373,6 +388,76 @@ class masterBuildStepsByProject implements Serializable {
 		List<String> buildItems = new ArrayList<String>();
 		buildItems.add("Build-ProductDevelopment-Dev001"); 
 		buildItems.add("Build-ProductDevelopmentUI-Dev001"); 	
+
+		return buildItems;		
+	}
+
+	//// Returns the deployment items for "HANSARD - Single" solutions @ DEV001 
+	private List<String> getMasterDeployDev001HansardSingle(){
+		List<String> buildItems = new ArrayList<String>()
+		
+		buildItems.add("Deploy-WebApi-Dev001-Hansard-Single"); 
+		buildItems.add("Deploy-AdminPlus-Dev001-Hansard-Single"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard-Single"); 
+		buildItems.add("Deploy-ChannelPlus-Dev001-Hansard-Single"); 
+		buildItems.add("Deploy-Portals.Broker-Dev001-Hansard-Single"); 
+		buildItems.add("Deploy-Portals.Client-Dev001-Hansard-Single"); 
+
+		return buildItems;		
+	}
+
+	//// Returns the deployment items for "HANSARD (EXAXE) - Multi" solutions @ DEV001 
+	private List<String> getMasterDeployDev001HansardExaxe(){
+		List<String> buildItems = new ArrayList<String>()
+		
+		buildItems.add("Deploy-WebApi-Dev001-Hansard-Exaxe"); 
+		buildItems.add("Deploy-AdminPlus-Dev001-Hansard-Exaxe"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard-Exaxe"); 
+		buildItems.add("Deploy-ChannelPlus-Dev001-Hansard-Exaxe"); 
+		buildItems.add("Deploy-Portals.Broker-Dev001-Hansard-Exaxe"); 
+		buildItems.add("Deploy-Portals.Client-Dev001-Hansard-Exaxe"); 
+
+		return buildItems;		
+	}
+
+	//// Returns the deployment items for "HANSARD (TEST) - Multi" solutions @ DEV001 
+	private List<String> getMasterDeployDev001HansardTest(){
+		List<String> buildItems = new ArrayList<String>()
+		
+		buildItems.add("Deploy-WebApi-Dev001-Hansard-Test"); 
+		buildItems.add("Deploy-AdminPlus-Dev001-Hansard-Test"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard-Test"); 
+		buildItems.add("Deploy-ChannelPlus-Dev001-Hansard-Test"); 
+		buildItems.add("Deploy-Portals.Broker-Dev001-Hansard-Test"); 
+		buildItems.add("Deploy-Portals.Client-Dev001-Hansard-Test"); 
+
+		return buildItems;		
+	}
+
+	//// Returns the deployment items for "HANSARD (STAGING) - Multi" solutions @ DEV001 
+	private List<String> getMasterDeployDev001HansardStaging(){
+		List<String> buildItems = new ArrayList<String>()
+		
+		buildItems.add("Deploy-WebApi-Dev001-Hansard-Staging"); 
+		buildItems.add("Deploy-AdminPlus-Dev001-Hansard-Staging"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard-Staging"); 
+		buildItems.add("Deploy-ChannelPlus-Dev001-Hansard-Staging"); 
+		buildItems.add("Deploy-Portals.Broker-Dev001-Hansard-Staging"); 
+		buildItems.add("Deploy-Portals.Client-Dev001-Hansard-Staging"); 
+
+		return buildItems;		
+	}
+
+	//// Returns the deployment items for "HANSARD (PRODUCTION) - Multi" solutions @ DEV001 
+	private List<String> getMasterDeployDev001HansardProduction(){
+		List<String> buildItems = new ArrayList<String>()
+		
+		buildItems.add("Deploy-WebApi-Dev001-Hansard-Production"); 
+		buildItems.add("Deploy-AdminPlus-Dev001-Hansard-Production"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard-Production"); 
+		buildItems.add("Deploy-ChannelPlus-Dev001-Hansard-Production"); 
+		buildItems.add("Deploy-Portals.Broker-Dev001-Hansard-Production"); 
+		buildItems.add("Deploy-Portals.Client-Dev001-Hansard-Production"); 
 
 		return buildItems;		
 	}
