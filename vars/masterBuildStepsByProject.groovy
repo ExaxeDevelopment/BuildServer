@@ -386,8 +386,8 @@ class masterBuildStepsByProject implements Serializable {
 	//// Returns the build items for "Product Development Application" solutions @ Dev001 
 	private List<String> getMasterBuildProductDevelopmentDev001(){
 		List<String> buildItems = new ArrayList<String>();
-		buildItems.add("Build-ProductDevelopment-Dev001"); 
-		buildItems.add("Build-ProductDevelopmentUI-Dev001"); 	
+		buildItems.add("Build-Exaxe.ProductDevelopment-Dev001"); 
+		buildItems.add("Build-Exaxe.ProductDevelopment.UI-Dev001"); 		
 
 		return buildItems;		
 	}
