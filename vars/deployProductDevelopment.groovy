@@ -48,13 +48,13 @@ class deployProductDevelopment implements Serializable {
 		/// WEB SITES
 		//ProductDevelopmentUI - RestoreNuGetPackages
 		Map<String,String> ProductDevelopmentUIWsRestoreNuGetMap  = new HashMap<String,String>();
-		ProductDevelopmentUIWsRestoreNuGetMap.put("Project", "ProductDevelopmentUI"); 
+		ProductDevelopmentUIWsRestoreNuGetMap.put("Project", "Exaxe.ProductDevelopment.UI"); 
 		ProductDevelopmentUIWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
 		deploySteps.add(ProductDevelopmentUIWsRestoreNuGetMap);
 		
 		//ProductDevelopmentUI - PublishWebSite
 		Map<String,String> ProductDevelopmentUIWsPublishMap  = new HashMap<String,String>();
-		ProductDevelopmentUIWsPublishMap.put("Project", "ProductDevelopmentUI"); 
+		ProductDevelopmentUIWsPublishMap.put("Project", "Exaxe.ProductDevelopment.UI"); 
 		ProductDevelopmentUIWsPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(ProductDevelopmentUIWsPublishMap);
 
