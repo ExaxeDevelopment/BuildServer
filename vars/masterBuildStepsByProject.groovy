@@ -54,6 +54,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterDeployDev001HansardSingle":
                 buildSteps = getMasterDeployDev001HansardSingle();
                 break	
+			case "MasterDeployDev001Hansard":
+                buildSteps = getMasterDeployDev001Hansard();
+                break	
 			case "MasterDeployDev001HansardExaxe":
                 buildSteps = getMasterDeployDev001HansardExaxe();
                 break	
@@ -406,6 +409,21 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;		
 	}
 
+	//// Returns the deployment items for "HANSARD (EXAXE) - Single" solutions @ DEV001 
+	private List<String> getMasterDeployDev001Hansard(){
+		List<String> buildItems = new ArrayList<String>()
+		
+		buildItems.add("Deploy-WebApi-Dev001-Hansard"); 
+		buildItems.add("Deploy-AdminPlus-Dev001-Hansard"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard"); 
+		buildItems.add("Deploy-ChannelPlus-Dev001-Hansard"); 
+		buildItems.add("Deploy-Portals.Broker-Dev001-Hansard"); 
+		buildItems.add("Deploy-Portals.Client-Dev001-Hansard"); 
+
+		return buildItems;		
+	}
+
+
 	//// Returns the deployment items for "HANSARD (EXAXE) - Multi" solutions @ DEV001 
 	private List<String> getMasterDeployDev001HansardExaxe(){
 		List<String> buildItems = new ArrayList<String>()
@@ -419,7 +437,6 @@ class masterBuildStepsByProject implements Serializable {
 
 		return buildItems;		
 	}
-
 	//// Returns the deployment items for "HANSARD (TEST) - Multi" solutions @ DEV001 
 	private List<String> getMasterDeployDev001HansardTest(){
 		List<String> buildItems = new ArrayList<String>()
