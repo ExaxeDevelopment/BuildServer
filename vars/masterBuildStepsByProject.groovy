@@ -21,6 +21,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildAdminPlusReleaseV2":
                 buildSteps = getMasterBuildAdminPlusReleaseV2();
                 break
+			case "MasterBuildAdminPlusReleaseV3":
+                buildSteps = getMasterBuildAdminPlusReleaseV3();
+                break
 			case "MasterBuildAdvicePlusDev001":
                 buildSteps = getMasterBuildAdvicePlusDev001();
                 break
@@ -282,6 +285,43 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-AdminPlus-Release-OneFamily-Test-V2"); 
 		buildItems.add("Deploy-AdminPlus-Release-OneFamily-Staging-V2"); 
 		buildItems.add("Deploy-AdminPlus-Release-OneFamily-Production-V2"); 
+	
+		return buildItems;		
+	}
+
+	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
+	private List<String> getMasterBuildAdminPlusReleaseV3(){
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Exaxe.Types-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Libraries-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Rest-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Web-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Common-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.External-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Agent-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.App-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Configuration-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Rules-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Comment-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Document-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.SystemConfiguration-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Users-AdminPlus-Release-V3");
+		buildItems.add("Build-Exaxe.Accounting-AdminPlus-Release-V3");
+		buildItems.add("Build-Exaxe.Auth-AdminPlus-Release-V3");
+		buildItems.add("Build-Exaxe.UIElements-AdminPlus-Release-V3");
+		buildItems.add("Build-SystemConfigurationUI-AdminPlus-Release-V3");
+		buildItems.add("Build-Exaxe.Calculations-AdminPlus-Release-V3");
+		buildItems.add("Build-Exaxe.Client-AdminPlus-Release-V3");
+		buildItems.add("Build-Exaxe.AdminPlus-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Apex-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Aggregate-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Apex.Activities-AdminPlus-Release-V3"); 
+		buildItems.add("Build-Exaxe.Apex.Server-AdminPlus-Release-V3"); 
+		buildItems.add("Build-AdminPlusUI-AdminPlus-Release-V3"); 
+	
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-AdminPlus-Release-PoliceMutual-V3");
 	
 		return buildItems;		
 	}
