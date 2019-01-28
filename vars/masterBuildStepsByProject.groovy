@@ -448,7 +448,7 @@ class masterBuildStepsByProject implements Serializable {
 		
 		buildItems.add("Deploy-WebApi-Dev002-Hansard"); 
 		buildItems.add("Deploy-AdminPlus-Dev002-Hansard"); 
-		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev002-Hansard"); 
 		buildItems.add("Deploy-ChannelPlus-Dev002-Hansard"); 
 		buildItems.add("Deploy-Portals.Broker-Dev002-Hansard"); 
 		buildItems.add("Deploy-Portals.Client-Dev002-Hansard"); 
@@ -462,7 +462,7 @@ class masterBuildStepsByProject implements Serializable {
 		
 		buildItems.add("Deploy-WebApi-Dev002-Hansard-Single"); 
 		buildItems.add("Deploy-AdminPlus-Dev002-Hansard-Single"); 
-		buildItems.add("Deploy-SystemConfiguration-Dev001-Hansard-Single"); 
+		buildItems.add("Deploy-SystemConfiguration-Dev002-Hansard-Single"); 
 		buildItems.add("Deploy-ChannelPlus-Dev002-Hansard-Single"); 
 		buildItems.add("Deploy-Portals.Broker-Dev002-Hansard-Single"); 
 		buildItems.add("Deploy-Portals.Client-Dev002-Hansard-Single"); 
