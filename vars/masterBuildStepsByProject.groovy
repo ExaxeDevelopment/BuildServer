@@ -74,6 +74,12 @@ class masterBuildStepsByProject implements Serializable {
                 break	
 			case "MasterDeployDev001HansardProduction":
                 buildSteps = getMasterDeployDev001HansardProduction();
+                break
+			case "MasterBuildApexServerWorkflowDev001":
+                buildSteps = getMasterBuildApexServerWorkflowDev001();
+                break	
+			case "MasterBuildApexServerWorkflowDev002":
+                buildSteps = getMasterBuildApexServerWorkflowDev002();
                 break	
 
             default:
@@ -560,6 +566,24 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-ChannelPlus-Dev001-Hansard-Production"); 
 		buildItems.add("Deploy-Portals.Broker-Dev001-Hansard-Production"); 
 		buildItems.add("Deploy-Portals.Client-Dev001-Hansard-Production"); 
+
+		return buildItems;		
+	}
+
+
+
+	//// Returns the build items for "APEX SERVER/WORKFLOWS" solutions @ Dev001 (UAT/INTEGRATION build)
+	private List<String> getMasterBuildApexServerWorkflowDev001(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Build-Exaxe.Apex.WorkFlow-Dev001"); 
+
+		return buildItems;		
+	}
+
+	//// Returns the build items for "APEX SERVER/WORKFLOWS" solutions @ Dev002 (DEVELOPMENT build)
+	private List<String> getMasterBuildApexServerWorkflowDev002(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Build-Exaxe.Apex.WorkFlow-Dev002"); 
 
 		return buildItems;		
 	}
