@@ -44,8 +44,56 @@ class deployProductDevelopment implements Serializable {
 		solutionManagerPublishCreateMap.put("Project", "Exaxe.SolutionManager-Create"); 
 		solutionManagerPublishCreateMap.put("Operation", "PublishInstallApp"); 
 		deploySteps.add(solutionManagerPublishCreateMap);
+		
+		//Exaxe.App - BuildDatabase
+		Map<String,String> appDbMap  = new HashMap<String,String>();
+		appDbMap.put("Project", "Exaxe.App"); 
+		appDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(appDbMap);
+
+		//Exaxe.Product.DatabaseModel - BuildDatabase
+		Map<String,String> productDbMap  = new HashMap<String,String>();
+		productDbMap.put("Project", "Exaxe.Product.DatabaseModel"); 
+		productDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(productDbMap);
+
+		//Exaxe.Common - BuildDatabase
+		Map<String,String> commonDbMap  = new HashMap<String,String>();
+		commonDbMap.put("Project", "Exaxe.Common"); 
+		commonDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(commonDbMap);
+
+		//Exaxe.Configuration-Configuration - BuildDatabase
+		Map<String,String> configurationDbMap  = new HashMap<String,String>();
+		configurationDbMap.put("Project", "Exaxe.Configuration-Configuration"); 
+		configurationDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(configurationDbMap);
+		
+		//Exaxe.SystemConfiguration - BuildDatabase
+		Map<String,String> systemConfigurationDbMap = new HashMap<String,String>();
+		systemConfigurationDbMap.put("Project", "Exaxe.SystemConfiguration"); 
+		systemConfigurationDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(systemConfigurationDbMap);
 
 		/// WEB SITES
+		//Exaxe.SystemConfigurationUI - GetCodeLatestVersion
+		Map<String,String> systemConfigurationWsGetCodeMap  = new HashMap<String,String>();
+		systemConfigurationWsGetCodeMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigurationWsGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(systemConfigurationWsGetCodeMap);
+
+		//Exaxe.SystemConfigurationUI - RestoreNuGetPackages
+		Map<String,String> systemConfigurationWsRestoreNuGetMap  = new HashMap<String,String>();
+		systemConfigurationWsRestoreNuGetMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigurationWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(systemConfigurationWsRestoreNuGetMap);
+
+		//Exaxe.SystemConfigurationUI - PublishWebSite
+		Map<String,String> systemConfigurationWsPublishMap  = new HashMap<String,String>();
+		systemConfigurationWsPublishMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigurationWsPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(systemConfigurationWsPublishMap);
+
 		//ProductDevelopmentUI - RestoreNuGetPackages
 		Map<String,String> ProductDevelopmentUIWsRestoreNuGetMap  = new HashMap<String,String>();
 		ProductDevelopmentUIWsRestoreNuGetMap.put("Project", "Exaxe.ProductDevelopment.UI"); 
