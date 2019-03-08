@@ -299,6 +299,18 @@ class deployWebApi implements Serializable {
 		apexWorkflowPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(apexWorkflowPublishMap);
 
+		//Exaxe.Apex.Server  - RestoreNuGetPackages
+		Map<String,String> apexServerRestoreMap = new HashMap<String,String>();
+		apexServerRestoreMap.put("Project", "Exaxe.Apex.Server"); 
+		apexServerRestoreMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(apexServerRestoreMap);
+
+		//Exaxe.Apex.Server  - PublishWebService
+		Map<String,String> apexServerPublishMap = new HashMap<String,String>();
+		apexServerPublishMap.put("Project", "Exaxe.Apex.Server"); 
+		apexServerPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(apexServerPublishMap);
+
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
 		releaseContentMap.put("Project", "ReleaseContent"); 
