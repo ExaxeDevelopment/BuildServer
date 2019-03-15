@@ -30,56 +30,171 @@ class masterDeploymentSteps implements Serializable {
 		solutionManagerSteps.add(solutionManagerMap);
 		deploySteps.add(solutionManagerSteps);
 
-		//// ********** First list with DB steps that will be triggered in parallel ********
-		List projects01 = new ArrayList<String>();
-		projects01.add("Exaxe.Agent");
-		projects01.add("Exaxe.App");
-		projects01.add("Exaxe.Product.DatabaseModel");
-		projects01.add("Exaxe.Common");
-		projects01.add("Exaxe.Configuration");
-		deploySteps.add(getDatabaseSteps(projects01));
+		//// ******************** DATABASES - START ********************
+		//// First list with DB projects that will be triggered in parallel 
+		List dbProjects01 = new ArrayList<String>();
+		dbProjects01.add("Exaxe.Agent");
+		dbProjects01.add("Exaxe.App");
+		dbProjects01.add("Exaxe.Product.DatabaseModel");
+		dbProjects01.add("Exaxe.Common");
+		dbProjects01.add("Exaxe.Configuration");
+		deploySteps.add(getDatabaseSteps(dbProjects01));
 
-		//// ********** Second list with DB steps that will be triggered in parallel ********
-		List projects02 = new ArrayList<String>();
-		projects02.add("Exaxe.Comment");
-		projects02.add("Exaxe.Document");
-		projects02.add("Exaxe.SystemConfiguration");
-		projects02.add("Exaxe.Accounting");
-		projects02.add("Exaxe.Client");
-		deploySteps.add(getDatabaseSteps(projects02));
+		//// Second list with DB projects that will be triggered in parallel 
+		List dbProjects02 = new ArrayList<String>();
+		dbProjects02.add("Exaxe.Comment");
+		dbProjects02.add("Exaxe.Document");
+		dbProjects02.add("Exaxe.SystemConfiguration");
+		dbProjects02.add("Exaxe.Accounting");
+		dbProjects02.add("Exaxe.Client");
+		deploySteps.add(getDatabaseSteps(dbProjects02));
 
+		//// Third list with DB projects that will be triggered in parallel 
+		List dbProjects03 = new ArrayList<String>();
+		dbProjects03.add("Exaxe.AdminPlus");
+		dbProjects03.add("Exaxe.Apex");
+		dbProjects03.add("Exaxe.FactFind");
+		dbProjects03.add("Exaxe.Quote");
+		deploySteps.add(getDatabaseSteps(dbProjects03));
 
-		//// ********** Third list with DB steps that will be triggered in parallel ********
-		List projects03 = new ArrayList<String>();
-		projects03.add("Exaxe.AdminPlus");
-		projects03.add("Exaxe.Apex");
-		projects03.add("Exaxe.FactFind");
-		projects03.add("Exaxe.Quote");
-		deploySteps.add(getDatabaseSteps(projects03));
+		//// Fourth list with DB projects that will be triggered in parallel 
+		List dbProjects04 = new ArrayList<String>();
+		dbProjects04.add("Exaxe.ExistingBusiness");
+		dbProjects04.add("Exaxe.ChannelPlus");
+		dbProjects04.add("Exaxe.Auth");
+		dbProjects04.add("Exaxe.PolicyEBI"); 
+		deploySteps.add(getDatabaseSteps(dbProjects04));
+		//// ********************* DATABASES - END *********************
 
-		//// ********** Fourth list with DB steps that will be triggered in parallel ********
-		List projects04 = new ArrayList<String>();
-		projects04.add("Exaxe.ExistingBusiness");
-		projects04.add("Exaxe.ChannelPlus");
-		projects04.add("Exaxe.Auth");
-		projects04.add("Exaxe.PolicyEBI"); 
-		deploySteps.add(getDatabaseSteps(projects04));
+		//// ********************* WCF SERVICES - START *********************
+		//// First list with WCF projects that will be triggered in parallel 
+		List wcfProjects01 = new ArrayList<String>();
+		wcfProjects01.add("Exaxe.Configuration");
+		wcfProjects01.add("Exaxe.Client");
+		wcfProjects01.add("Exaxe.AdminPlus");
+		deploySteps.add(getWcfServiceSteps(wcfProjects01));
+
+		//// Second list with WCF projects that will be triggered in parallel 
+		List wcfProjects02 = new ArrayList<String>();
+		wcfProjects02.add("Exaxe.Apex");
+		wcfProjects02.add("Exaxe.Aggregate");
+		wcfProjects02.add("Exaxe.FactFind");
+		deploySteps.add(getWcfServiceSteps(wcfProjects02));
+
+		//// Third list with WCF projects that will be triggered in parallel 
+		List wcfProjects03 = new ArrayList<String>();
+		wcfProjects03.add("Exaxe.Apex.Server");
+		wcfProjects03.add("Exaxe.PolicyEBI");
+		deploySteps.add(getWcfServiceSteps(wcfProjects03));
+		//// ********************** WCF SERVICES - END **********************
+
+		//// ********************* WEB API - START *********************
+		//// First list with Web API projects that will be triggered in parallel 
+		List apiProjects01 = new ArrayList<String>();
+		apiProjects01.add("Exaxe.External");
+		apiProjects01.add("Exaxe.Configuration");
+		apiProjects01.add("Exaxe.Document");
+		deploySteps.add(getWebApiSteps(apiProjects01));
+
+		//// Second list with Web API projects that will be triggered in parallel 
+		List apiProjects02 = new ArrayList<String>();
+		apiProjects02.add("Exaxe.SystemConfiguration");
+		apiProjects02.add("Exaxe.Users");
+		apiProjects02.add("Exaxe.Client");
+		deploySteps.add(getWebApiSteps(apiProjects02));
+
+		//// Third list with Web API projects that will be triggered in parallel 
+		List apiProjects03 = new ArrayList<String>();
+		apiProjects03.add("Exaxe.AdminPlus");
+		apiProjects03.add("Exaxe.Apex");
+		apiProjects03.add("Exaxe.Aggregate");
+		deploySteps.add(getWebApiSteps(apiProjects03));
+
+		//// Fourth list with Web API projects that will be triggered in parallel 
+		List apiProjects04 = new ArrayList<String>();
+		apiProjects04.add("Exaxe.Quote");
+		apiProjects04.add("Exaxe.ChannelPlus");
+		apiProjects04.add("Exaxe.Auth");
+		deploySteps.add(getWebApiSteps(apiProjects04));
+
+		//// Fifth list with Web API projects that will be triggered in parallel 
+		List apiProjects05 = new ArrayList<String>();
+		apiProjects05.add("Exaxe.Apex.Workflow");
+		deploySteps.add(getWebApiSteps(apiProjects05));
+		//// ********************** WEB API - END **********************
+
+		//// ********************* WEB SITE - START *********************
+		//// First list with Web Site projects that will be triggered in parallel 
+		List siteProjects01 = new ArrayList<String>();
+		siteProjects01.add("AdminPlusUI");
+		siteProjects01.add("PointOfSaleUI");
+		siteProjects01.add("ChannelPlusUI");
+		deploySteps.add(getWebApiSteps(siteProjects01));
+
+		//// Second list with Web Site projects that will be triggered in parallel 
+		List siteProjects02 = new ArrayList<String>();
+		siteProjects02.add("SystemConfigurationUI");
+		siteProjects02.add("ProductDevelopmentApplication");
+		siteProjects02.add("ExistingBusinessUI");
+		deploySteps.add(getWebApiSteps(siteProjects02));
+
+		//// Third list with Web Site projects that will be triggered in parallel 
+		List siteProjects03 = new ArrayList<String>();
+		siteProjects03.add("Hansard.Portals.Broker");
+		siteProjects03.add("Hansard.Portals.Client");
+		deploySteps.add(getWebApiSteps(siteProjects03));
+
+		//// Fourth list with Web Site projects that will be triggered in parallel 
+		List siteProjects04 = new ArrayList<String>();
+		siteProjects04.add("Exaxe.Portals.Broker");
+		siteProjects04.add("Exaxe.Portals.Client");
+		deploySteps.add(getWebApiSteps(siteProjects04));
+
+		//// ********************** WEB SITE - END **********************
 
 		deploySteps;
 	}
 
-	//// Get the database steps for the passed in projects 
-	def getDatabaseSteps(List<String> projects){	
-		List dbSteps = new ArrayList<Map<String,String>>();
+	//// Get the steps for the passed in projects and operation 
+	def getSteps(List<String> projects, String operation){	
+		List steps = new ArrayList<Map<String,String>>();
 
 		for(String project : projects){
-			Map<String,String> dbMap  = new HashMap<String,String>();
-			dbMap.put("Project", project); 
-			dbMap.put("Operation", "DeployDatabase"); 
-			dbSteps.add(dbMap);			
+			Map<String,String> map = new HashMap<String,String>();
+			map.put("Project", project); 
+			map.put("Operation", operation); 
+			steps.add(map);			
 		}
 
-		dbSteps;
+		steps;
+	}
+
+	//// Get the database steps for the passed in projects 
+	def getDatabaseSteps(List<String> projects){	
+		List steps = getSteps(projects, "DeployDatabase");
+
+		steps;
+	}
+
+	//// Get the WCF Service steps for the passed in projects 
+	def getWcfServiceSteps(List<String> projects){	
+		List steps = getSteps(projects, "DeployWcfService");
+
+		steps;
+	}
+
+	//// Get the Web API steps for the passed in projects 
+	def getWebApiSteps(List<String> projects){	
+		List steps = getSteps(projects, "DeployWebApi");
+
+		steps;		
+	}
+
+	//// Get the Web Site steps for the passed in projects 
+	def getWebSiteSteps(List<String> projects){	
+		List steps = getSteps(projects, "DeployWebSite");
+
+		steps;
 	}
 
 }
