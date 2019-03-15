@@ -1,15 +1,29 @@
 import hudson.Util;
 
-def jobBuild = "";
-
+def appRootPath = "C:\\Uploads\\BuildApp\\Exaxe.SolutionManager.BuildApp.exe";
+def tfsUsername = "";
+def tfsPassword = "";
+def failureMessage = "";
+def failureMessageSuffix = " was not successful!";
 def duration = "";
+
+def configFile = "#";
 
 try{
 	
     node{
-		def masterDeploymentStepsClass = new masterDeploymentSteps();
+        withCredentials([[$class: "UsernamePasswordMultiBinding", credentialsId: "166ca05f-1074-4a9c-9529-2ab17ba62480", usernameVariable: "USERNAME", passwordVariable: "PASSWORD"]]) {
+            tfsUsername = "${env.USERNAME}"
+            tfsPassword = "${env.PASSWORD}"
+        }
+
+		// INPUT PARAMS
+		configFile = SelectedConfigFile;
+
+		def actionStringClass = new actionString();
 
 		//// Retrieve all possible deployment steps
+		def masterDeploymentStepsClass = new masterDeploymentSteps();
 		def masterDeploySteps = masterDeploymentStepsClass.getMasterDeploymentSteps();
 
 		//// Each array is going to be triggered in parallel
@@ -22,11 +36,17 @@ try{
                 def operation = deployStep.get("Operation");
                 def project = deployStep.get("Project");
                 
-                parallelDeployJobs[_deployStep]  = {
-					stage("${_deployStep}"){
-						//// Setup action
-						echo operation
-						echo project
+                parallelDeployJobs[_deployStep] = {
+					stage("${operation} - ${project}"){
+						//// Add action
+						def actionString = actionStringClass.createActionString(appRootPath, configFile, project, operation, tfsUsername, tfsPassword);
+						echo actionString;
+						/*def result = bat(returnStatus: true, script: "${actionString}");
+						if(result != 0){
+							failureMessage = "${_deployStep} ${failureMessageSuffix}";
+							echo failureMessage;
+							error(failureMessage);
+						}*/
 					}
 				}
             }
