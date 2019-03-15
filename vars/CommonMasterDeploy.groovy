@@ -8,6 +8,7 @@ def failureMessageSuffix = " was not successful!";
 def duration = "";
 
 def configFile = "#";
+def projectsOperations = "#";
 
 try{
 	
@@ -19,6 +20,9 @@ try{
 
 		// INPUT PARAMS
 		configFile = SelectedConfigFile;
+		projectsOperations = ProjectsOperations;
+
+		echo projectsOperations;
 
 		def actionStringClass = new actionString();
 
