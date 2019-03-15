@@ -38,20 +38,20 @@ try{
                 
                 parallelDeployJobs[_deployStep] = {
 					stage("${operation} - ${project}"){
-						//// Add action
+						//// Add action to be executed in parallel
 						def actionString = actionStringClass.createActionString(appRootPath, configFile, project, operation, tfsUsername, tfsPassword);
 						echo actionString;
-						/*def result = bat(returnStatus: true, script: "${actionString}");
+						def result = bat(returnStatus: true, script: "${actionString}");
 						if(result != 0){
 							failureMessage = "${_deployStep} ${failureMessageSuffix}";
 							echo failureMessage;
 							error(failureMessage);
-						}*/
+						}
 					}
 				}
             }
 
-			// Schedule Actions in parallel
+			// Schedule actions in parallel
 			parallel parallelDeployJobs;
 		}
 
