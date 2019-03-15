@@ -33,6 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CE151E
 		CommonBuild.groovy = CommonBuild.groovy
 		CommonDeployBuild.groovy = CommonDeployBuild.groovy
 		CommonMasterBuild.groovy = CommonMasterBuild.groovy
+		CommonMasterDeploy.groovy = CommonMasterDeploy.groovy
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MasterBuild", "MasterBuild", "{D256FD06-5C05-4B5B-85A8-EE030D7EFB7F}"
@@ -89,6 +90,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductDevelopment", "Produ
 		deployProductDevelopment.groovy = deployProductDevelopment.groovy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MasterDeploy", "MasterDeploy", "{1FC1E09A-9326-444F-8EB6-1C2EE5023EB2}"
+	ProjectSection(SolutionItems) = preProject
+		masterDeploymentSteps.groovy = masterDeploymentSteps.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{F3ED9BDA-0B7D-4E0B-804C-7443F267D42D} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{F51D6CC3-2527-4B0D-87F6-87A62C70C23C} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{DDCADB45-566F-4B0B-B645-F50DB9307851} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
+		{1FC1E09A-9326-444F-8EB6-1C2EE5023EB2} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
