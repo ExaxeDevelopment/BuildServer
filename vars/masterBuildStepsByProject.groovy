@@ -197,9 +197,6 @@ class masterBuildStepsByProject implements Serializable {
 
 		//// Commented deployments can be re-added if the customer/environment must be included.
 
-		//// FORESTERS SECTION
-		buildItems.add("Deploy-AdminPlus-Dev002-Foresters"); 
-
 		//// ONE FAMILY SECTION
 		buildItems.add("Deploy-AdminPlus-Dev002-OneFamily"); 
 
