@@ -22,13 +22,21 @@ class masterDeploymentSteps implements Serializable {
 		getCodeLatestVersionSteps.add(getCodeLatestVersionMap);
 		deploySteps.add(getCodeLatestVersionSteps);
 
-		// DeployInstallApp - Exaxe.SolutionManager
-		List solutionManagerSteps = new ArrayList<Map<String,String>>();
-		Map<String,String> solutionManagerMap  = new HashMap<String,String>();
-		solutionManagerMap.put("Project", "Exaxe.SolutionManager"); 
-		solutionManagerMap.put("Operation", "DeployInstallApp"); 
-		solutionManagerSteps.add(solutionManagerMap);
-		deploySteps.add(solutionManagerSteps);
+		// DeployInstallApp - Exaxe.SolutionManager-Console
+		List solutionManagerConsoleSteps = new ArrayList<Map<String,String>>();
+		Map<String,String> solutionManagerConsoleMap  = new HashMap<String,String>();
+		solutionManagerConsoleMap.put("Project", "Exaxe.SolutionManager-Console"); 
+		solutionManagerConsoleMap.put("Operation", "DeployInstallApp"); 
+		solutionManagerConsoleSteps.add(solutionManagerConsoleMap);
+		deploySteps.add(solutionManagerConsoleSteps);
+
+		// DeployInstallApp - Exaxe.SolutionManager-UI
+		List solutionManagerUISteps = new ArrayList<Map<String,String>>();
+		Map<String,String> solutionManagerUIMap  = new HashMap<String,String>();
+		solutionManagerUIMap.put("Project", "Exaxe.SolutionManager-UI"); 
+		solutionManagerUIMap.put("Operation", "DeployInstallApp"); 
+		solutionManagerUISteps.add(solutionManagerUIMap);
+		deploySteps.add(solutionManagerUISteps);
 
 		//// ******************** DATABASES - START ********************
 		//// First list with DB projects that will be triggered in parallel 
