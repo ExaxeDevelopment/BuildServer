@@ -160,6 +160,14 @@ class masterDeploymentSteps implements Serializable {
 
 		//// ********************** WEB SITE - END **********************
 
+		//Release Content
+		List releaseContentSteps = new ArrayList<Map<String,String>>();
+		Map<String,String> releaseContentMap  = new HashMap<String,String>();
+		releaseContentMap.put("Project", "ReleaseContent"); 
+		releaseContentMap.put("Operation", "ReleaseContent"); 
+		releaseContentSteps.add(releaseContentMap);
+		deploySteps.add(releaseContentSteps);
+
 		deploySteps;
 	}
 
