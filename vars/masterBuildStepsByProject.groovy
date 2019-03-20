@@ -9,6 +9,12 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildBaseDev001":
                 buildSteps = getMasterBuildBaseDev001();
                 break
+            case "MasterBuildSystemConfigurationDev001":
+                buildSteps = getMasterBuildSystemConfigurationDev001();
+                break
+            case "MasterBuildSystemConfigurationDev002":
+                buildSteps = getMasterBuildSystemConfigurationDev002();
+                break
             case "MasterBuildAdminPlusDev001":
                 buildSteps = getMasterBuildAdminPlusDev001();
                 break
@@ -147,9 +153,24 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Accounting-Dev001");
 		buildItems.add("Build-Exaxe.Auth-Dev001"); 
 		buildItems.add("Build-Exaxe.UIElements-Dev001");
-		buildItems.add("Build-SystemConfigurationUI-Dev001");
 		buildItems.add("Build-Exaxe.Calculations-Dev001");
 
+		return buildItems;
+	}
+
+	//// Returns the build for "SYSTEM CONFIGURATION UI" @ DEV001 (UAT/INTEGRATION)
+	private List<String> getMasterBuildSystemConfigurationDev001(){
+
+        List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-SystemConfigurationUI-Dev001");
+		return buildItems;
+	}
+
+	//// Returns the build for "SYSTEM CONFIGURATION UI" @ DEV002 (DEVELOPMENT)
+	private List<String> getMasterBuildSystemConfigurationDev002(){
+
+        List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-SystemConfigurationUI-Dev002");
 		return buildItems;
 	}
 
@@ -164,22 +185,6 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Apex.Activities-Dev001"); 
 		buildItems.add("Build-Exaxe.Apex.Server-Dev001"); 
 		buildItems.add("Build-AdminPlusUI-Dev001"); 
-
-		//// NOTE: Commented deployments can be re-added if the customer/environment must be included.
-
-		//// ONE FAMILY DEPLOYMENT SECTION
-		// buildItems.add("Deploy-AdminPlus-Dev001-OneFamily"); 
-		// buildItems.add("Deploy-AdminPlus-Dev001-OneFamily-Exaxe"); 
-		// buildItems.add("Deploy-AdminPlus-Dev001-OneFamily-Test"); 
-		// buildItems.add("Deploy-AdminPlus-Dev001-OneFamily-Staging"); 
-		// buildItems.add("Deploy-AdminPlus-Dev001-OneFamily-Production"); 
-
-		//// POLICE MUTUAL DEPLOYMENT SECTION
-		// buildItems.add("Deploy-AdminPlus-Dev001-PoliceMutual"); 
-
-		//// SALES DEMO DEPLOYMENT SECTION
-		// buildItems.add("Deploy-AdminPlus-Dev001-SalesDemo"); 
-
 		return buildItems;
 	}
 
