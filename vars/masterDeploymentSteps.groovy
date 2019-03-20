@@ -149,12 +149,12 @@ class masterDeploymentSteps implements Serializable {
 		//// Third list with Web Site projects that will be triggered in parallel 
 		List siteProjects03 = new ArrayList<String>();
 		siteProjects03.add("Hansard.Portals.Broker-WebSite");
-		siteProjects03.add("Hansard.Portals.Client-WebSite");
+		siteProjects03.add("Exaxe.Portals.Broker-WebSite");
 		deploySteps.add(getWebSiteSteps(siteProjects03));
 
 		//// Fourth list with Web Site projects that will be triggered in parallel 
 		List siteProjects04 = new ArrayList<String>();
-		siteProjects04.add("Exaxe.Portals.Broker-WebSite");
+		siteProjects04.add("Hansard.Portals.Client-WebSite");
 		siteProjects04.add("Exaxe.Portals.Client-WebSite");
 		deploySteps.add(getWebSiteSteps(siteProjects04));
 
