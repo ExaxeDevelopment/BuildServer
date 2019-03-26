@@ -58,7 +58,7 @@ class masterBuildStepsByProject implements Serializable {
                 buildSteps = getMasterBuildExaxePortalsDev001();
                 break
 			case "MasterBuildExaxePortalsDev002":
-                buildSteps = MasterBuildExaxePortalsDev002();
+                buildSteps = getMasterBuildExaxePortalsDev002();
                 break
 
 			case "MasterBuildProductDevelopmentDev001":
