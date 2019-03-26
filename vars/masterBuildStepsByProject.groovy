@@ -54,6 +54,13 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildHansardPortalsDev002":
                 buildSteps = getMasterBuildHansardPortalsDev002();
                 break
+			case "MasterBuildExaxePortalsDev001":
+                buildSteps = getMasterBuildExaxePortalsDev001();
+                break
+			case "MasterBuildExaxePortalsDev002":
+                buildSteps = MasterBuildExaxePortalsDev002();
+                break
+
 			case "MasterBuildProductDevelopmentDev001":
                 buildSteps = getMasterBuildProductDevelopmentDev001();
                 break
@@ -427,6 +434,22 @@ class masterBuildStepsByProject implements Serializable {
 	private List<String> getMasterBuildHansardPortalsDev002(){
 		List<String> buildItems = new ArrayList<String>()
 		buildItems.add("Build-Hansard.Portals-Dev002"); 
+		
+		return buildItems;		
+	}
+	
+	//// Returns the build items for "EXAXE PORTALS" solutions @ DEV001 (UAT/INTEGRATION build)
+	private List<String> getMasterBuildExaxePortalsDev001(){
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Exaxe.Portals-Dev001"); 
+		
+		return buildItems;		
+	}
+
+	//// Returns the build items for "EXAXE PORTALS" solutions @ DEV002 (DEVELOPMENT build)
+	private List<String> getMasterBuildExaxePortalsDev002(){
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Exaxe.Portals-Dev002"); 
 		
 		return buildItems;		
 	}
