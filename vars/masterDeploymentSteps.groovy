@@ -158,6 +158,11 @@ class masterDeploymentSteps implements Serializable {
 		siteProjects04.add("Exaxe.Portals.Client-WebSite");
 		deploySteps.add(getWebSiteSteps(siteProjects04));
 
+		//// Fifth list with Web Site projects that will be triggered in parallel 
+		List siteProjects05 = new ArrayList<String>();
+		siteProjects05.add("Exaxe.Portals.Court-WebSite");
+		deploySteps.add(getWebSiteSteps(siteProjects05));
+
 		//// ********************** WEB SITE - END **********************
 
 		//Release Content
