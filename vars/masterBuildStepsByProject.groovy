@@ -181,7 +181,7 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;
 	}
 
-	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ DEV001 (UAT/INTEGRATION)
+	//// Returns the build items for "ADMIN PLUS" solutions @ DEV001 (UAT/INTEGRATION)
 	private List<String> getMasterBuildAdminPlusDev001(){
 
         List<String> buildItems = new ArrayList<String>()
@@ -195,7 +195,7 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;
 	}
 
-	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ DEV002 (DEVELOPMENT)
+	//// Returns the build items for "ADMIN PLUS" solutions @ DEV002 (DEVELOPMENT)
 	private List<String> getMasterBuildAdminPlusDev002(){
 
         List<String> buildItems = new ArrayList<String>();
@@ -207,14 +207,11 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Apex.Server-Dev002"); 
 		buildItems.add("Build-AdminPlusUI-Dev002"); 
 
-		//// Commented deployments can be re-added if the customer/environment must be included.
-
+		//// TODO: Remove ONE FAMILY deployment from build.
 		//// ONE FAMILY SECTION
 		buildItems.add("Deploy-AdminPlus-Dev002-OneFamily"); 
 
-		//// POLICE MUTUAL SECTION
-		// buildItems.add("Deploy-AdminPlus-Dev002-PoliceMutual"); 
-
+		//// TODO: Remove SALES DEMO deployment from build.
 		//// SALES DEMO SECTION
 		buildItems.add("Deploy-AdminPlus-Dev002-SalesDemo"); 
 
