@@ -91,13 +91,11 @@ class masterBuildSteps implements Serializable {
 		return buildItems;
 	}
  
-	//// Returns the build + deploy items for "POLICY EBI (Aviva)" solutions @ DEV001 (DEVELOPMENT + UAT/INTEGRATION)
+	//// Returns the build items for "POLICY EBI (Aviva)" solutions @ DEV001 (DEVELOPMENT + UAT/INTEGRATION)
 	private List<String> getMasterBuildPolicyEBIDev001(){
 		List<String> buildItems = new ArrayList<String>()
 		buildItems.add("Build-Exaxe.PolicyEBI-Dev001"); 
 		buildItems.add("Build-ExistingBusinessUI-Dev001"); 
-		buildItems.add("Deploy-Dev001-Aviva-Exaxe"); 
-		buildItems.add("Deploy-Dev001-Aviva"); 
 	
 		return buildItems;
 	}
