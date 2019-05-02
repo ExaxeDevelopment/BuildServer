@@ -20,16 +20,16 @@ try{
 
 			echo "Building: ${buildStep}";
 
-			//stage("${buildStep}")
-			//{
-			//	build buildStep;
-			//}
+			/*stage("${buildStep}")
+			{
+				build buildStep;
+			}*/
 		}
 
 		currentBuild.result = "SUCCESS";
 		duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
 
-		try{
+		/*try{
 			stage("Success Notification"){
                 echo duration;
 				
@@ -41,7 +41,7 @@ try{
         catch(err){
             echo "Notification stage failed, but build was successful.";
             echo "Error: ${err}"
-        }
+        }*/
 
 	} // END NODE
 }
@@ -50,11 +50,11 @@ catch(err){
 	
     currentBuild.result = "FAILURE";
 	
-    node{
+    /*node{
         stage("Error Notification"){
             mail to: "${DEV_TEAM_EMAIL}", 
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
             body: "The build failed on stage: ${jobBuild} \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"      
         }
-    }	
+    }*/	
 }
