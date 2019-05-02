@@ -33,11 +33,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CE151E
 		CommonBuild.groovy = CommonBuild.groovy
 		CommonDeployBuild.groovy = CommonDeployBuild.groovy
 		CommonMasterBuild.groovy = CommonMasterBuild.groovy
+		CommonMasterBuildV2.groovy = CommonMasterBuildV2.groovy
 		CommonMasterDeploy.groovy = CommonMasterDeploy.groovy
+		MasterOrchestration.groovy = MasterOrchestration.groovy
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MasterBuild", "MasterBuild", "{D256FD06-5C05-4B5B-85A8-EE030D7EFB7F}"
 	ProjectSection(SolutionItems) = preProject
+		masterBuildSteps.groovy = masterBuildSteps.groovy
 		masterBuildStepsByProject.groovy = masterBuildStepsByProject.groovy
 	EndProjectSection
 EndProject
