@@ -1,6 +1,7 @@
 class masterBuildSteps implements Serializable {
 	//// Returns the build steps based on the 'masterBuildType'
-    def getMasterBuildSteps(masterBuildType) { 
+	//// The 'firstProject' indicates from where in the list the build will start
+    def getMasterBuildSteps(masterBuildType, firstProject) { 
 
 		List<String> buildSteps = new ArrayList<String>();
 
@@ -50,7 +51,16 @@ class masterBuildSteps implements Serializable {
                 break
         }   
 
-		buildSteps;
+		int indexOfStartStep = buildSteps.indexOf(firstProject);
+        
+		if(indexOfStartStep == -1){
+			indexOfStartStep = 0;
+		}
+
+		// Return Selected MasterBuildSteps
+		def steps = buildSteps.subList(Math.max(indexOfStartStep, 0), buildSteps.size()).collect();
+		
+		steps
     } 
 
 	//// Returns the build items for "COMMON/BASE" solutions @ DEV001 (DEVELOPMENT + UAT/INTEGRATION)

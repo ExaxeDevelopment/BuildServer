@@ -13,7 +13,7 @@ try{
 
 		def masterBuildStepsClass = new masterBuildSteps();
 
-		def buildSteps = masterBuildStepsClass.getMasterBuildSteps(masterBuildName);
+		def buildSteps = masterBuildStepsClass.getMasterBuildSteps(masterBuildName, buildFrom);
     
 		for (String buildStep : buildSteps) {
 			jobBuild = buildStep; //// So it can be included in the failure notification
@@ -56,5 +56,5 @@ catch(err){
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
             body: "The build failed on stage: ${jobBuild} \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"      
         }
-    }*/	
+    }*/
 }
