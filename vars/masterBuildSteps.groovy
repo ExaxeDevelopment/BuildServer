@@ -46,6 +46,14 @@ class masterBuildSteps implements Serializable {
                 buildSteps = getMasterBuildApexDev002();
                 break
 
+			case "MasterBuildWebServicesDev001":
+                buildSteps = getMasterBuildWebServicesDev001();
+                break
+				
+			case "MasterBuildWebServicesDev002":
+                buildSteps = getMasterBuildWebServicesDev002();
+                break
+
             default:
                 buildSteps.add("MasterBuildNotDefined");
                 break
@@ -179,6 +187,24 @@ class masterBuildSteps implements Serializable {
 		buildItems.add("Build-Exaxe.Apex.Workflow-Dev002"); 
 		buildItems.add("Build-Exaxe.Apex.Activities-Dev002"); 
 		buildItems.add("Build-Exaxe.Apex.Server-Dev002"); 
+
+		return buildItems;		
+	}
+
+	//// Returns the build items for "Web Services" solutions @ Dev001 (UAT/INTEGRATION)
+	private List<String> getMasterBuildWebServicesDev001(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Build-Exaxe.WebApi-Dev001"); 
+		buildItems.add("Build-Exaxe.WcfService-Dev001"); 
+
+		return buildItems;		
+	}
+
+	//// Returns the build items for "Web Services" solutions @ Dev002 (DEVELOPMENT)
+	private List<String> getMasterBuildWebServicesDev002(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Build-Exaxe.WebApi-Dev002"); 
+		buildItems.add("Build-Exaxe.WcfService-Dev002"); 
 
 		return buildItems;		
 	}
