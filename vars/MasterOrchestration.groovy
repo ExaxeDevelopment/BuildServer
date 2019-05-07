@@ -7,91 +7,17 @@ try{
 	node {
 		stage("Orchestration - Development"){
 
-			// GLOBAL PROPERTIES
-			def remoteToken = REMOTE_TOKEN	
-			def baseBuildServer = BASE_BUILD_SERVER
-			def adminPlusBuildServer = ADMIN_PLUS_BUILD_SERVER
-			def advicePlusBuildServer = ADVICE_PLUS_BUILD_SERVER
-			def distribuitionPlusBuildServer = DISTRIBUTION_PLUS_BUILD_SERVER
-			def apexBuildServer = APEX_BUILD_SERVER
-			def apiBuildServer = API_BUILD_SERVER
+			def allSteps = getDevelopmentSteps()
 
-			//// BASE/COMMON
-			def parallelBuildJobs = [:] 
-
-			def baseBuildStage = "MasterBuild-Base-Dev001";
-			parallelBuildJobs [baseBuildStage] = getRemoteJobRequest(baseBuildServer, baseBuildStage, remoteToken)
-		
-			parallel parallelBuildJobs;
-
-			parallelBuildJobs = [:] 	
-
-			//// ADMIN PLUS 		
-			def adminPlusBuildStage = "MasterBuild-AdminPlus-Dev002";
-			parallelBuildJobs [adminPlusBuildStage] = getRemoteJobRequest(adminPlusBuildServer, adminPlusBuildStage, remoteToken)
-	
-			//// ADVICE PLUS 		
-			def advicePlusBuildStage = "MasterBuild-AdvicePlus-Dev002";
-			parallelBuildJobs [advicePlusBuildStage] = getRemoteJobRequest(advicePlusBuildServer, advicePlusBuildStage, remoteToken)
-		
-			//// DISTRIBUTION PLUS 		
-			def distributionPlusBuildStage = "MasterBuild-ChannelPlus-Dev002";
-			parallelBuildJobs [distributionPlusBuildStage] = getRemoteJobRequest(distribuitionPlusBuildServer, distributionPlusBuildStage, remoteToken)
-		
-			//// POLICY EBI (AVIVA) 		
-			def policyEbiBuildStage = "MasterBuild-PolicyEBI-Dev001";
-			parallelBuildJobs [policyEbiBuildStage] = getRemoteJobRequest(baseBuildServer, policyEbiBuildStage, remoteToken)		
-		
-			parallel parallelBuildJobs;
-				
-			parallelBuildJobs = [:] 	
-
-			//// APEX 
-			def apexBuildStage = "MasterBuild-Apex-Dev002";
-			parallelBuildJobs [apexBuildStage] = getRemoteJobRequest(apexBuildServer, apexBuildStage, remoteToken)		
-		
-			parallel parallelBuildJobs;
-		
-			parallelBuildJobs = [:] 	
-
-			//// WEB SERVICES 
-			def apiBuildStage = "Build-Exaxe.WebApi-Dev002";
-			parallelBuildJobs [apiBuildStage] = getRemoteJobRequest(apiBuildServer, apiBuildStage, remoteToken)		
-
-			def wcfBuildStage = "Build-Exaxe.WcfService-Dev002";
-			parallelBuildJobs [wcfBuildStage] = getRemoteJobRequest(apiBuildServer, wcfBuildStage, remoteToken)		
-		
-			parallel parallelBuildJobs;
-		
-			parallelBuildJobs = [:] 	
-
-			//// WEB SITES 			
-			def pdaSiteBuildStage = "Build-Exaxe.ProductDevelopment.UI-Dev001";
-			parallelBuildJobs [pdaSiteBuildStage] = getRemoteJobRequest(baseBuildServer, pdaSiteBuildStage, remoteToken)		
-
-			def sysConfigurationSiteBuildStage = "Build-SystemConfigurationUI-Dev002";
-			parallelBuildJobs [sysConfigurationSiteBuildStage] = getRemoteJobRequest(baseBuildServer, sysConfigurationSiteBuildStage, remoteToken)		
-
-			def adminPlusSiteBuildStage = "Build-AdminPlusUI-Dev002";
-			parallelBuildJobs [adminPlusSiteBuildStage] = getRemoteJobRequest(adminPlusBuildServer, adminPlusSiteBuildStage, remoteToken)		
-
-			def advicePlusSiteBuildStage = "Build-PointOfSaleUI-Dev002";
-			parallelBuildJobs [advicePlusSiteBuildStage] = getRemoteJobRequest(advicePlusBuildServer, advicePlusSiteBuildStage, remoteToken)		
-		
-			def distributionPlusSiteBuildStage = "Build-ChannelPlusUI-Dev002";
-			parallelBuildJobs [distributionPlusSiteBuildStage] = getRemoteJobRequest(distribuitionPlusBuildServer, distributionPlusSiteBuildStage, remoteToken)
-
-			def exaxePortalsBuildStage = "Build-Exaxe.Portals-Dev002";
-			parallelBuildJobs [exaxePortalsBuildStage] = getRemoteJobRequest(apexBuildServer, exaxePortalsBuildStage, remoteToken)
-	
-			def hansardPortalsBuildStage = "Build-Hansard.Portals-Dev002";
-			parallelBuildJobs [hansardPortalsBuildStage] = getRemoteJobRequest(apexBuildServer, hansardPortalsBuildStage, remoteToken)
+			for (Map<String,String> innerSteps : allSteps) {
+				def parallelBuildJobs = [:] 
 			
-			parallel parallelBuildJobs;		
-
-			parallelBuildJobs = [:] 	
-
-			//// DEPLOYMENTS 	
+				innerSteps.each{key, value ->
+					parallelBuildJobs[key] = getRemoteJobRequest(value, key, REMOTE_TOKEN)
+				}
+			
+				parallel parallelBuildJobs;
+			}
 			
 			currentBuild.result = "SUCCESS";
 		
@@ -110,30 +36,8 @@ try{
 				echo "Notification stage failed, but build was successful.";
 				echo "Error: ${err}"
 			}
-		}
+		} // END STAGE
 	} // END NODE
-
-	/// Method that returns a remote request job ready to be executed.
-	def getRemoteJobRequest(serverName, job, token){
-	
-		def remoteRequest = {
-			try{
-				stage("${job}"){
-					echo "Trigering job: ${job}"
-					def handle = triggerRemoteJob(remoteJenkinsName: serverName, job: job, token: token, connectionRetryLimit: 1, blockBuildUntilComplete: true);
-					def status = handle.getBuildStatus();
-					echo "Remote status from ${job}: ${status.toString()}";
-					def result = handle.getBuildResult();
-					echo "Remote result from ${job}: ${result.toString()}";
-				}
-			}
-			catch(err){
-				echo "Build ${job} failed...";			
-			}
-		}
-			
-		remoteRequest
-	}
 }
 catch(err){
     echo "Build Failed...";
@@ -147,4 +51,63 @@ catch(err){
             body: "The deployment failed \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"
         }
     }	
+}
+
+/// Method that returns a remote request job ready to be executed.
+def getRemoteJobRequest(serverName, job, token){
+	
+	def remoteRequest = {
+		try{
+			stage("${job}"){
+				echo "Trigering job: ${job}"
+				def handle = triggerRemoteJob(remoteJenkinsName: serverName, job: job, token: token, connectionRetryLimit: 1, blockBuildUntilComplete: true);
+				def status = handle.getBuildStatus();
+				echo "Remote status from ${job}: ${status.toString()}";
+				def result = handle.getBuildResult();
+				echo "Remote result from ${job}: ${result.toString()}";
+			}
+		}
+		catch(err){
+			echo "Build ${job} failed...";			
+		}
+	}
+			
+	remoteRequest
+}
+
+/// Method that returns the development steps for build + deploy.
+def getDevelopmentSteps(){
+	List steps = new ArrayList<Map<String,String>>();
+
+	Map<String,String> map01 = new HashMap<String,String>();
+	map01.put("MasterBuild-Base-Dev001", BASE_BUILD_SERVER)
+	steps.add(map01);
+
+	Map<String,String> map02 = new HashMap<String,String>();
+	map02.put("MasterBuild-AdminPlus-Dev002", ADMIN_PLUS_BUILD_SERVER)
+	map02.put("MasterBuild-AdvicePlus-Dev002", ADVICE_PLUS_BUILD_SERVER)
+	map02.put("MasterBuild-ChannelPlus-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map02.put("MasterBuild-PolicyEBI-Dev001", BASE_BUILD_SERVER)
+	steps.add(map02);
+	  
+	Map<String,String> map03 = new HashMap<String,String>();
+	map03.put("MasterBuild-Apex-Dev002", APEX_BUILD_SERVER)	
+	steps.add(map03);
+	 
+	Map<String,String> map04 = new HashMap<String,String>();
+	map04.put("Build-Exaxe.WebApi-Dev002", API_BUILD_SERVER)	
+	map04.put("Build-Exaxe.WcfService-Dev002", API_BUILD_SERVER)	
+	steps.add(map04);
+
+	Map<String,String> map05 = new HashMap<String,String>();
+	map05.put("Build-Exaxe.ProductDevelopment.UI-Dev001", BASE_BUILD_SERVER)	
+	map05.put("Build-SystemConfigurationUI-Dev002", BASE_BUILD_SERVER)	
+	map05.put("Build-AdminPlusUI-Dev002", ADMIN_PLUS_BUILD_SERVER)
+	map05.put("Build-PointOfSaleUI-Dev002", ADVICE_PLUS_BUILD_SERVER)	
+	map05.put("Build-ChannelPlusUI-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map05.put("Build-Exaxe.Portals-Dev002", APEX_BUILD_SERVER)
+	map05.put("Build-Hansard.Portals-Dev002", APEX_BUILD_SERVER)	
+	steps.add(map05);
+
+	steps;	
 }
