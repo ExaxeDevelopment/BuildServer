@@ -95,8 +95,7 @@ def getDevelopmentSteps(){
 	steps.add(map03);
 	 
 	Map<String,String> map04 = new HashMap<String,String>();
-	map04.put("Build-Exaxe.WebApi-Dev002", API_BUILD_SERVER)	
-	map04.put("Build-Exaxe.WcfService-Dev002", API_BUILD_SERVER)	
+	map04.put("MasterBuild-WebServices-Dev002", API_BUILD_SERVER)	
 	steps.add(map04);
 
 	Map<String,String> map05 = new HashMap<String,String>();
