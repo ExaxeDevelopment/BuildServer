@@ -29,7 +29,7 @@ try{
 				
 					mail to: "ricardo.bicho@majesco.com", 
 					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-					body: "${env.BUILD_URL} \r\n ${duration} \r\n Build Type: ${buildTypeAction}" 
+					body: "${env.BUILD_URL} \r\n ${duration}" 
 				}
 			}
 			catch(err){
