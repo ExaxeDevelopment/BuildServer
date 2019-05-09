@@ -27,7 +27,7 @@ try{
 				stage("Success Notification"){
 					echo duration;
 				
-					mail to: "ricardo.bicho@majesco.com", 
+					mail to: "${DEV_TEAM_EMAIL}", 
 					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
 					body: "${env.BUILD_URL} \r\n ${duration}" 
 				}
@@ -46,7 +46,7 @@ catch(err){
 	
     node{
         stage("Error Notification"){
-            mail to: "ricardo.bicho@majesco.com", 
+            mail to: "${DEV_TEAM_EMAIL}", 
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
             body: "The deployment failed \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"
         }
