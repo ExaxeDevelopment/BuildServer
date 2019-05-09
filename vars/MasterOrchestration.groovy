@@ -115,6 +115,7 @@ def getDevelopmentSteps(){
 	map06.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
 	map06.put("Deploy-AdminPlus-Dev002-SalesDemo", DEMO_DEPLOY_SERVER)
 	map06.put("Deploy-AdvicePlus-Dev002-ACORN", ACN_DEPLOY_SERVER)
+	map06.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	steps.add(map06);
 
 	steps;	
