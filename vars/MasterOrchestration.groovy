@@ -75,7 +75,7 @@ def getRemoteJobRequest(serverName, job, token){
 	remoteRequest
 }
 
-/// Method that returns the development steps for build + deploy.
+/// Method that returns the development steps for Build, Deploy, Analysis, etc.
 def getDevelopmentSteps(){
 	List steps = new ArrayList<Map<String,String>>();
 
@@ -117,6 +117,15 @@ def getDevelopmentSteps(){
 	map06.put("Deploy-AdvicePlus-Dev002-ACORN", ACN_DEPLOY_SERVER)
 	map06.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	steps.add(map06);
+
+	Map<String,String> map07 = new HashMap<String,String>();
+	map07.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
+	map07.put("Build-QualityGates-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
+	map07.put("Build-QualityGates-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
+	map07.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map07.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
+	map07.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
+	steps.add(map07);
 
 	steps;	
 }
