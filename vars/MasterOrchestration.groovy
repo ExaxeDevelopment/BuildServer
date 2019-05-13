@@ -126,6 +126,15 @@ def getDevelopmentSteps(){
 	map07.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
 	steps.add(map07);
+	
+	Map<String,String> map08 = new HashMap<String,String>();
+	map08.put("Build-ShrinkDbLogsScript", BASE_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript", ADMIN_PLUS_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript", ADVICE_PLUS_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript", APEX_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript", API_BUILD_SERVER)
+	steps.add(map08);
 
 	steps;	
 }

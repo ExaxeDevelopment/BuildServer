@@ -205,6 +205,13 @@ class buildStepsByBuildType implements Serializable {
 		updatePackagesWithBuild.add("CheckInFiles"); 
 		updatePackagesWithBuild.add("PublishNuGetPackagesAzureDevOps"); 
 
+		List<String> fullDatabaseReconciliation = new ArrayList<String>()
+		fullDatabaseReconciliation.add("GetAllCodeLatestVersion"); 
+		fullDatabaseReconciliation.add("ClearDatabases"); 
+		fullDatabaseReconciliation.add("InstallAllDatabases"); 
+		fullDatabaseReconciliation.add("CheckExtendedProperties");
+		fullDatabaseReconciliation.add("DataScriptsReconciliation"); 
+
 		List<String> buildDataScriptsReconciliation = new ArrayList<String>()
 		buildDataScriptsReconciliation.add("DataScriptsReconciliation"); 
 
@@ -263,6 +270,9 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "DataScriptsReconciliation":
                 buildSteps = buildDataScriptsReconciliation;
+                break
+			case "FullDatabaseReconciliation":
+                buildSteps = fullDatabaseReconciliation;
                 break
 			case "UpdateQualityGates":
                 buildSteps = buildUpdateQualityGates;
