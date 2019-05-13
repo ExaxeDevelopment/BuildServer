@@ -79,8 +79,9 @@ class masterBuildSteps implements Serializable {
 		buildItems.add("Build-Exaxe.Libraries-Dev001"); 
 		buildItems.add("Build-Exaxe.Rest-Dev001"); 
 		buildItems.add("Build-Exaxe.Web-Dev001"); 
-		buildItems.add("Build-Exaxe.Common-Dev001"); 
+		buildItems.add("Build-Exaxe.Auth-Dev001"); 
 		buildItems.add("Build-Exaxe.External-Dev001"); 
+		buildItems.add("Build-Exaxe.Common-Dev001"); 
 		buildItems.add("Build-Exaxe.Agent-Dev001"); 
 		buildItems.add("Build-Exaxe.App-Dev001"); 
 		buildItems.add("Build-Exaxe.Configuration-Dev001"); 
@@ -90,7 +91,6 @@ class masterBuildSteps implements Serializable {
 		buildItems.add("Build-Exaxe.SystemConfiguration-Dev001"); 
 		buildItems.add("Build-Exaxe.Users-Dev001");
 		buildItems.add("Build-Exaxe.Accounting-Dev001");
-		buildItems.add("Build-Exaxe.Auth-Dev001"); 
 		buildItems.add("Build-Exaxe.UIElements-Dev001");
 		buildItems.add("Build-Exaxe.Calculations-Dev001");
 		buildItems.add("Build-Exaxe.CalculationManagers-Dev001");
