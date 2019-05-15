@@ -87,7 +87,7 @@ def getRemoteJobRequest(serverName, job, token){
 }
 
 /// Method that returns the development steps for Build, Deploy, Analysis, etc.
-def getDevelopmentSteps(){
+def getDevelopmentSteps(buildFromStage, buildToStage){
 	List steps = new ArrayList<Map<String,String>>();
 
 	Map<String,String> map01 = new HashMap<String,String>();
