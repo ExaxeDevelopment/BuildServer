@@ -218,6 +218,9 @@ class buildStepsByBuildType implements Serializable {
 		List<String> buildShrinkDatabaseLogs = new ArrayList<String>()
 		buildShrinkDatabaseLogs.add("ShrinkDatabaseLogs");
 
+		List<String> buildDeletePackages = new ArrayList<String>()
+		buildDeletePackages.add("DeletePackages");
+
 		List<String> buildCheckExtendedProperties = new ArrayList<String>()
 		buildCheckExtendedProperties.add("CheckExtendedProperties");
 
@@ -285,6 +288,9 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "ShrinkDatabaseLogs":
                 buildSteps = buildShrinkDatabaseLogs;
+                break
+			case "DeletePackages":
+                buildSteps = buildDeletePackages;
                 break
 			case "CheckExtendedProperties":
                 buildSteps = buildCheckExtendedProperties;
