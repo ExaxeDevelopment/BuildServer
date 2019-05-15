@@ -1,23 +1,34 @@
 import hudson.Util;
 
 def duration = "";
+def buildFromStage = "#";
+def buildToStage = "#";
 
 try{
 	
 	node {
 		stage("Orchestration - Development"){
-
-			def allSteps = getDevelopmentSteps()
-
-			for (Map<String,String> innerSteps : allSteps) {
-				def parallelBuildJobs = [:] 
 			
+			// Input parameters
+			buildFromStage = FromStage
+			buildToStage = ToStage
+	
+			echo "From: ${buildFromStage}"
+			echo "To: ${buildToStage}"
+
+			Map<String,Map<String,String>> allSteps = getDevelopmentSteps(buildFromStage, buildToStage)
+
+			allSteps.each{stage, innerSteps ->
+				def parallelBuildJobs = [:] 
+				echo "************** ${stage} ******************"
+
 				innerSteps.each{key, value ->
+					echo "Server:${value} / Pipeline:${key}" 
 					parallelBuildJobs[key] = getRemoteJobRequest(value, key, REMOTE_TOKEN)
 				}
-			
+				
 				parallel parallelBuildJobs;
-			}
+			} 
 			
 			currentBuild.result = "SUCCESS";
 		
@@ -128,13 +139,49 @@ def getDevelopmentSteps(){
 	steps.add(map07);
 	
 	Map<String,String> map08 = new HashMap<String,String>();
-	map08.put("Build-ShrinkDbLogsScript", BASE_BUILD_SERVER)
-	map08.put("Build-ShrinkDbLogsScript", ADMIN_PLUS_BUILD_SERVER)
-	map08.put("Build-ShrinkDbLogsScript", ADVICE_PLUS_BUILD_SERVER)
-	map08.put("Build-ShrinkDbLogsScript", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map08.put("Build-ShrinkDbLogsScript", APEX_BUILD_SERVER)
-	map08.put("Build-ShrinkDbLogsScript", API_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript-exop-base-bld01", BASE_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript-exop-apex-bld01", APEX_BUILD_SERVER)
+	map08.put("Build-ShrinkDbLogsScript-exop-api-bld01", API_BUILD_SERVER)
 	steps.add(map08);
 
-	steps;	
+	Map<String,String> map09 = new HashMap<String,String>();
+	map09.put("Build-DeletePackages-exop-base-bld01", BASE_BUILD_SERVER)
+	map09.put("Build-DeletePackages-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
+	map09.put("Build-DeletePackages-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
+	map09.put("Build-DeletePackages-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map09.put("Build-DeletePackages-exop-apex-bld01", APEX_BUILD_SERVER)
+	map09.put("Build-DeletePackages-exop-api-bld01", API_BUILD_SERVER)
+	steps.add(map09);
+
+	//// filter the steps/stages
+	Map<String,Map<String,String>> finalSteps = new LinkedHashMap<String,Map<String,String>>();
+	
+	boolean foundFrom = false;
+	boolean foundTo = false;
+	
+	steps.each{ key, value ->
+		if(key != buildFromStage && !foundFrom){
+			return;
+		}
+
+		if(key == buildFromStage){
+			foundFrom = true;
+		}	
+
+		if(key != buildToStage && foundTo){
+			return;
+		}
+		
+		if(key == buildToStage){
+			foundTo = true;
+		}		
+
+		finalSteps.put(key, value)			
+	}
+
+	finalSteps;	
+
 }
