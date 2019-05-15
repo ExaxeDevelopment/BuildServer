@@ -88,26 +88,26 @@ def getRemoteJobRequest(serverName, job, token){
 
 /// Method that returns the development steps for Build, Deploy, Analysis, etc.
 def getDevelopmentSteps(buildFromStage, buildToStage){
-	List steps = new ArrayList<Map<String,String>>();
+	Map<String,Map<String,String>> steps = new LinkedHashMap<String,Map<String,String>>();
 
 	Map<String,String> map01 = new HashMap<String,String>();
 	map01.put("MasterBuild-Base-Dev001", BASE_BUILD_SERVER)
-	steps.add(map01);
+	steps.put("Base/Common", map01);
 
 	Map<String,String> map02 = new HashMap<String,String>();
 	map02.put("MasterBuild-AdminPlus-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-AdvicePlus-Dev002", ADVICE_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-ChannelPlus-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-PolicyEBI-Dev001", BASE_BUILD_SERVER)
-	steps.add(map02);
+	steps.put("Backend Services", map02);
 	  
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("MasterBuild-Apex-Dev002", APEX_BUILD_SERVER)	
-	steps.add(map03);
+	steps.put("APEX", map03);
 	 
 	Map<String,String> map04 = new HashMap<String,String>();
 	map04.put("MasterBuild-WebServices-Dev002", API_BUILD_SERVER)	
-	steps.add(map04);
+	steps.put("Web Services", map04);
 
 	Map<String,String> map05 = new HashMap<String,String>();
 	map05.put("Build-Exaxe.ProductDevelopment.UI-Dev001", BASE_BUILD_SERVER)	
@@ -117,7 +117,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map05.put("Build-ChannelPlusUI-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map05.put("Build-Exaxe.Portals-Dev002", APEX_BUILD_SERVER)
 	map05.put("Build-Hansard.Portals-Dev002", APEX_BUILD_SERVER)	
-	steps.add(map05);
+	steps.put("Web Sites", map05);
 
 	Map<String,String> map06 = new HashMap<String,String>();
 	map06.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
@@ -127,7 +127,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map06.put("Deploy-AdminPlus-Dev002-SalesDemo", DEMO_DEPLOY_SERVER)
 	map06.put("Deploy-AdvicePlus-Dev002-ACORN", ACN_DEPLOY_SERVER)
 	map06.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
-	steps.add(map06);
+	steps.put("Deployments", map06);
 
 	Map<String,String> map07 = new HashMap<String,String>();
 	map07.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
@@ -136,7 +136,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map07.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
-	steps.add(map07);
+	steps.put("QualityGates", map07);
 	
 	Map<String,String> map08 = new HashMap<String,String>();
 	map08.put("Build-ShrinkDbLogsScript-exop-base-bld01", BASE_BUILD_SERVER)
@@ -145,7 +145,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map08.put("Build-ShrinkDbLogsScript-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map08.put("Build-ShrinkDbLogsScript-exop-apex-bld01", APEX_BUILD_SERVER)
 	map08.put("Build-ShrinkDbLogsScript-exop-api-bld01", API_BUILD_SERVER)
-	steps.add(map08);
+	steps.put("ShrinkDbLogsScript", map08);
 
 	Map<String,String> map09 = new HashMap<String,String>();
 	map09.put("Build-DeletePackages-exop-base-bld01", BASE_BUILD_SERVER)
@@ -154,8 +154,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map09.put("Build-DeletePackages-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map09.put("Build-DeletePackages-exop-apex-bld01", APEX_BUILD_SERVER)
 	map09.put("Build-DeletePackages-exop-api-bld01", API_BUILD_SERVER)
-	steps.add(map09);
-
+	steps.put("DeletePackages", map09);
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = new LinkedHashMap<String,Map<String,String>>();
 	
