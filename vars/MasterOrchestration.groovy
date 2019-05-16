@@ -3,20 +3,33 @@ import hudson.Util;
 def duration = "";
 def buildFromStage = "#";
 def buildToStage = "#";
+def orchestrationType = "#"
 
 try{
 	
 	node {
-		stage("Orchestration - Development"){
+		stage("Orchestration - ${OrchestrationType}"){
 			
 			// Input parameters
 			buildFromStage = FromStage
 			buildToStage = ToStage
+			orchestrationType = OrchestrationType
 	
 			echo "From: ${buildFromStage}"
 			echo "To: ${buildToStage}"
+			echo "Orchestration: ${orchestrationType}"
 
-			Map<String,Map<String,String>> allSteps = getDevelopmentSteps(buildFromStage, buildToStage)
+			Map<String,Map<String,String>> allSteps = null
+
+			switch (orchestrationType) {
+				case "Development":
+					allSteps = getDevelopmentSteps(buildFromStage, buildToStage);
+					break
+
+				case "Integration":
+					allSteps = getIntegrationSteps(buildFromStage, buildToStage);
+					break
+			}
 
 			allSteps.each{stage, innerSteps ->
 				def parallelBuildJobs = [:] 
@@ -115,8 +128,8 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map05.put("Build-AdminPlusUI-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map05.put("Build-PointOfSaleUI-Dev002", ADVICE_PLUS_BUILD_SERVER)	
 	map05.put("Build-ChannelPlusUI-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map05.put("Build-Exaxe.Portals-Dev002", APEX_BUILD_SERVER)
-	map05.put("Build-Hansard.Portals-Dev002", APEX_BUILD_SERVER)	
+	map05.put("Build-Exaxe.Portals-Dev002", API_BUILD_SERVER)
+	map05.put("Build-Hansard.Portals-Dev002", API_BUILD_SERVER)	
 	steps.put("Web Sites", map05);
 
 	Map<String,String> map06 = new HashMap<String,String>();
@@ -155,7 +168,76 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map09.put("Build-DeletePackages-exop-apex-bld01", APEX_BUILD_SERVER)
 	map09.put("Build-DeletePackages-exop-api-bld01", API_BUILD_SERVER)
 	steps.put("DeletePackages", map09);
+
 	//// filter the steps/stages
+	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
+
+	finalSteps;	
+}
+
+/// Method that returns the integartion steps for Build and Deploy
+def getIntegrationSteps(buildFromStage, buildToStage){
+	Map<String,Map<String,String>> steps = new LinkedHashMap<String,Map<String,String>>();
+
+	Map<String,String> map01 = new HashMap<String,String>();
+	map01.put("MasterBuild-Base-Dev001", BASE_BUILD_SERVER)
+	steps.put("Base/Common", map01);
+
+	Map<String,String> map02 = new HashMap<String,String>();
+	map02.put("MasterBuild-AdminPlus-Dev001", ADMIN_PLUS_BUILD_SERVER)
+	map02.put("MasterBuild-AdvicePlus-Dev001", ADVICE_PLUS_BUILD_SERVER)
+	map02.put("MasterBuild-ChannelPlus-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
+	steps.put("Backend Services", map02);
+	  
+	Map<String,String> map03 = new HashMap<String,String>();
+	map03.put("MasterBuild-Apex-Dev001", APEX_BUILD_SERVER)	
+	steps.put("APEX", map03);
+	 
+	Map<String,String> map04 = new HashMap<String,String>();
+	map04.put("MasterBuild-WebServices-Dev001", API_BUILD_SERVER)	
+	steps.put("Web Services", map04);
+
+	Map<String,String> map05 = new HashMap<String,String>();
+	map05.put("Build-SystemConfigurationUI-Dev001", BASE_BUILD_SERVER)	
+	map05.put("Build-AdminPlusUI-Dev001", ADMIN_PLUS_BUILD_SERVER)
+	map05.put("Build-PointOfSaleUI-Dev001", ADVICE_PLUS_BUILD_SERVER)	
+	map05.put("Build-ChannelPlusUI-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map05.put("Build-Exaxe.Portals-Dev001", API_BUILD_SERVER)
+	map05.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
+	steps.put("Web Sites", map05);
+
+	//// ***** ADD/REMOVE the customers and respective stages if/when required
+	// 1. SINGLE SERVER --> EXAXE
+	Map<String,String> map06 = new HashMap<String,String>();
+	map06.put("Deploy-Dev001-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
+	map06.put("Deploy-Dev001-Foresters-Exaxe-Single", FFS_DEPLOY_SERVER)
+	steps.put("Deployments / Exaxe Single", map06);
+
+	// 2. SINGLE SERVER --> CUSTOMER
+	Map<String,String> map07 = new HashMap<String,String>();
+	map07.put("Deploy-Dev001-Hansard-Single", HD_DEPLOY_SERVER)
+	map07.put("Deploy-Dev001-Foresters-Single", FFS_DEPLOY_SERVER)
+	steps.put("Deployments / Customer Single", map07);
+
+	// 3. MULTI SERVER --> EXAXE
+	Map<String,String> map08 = new HashMap<String,String>();
+	map08.put("Deploy-Dev001-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
+	steps.put("Deployments / Exaxe Multi", map08);
+
+	// 4. MULTI SERVER --> CUSTOMER
+	Map<String,String> map09 = new HashMap<String,String>();
+	map09.put("Deploy-Dev001-Hansard-Multi", HD_DEPLOY_SERVER)
+	steps.put("Deployments / Customer Multi", map09);
+ 
+	//// filter the steps/stages
+	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
+	
+	finalSteps;	
+}
+
+//// Method that returns the steps filtered by from/to stages
+def getFilteredSteps(steps, buildFromStage, buildToStage){
+
 	Map<String,Map<String,String>> finalSteps = new LinkedHashMap<String,Map<String,String>>();
 	
 	boolean foundFrom = false;
@@ -182,5 +264,4 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	}
 
 	finalSteps;	
-
 }
