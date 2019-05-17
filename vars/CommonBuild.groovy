@@ -34,8 +34,10 @@ try{
 		def actionStringClass = new actionString();
 		
 		// EXECUTE
+		echo "Getting build steps..."
 		def buildSteps = buildStepsClass.createBuildStepsByBuildType("${buildTypeAction}")
     
+		echo "Sarting to execute the steps..."
 		for (String buildStep : buildSteps) {
 			operation = buildStep;
 
@@ -121,11 +123,12 @@ catch(err){
 
 //// Gets the time-out for the build step
 def getTimeout(buildStep){
+
 	def timeOut = 300;
 
 	if(buildStep == "CheckNuGetFeed"){
 		timeOut = 5;
 	}
 
-	timeout;
+	timeOut;
 }
