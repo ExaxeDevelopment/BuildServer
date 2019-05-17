@@ -10,6 +10,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("UpdateAssemblyVersion"); 
 		fullBuild.add("RestoreNuGetPackages"); 
 		fullBuild.add("UpdateNuGetPackages"); 
+		fullBuild.add("CanContinueBuild");
 		fullBuild.add("BuildSolution");
 		fullBuild.add("PerformUnitTests"); 
 		fullBuild.add("CheckInFiles"); 
@@ -25,6 +26,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildRevision.add("UpdateAssemblyVersionRevision"); 
 		fullBuildRevision.add("RestoreNuGetPackages"); 
 		fullBuildRevision.add("UpdateNuGetPackages"); 
+		fullBuildRevision.add("CanContinueBuild");
 		fullBuildRevision.add("BuildSolution");
 		fullBuildRevision.add("PerformUnitTests"); 
 		fullBuildRevision.add("CheckInFiles"); 
@@ -40,6 +42,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildWithWebService.add("UpdateAssemblyVersion"); 
 		fullBuildWithWebService.add("RestoreNuGetPackages"); 
 		fullBuildWithWebService.add("UpdateNuGetPackages"); 
+		fullBuildWithWebService.add("CanContinueBuild");
 		fullBuildWithWebService.add("BuildSolution");
 		fullBuildWithWebService.add("PublishWebService");
 		fullBuildWithWebService.add("PerformUnitTests"); 
@@ -56,6 +59,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildWithWebServiceRevision.add("UpdateAssemblyVersionRevision"); 
 		fullBuildWithWebServiceRevision.add("RestoreNuGetPackages"); 
 		fullBuildWithWebServiceRevision.add("UpdateNuGetPackages"); 
+		fullBuildWithWebServiceRevision.add("CanContinueBuild");
 		fullBuildWithWebServiceRevision.add("BuildSolution");
 		fullBuildWithWebServiceRevision.add("PublishWebService");
 		fullBuildWithWebServiceRevision.add("PerformUnitTests"); 
@@ -71,6 +75,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("UpdateAssemblyVersion"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("RestoreNuGetPackages"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("UpdateNuGetPackages"); 
+		fullBuildWithoutGetAllCodeLatestVersionStage.add("CanContinueBuild");
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("BuildSolution"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("PerformUnitTests"); 
 		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckInFiles"); 
@@ -83,6 +88,7 @@ class buildStepsByBuildType implements Serializable {
 		buildWithoutDB.add("UpdateAssemblyVersion"); 
 		buildWithoutDB.add("RestoreNuGetPackages"); 
 		buildWithoutDB.add("UpdateNuGetPackages"); 
+		buildWithoutDB.add("CanContinueBuild");
 		buildWithoutDB.add("BuildSolution"); 
 		buildWithoutDB.add("PerformUnitTests"); 
 		buildWithoutDB.add("CheckInFiles"); 
@@ -95,6 +101,7 @@ class buildStepsByBuildType implements Serializable {
 		buildWithoutDBRevision.add("UpdateAssemblyVersionRevision"); 
 		buildWithoutDBRevision.add("RestoreNuGetPackages"); 
 		buildWithoutDBRevision.add("UpdateNuGetPackages"); 
+		buildWithoutDBRevision.add("CanContinueBuild");
 		buildWithoutDBRevision.add("BuildSolution"); 
 		buildWithoutDBRevision.add("PerformUnitTests"); 
 		buildWithoutDBRevision.add("CheckInFiles"); 
@@ -107,6 +114,7 @@ class buildStepsByBuildType implements Serializable {
 		buildWithoutDBAndUnitTests.add("UpdateAssemblyVersion"); 
 		buildWithoutDBAndUnitTests.add("RestoreNuGetPackages"); 
 		buildWithoutDBAndUnitTests.add("UpdateNuGetPackages"); 
+		buildWithoutDBAndUnitTests.add("CanContinueBuild");
 		buildWithoutDBAndUnitTests.add("BuildSolution"); 
 		buildWithoutDBAndUnitTests.add("CheckInFiles"); 
 		buildWithoutDBAndUnitTests.add("PublishNuGetPackages"); 
@@ -118,6 +126,7 @@ class buildStepsByBuildType implements Serializable {
 		buildUI.add("UpdateAssemblyVersion"); 
 		buildUI.add("RestoreNuGetPackages"); 
 		buildUI.add("UpdateNuGetPackages"); 
+		buildUI.add("CanContinueBuild");
 		buildUI.add("BuildSolution"); 
 		buildUI.add("PerformUnitTests"); 
 		buildUI.add("CheckInFiles");
@@ -129,6 +138,7 @@ class buildStepsByBuildType implements Serializable {
 		buildUIRevision.add("UpdateAssemblyVersionRevision"); 
 		buildUIRevision.add("RestoreNuGetPackages"); 
 		buildUIRevision.add("UpdateNuGetPackages"); 
+		buildUIRevision.add("CanContinueBuild");
 		buildUIRevision.add("BuildSolution"); 
 		buildUIRevision.add("PerformUnitTests"); 
 		buildUIRevision.add("CheckInFiles");
@@ -138,6 +148,7 @@ class buildStepsByBuildType implements Serializable {
 		buildDBSyncService.add("GetCodeLatestVersion"); 
 		buildDBSyncService.add("CheckOutFiles"); 
 		buildDBSyncService.add("RestoreNuGetPackages");
+		buildDBSyncService.add("CanContinueBuild");
 		buildDBSyncService.add("BuildSolution"); 
 		buildDBSyncService.add("PerformUnitTests"); 
 		buildDBSyncService.add("Provision"); 
@@ -154,6 +165,7 @@ class buildStepsByBuildType implements Serializable {
 		buildWithoutPublishNugGet.add("UpdateAssemblyVersion"); 
 		buildWithoutPublishNugGet.add("RestoreNuGetPackages"); 
 		buildWithoutPublishNugGet.add("UpdateNuGetPackages"); 
+		buildWithoutPublishNugGet.add("CanContinueBuild");
 		buildWithoutPublishNugGet.add("BuildSolution");
 		buildWithoutPublishNugGet.add("PerformUnitTests"); 
 		buildWithoutPublishNugGet.add("CheckInFiles"); 
@@ -167,6 +179,7 @@ class buildStepsByBuildType implements Serializable {
 		buildApexServer.add("UpdateAssemblyVersion"); 
 		buildApexServer.add("RestoreNuGetPackages"); 
 		buildApexServer.add("UpdateNuGetPackages"); 
+		buildApexServer.add("CanContinueBuild");
 		buildApexServer.add("BuildSolution");
 		buildApexServer.add("PublishWebService");
 		buildApexServer.add("CheckWorkflowsAsync");
@@ -182,6 +195,7 @@ class buildStepsByBuildType implements Serializable {
 		buildApexServerRevision.add("UpdateAssemblyVersionRevision"); 
 		buildApexServerRevision.add("RestoreNuGetPackages"); 
 		buildApexServerRevision.add("UpdateNuGetPackages"); 
+		buildApexServerRevision.add("CanContinueBuild");
 		buildApexServerRevision.add("BuildSolution");
 		buildApexServerRevision.add("PublishWebService");
 		buildApexServerRevision.add("CheckWorkflowsAsync");

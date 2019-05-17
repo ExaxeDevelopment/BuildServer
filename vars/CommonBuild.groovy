@@ -42,27 +42,20 @@ try{
 			if(buildStep == "PublishNuGetPackages" || buildStep == "UpdateQualityGates" || buildStep == "DataScriptsReconciliation" || buildStep == "ShrinkDatabaseLogs" || buildStep == "CheckExtendedProperties"){
 				undoChanges = false;	//// No need to worry about changes
 			}
+
+			def timeOut = getTimeout(buildStep);
 			
 			stage("${buildStep}"){
 				def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", "${projectName}", buildStep, "${tfsUsername}", "${tfsPassword}")
-				
-				if(buildStep == "CheckNuGetFeed"){
-					timeout(time: 5, unit: 'MINUTES'){
-						def result = bat(returnStatus: true, script: "${actionString}");
-						if(result != 0){
-							failureMessage = "${operation} ${failureMessageSuffix}";
-							echo failureMessage;
-							error(failureMessage);
-						}
-					}
-				} else {
+
+				timeout(time: timeOut, unit: 'MINUTES'){
 					def result = bat(returnStatus: true, script: "${actionString}");
 					if(result != 0){
 						failureMessage = "${operation} ${failureMessageSuffix}";
 						echo failureMessage;
 						error(failureMessage);
 					}
-				}
+				}			
 			}
 
 			if(buildStep == buildSteps.last()){
@@ -108,13 +101,31 @@ catch(err){
         }
     }
 	
-    currentBuild.result = "FAILURE";
+	if(operation == "CanContinueBuild"){
+		//// This operation checks if the build can continue, based on changes in the solution or new packages. 
+		currentBuild.result = "SUCCESS";
+	}
+	else{
+		currentBuild.result = "FAILURE";
 	
-    node{
-        stage("Error Notification"){
-            mail to: "${DEV_TEAM_EMAIL}", 
-            subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-            body: "The build failed on stage: ${operation} \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"      
-        }
-    }	
+		node{
+			stage("Error Notification"){
+				mail to: "${DEV_TEAM_EMAIL}", 
+				subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
+				body: "The build failed on stage: ${operation} \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"      
+			}
+		}
+	}
+
+}
+
+//// Gets the time-out for the build step
+def getTimeout(buildStep){
+	def timeOut = 300;
+
+	if(buildStep == "CheckNuGetFeed"){
+		timeOut = 5;
+	}
+
+	timeout;
 }
