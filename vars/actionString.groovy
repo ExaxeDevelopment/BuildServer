@@ -1,6 +1,6 @@
 class actionString implements Serializable {
   
-  def stagesWithSixParams = ["GetCodeLatestVersion", "CheckOutFiles", "UpdateAssemblyVersion", "CheckInFiles", "DeployInstallApp"]
+  def stagesWithSixParams = ["GetCodeLatestVersion", "CheckOutFiles", "UpdateAssemblyVersion", "CheckInFiles", "DeployInstallApp", "CanContinueBuild"]
   def stagesWithCustomParams = ["GetAllCodeLatestVersion"] 
   def stagesWithFourCustomParans = ["Initialisation", "ReleaseContent"]
 
