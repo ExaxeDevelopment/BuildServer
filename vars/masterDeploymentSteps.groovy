@@ -46,6 +46,8 @@ class masterDeploymentSteps implements Serializable {
 		dbProjects01.add("Exaxe.Product.DatabaseModel");
 		dbProjects01.add("Exaxe.Common-DB");
 		dbProjects01.add("Exaxe.Configuration-DB");
+		dbProjects01.add("Exaxe.Configuration-Question-DB");
+		dbProjects01.add("Exaxe.Configuration-Reference-DB");
 		deploySteps.add(getDatabaseSteps(dbProjects01));
 
 		//// Second list with DB projects that will be triggered in parallel 
