@@ -31,18 +31,47 @@ try{
 					break
 			}
 
+			//// Set the default status to 'false' (FAILURE)
+			Map<String,Boolean> mapStatuses = new LinkedHashMap<String,Boolean>();
+			allSteps.each{stage, innerSteps ->
+				innerSteps.each{job, serverName ->				
+					mapStatuses.put(job, false);
+				}
+			}
+
 			allSteps.each{stage, innerSteps ->
 				def parallelBuildJobs = [:] 
 				echo "************** ${stage} ******************"
 
-				innerSteps.each{key, value ->
-					echo "Server:${value} / Pipeline:${key}" 
-					parallelBuildJobs[key] = getRemoteJobRequest(value, key, REMOTE_TOKEN)
+				innerSteps.each{job, serverName ->
+					echo "Server:${serverName} / Pipeline:${job}" 
+					parallelBuildJobs[job] = getRemoteJobRequest(serverName, job, REMOTE_TOKEN, mapStatuses)
 				}
 				
 				parallel parallelBuildJobs;
-			} 
+			} 			
+
+			List productsStability = getProductsStability(mapStatuses);
 			
+			def stableMessage = "";
+			def mailTo = "${DEV_TEAM_EMAIL}";
+			
+			if(productsStability.size() > 0){
+				////Prepares message indicating the products stability
+				stableMessage = """
+				****************************************************
+				ADMIN PLUS STABLE? ${productsStability.get(0)}
+				ADVICE PLUS STABLE? ${productsStability.get(1)}
+				DISTRIBUTION PLUS STABLE? ${productsStability.get(2)}
+				PORTALS STABLE? ${productsStability.get(3)}
+				****************************************************
+				"""
+				
+				mailTo += ",${QA_TEAM_EMAIL}"
+			}
+ 			
+			echo stableMessage
+
 			currentBuild.result = "SUCCESS";
 		
 			duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
@@ -51,9 +80,9 @@ try{
 				stage("Success Notification"){
 					echo duration;
 				
-					mail to: "${DEV_TEAM_EMAIL}", 
+					mail to: "${mailTo}", 
 					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-					body: "${env.BUILD_URL} \r\n ${duration}" 
+					body: "${env.BUILD_URL} \r\n ${duration} \r\n ${stableMessage}"  
 				}
 			}
 			catch(err){
@@ -78,7 +107,7 @@ catch(err){
 }
 
 /// Method that returns a remote request job ready to be executed.
-def getRemoteJobRequest(serverName, job, token){
+def getRemoteJobRequest(serverName, job, token, mapStatuses){
 	
 	def remoteRequest = {
 		try{
@@ -89,6 +118,10 @@ def getRemoteJobRequest(serverName, job, token){
 				echo "Remote status from ${job}: ${status.toString()}";
 				def result = handle.getBuildResult();
 				echo "Remote result from ${job}: ${result.toString()}";
+
+				if(status == "SUCCESS" && mapStatuses.containsKey(job)){
+					mapStatuses.put(job, true);
+				}
 			}
 		}
 		catch(err){
@@ -264,4 +297,125 @@ def getFilteredSteps(steps, buildFromStage, buildToStage){
 	}
 
 	finalSteps;	
+}
+
+//// Method that returns the key builds for Admin Plus
+//// To be used to check whether the deployment might be affected
+def GetAdminPlusKeyBuilds()	{
+	List keyBuilds = new ArrayList<String>();
+	keyBuilds.add("MasterBuild-AdminPlus");
+	keyBuilds.add("MasterBuild-ChannelPlus");
+	keyBuilds.add("MasterBuild-Apex");
+	keyBuilds.add("Build-AdminPlusUI");
+	
+	keyBuilds;
+}
+
+//// Method that returns the key builds for Advice Plus
+//// To be used to check whether the deployment might be affected
+def GetAdvicePlusKeyBuilds(){
+	List keyBuilds = new ArrayList<String>();
+	keyBuilds.add("MasterBuild-AdvicePlus");
+	keyBuilds.add("Build-PointOfSaleUI");
+	
+	keyBuilds;
+}
+
+//// Method that returns the key builds for Distribution Plus
+//// To be used to check whether the deployment might be affected
+def GetDistributionPlusKeyBuilds(){
+	List keyBuilds = new ArrayList<String>();
+	keyBuilds.add("MasterBuild-ChannelPlus");
+	keyBuilds.add("Build-ChannelPlusUI");
+	keyBuilds.add("MasterBuild-WebServices");
+	keyBuilds.add("MasterBuild-Apex");
+	
+	keyBuilds;
+}
+
+//// Method that returns the key builds for Portals
+//// To be used to check whether the deployment might be affected
+def GetPortalsKeyBuilds(){
+	List keyBuilds = new ArrayList<String>();
+	keyBuilds.add("MasterBuild-AdminPlus");
+	keyBuilds.add("MasterBuild-AdvicePlus");
+	keyBuilds.add("MasterBuild-ChannelPlus");
+	keyBuilds.add("MasterBuild-Apex");
+	keyBuilds.add("MasterBuild-WebServices");
+	keyBuilds.add("Build-Exaxe.Portals");
+	keyBuilds.add("Build-Hansard.Portals");
+	
+	keyBuilds;
+}
+
+//// Method that returns the stability of the products:
+//// 0 -> Admin Plus
+//// 1 -> Advice Plus
+//// 2 -> Distribution Plus
+//// 3 -> Portals
+def getProductsStability(mapStatuses){	
+	//// Set default values for
+	List productsStability = new ArrayList<Boolean>();
+	
+	//// Check if we have deployments	
+	Boolean hasDeployments = false;
+
+	mapStatuses.each{key, value ->
+		if(key.startsWith("Deploy")){
+			hasDeployments = true;
+		}
+	}
+	
+	if(!hasDeployments){
+		return productsStability
+	}
+
+	//// Admin Plus
+	productsStability.add(true);
+
+	//// Advice Plus
+	productsStability.add(true);
+
+	//// Distribution Plus
+	productsStability.add(true);
+
+	//// Portals
+	productsStability.add(true);
+	
+	//// Get the key builds for the different products
+	List adminPlusKeyBuilds = GetAdminPlusKeyBuilds();
+	List advicePlusKeyBuilds = GetAdvicePlusKeyBuilds();
+	List distributionPlusKeyBuilds = GetDistributionPlusKeyBuilds();
+	List portalsKeyBuilds = GetPortalsKeyBuilds();
+	
+	//// Check for failures 
+	mapStatuses.each{key, value ->
+		if(value == false){
+			adminPlusKeyBuilds.each{ str -> 
+				if(key.startsWith(str)){
+					productsStability.set(0, false);
+				}
+			};
+			
+			advicePlusKeyBuilds.each{ str -> 
+				if(key.startsWith(str)){
+					productsStability.set(1, false);
+				}
+			};
+			
+			distributionPlusKeyBuilds.each{ str -> 
+				if(key.startsWith(str)){
+					productsStability.set(2, false);
+				}
+			};
+			
+			portalsKeyBuilds.each{ str -> 
+				if(key.startsWith(str)){
+					productsStability.set(3, false);
+				}
+			};
+		}
+	}	
+	
+	productsStability
 }
