@@ -360,13 +360,17 @@ def getProductsStability(mapStatuses){
 	//// Check if we have deployments	
 	Boolean hasDeployments = false;
 
+	echo "GETTING PRODUCTS STABILITY..." 
+
 	mapStatuses.each{key, value ->
+		echo "KEY:${key} / VALUE:${value}" 
 		if(key.startsWith("Deploy")){
 			hasDeployments = true;
 		}
 	}
 	
 	if(!hasDeployments){
+		echo "NO DEPLOYMENTS." 
 		return productsStability
 	}
 
@@ -393,23 +397,27 @@ def getProductsStability(mapStatuses){
 		if(value == false){
 			adminPlusKeyBuilds.each{ str -> 
 				if(key.startsWith(str)){
+					echo "ADMIN PLUS NOT STABLE (${key}/${str})."
 					productsStability.set(0, false);
 				}
 			};
 			
 			advicePlusKeyBuilds.each{ str -> 
 				if(key.startsWith(str)){
+					echo "ADVICE PLUS NOT STABLE (${key}/${str})."
 					productsStability.set(1, false);
 				}
 			};
 			
 			distributionPlusKeyBuilds.each{ str -> 
+				echo "DISTRIBUTION PLUS NOT STABLE (${key}/${str})."
 				if(key.startsWith(str)){
 					productsStability.set(2, false);
 				}
 			};
 			
 			portalsKeyBuilds.each{ str -> 
+				echo "PORTALS NOT STABLE (${key}/${str})."
 				if(key.startsWith(str)){
 					productsStability.set(3, false);
 				}
