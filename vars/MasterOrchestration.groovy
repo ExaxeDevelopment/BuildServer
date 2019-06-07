@@ -202,11 +202,6 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map09.put("Build-ShrinkDbLogsScript-exop-api-bld01", API_BUILD_SERVER)
 	steps.put("ShrinkDbLogsScript", map09);
 
-	//// Temporary stage to allow integration to be kicked off automatically
-	Map<String,String> map10 = new HashMap<String,String>();
-	map10.put("MasterBuild-Orchestration-Integration", BASE_BUILD_SERVER)
-	steps.put("Integration", map10);
-
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
 
