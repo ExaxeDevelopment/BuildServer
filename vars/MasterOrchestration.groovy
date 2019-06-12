@@ -119,7 +119,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses){
 				def result = handle.getBuildResult();
 				echo "Remote result from ${job}: ${result.toString()}";
 
-				if(status == "SUCCESS" && mapStatuses.containsKey(job)){
+				if(result == "SUCCESS" && mapStatuses.containsKey(job)){
 					mapStatuses.put(job, true);
 				}
 			}
