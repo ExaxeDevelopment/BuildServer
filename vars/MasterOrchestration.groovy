@@ -119,7 +119,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses){
 				def result = handle.getBuildResult();
 				echo "Remote result from ${job}: ${result.toString()}";
 
-				if(result == "SUCCESS" && mapStatuses.containsKey(job)){
+				if(result.toString() == "SUCCESS" && mapStatuses.containsKey(job)){
 					mapStatuses.put(job, true);
 				}
 			}
@@ -306,7 +306,7 @@ def getFilteredSteps(steps, buildFromStage, buildToStage){
 
 //// Method that returns the key builds for Admin Plus
 //// To be used to check whether the deployment might be affected
-def GetAdminPlusKeyBuilds()	{
+def getAdminPlusKeyBuilds()	{
 	List keyBuilds = new ArrayList<String>();
 	keyBuilds.add("MasterBuild-AdminPlus");
 	keyBuilds.add("MasterBuild-ChannelPlus");
@@ -318,7 +318,7 @@ def GetAdminPlusKeyBuilds()	{
 
 //// Method that returns the key builds for Advice Plus
 //// To be used to check whether the deployment might be affected
-def GetAdvicePlusKeyBuilds(){
+def getAdvicePlusKeyBuilds(){
 	List keyBuilds = new ArrayList<String>();
 	keyBuilds.add("MasterBuild-AdvicePlus");
 	keyBuilds.add("Build-PointOfSaleUI");
@@ -328,7 +328,7 @@ def GetAdvicePlusKeyBuilds(){
 
 //// Method that returns the key builds for Distribution Plus
 //// To be used to check whether the deployment might be affected
-def GetDistributionPlusKeyBuilds(){
+def getDistributionPlusKeyBuilds(){
 	List keyBuilds = new ArrayList<String>();
 	keyBuilds.add("MasterBuild-ChannelPlus");
 	keyBuilds.add("Build-ChannelPlusUI");
@@ -340,7 +340,7 @@ def GetDistributionPlusKeyBuilds(){
 
 //// Method that returns the key builds for Portals
 //// To be used to check whether the deployment might be affected
-def GetPortalsKeyBuilds(){
+def getPortalsKeyBuilds(){
 	List keyBuilds = new ArrayList<String>();
 	keyBuilds.add("MasterBuild-AdminPlus");
 	keyBuilds.add("MasterBuild-AdvicePlus");
@@ -392,10 +392,10 @@ def getProductsStability(mapStatuses){
 	productsStability.add(true);
 	
 	//// Get the key builds for the different products
-	List adminPlusKeyBuilds = GetAdminPlusKeyBuilds();
-	List advicePlusKeyBuilds = GetAdvicePlusKeyBuilds();
-	List distributionPlusKeyBuilds = GetDistributionPlusKeyBuilds();
-	List portalsKeyBuilds = GetPortalsKeyBuilds();
+	List adminPlusKeyBuilds = getAdminPlusKeyBuilds();
+	List advicePlusKeyBuilds = getAdvicePlusKeyBuilds();
+	List distributionPlusKeyBuilds = getDistributionPlusKeyBuilds();
+	List portalsKeyBuilds = getPortalsKeyBuilds();
 	
 	//// Check for failures 
 	mapStatuses.each{key, value ->
