@@ -3,7 +3,6 @@ class buildStepsByBuildType implements Serializable {
 
         List<String> fullBuild = new ArrayList<String>()
 		fullBuild.add("GetAllCodeLatestVersion"); 
-		fullBuild.add("GetCodeLatestVersion");
 		fullBuild.add("ClearDatabases"); 
 		fullBuild.add("InstallAllDatabases"); 
 		fullBuild.add("CheckOutFiles"); 
@@ -12,14 +11,16 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("UpdateNuGetPackages"); 
 		fullBuild.add("CanContinueBuild");
 		fullBuild.add("BuildSolution");
+		fullBuild.add("PublishWebService");
+		fullBuild.add("CheckWorkflowsAsync");
 		fullBuild.add("PerformUnitTests"); 
 		fullBuild.add("CheckInFiles"); 
 		fullBuild.add("PublishNuGetPackages"); 
 		fullBuild.add("CheckNuGetFeed");
+		fullBuild.add("PublishNuGetPackagesAzureDevOps");			
 
         List<String> fullBuildRevision = new ArrayList<String>()
-		fullBuildRevision.add("GetAllCodeLatestVersion"); 
-		fullBuildRevision.add("GetCodeLatestVersion");
+		fullBuildRevision.add("GetAllCodeLatestVersion");
 		fullBuildRevision.add("ClearDatabases"); 
 		fullBuildRevision.add("InstallAllDatabases"); 
 		fullBuildRevision.add("CheckOutFiles"); 
@@ -28,14 +29,17 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildRevision.add("UpdateNuGetPackages"); 
 		fullBuildRevision.add("CanContinueBuild");
 		fullBuildRevision.add("BuildSolution");
+		fullBuildRevision.add("PublishWebService");
+		fullBuildRevision.add("CheckWorkflowsAsync");
 		fullBuildRevision.add("PerformUnitTests"); 
 		fullBuildRevision.add("CheckInFiles"); 
 		fullBuildRevision.add("PublishNuGetPackages"); 
 		fullBuildRevision.add("CheckNuGetFeed"); 
+		fullBuildRevision.add("PublishNuGetPackagesAzureDevOps");			
+
 
 		List<String> fullBuildWithWebService = new ArrayList<String>()
 		fullBuildWithWebService.add("GetAllCodeLatestVersion"); 
-		fullBuildWithWebService.add("GetCodeLatestVersion");
 		fullBuildWithWebService.add("ClearDatabases"); 
 		fullBuildWithWebService.add("InstallAllDatabases"); 
 		fullBuildWithWebService.add("CheckOutFiles"); 
@@ -52,7 +56,6 @@ class buildStepsByBuildType implements Serializable {
 
 		List<String> fullBuildWithWebServiceRevision = new ArrayList<String>()
 		fullBuildWithWebServiceRevision.add("GetAllCodeLatestVersion"); 
-		fullBuildWithWebServiceRevision.add("GetCodeLatestVersion");
 		fullBuildWithWebServiceRevision.add("ClearDatabases"); 
 		fullBuildWithWebServiceRevision.add("InstallAllDatabases"); 
 		fullBuildWithWebServiceRevision.add("CheckOutFiles"); 
@@ -121,7 +124,7 @@ class buildStepsByBuildType implements Serializable {
 		buildWithoutDBAndUnitTests.add("CheckNuGetFeed");
 		
 		List<String> buildUI = new ArrayList<String>()
-		buildUI.add("GetCodeLatestVersion"); 
+		buildUI.add("GetAllCodeLatestVersion"); 
 		buildUI.add("CheckOutFiles"); 
 		buildUI.add("UpdateAssemblyVersion"); 
 		buildUI.add("RestoreNuGetPackages"); 
@@ -133,7 +136,7 @@ class buildStepsByBuildType implements Serializable {
 		buildUI.add("PublishNuGetPackagesAzureDevOps");
 
 		List<String> buildUIRevision = new ArrayList<String>()
-		buildUIRevision.add("GetCodeLatestVersion"); 
+		buildUIRevision.add("GetAllCodeLatestVersion"); 
 		buildUIRevision.add("CheckOutFiles"); 
 		buildUIRevision.add("UpdateAssemblyVersionRevision"); 
 		buildUIRevision.add("RestoreNuGetPackages"); 
@@ -172,7 +175,6 @@ class buildStepsByBuildType implements Serializable {
 		
         List<String> buildApexServer = new ArrayList<String>()
 		buildApexServer.add("GetAllCodeLatestVersion"); 
-		buildApexServer.add("GetCodeLatestVersion");
 		buildApexServer.add("ClearDatabases"); 
 		buildApexServer.add("InstallAllDatabases"); 
 		buildApexServer.add("CheckOutFiles"); 
@@ -188,7 +190,6 @@ class buildStepsByBuildType implements Serializable {
 
         List<String> buildApexServerRevision = new ArrayList<String>()
 		buildApexServerRevision.add("GetAllCodeLatestVersion"); 
-		buildApexServerRevision.add("GetCodeLatestVersion");
 		buildApexServerRevision.add("ClearDatabases"); 
 		buildApexServerRevision.add("InstallAllDatabases"); 
 		buildApexServerRevision.add("CheckOutFiles"); 
