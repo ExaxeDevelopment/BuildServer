@@ -36,116 +36,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildRevision.add("PublishNuGetPackages"); 
 		fullBuildRevision.add("CheckNuGetFeed"); 
 		fullBuildRevision.add("PublishNuGetPackagesAzureDevOps");			
-
-
-		List<String> fullBuildWithWebService = new ArrayList<String>()
-		fullBuildWithWebService.add("GetAllCodeLatestVersion"); 
-		fullBuildWithWebService.add("ClearDatabases"); 
-		fullBuildWithWebService.add("InstallAllDatabases"); 
-		fullBuildWithWebService.add("CheckOutFiles"); 
-		fullBuildWithWebService.add("UpdateAssemblyVersion"); 
-		fullBuildWithWebService.add("RestoreNuGetPackages"); 
-		fullBuildWithWebService.add("UpdateNuGetPackages"); 
-		fullBuildWithWebService.add("CanContinueBuild");
-		fullBuildWithWebService.add("BuildSolution");
-		fullBuildWithWebService.add("PublishWebService");
-		fullBuildWithWebService.add("PerformUnitTests"); 
-		fullBuildWithWebService.add("CheckInFiles"); 
-		fullBuildWithWebService.add("PublishNuGetPackages"); 
-		fullBuildWithWebService.add("CheckNuGetFeed");
-
-		List<String> fullBuildWithWebServiceRevision = new ArrayList<String>()
-		fullBuildWithWebServiceRevision.add("GetAllCodeLatestVersion"); 
-		fullBuildWithWebServiceRevision.add("ClearDatabases"); 
-		fullBuildWithWebServiceRevision.add("InstallAllDatabases"); 
-		fullBuildWithWebServiceRevision.add("CheckOutFiles"); 
-		fullBuildWithWebServiceRevision.add("UpdateAssemblyVersionRevision"); 
-		fullBuildWithWebServiceRevision.add("RestoreNuGetPackages"); 
-		fullBuildWithWebServiceRevision.add("UpdateNuGetPackages"); 
-		fullBuildWithWebServiceRevision.add("CanContinueBuild");
-		fullBuildWithWebServiceRevision.add("BuildSolution");
-		fullBuildWithWebServiceRevision.add("PublishWebService");
-		fullBuildWithWebServiceRevision.add("PerformUnitTests"); 
-		fullBuildWithWebServiceRevision.add("CheckInFiles"); 
-		fullBuildWithWebServiceRevision.add("PublishNuGetPackages"); 
-		fullBuildWithWebServiceRevision.add("CheckNuGetFeed");
-
-        List<String> fullBuildWithoutGetAllCodeLatestVersionStage = new ArrayList<String>();
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("GetAllCodeLatestVersion"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("ClearDatabases"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("InstallAllDatabases"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckOutFiles"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("UpdateAssemblyVersion"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("RestoreNuGetPackages"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("UpdateNuGetPackages"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("CanContinueBuild");
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("BuildSolution"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("PerformUnitTests"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckInFiles"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("PublishNuGetPackages"); 
-		fullBuildWithoutGetAllCodeLatestVersionStage.add("CheckNuGetFeed"); 
-		
-		List<String> buildWithoutDB = new ArrayList<String>()
-		buildWithoutDB.add("GetCodeLatestVersion"); 
-		buildWithoutDB.add("CheckOutFiles"); 
-		buildWithoutDB.add("UpdateAssemblyVersion"); 
-		buildWithoutDB.add("RestoreNuGetPackages"); 
-		buildWithoutDB.add("UpdateNuGetPackages"); 
-		buildWithoutDB.add("CanContinueBuild");
-		buildWithoutDB.add("BuildSolution"); 
-		buildWithoutDB.add("PerformUnitTests"); 
-		buildWithoutDB.add("CheckInFiles"); 
-		buildWithoutDB.add("PublishNuGetPackages"); 
-		buildWithoutDB.add("CheckNuGetFeed");
-
-		List<String> buildWithoutDBRevision = new ArrayList<String>()
-		buildWithoutDBRevision.add("GetCodeLatestVersion"); 
-		buildWithoutDBRevision.add("CheckOutFiles"); 
-		buildWithoutDBRevision.add("UpdateAssemblyVersionRevision"); 
-		buildWithoutDBRevision.add("RestoreNuGetPackages"); 
-		buildWithoutDBRevision.add("UpdateNuGetPackages"); 
-		buildWithoutDBRevision.add("CanContinueBuild");
-		buildWithoutDBRevision.add("BuildSolution"); 
-		buildWithoutDBRevision.add("PerformUnitTests"); 
-		buildWithoutDBRevision.add("CheckInFiles"); 
-		buildWithoutDBRevision.add("PublishNuGetPackages"); 
-		buildWithoutDBRevision.add("CheckNuGetFeed");
-
-		List<String> buildWithoutDBAndUnitTests = new ArrayList<String>()
-		buildWithoutDBAndUnitTests.add("GetCodeLatestVersion"); 
-		buildWithoutDBAndUnitTests.add("CheckOutFiles"); 
-		buildWithoutDBAndUnitTests.add("UpdateAssemblyVersion"); 
-		buildWithoutDBAndUnitTests.add("RestoreNuGetPackages"); 
-		buildWithoutDBAndUnitTests.add("UpdateNuGetPackages"); 
-		buildWithoutDBAndUnitTests.add("CanContinueBuild");
-		buildWithoutDBAndUnitTests.add("BuildSolution"); 
-		buildWithoutDBAndUnitTests.add("CheckInFiles"); 
-		buildWithoutDBAndUnitTests.add("PublishNuGetPackages"); 
-		buildWithoutDBAndUnitTests.add("CheckNuGetFeed");
-		
-		List<String> buildUI = new ArrayList<String>()
-		buildUI.add("GetAllCodeLatestVersion"); 
-		buildUI.add("CheckOutFiles"); 
-		buildUI.add("UpdateAssemblyVersion"); 
-		buildUI.add("RestoreNuGetPackages"); 
-		buildUI.add("UpdateNuGetPackages"); 
-		buildUI.add("CanContinueBuild");
-		buildUI.add("BuildSolution"); 
-		buildUI.add("PerformUnitTests"); 
-		buildUI.add("CheckInFiles");
-		buildUI.add("PublishNuGetPackagesAzureDevOps");
-
-		List<String> buildUIRevision = new ArrayList<String>()
-		buildUIRevision.add("GetAllCodeLatestVersion"); 
-		buildUIRevision.add("CheckOutFiles"); 
-		buildUIRevision.add("UpdateAssemblyVersionRevision"); 
-		buildUIRevision.add("RestoreNuGetPackages"); 
-		buildUIRevision.add("UpdateNuGetPackages"); 
-		buildUIRevision.add("CanContinueBuild");
-		buildUIRevision.add("BuildSolution"); 
-		buildUIRevision.add("PerformUnitTests"); 
-		buildUIRevision.add("CheckInFiles");
-
+			
 		List<String> buildDBSyncService = new ArrayList<String>()
 		buildDBSyncService.add("GetAllCodeLatestVersion"); 
 		buildDBSyncService.add("GetCodeLatestVersion"); 
@@ -159,50 +50,7 @@ class buildStepsByBuildType implements Serializable {
 		buildDBSyncService.add("InstallAllDatabases"); 
 		buildDBSyncService.add("Reprovision"); 
 		buildDBSyncService.add("Synchronize");
-
-        List<String> buildWithoutPublishNugGet = new ArrayList<String>()
-		buildWithoutPublishNugGet.add("GetAllCodeLatestVersion"); 
-		buildWithoutPublishNugGet.add("ClearDatabases"); 
-		buildWithoutPublishNugGet.add("InstallAllDatabases"); 
-		buildWithoutPublishNugGet.add("CheckOutFiles"); 
-		buildWithoutPublishNugGet.add("UpdateAssemblyVersion"); 
-		buildWithoutPublishNugGet.add("RestoreNuGetPackages"); 
-		buildWithoutPublishNugGet.add("UpdateNuGetPackages"); 
-		buildWithoutPublishNugGet.add("CanContinueBuild");
-		buildWithoutPublishNugGet.add("BuildSolution");
-		buildWithoutPublishNugGet.add("PerformUnitTests"); 
-		buildWithoutPublishNugGet.add("CheckInFiles"); 
-		
-        List<String> buildApexServer = new ArrayList<String>()
-		buildApexServer.add("GetAllCodeLatestVersion"); 
-		buildApexServer.add("ClearDatabases"); 
-		buildApexServer.add("InstallAllDatabases"); 
-		buildApexServer.add("CheckOutFiles"); 
-		buildApexServer.add("UpdateAssemblyVersion"); 
-		buildApexServer.add("RestoreNuGetPackages"); 
-		buildApexServer.add("UpdateNuGetPackages"); 
-		buildApexServer.add("CanContinueBuild");
-		buildApexServer.add("BuildSolution");
-		buildApexServer.add("PublishWebService");
-		buildApexServer.add("CheckWorkflowsAsync");
-		buildApexServer.add("PerformUnitTests"); 
-		buildApexServer.add("CheckInFiles"); 
-
-        List<String> buildApexServerRevision = new ArrayList<String>()
-		buildApexServerRevision.add("GetAllCodeLatestVersion"); 
-		buildApexServerRevision.add("ClearDatabases"); 
-		buildApexServerRevision.add("InstallAllDatabases"); 
-		buildApexServerRevision.add("CheckOutFiles"); 
-		buildApexServerRevision.add("UpdateAssemblyVersionRevision"); 
-		buildApexServerRevision.add("RestoreNuGetPackages"); 
-		buildApexServerRevision.add("UpdateNuGetPackages"); 
-		buildApexServerRevision.add("CanContinueBuild");
-		buildApexServerRevision.add("BuildSolution");
-		buildApexServerRevision.add("PublishWebService");
-		buildApexServerRevision.add("CheckWorkflowsAsync");
-		buildApexServerRevision.add("PerformUnitTests"); 
-		buildApexServerRevision.add("CheckInFiles"); 
-
+	
 		List<String> updatePackagesWithoutBuild = new ArrayList<String>()
 		updatePackagesWithoutBuild.add("GetCodeLatestVersion"); 
 		updatePackagesWithoutBuild.add("CheckOutFiles"); 
@@ -227,17 +75,11 @@ class buildStepsByBuildType implements Serializable {
 		fullDatabaseReconciliation.add("CheckExtendedProperties");
 		fullDatabaseReconciliation.add("DataScriptsReconciliation"); 
 
-		List<String> buildDataScriptsReconciliation = new ArrayList<String>()
-		buildDataScriptsReconciliation.add("DataScriptsReconciliation"); 
-
 		List<String> buildShrinkDatabaseLogs = new ArrayList<String>()
 		buildShrinkDatabaseLogs.add("ShrinkDatabaseLogs");
 
 		List<String> buildDeletePackages = new ArrayList<String>()
 		buildDeletePackages.add("DeletePackages");
-
-		List<String> buildCheckExtendedProperties = new ArrayList<String>()
-		buildCheckExtendedProperties.add("CheckExtendedProperties");
 
 		List<String> buildUpdateQualityGates = new ArrayList<String>()
 		buildUpdateQualityGates.add("UpdateQualityGates"); 
@@ -247,26 +89,8 @@ class buildStepsByBuildType implements Serializable {
             case "FullBuild":
                 buildSteps = fullBuild;
                 break
-            case "FullBuildWithoutGetAllCodeLatestVersionStage":
-                buildSteps = fullBuildWithoutGetAllCodeLatestVersionStage;
-                break
-			case "BuildWithoutDB":
-                buildSteps = buildWithoutDB;
-                break
-			case "BuildWithoutDBAndUnitTests":
-                buildSteps = buildWithoutDBAndUnitTests;
-                break
-			case "BuildWithoutPublishNugGet":
-                buildSteps = buildWithoutPublishNugGet;
-                break
-			case "BuildApexServer":
-                buildSteps = buildApexServer;
-                break
-			case "BuildUI":
-                buildSteps = buildUI;
-                break
-			case "BuildDBSyncService":
-                buildSteps = buildDBSyncService;
+            case "FullBuildRevision":
+                buildSteps = fullBuildRevision;
                 break
 			case "UpdatePackagesWithoutBuild":
                 buildSteps = updatePackagesWithoutBuild;
@@ -274,20 +98,8 @@ class buildStepsByBuildType implements Serializable {
 			case "UpdatePackagesWithBuild":
                 buildSteps = updatePackagesWithBuild;
                 break
-            case "FullBuildRevision":
-                buildSteps = fullBuildRevision;
-                break
-			case "BuildWithoutDBRevision":
-                buildSteps = buildWithoutDBRevision;
-                break
-			case "BuildApexServerRevision":
-                buildSteps = buildApexServerRevision;
-                break
-			case "BuildUIRevision":
-                buildSteps = buildUIRevision;
-                break
-			case "DataScriptsReconciliation":
-                buildSteps = buildDataScriptsReconciliation;
+			case "BuildDBSyncService":
+                buildSteps = buildDBSyncService;
                 break
 			case "FullDatabaseReconciliation":
                 buildSteps = fullDatabaseReconciliation;
@@ -295,20 +107,11 @@ class buildStepsByBuildType implements Serializable {
 			case "UpdateQualityGates":
                 buildSteps = buildUpdateQualityGates;
                 break
-			case "FullBuildWithWebService":
-                buildSteps = fullBuildWithWebService;
-                break
-			case "FullBuildWithWebServiceRevision":
-                buildSteps = fullBuildWithWebServiceRevision;
-                break
 			case "ShrinkDatabaseLogs":
                 buildSteps = buildShrinkDatabaseLogs;
                 break
 			case "DeletePackages":
                 buildSteps = buildDeletePackages;
-                break
-			case "CheckExtendedProperties":
-                buildSteps = buildCheckExtendedProperties;
                 break
             default:
                 buildSteps.add("BuildTypeNotDefined");
