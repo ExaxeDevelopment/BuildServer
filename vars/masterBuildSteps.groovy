@@ -290,7 +290,7 @@ class masterBuildSteps implements Serializable {
 	//// Returns the sequential builds for APEX SERVER/WORKFLOW solutions @ DEV002 (DEVELOPMENT)
 	private List<String> getSequentialMasterBuildAPEXDev002(){
 		List<String> buildItems = new ArrayList<String>();
-		buildItems.add("Intermediate-Build-Exaxe.Apex.Server-Dev002"); 
+		buildItems.add("Build-Exaxe.Apex.Server-Dev002"); 
 
 		return buildItems;
 	} 
