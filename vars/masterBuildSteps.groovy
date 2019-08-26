@@ -54,7 +54,7 @@ class masterBuildSteps implements Serializable {
                 buildSteps = getMasterBuildWebServicesDev002();
                 break
 
-			case "IntermediateMasterBuildAPEXDev002":
+			case "IntermediateMasterBuildApexDev002":
                 buildSteps = getSequentialMasterBuildAPEXDev002();
                 break
 
@@ -92,7 +92,7 @@ class masterBuildSteps implements Serializable {
                 buildSteps = getParallelMasterBuildChannelPlusDev002();
                 break
 
-			case "IntermediateMasterBuildAPEXDev002":
+			case "IntermediateMasterBuildApexDev002":
                 buildSteps = getParallelMasterBuildAPEXDev002();
                 break
 
