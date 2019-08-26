@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PipelineBase", "PipelineBase", "{46C9246D-9EFE-4F4D-AC4B-E285D86FE584}"
 EndProject
@@ -33,6 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CE151E
 		CommonBuild.groovy = CommonBuild.groovy
 		CommonDeployBuild.groovy = CommonDeployBuild.groovy
 		CommonMasterBuild.groovy = CommonMasterBuild.groovy
+		CommonMasterBuilder.groovy = CommonMasterBuilder.groovy
 		CommonMasterBuildV2.groovy = CommonMasterBuildV2.groovy
 		CommonMasterDeploy.groovy = CommonMasterDeploy.groovy
 		MasterOrchestration.groovy = MasterOrchestration.groovy

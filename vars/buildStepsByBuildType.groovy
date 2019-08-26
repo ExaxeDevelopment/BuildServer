@@ -36,7 +36,19 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildRevision.add("PublishNuGetPackages"); 
 		fullBuildRevision.add("CheckNuGetFeed"); 
 		fullBuildRevision.add("PublishNuGetPackagesAzureDevOps");			
-			
+
+		List<String> intermediateBuild = new ArrayList<String>()
+		intermediateBuild.add("GetCodeLatestVersion"); 
+		intermediateBuild.add("CheckOutFiles"); 
+		intermediateBuild.add("UpdateAssemblyVersion"); 
+		intermediateBuild.add("RestoreNuGetPackages"); 
+		intermediateBuild.add("UpdateNuGetPackages"); 
+		intermediateBuild.add("CanContinueBuild");
+		intermediateBuild.add("BuildSolution"); 
+		intermediateBuild.add("CheckInFiles"); 
+		intermediateBuild.add("PublishNuGetPackages"); 
+		intermediateBuild.add("CheckNuGetFeed");
+		
 		List<String> buildDBSyncService = new ArrayList<String>()
 		buildDBSyncService.add("GetAllCodeLatestVersion"); 
 		buildDBSyncService.add("GetCodeLatestVersion"); 
@@ -91,6 +103,9 @@ class buildStepsByBuildType implements Serializable {
                 break
             case "FullBuildRevision":
                 buildSteps = fullBuildRevision;
+                break
+            case "IntermediateBuild":
+                buildSteps = intermediateBuild;
                 break
 			case "UpdatePackagesWithoutBuild":
                 buildSteps = updatePackagesWithoutBuild;

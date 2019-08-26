@@ -54,6 +54,10 @@ class masterBuildSteps implements Serializable {
                 buildSteps = getMasterBuildWebServicesDev002();
                 break
 
+			case "IntermediateMasterBuildAPEXDev002":
+                buildSteps = getSequentialMasterBuildAPEXDev002();
+                break
+
             default:
                 buildSteps.add("MasterBuildNotDefined");
                 break
@@ -69,6 +73,39 @@ class masterBuildSteps implements Serializable {
 		def steps = buildSteps.subList(Math.max(indexOfStartStep, 0), buildSteps.size()).collect();
 		
 		steps
+    } 
+
+	//// Returns the parallel build steps based on the 'masterBuildType'
+    def getMasterBuildParallelSteps(masterBuildType) { 
+
+		List<String> buildSteps = new ArrayList<String>();
+
+        switch (masterBuildType) {
+			case "IntermediateMasterBuildAdminPlusDev002":
+                buildSteps = getParallelMasterBuildAdminPlusDev002();
+                break
+
+			case "IntermediateMasterBuildAdvicePlusDev002":
+                buildSteps = getParallelMasterBuildAdvicePlusDev002();
+                break
+
+			case "IntermediateMasterBuildChannelPlusDev002":
+                buildSteps = getParallelMasterBuildChannelPlusDev002();
+                break
+
+			case "IntermediateMasterBuildAPEXDev002":
+                buildSteps = getParallelMasterBuildAPEXDev002();
+                break
+
+			case "IntermediateMasterBuildWebServiceDev002":
+                buildSteps = getParallelMasterBuildWebServiceDev002();
+                break
+
+            default:
+                break
+        }   
+
+		buildSteps
     } 
 
 	//// Returns the build items for "COMMON/BASE" solutions @ DEV001 (DEVELOPMENT + UAT/INTEGRATION)
@@ -206,5 +243,66 @@ class masterBuildSteps implements Serializable {
 
 		return buildItems;		
 	}
+
+
+	///********************************************************************
+	///********************* STEPS FOR THE INTERMEDIATE buildSteps ********
+	///******************************************************************** 
+
+	//// Returns the parallel builds for ADMIN PLUS solutions @ DEV002 (DEVELOPMENT)
+	private List<String> getParallelMasterBuildAdminPlusDev002(){
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Intermediate-Build-Exaxe.Client-Dev002"); 
+		buildItems.add("Intermediate-Build-Exaxe.AdminPlus-Dev002"); 
+		buildItems.add("Intermediate-Build-Exaxe.Apex-Dev002"); 
+		buildItems.add("Intermediate-Build-Exaxe.Aggregate-Dev002"); 
+
+		return buildItems;
+	} 
+
+	//// Returns the parallel builds for ADVICE PLUS solutions @ DEV002 (DEVELOPMENT)
+	private List<String> getParallelMasterBuildAdvicePlusDev002(){
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Intermediate-Build-Exaxe.FactFind-Dev002");
+		buildItems.add("Intermediate-Build-Exaxe.Quote.Rules-Dev002");
+		buildItems.add("Intermediate-Build-Exaxe.Quote-Dev002");
+		buildItems.add("Intermediate-Build-Exaxe.ExistingBusiness-Dev002");
+
+		return buildItems;
+	} 
+
+	//// Returns the parallel builds for CHANNEL PLUS solutions @ DEV002 (DEVELOPMENT)
+	private List<String> getParallelMasterBuilChannelPlusDev002(){
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Intermediate-Build-Exaxe.ChannelPlus-Dev002"); 
+
+		return buildItems;
+	} 
+
+	//// Returns the parallel builds for APEX SERVER/WORKFLOW solutions @ DEV002 (DEVELOPMENT)
+	private List<String> getParallelMasterBuildAPEXDev002(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Intermediate-Build-Exaxe.Apex.Workflow-Dev002"); 
+		buildItems.add("Intermediate-Build-Exaxe.Apex.Activities-Dev002"); 
+
+		return buildItems;
+	} 
+
+	//// Returns the sequential builds for APEX SERVER/WORKFLOW solutions @ DEV002 (DEVELOPMENT)
+	private List<String> getSequentialMasterBuildAPEXDev002(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Intermediate-Build-Exaxe.Apex.Server-Dev002"); 
+
+		return buildItems;
+	} 
+	
+	//// Returns the parallel builds for WEB SERVICE solutions @ DEV002 (DEVELOPMENT)
+	private List<String> getParallelMasterBuildWebServiceDev002(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Intermediate-Build-Exaxe.WebApi-Dev002"); 
+
+		return buildItems;
+	} 
+
 
 }
