@@ -271,7 +271,7 @@ class masterBuildSteps implements Serializable {
 	} 
 
 	//// Returns the parallel builds for CHANNEL PLUS solutions @ DEV002 (DEVELOPMENT)
-	private List<String> getParallelMasterBuilChannelPlusDev002(){
+	private List<String> getParallelMasterBuildChannelPlusDev002(){
 		List<String> buildItems = new ArrayList<String>()
 		buildItems.add("Intermediate-Build-Exaxe.ChannelPlus-Dev002"); 
 
