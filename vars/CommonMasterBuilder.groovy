@@ -36,7 +36,7 @@ try{
 			parallel parallelBuildJobs;
 		}
 		else{
-			echo "No Parallel Steps"
+			echo "No PARALLEL Steps!"
 		}
 
 		//// #######################################
@@ -44,14 +44,19 @@ try{
 		//// #######################################
 		def buildSteps = masterBuildStepsClass.getMasterBuildSteps(masterBuildName, buildFrom);
     
-		for (String buildStep : buildSteps) {
-			jobBuild = buildStep; //// So it can be included in the failure notification
+		if(buildSteps != null && buildSteps.size() > 0){
+			for (String buildStep : buildSteps) {
+				jobBuild = buildStep; //// So it can be included in the failure notification
 
-			stage("${buildStep}")
-			{
-				echo "Building: ${buildStep}";
-				// build buildStep;
+				stage("${buildStep}")
+				{
+					echo "Building: ${buildStep}";
+					// build buildStep;
+				}
 			}
+		}
+		else{
+			echo "No SEQUENTIAL Steps!"
 		}
 
 		currentBuild.result = "SUCCESS";
