@@ -59,7 +59,6 @@ class masterBuildSteps implements Serializable {
                 break
 
             default:
-                buildSteps.add("MasterBuildNotDefined");
                 break
         }   
 
