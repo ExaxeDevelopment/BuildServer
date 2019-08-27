@@ -117,7 +117,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses){
 		try{
 			stage("${job}"){
 				echo "Trigering job: ${job}"
-				def handle = triggerRemoteJob(remoteJenkinsName: serverName, job: job, token: token, connectionRetryLimit: 1, blockBuildUntilComplete: true);
+				def handle = triggerRemoteJob(remoteJenkinsName: serverName, job: job, token: token, pollInterval: 30, blockBuildUntilComplete: true);
 				def status = handle.getBuildStatus();
 				echo "Remote status from ${job}: ${status.toString()}";
 				def result = handle.getBuildResult();
