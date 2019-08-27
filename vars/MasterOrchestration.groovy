@@ -227,7 +227,7 @@ def getIntermediateDevelopmentSteps(buildFromStage, buildToStage){
 	map02.put("Intermediate-MasterBuild-ChannelPlus-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
 	steps.put("Backend Services", map02);
 	  
-	/*Map<String,String> map03 = new HashMap<String,String>();
+	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("Intermediate-MasterBuild-Apex-Dev002", APEX_BUILD_SERVER)	
 	steps.put("APEX", map03);
 	 
@@ -235,7 +235,7 @@ def getIntermediateDevelopmentSteps(buildFromStage, buildToStage){
 	map04.put("Intermediate-MasterBuild-WebServices-Dev002", API_BUILD_SERVER)	
 	steps.put("Web Services", map04);
 
-	Map<String,String> map05 = new HashMap<String,String>();
+	/*Map<String,String> map05 = new HashMap<String,String>();
 	map05.put("Build-SystemConfigurationUI-Dev002", BASE_BUILD_SERVER)	
 	map05.put("Build-AdminPlusUI-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map05.put("Build-PointOfSaleUI-Dev002", ADVICE_PLUS_BUILD_SERVER)	
