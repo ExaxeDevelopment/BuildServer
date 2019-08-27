@@ -27,7 +27,7 @@ try{
 				parallelBuildJobs[_buildStep]  = {
 					stage("${_buildStep}"){
 						echo "Building: ${_buildStep}";
-						// build _buildStep
+						build _buildStep
 					}
 				}
 			}
@@ -51,7 +51,7 @@ try{
 				stage("${buildStep}")
 				{
 					echo "Building: ${buildStep}";
-					// build buildStep;
+					build buildStep;
 				}
 			}
 		}
@@ -62,7 +62,7 @@ try{
 		currentBuild.result = "SUCCESS";
 		duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
 
-		/*try{
+		try{
 			stage("Success Notification"){
                 echo duration;
 				
@@ -74,7 +74,7 @@ try{
         catch(err){
             echo "Notification stage failed, but build was successful.";
             echo "Error: ${err}"
-        }*/
+        }
 
 	} // END NODE
 }
@@ -83,11 +83,11 @@ catch(err){
 	
     currentBuild.result = "FAILURE";
 	
-    /*node{
+    node{
         stage("Error Notification"){
             mail to: "${DEV_TEAM_EMAIL}", 
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
             body: "The build failed on stage: ${jobBuild} \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"      
         }
-    }*/
+    }
 }
