@@ -235,7 +235,7 @@ def getIntermediateDevelopmentSteps(buildFromStage, buildToStage){
 	map04.put("Intermediate-MasterBuild-WebServices-Dev002", API_BUILD_SERVER)	
 	steps.put("Web Services", map04);
 
-	/*Map<String,String> map05 = new HashMap<String,String>();
+	Map<String,String> map05 = new HashMap<String,String>();
 	map05.put("Build-SystemConfigurationUI-Dev002", BASE_BUILD_SERVER)	
 	map05.put("Build-AdminPlusUI-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map05.put("Build-PointOfSaleUI-Dev002", ADVICE_PLUS_BUILD_SERVER)	
@@ -246,8 +246,7 @@ def getIntermediateDevelopmentSteps(buildFromStage, buildToStage){
 
 	Map<String,String> map06 = new HashMap<String,String>();
 	map06.put("Build-DatabaseReconciliation-All", APEX_BUILD_SERVER)
-	steps.put("Database Reconciliation", map06);*/
-
+	steps.put("Database Reconciliation", map06);
 
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
