@@ -62,10 +62,6 @@ class masterBuildSteps implements Serializable {
                 buildSteps = getSequentialMasterBuildAdvicePlusDev002();
                 break
 
-			case "IntermediateMasterBuildApexDev002":
-                buildSteps = getSequentialMasterBuildAPEXDev002();
-                break
-
             default:
                 break
         }   
@@ -293,14 +289,6 @@ class masterBuildSteps implements Serializable {
 		return buildItems;
 	} 
 
-	//// Returns the sequential builds for APEX SERVER/WORKFLOW solutions @ DEV002 (DEVELOPMENT)
-	private List<String> getSequentialMasterBuildAPEXDev002(){
-		List<String> buildItems = new ArrayList<String>();
-		buildItems.add("Build-Exaxe.Apex.Server-Dev002"); 
-
-		return buildItems;
-	} 
-
 	//// Returns the sequential builds for ADMIN PLUS solutions @ DEV002 (DEVELOPMENT)
 	private List<String> getSequentialMasterBuildAdminPlusDev002(){
 		List<String> buildItems = new ArrayList<String>();
@@ -309,7 +297,7 @@ class masterBuildSteps implements Serializable {
 		return buildItems;
 	} 
 
-	//// Returns the sequential builds for ADMIN PLUS solutions @ DEV002 (DEVELOPMENT)
+	//// Returns the sequential builds for ADVICE PLUS solutions @ DEV002 (DEVELOPMENT)
 	private List<String> getSequentialMasterBuildAdvicePlusDev002(){
 		List<String> buildItems = new ArrayList<String>();
 		buildItems.add("Intermediate-Build-Exaxe.ExistingBusiness-Dev002");
@@ -320,6 +308,7 @@ class masterBuildSteps implements Serializable {
 	//// Returns the parallel builds for WEB SERVICE solutions @ DEV002 (DEVELOPMENT)
 	private List<String> getParallelMasterBuildWebServiceDev002(){
 		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Build-Exaxe.Apex.Server-Dev002"); 
 		buildItems.add("Intermediate-Build-Exaxe.WebApi-Dev002"); 
 
 		return buildItems;
