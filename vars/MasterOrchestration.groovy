@@ -144,6 +144,11 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map01.put("MasterBuild-Base-Dev001", BASE_BUILD_SERVER)
 	steps.put("Base/Common", map01);
 
+	//// Temporary stage to allow integration to be kicked off automatically
+	Map<String,String> mapIntegration = new HashMap<String,String>();
+	mapIntegration.put("MasterBuild-Orchestration-Integration", BASE_BUILD_SERVER)
+	steps.put("Integration", mapIntegration);
+
 	Map<String,String> map02 = new HashMap<String,String>();
 	map02.put("MasterBuild-AdminPlus-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-AdvicePlus-Dev002", ADVICE_PLUS_BUILD_SERVER)
@@ -204,11 +209,6 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map09.put("Build-ShrinkDbLogsScript-exop-apex-bld01", APEX_BUILD_SERVER)
 	map09.put("Build-ShrinkDbLogsScript-exop-api-bld01", API_BUILD_SERVER)
 	steps.put("ShrinkDbLogsScript", map09);
-
-	//// Temporary stage to allow integration to be kicked off automatically
-	Map<String,String> map10 = new HashMap<String,String>();
-	map10.put("MasterBuild-Orchestration-Integration", BASE_BUILD_SERVER)
-	steps.put("Integration", map10);
 
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
