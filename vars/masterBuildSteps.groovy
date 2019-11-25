@@ -289,8 +289,8 @@ class masterBuildSteps implements Serializable {
 	//// Returns the sequential builds for ADMIN PLUS solutions @ DEV002 (DEVELOPMENT)
 	private List<String> getSequentialMasterBuildAdminPlusDev002(){
 		List<String> buildItems = new ArrayList<String>();
-		buildItems.add("Intermediate-Build-Exaxe.Apex-Dev002"); 
 		buildItems.add("Intermediate-Build-Exaxe.AdminPlus-Dev002"); 
+		buildItems.add("Intermediate-Build-Exaxe.Apex-Dev002"); 
 		buildItems.add("Intermediate-Build-Exaxe.Aggregate-Dev002"); 
 
 		return buildItems;
