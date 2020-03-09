@@ -1,8 +1,7 @@
 import hudson.Util;
 
 def appRootPath = "C:\\Uploads\\BuildApp\\Exaxe.SolutionManager.BuildApp.exe";
-def tfsUsername = "";
-def tfsPassword = "";
+
 def failureMessage = "";
 def failureMessageSuffix = " was not successful!";
 def duration = "";
@@ -13,11 +12,6 @@ def projectsOperations = "#";
 try{
 	
     node{
-        withCredentials([[$class: "UsernamePasswordMultiBinding", credentialsId: "166ca05f-1074-4a9c-9529-2ab17ba62480", usernameVariable: "USERNAME", passwordVariable: "PASSWORD"]]) {
-            tfsUsername = "${env.USERNAME}"
-            tfsPassword = "${env.PASSWORD}"
-        }
-
 		// INPUT PARAMS
 		configFile = SelectedConfigFile;
 		projectsOperations = ProjectsOperations;
@@ -43,7 +37,7 @@ try{
                 parallelDeployJobs[_deployStep] = {
 					stage("${operation} - ${project}"){
 						//// Add action to be executed in parallel
-						def actionString = actionStringClass.createActionString(appRootPath, configFile, project, operation, tfsUsername, tfsPassword);
+						def actionString = actionStringClass.createActionString(appRootPath, configFile, project, operation);
 						echo actionString;
 						def result = bat(returnStatus: true, script: "${actionString}");
 						if(result != 0){

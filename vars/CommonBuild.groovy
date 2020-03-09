@@ -2,8 +2,7 @@ import hudson.Util;
 
 def undoChanges = false;
 def appRootPath = "C:\\Uploads\\BuildApp\\Exaxe.SolutionManager.BuildApp.exe";
-def tfsUsername = "";
-def tfsPassword = "";
+
 def operation = "";
 def undoOperation = "";
 def failureMessage = "";
@@ -17,10 +16,6 @@ def projectName = "#";
 try{
 
     node{
-        withCredentials([[$class: "UsernamePasswordMultiBinding", credentialsId: "166ca05f-1074-4a9c-9529-2ab17ba62480", usernameVariable: "USERNAME", passwordVariable: "PASSWORD"]]) {
-            tfsUsername = "${env.USERNAME}"
-            tfsPassword = "${env.PASSWORD}"
-        }
         
         undoChanges = true;	//// From here, it will need to undo the changes if any error/exception is raised
 		
@@ -48,7 +43,7 @@ try{
 			def timeOut = getTimeout(buildStep);
 			
 			stage("${buildStep}"){
-				def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", "${projectName}", buildStep, "${tfsUsername}", "${tfsPassword}")
+				def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", "${projectName}", buildStep)
 
 				timeout(time: timeOut, unit: 'MINUTES'){
 					def result = bat(returnStatus: true, script: "${actionString}");
@@ -94,7 +89,7 @@ catch(err){
         node{
             undoOperation = "UndoCheckOutFiles"
             stage(undoOperation){
-                def result = bat(returnStatus: true, script: "${appRootPath} ${configFile} ${projectName} ${undoOperation} ${tfsUsername} ${tfsPassword}");
+                def result = bat(returnStatus: true, script: "${appRootPath} ${configFile} ${projectName} ${undoOperation}");
                 if(result != 0){
                     failureMessage = "${undoOperation} ${failureMessageSuffix}";
                     echo failureMessage;
