@@ -93,6 +93,9 @@ class buildStepsByBuildType implements Serializable {
 		List<String> buildDeletePackages = new ArrayList<String>()
 		buildDeletePackages.add("DeletePackages");
 
+		List<String> buildClearNuGetCachePackages = new ArrayList<String>()
+		buildClearNuGetCachePackages.add("ClearNuGetCachePackages");
+
 		List<String> buildUpdateQualityGates = new ArrayList<String>()
 		buildUpdateQualityGates.add("UpdateQualityGates"); 
 
@@ -127,6 +130,9 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "DeletePackages":
                 buildSteps = buildDeletePackages;
+                break
+			case "ClearNuGetCachePackages":
+                buildSteps = buildClearNuGetCachePackages;
                 break
             default:
                 buildSteps.add("BuildTypeNotDefined");
