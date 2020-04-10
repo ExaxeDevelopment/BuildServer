@@ -145,9 +145,9 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	steps.put("Base/Common", map01);
 
 	//// Temporary stage to allow integration to be kicked off automatically
-	Map<String,String> mapIntegration = new HashMap<String,String>();
-	mapIntegration.put("MasterBuild-Orchestration-Integration", BASE_BUILD_SERVER)
-	steps.put("Integration", mapIntegration);
+	// Map<String,String> mapIntegration = new HashMap<String,String>();
+	// mapIntegration.put("MasterBuild-Orchestration-Integration", BASE_BUILD_SERVER)
+	// steps.put("Integration", mapIntegration);
 
 	Map<String,String> map02 = new HashMap<String,String>();
 	map02.put("MasterBuild-AdminPlus-Dev002", ADMIN_PLUS_BUILD_SERVER)
@@ -292,19 +292,19 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	steps.put("Deployments / Exaxe Single", map06);
 
 	// 2. SINGLE SERVER --> CUSTOMER
-	// Map<String,String> map07 = new HashMap<String,String>();
-	// map07.put("Deploy-Dev001-Hansard-Single", HD_DEPLOY_SERVER)
-	// steps.put("Deployments / Customer Single", map07);
+	Map<String,String> map07 = new HashMap<String,String>();
+	map07.put("Deploy-Dev001-Hansard-Single", HD_DEPLOY_SERVER)
+	steps.put("Deployments / Customer Single", map07);
 
 	// 3. MULTI SERVER --> EXAXE
-	// Map<String,String> map08 = new HashMap<String,String>();
-	// map08.put("Deploy-Dev001-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
-	// steps.put("Deployments / Exaxe Multi", map08);
+	Map<String,String> map08 = new HashMap<String,String>();
+	map08.put("Deploy-Dev001-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
+	steps.put("Deployments / Exaxe Multi", map08);
 
 	// 4. MULTI SERVER --> CUSTOMER
-	// Map<String,String> map09 = new HashMap<String,String>();
-	// map09.put("Deploy-Dev001-Hansard-Multi", HD_DEPLOY_SERVER)
-	// steps.put("Deployments / Customer Multi", map09);
+	Map<String,String> map09 = new HashMap<String,String>();
+	map09.put("Deploy-Dev001-Hansard-Multi", HD_DEPLOY_SERVER)
+	steps.put("Deployments / Customer Multi", map09);
  
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
