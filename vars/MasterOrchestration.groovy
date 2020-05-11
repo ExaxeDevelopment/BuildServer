@@ -145,11 +145,10 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	steps.put("Base/Common", map01);
 
 	//// Temporary stage to allow integration to be kicked off automatically
-	Map<String,String> mapIntegration = new HashMap<String,String>();
+	/*Map<String,String> mapIntegration = new HashMap<String,String>();
 	mapIntegration.put("MasterBuild-Orchestration-Integration", BASE_BUILD_SERVER)
-	steps.put("Integration", mapIntegration);
-
-	/* 
+	steps.put("Integration", mapIntegration);*/
+		 
 	Map<String,String> map02 = new HashMap<String,String>();
 	map02.put("MasterBuild-AdminPlus-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-AdvicePlus-Dev002", ADVICE_PLUS_BUILD_SERVER)
@@ -192,7 +191,6 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map07.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
 	steps.put("QualityGates", map07);
-	*/
 
 	Map<String,String> map08 = new HashMap<String,String>();
 	map08.put("Build-DeletePackages-exop-base-bld01", BASE_BUILD_SERVER)
