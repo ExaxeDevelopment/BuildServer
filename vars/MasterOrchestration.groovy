@@ -178,7 +178,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map06.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
-	map06.put("Deploy-AdminPlus-Dev002-SalesDemo", DEMO_DEPLOY_SERVER)
+	map06.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	map06.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	steps.put("Deployments", map06);
