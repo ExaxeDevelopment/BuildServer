@@ -178,10 +178,13 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map06.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
-	map06.put("Deploy-AdminPlus-Dev002-SalesDemo", DEMO_DEPLOY_SERVER)
+	map06.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
-	map06.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	steps.put("Deployments", map06);
+
+	Map<String,String> map06a = new HashMap<String,String>();
+	map06a.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
+	steps.put("Deployments-a", map06a);
 
 	Map<String,String> map07 = new HashMap<String,String>();
 	map07.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
