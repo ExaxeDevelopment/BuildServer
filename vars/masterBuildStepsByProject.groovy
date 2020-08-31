@@ -345,7 +345,7 @@ class masterBuildStepsByProject implements Serializable {
 	}
 
 	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
-	private List<String> getMasterBuildAdminPlusReleaseV20_6(){
+	private List<String> getMasterBuildReleaseV20_6(){
 		List<String> buildItems = new ArrayList<String>()
 		buildItems.add("Build-Exaxe.Types-Release-V20.6"); 
 		buildItems.add("Build-Exaxe.Libraries-Release-V20.6"); 
@@ -405,13 +405,15 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Calculations-Release-V20.8");
 		buildItems.add("Build-Exaxe.Client-Release-V20.8");
 		buildItems.add("Build-Exaxe.ChannelPlus-Release-V20.8"); 
-		buildItems.add("Build-ChannelPlusUI-Release-V20.8"); 	
 		buildItems.add("Build-Exaxe.AdminPlus-Release-V20.8"); 
 		buildItems.add("Build-Exaxe.Apex-Release-V20.8"); 
 		buildItems.add("Build-Exaxe.Aggregate-Release-V20.8"); 
+		buildItems.add("Build-Exaxe.WebApi-Release-V20.8"); 
+		buildItems.add("Build-Exaxe.Apex.Workflow-Release-V20.8"); 
 		buildItems.add("Build-Exaxe.Apex.Activities-Release-V20.8"); 
 		buildItems.add("Build-Exaxe.Apex.Server-Release-V20.8"); 
 		buildItems.add("Build-AdminPlusUI-Release-V20.8"); 
+		buildItems.add("Build-ChannelPlusUI-Release-V20.8"); 	
 	
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
