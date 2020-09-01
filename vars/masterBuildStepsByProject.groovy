@@ -389,8 +389,8 @@ class masterBuildStepsByProject implements Serializable {
 
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
-		//// buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V20.8");
-		//// buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V20.8");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V20.8");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V20.8");
 		//// buildItems.add("Deploy-Release-Hansard-Multi-V20.8");
 		//// buildItems.add("Deploy-Release-Hansard-Single-V20.8");
 	
