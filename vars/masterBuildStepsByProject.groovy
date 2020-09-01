@@ -346,33 +346,7 @@ class masterBuildStepsByProject implements Serializable {
 
 	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
 	private List<String> getMasterBuildReleaseV20_6(){
-		List<String> buildItems = new ArrayList<String>()
-		buildItems.add("Build-Exaxe.Types-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Libraries-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Rest-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Web-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Common-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.External-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Agent-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.App-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Configuration-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Rules-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Comment-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Document-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.SystemConfiguration-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Users-Release-V20.6");
-		buildItems.add("Build-Exaxe.Accounting-Release-V20.6");
-		buildItems.add("Build-Exaxe.Auth-Release-V20.6");
-		buildItems.add("Build-Exaxe.UIElements-Release-V20.6");
-		buildItems.add("Build-SystemConfigurationUI-Release-V20.6");
-		buildItems.add("Build-Exaxe.Calculations-Release-V20.6");
-		buildItems.add("Build-Exaxe.Client-Release-V20.6");
-		buildItems.add("Build-Exaxe.AdminPlus-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Apex-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Aggregate-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Apex.Activities-Release-V20.6"); 
-		buildItems.add("Build-Exaxe.Apex.Server-Release-V20.6"); 
-		buildItems.add("Build-AdminPlusUI-Release-V20.6"); 
+		List<String> buildItems = getMasterBuildReleaseVXX_X("20.6");
 	
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
@@ -383,37 +357,7 @@ class masterBuildStepsByProject implements Serializable {
 
 	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
 	private List<String> getMasterBuildReleaseV20_8(){
-		List<String> buildItems = new ArrayList<String>()
-		buildItems.add("Build-Exaxe.Types-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Libraries-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Rest-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Web-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Common-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.External-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Agent-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.App-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Configuration-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Rules-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Comment-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Document-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.SystemConfiguration-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Users-Release-V20.8");
-		buildItems.add("Build-Exaxe.Accounting-Release-V20.8");
-		buildItems.add("Build-Exaxe.Auth-Release-V20.8");
-		buildItems.add("Build-Exaxe.UIElements-Release-V20.8");
-		buildItems.add("Build-SystemConfigurationUI-Release-V20.8");
-		buildItems.add("Build-Exaxe.Calculations-Release-V20.8");
-		buildItems.add("Build-Exaxe.Client-Release-V20.8");
-		buildItems.add("Build-Exaxe.ChannelPlus-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.AdminPlus-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Apex-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Aggregate-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.WebApi-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Apex.Workflow-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Apex.Activities-Release-V20.8"); 
-		buildItems.add("Build-Exaxe.Apex.Server-Release-V20.8"); 
-		buildItems.add("Build-AdminPlusUI-Release-V20.8"); 
-		buildItems.add("Build-ChannelPlusUI-Release-V20.8"); 	
+		List<String> buildItems = getMasterBuildReleaseVXX_X("20.8");
 	
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
@@ -425,6 +369,42 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;		
 	}
 
+	private List<String> getMasterBuildReleaseVXX_X(String version)
+	{
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Exaxe.Types-Release-V".version); 
+		buildItems.add("Build-Exaxe.Libraries-Release-V".version); 
+		buildItems.add("Build-Exaxe.Rest-Release-V".version); 
+		buildItems.add("Build-Exaxe.Web-Release-V".version); 
+		buildItems.add("Build-Exaxe.Common-Release-V".version); 
+		buildItems.add("Build-Exaxe.External-Release-V".version); 
+		buildItems.add("Build-Exaxe.Agent-Release-V".version); 
+		buildItems.add("Build-Exaxe.App-Release-V".version); 
+		buildItems.add("Build-Exaxe.Configuration-Release-V".version); 
+		buildItems.add("Build-Exaxe.Rules-Release-V".version); 
+		buildItems.add("Build-Exaxe.Comment-Release-V".version); 
+		buildItems.add("Build-Exaxe.Document-Release-V".version); 
+		buildItems.add("Build-Exaxe.SystemConfiguration-Release-V".version); 
+		buildItems.add("Build-Exaxe.Users-Release-V".version);
+		buildItems.add("Build-Exaxe.Accounting-Release-V".version);
+		buildItems.add("Build-Exaxe.Auth-Release-V".version);
+		buildItems.add("Build-Exaxe.UIElements-Release-V".version);
+		buildItems.add("Build-SystemConfigurationUI-Release-V".version);
+		buildItems.add("Build-Exaxe.Calculations-Release-V".version);
+		buildItems.add("Build-Exaxe.Client-Release-V".version);
+		buildItems.add("Build-Exaxe.ChannelPlus-Release-V".version); 
+		buildItems.add("Build-Exaxe.AdminPlus-Release-V".version); 
+		buildItems.add("Build-Exaxe.Apex-Release-V".version); 
+		buildItems.add("Build-Exaxe.Aggregate-Release-V".version); 
+		buildItems.add("Build-Exaxe.WebApi-Release-V".version); 
+		buildItems.add("Build-Exaxe.Apex.Workflow-Release-V".version); 
+		buildItems.add("Build-Exaxe.Apex.Activities-Release-V".version); 
+		buildItems.add("Build-Exaxe.Apex.Server-Release-V".version); 
+		buildItems.add("Build-AdminPlusUI-Release-V".version); 
+		buildItems.add("Build-ChannelPlusUI-Release-V".version); 	
+
+		return buildItems;		
+	}
 	//// Returns the build + deploy items for "ADVICE PLUS" solutions @ DEV001 (UAT/INTEGRATION build)
 	private List<String> getMasterBuildAdvicePlusDev001(){
 		List<String> buildItems = new ArrayList<String>()
