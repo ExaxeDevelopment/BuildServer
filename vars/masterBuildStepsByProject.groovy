@@ -392,6 +392,8 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-SystemConfigurationUI-Release-V"+version);
 		buildItems.add("Build-Exaxe.Calculations-Release-V"+version);
 		buildItems.add("Build-Exaxe.Client-Release-V"+version);
+		buildItems.add("Build-Exaxe.Client-Release-VADVP"+version);
+		buildItems.add("Build-Exaxe.FactFind-Release-V"+version);
 		buildItems.add("Build-Exaxe.ChannelPlus-Release-V"+version); 
 		buildItems.add("Build-Exaxe.AdminPlus-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Apex-Release-V"+version); 
