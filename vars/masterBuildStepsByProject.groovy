@@ -366,6 +366,7 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.UIElements-Release-V20.6");
 		buildItems.add("Build-SystemConfigurationUI-Release-V20.6");
 		buildItems.add("Build-Exaxe.Calculations-Release-V20.6");
+		buildItems.add("Build-Exaxe.CalculationManagers-Release-V20.6");
 		buildItems.add("Build-Exaxe.Client-Release-V20.6");
 		buildItems.add("Build-Exaxe.AdminPlus-Release-V20.6"); 
 		buildItems.add("Build-Exaxe.Apex-Release-V20.6"); 
@@ -419,6 +420,7 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.UIElements-Release-V"+version);
 		buildItems.add("Build-SystemConfigurationUI-Release-V"+version);
 		buildItems.add("Build-Exaxe.Calculations-Release-V"+version);
+		buildItems.add("Build-Exaxe.CalculationManagers-Release-V"+version);
 		buildItems.add("Build-Exaxe.Client-Release-V"+version);
 		buildItems.add("Build-Exaxe.Client-Release-VADVP"+version);
 		buildItems.add("Build-Exaxe.FactFind-Release-V"+version);
