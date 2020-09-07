@@ -1,4 +1,4 @@
-class deployRelease_Hansard implements Serializable {
+aggregateWsPublishMap class deployRelease_Hansard implements Serializable {
     def getDeploySteps() { 
 		
 		List deploySteps = new ArrayList<Map<String,String>>();
@@ -191,11 +191,6 @@ class deployRelease_Hansard implements Serializable {
 		deploySteps.add(apexWebApiPublishMap);
 
 		//Exaxe.Aggregate  - PublishWebService
-		Map<String,String> aggregateWsPublishMap = new HashMap<String,String>();
-		aggregateWsPublishMap.put("Project", "Exaxe.Aggregate"); 
-		aggregateWsPublishMap.put("Operation", "PublishWebService"); 
-		deploySteps.add(aggregateWsPublishMap);
-
 		//Exaxe.Quote - PublishWebService
 		Map<String,String> quotehWebApiPublishMap  = new HashMap<String,String>();
 		quotehWebApiPublishMap.put("Project", "Exaxe.Quote-WebAPI"); 
