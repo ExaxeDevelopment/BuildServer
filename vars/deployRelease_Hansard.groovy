@@ -131,31 +131,21 @@ class deployRelease_Hansard implements Serializable {
 
 		/// WEB SERVICES
 
-		Map<String,String> externalWebApiRestoreMap  = new HashMap<String,String>();
-		externalWebApiRestoreMap.put("Project", "Exaxe.External"); 
-		externalWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(externalWebApiRestoreMap);
-
 		//Exaxe.Aggregate  - PublishWebService
 		Map<String,String> aggregateWsPublishMap = new HashMap<String,String>();
 		aggregateWsPublishMap.put("Project", "Exaxe.Aggregate"); 
 		aggregateWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(aggregateWsPublishMap);
 
-		Map<String,String> externalWebApiRestoreMap  = new HashMap<String,String>();
-		externalWebApiRestoreMap.put("Project", "Exaxe.External"); 
-		externalWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(externalWebApiRestoreMap);
-
 		//Exaxe.External - PublishWebService
 		Map<String,String> externalWebApiPublishMap  = new HashMap<String,String>();
-		externalWebApiPublishMap.put("Project", "Exaxe.External"); 
+		externalWebApiPublishMap.put("Project", "Exaxe.External-WebAPI"); 
 		externalWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(externalWebApiPublishMap);
 
 		//Exaxe.Document - PublishWebService
 		Map<String,String> documenthWebApiPublishMap  = new HashMap<String,String>();
-		documenthWebApiPublishMap.put("Project", "Exaxe.Document"); 
+		documenthWebApiPublishMap.put("Project", "Exaxe.Document-WebAPI"); 
 		documenthWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(documenthWebApiPublishMap);
 
@@ -167,13 +157,13 @@ class deployRelease_Hansard implements Serializable {
 
 		//Exaxe.SystemConfiguration - PublishWebService
 		Map<String,String> sysConfigurationWebApiPublishMap  = new HashMap<String,String>();
-		sysConfigurationWebApiPublishMap.put("Project", "Exaxe.SystemConfiguration"); 
+		sysConfigurationWebApiPublishMap.put("Project", "Exaxe.SystemConfiguration-WebAPI"); 
 		sysConfigurationWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(sysConfigurationWebApiPublishMap);
 
 		//Exaxe.Users - PublishWebService
 		Map<String,String> usersWebApiPublishMap  = new HashMap<String,String>();
-		usersWebApiPublishMap.put("Project", "Exaxe.Users"); 
+		usersWebApiPublishMap.put("Project", "Exaxe.Users-WebAPI"); 
 		usersWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(usersWebApiPublishMap);
 
@@ -195,6 +185,11 @@ class deployRelease_Hansard implements Serializable {
 		apexWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(apexWsPublishMap);
 
+		Map<String,String> apexWebApiPublishMap = new HashMap<String,String>();
+		apexWebApiPublishMap.put("Project", "Exaxe.Apex-WebAPI"); 
+		apexWebApiPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(apexWebApiPublishMap);
+
 		//Exaxe.Aggregate  - PublishWebService
 		Map<String,String> aggregateWsPublishMap = new HashMap<String,String>();
 		aggregateWsPublishMap.put("Project", "Exaxe.Aggregate"); 
@@ -203,25 +198,25 @@ class deployRelease_Hansard implements Serializable {
 
 		//Exaxe.Quote - PublishWebService
 		Map<String,String> quotehWebApiPublishMap  = new HashMap<String,String>();
-		quotehWebApiPublishMap.put("Project", "Exaxe.Quote"); 
+		quotehWebApiPublishMap.put("Project", "Exaxe.Quote-WebAPI"); 
 		quotehWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(quotehWebApiPublishMap);
 
 		//Exaxe.ChannelPlus - PublishWebService
 		Map<String,String> channelPlusWebApiPublishMap  = new HashMap<String,String>();
-		channelPlusWebApiPublishMap.put("Project", "Exaxe.ChannelPlus"); 
+		channelPlusWebApiPublishMap.put("Project", "Exaxe.ChannelPlus-WebAPI"); 
 		channelPlusWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(channelPlusWebApiPublishMap);
 
 		//Exaxe.Auth - PublishWebService
-		Map<String,String> authhWebApiPublishMap  = new HashMap<String,String>();
-		authhWebApiPublishMap.put("Project", "Exaxe.Auth"); 
-		authhWebApiPublishMap.put("Operation", "PublishWebService"); 
-		deploySteps.add(authhWebApiPublishMap);
+		Map<String,String> authWebApiPublishMap  = new HashMap<String,String>();
+		authWebApiPublishMap.put("Project", "Exaxe.Auth"); 
+		authWebApiPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(authWebApiPublishMap);
 
 		//Exaxe.Apex.Workflow  - PublishWebService
 		Map<String,String> apexWorkflowPublishMap = new HashMap<String,String>();
-		apexWorkflowPublishMap.put("Project", "Exaxe.Apex.Workflow"); 
+		apexWorkflowPublishMap.put("Project", "Exaxe.Apex.Workflow-WebAPI"); 
 		apexWorkflowPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(apexWorkflowPublishMap);
 
