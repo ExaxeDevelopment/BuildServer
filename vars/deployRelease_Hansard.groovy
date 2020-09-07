@@ -353,18 +353,6 @@ class deployRelease_Hansard implements Serializable {
 		hansardPortalClientPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(hansardPortalClientPublishMap);
 
-		//Hansard.Portals - RestoreNuGetPackages
-		Map<String,String> hansardPortalRestoreNugetMap  = new HashMap<String,String>();
-		hansardPortalRestoreNugetMap.put("Project", "Hansard.Portals"); 
-		hansardPortalRestoreNugetMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(hansardPortalRestoreNugetMap);
-		
-		//Hansard.Portals - PublishWebSite
-		Map<String,String> hansardPortalPublishMap  = new HashMap<String,String>();
-		hansardPortalPublishMap.put("Project", "Hansard.Portals"); 
-		hansardPortalPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(hansardPortalPublishMap);
-
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
 		releaseContentMap.put("Project", "ReleaseContent"); 
