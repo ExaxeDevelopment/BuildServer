@@ -123,12 +123,6 @@ class deployRelease_Hansard implements Serializable {
 		adminPlusDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(adminPlusDbMap);
 
-		//Exaxe.AdminPlus - BuildDatabase
-		Map<String,String> authDbMap = new HashMap<String,String>();
-		authDbMap.put("Project", "Exaxe.Auth"); 
-		authDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(adminPlusDbMap);
-
 		//Exaxe.Apex  - BuildDatabase
 		Map<String,String> apexDbMap = new HashMap<String,String>();
 		apexDbMap.put("Project", "Exaxe.Apex "); 
