@@ -131,11 +131,16 @@ class deployRelease_Hansard implements Serializable {
 
 		/// WEB SERVICES
 
-		//Exaxe.ChannelPlus - GetCodeLatestVersion
-		Map<String,String> channelPlusWebApiGetCodeMap  = new HashMap<String,String>();
-		channelPlusWebApiGetCodeMap.put("Project", "Exaxe.ChannelPlus"); 
-		channelPlusWebApiGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(channelPlusWebApiGetCodeMap);
+		Map<String,String> externalWebApiRestoreMap  = new HashMap<String,String>();
+		externalWebApiRestoreMap.put("Project", "Exaxe.External"); 
+		externalWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(externalWebApiRestoreMap);
+
+		//Exaxe.Aggregate  - PublishWebService
+		Map<String,String> aggregateWsPublishMap = new HashMap<String,String>();
+		aggregateWsPublishMap.put("Project", "Exaxe.Aggregate"); 
+		aggregateWsPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(aggregateWsPublishMap);
 
 		Map<String,String> externalWebApiRestoreMap  = new HashMap<String,String>();
 		externalWebApiRestoreMap.put("Project", "Exaxe.External"); 
@@ -227,24 +232,6 @@ class deployRelease_Hansard implements Serializable {
 		deploySteps.add(apexServerPublishMap);
 
 		/// WEB SITES
-		//SystemConfigurationUI - GetCodeLatestVersion
-		Map<String,String> systemConfigUIGetCodeMap  = new HashMap<String,String>();
-		systemConfigUIGetCodeMap.put("Project", "SystemConfigurationUI"); 
-		systemConfigUIGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(systemConfigUIGetCodeMap);
-
-		//ChannelPlusUI - GetCodeLatestVersion
-		Map<String,String> channelPlusUIGetCodeMap  = new HashMap<String,String>();
-		channelPlusUIGetCodeMap.put("Project", "ChannelPlusUI"); 
-		channelPlusUIGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(channelPlusUIGetCodeMap);
-
-		//AdminPlusUI - GetCodeLatestVersion
-		Map<String,String> adminPlusUIGetCodeMap  = new HashMap<String,String>();
-		adminPlusUIGetCodeMap.put("Project", "AdminPlusUI"); 
-		adminPlusUIGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(adminPlusUIGetCodeMap);
-
 		//SystemConfigurationUI - PublishWebSite
 		Map<String,String> systemConfigUIPublishMap  = new HashMap<String,String>();
 		systemConfigUIPublishMap.put("Project", "SystemConfigurationUI"); 
