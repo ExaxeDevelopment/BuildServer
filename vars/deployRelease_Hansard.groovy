@@ -131,12 +131,6 @@ class deployRelease_Hansard implements Serializable {
 		channelPlusWebApiGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
 		deploySteps.add(channelPlusWebApiGetCodeMap);
 
-		//Exaxe.ChannelPlus - PublishWebSite
-		Map<String,String> channelPlusWebApiPublishMap  = new HashMap<String,String>();
-		channelPlusWebApiPublishMap.put("Project", "Exaxe.ChannelPlus"); 
-		channelPlusWebApiPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(channelPlusWebApiPublishMap);
-
 		Map<String,String> externalWebApiRestoreMap  = new HashMap<String,String>();
 		externalWebApiRestoreMap.put("Project", "Exaxe.External"); 
 		externalWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
