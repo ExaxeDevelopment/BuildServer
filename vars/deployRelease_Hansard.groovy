@@ -142,23 +142,11 @@ class deployRelease_Hansard implements Serializable {
 		externalWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(externalWebApiPublishMap);
 
-		//Exaxe.Document - RestoreNuGetPackages
-		Map<String,String> documentWebApiRestoreMap  = new HashMap<String,String>();
-		documentWebApiRestoreMap.put("Project", "Exaxe.Document"); 
-		documentWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(documentWebApiRestoreMap);
-
 		//Exaxe.Document - PublishWebService
 		Map<String,String> documenthWebApiPublishMap  = new HashMap<String,String>();
 		documenthWebApiPublishMap.put("Project", "Exaxe.Document"); 
 		documenthWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(documenthWebApiPublishMap);
-
-	    //Exaxe.Configuration - RestoreNuGetPackages
-		Map<String,String> configurationRestoreNuGetMap  = new HashMap<String,String>();
-		configurationRestoreNuGetMap.put("Project", "Exaxe.Configuration"); 
-		configurationRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(configurationRestoreNuGetMap);
 
 		//Exaxe.Configuration - PublishWebService
 		Map<String,String> configurationWsPublishMap = new HashMap<String,String>();
@@ -166,23 +154,11 @@ class deployRelease_Hansard implements Serializable {
 		configurationWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(configurationWsPublishMap);
 
-		//Exaxe.SystemConfiguration - RestoreNuGetPackages
-		Map<String,String> sysConfigurationWebApiRestoreMap  = new HashMap<String,String>();
-		sysConfigurationWebApiRestoreMap.put("Project", "Exaxe.SystemConfiguration"); 
-		sysConfigurationWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(sysConfigurationWebApiRestoreMap);
-
 		//Exaxe.SystemConfiguration - PublishWebService
 		Map<String,String> sysConfigurationWebApiPublishMap  = new HashMap<String,String>();
 		sysConfigurationWebApiPublishMap.put("Project", "Exaxe.SystemConfiguration"); 
 		sysConfigurationWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(sysConfigurationWebApiPublishMap);
-
-		//Exaxe.Users - RestoreNuGetPackages
-		Map<String,String> usersWebApiRestoreMap  = new HashMap<String,String>();
-		usersWebApiRestoreMap.put("Project", "Exaxe.Users"); 
-		usersWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(usersWebApiRestoreMap);
 
 		//Exaxe.Users - PublishWebService
 		Map<String,String> usersWebApiPublishMap  = new HashMap<String,String>();
@@ -190,23 +166,11 @@ class deployRelease_Hansard implements Serializable {
 		usersWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(usersWebApiPublishMap);
 
-		//Exaxe.Client  - RestoreNuGetPackages
-		Map<String,String> clientWsRestoreMap = new HashMap<String,String>();
-		clientWsRestoreMap.put("Project", "Exaxe.Client"); 
-		clientWsRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(clientWsRestoreMap);
-
 		//Exaxe.Client  - PublishWebService
 		Map<String,String> clientWsPublishMap = new HashMap<String,String>();
 		clientWsPublishMap.put("Project", "Exaxe.Client"); 
 		clientWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(clientWsPublishMap);
-
-		//Exaxe.AdminPlus  - RestoreNuGetPackages
-		Map<String,String> policyWsRestoreMap = new HashMap<String,String>();
-		policyWsRestoreMap.put("Project", "Exaxe.AdminPlus"); 
-		policyWsRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(policyWsRestoreMap);
 
 		//Exaxe.AdminPlus  - PublishWebService
 		Map<String,String> policyWsPublishMap = new HashMap<String,String>();
@@ -214,23 +178,11 @@ class deployRelease_Hansard implements Serializable {
 		policyWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(policyWsPublishMap);
 
-		//Exaxe.Apex  - RestoreNuGetPackages
-		Map<String,String> apexWsRestoreMap = new HashMap<String,String>();
-		apexWsRestoreMap.put("Project", "Exaxe.Apex"); 
-		apexWsRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(apexWsRestoreMap);
-
 		//Exaxe.Apex  - PublishWebService
 		Map<String,String> apexWsPublishMap = new HashMap<String,String>();
 		apexWsPublishMap.put("Project", "Exaxe.Apex"); 
 		apexWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(apexWsPublishMap);
-
-		//Exaxe.Aggregate  - RestoreNuGetPackages
-		Map<String,String> aggregateWsRestoreMap = new HashMap<String,String>();
-		aggregateWsRestoreMap.put("Project", "Exaxe.Aggregate"); 
-		aggregateWsRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(aggregateWsRestoreMap);
 
 		//Exaxe.Aggregate  - PublishWebService
 		Map<String,String> aggregateWsPublishMap = new HashMap<String,String>();
@@ -238,23 +190,11 @@ class deployRelease_Hansard implements Serializable {
 		aggregateWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(aggregateWsPublishMap);
 
-		//Exaxe.Quote - RestoreNuGetPackages
-		Map<String,String> quoteWebApiRestoreMap  = new HashMap<String,String>();
-		quoteWebApiRestoreMap.put("Project", "Exaxe.Quote"); 
-		quoteWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(quoteWebApiRestoreMap);
-
 		//Exaxe.Quote - PublishWebService
 		Map<String,String> quotehWebApiPublishMap  = new HashMap<String,String>();
 		quotehWebApiPublishMap.put("Project", "Exaxe.Quote"); 
 		quotehWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(quotehWebApiPublishMap);
-
-		//Exaxe.ChannelPlus - RestoreNuGetPackages
-		Map<String,String> channelPlusWebApiRestoreMap  = new HashMap<String,String>();
-		channelPlusWebApiRestoreMap.put("Project", "Exaxe.ChannelPlus"); 
-		channelPlusWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(channelPlusWebApiRestoreMap);
 
 		//Exaxe.ChannelPlus - PublishWebService
 		Map<String,String> channelPlusWebApiPublishMap  = new HashMap<String,String>();
@@ -262,35 +202,17 @@ class deployRelease_Hansard implements Serializable {
 		channelPlusWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(channelPlusWebApiPublishMap);
 
-		//Exaxe.Auth - RestoreNuGetPackages
-		Map<String,String> authWebApiRestoreMap  = new HashMap<String,String>();
-		authWebApiRestoreMap.put("Project", "Exaxe.Auth"); 
-		authWebApiRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(authWebApiRestoreMap);
-
 		//Exaxe.Auth - PublishWebService
 		Map<String,String> authhWebApiPublishMap  = new HashMap<String,String>();
 		authhWebApiPublishMap.put("Project", "Exaxe.Auth"); 
 		authhWebApiPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(authhWebApiPublishMap);
 
-		//Exaxe.Apex.Workflow  - RestoreNuGetPackages
-		Map<String,String> apexWorkflowRestoreMap = new HashMap<String,String>();
-		apexWorkflowRestoreMap.put("Project", "Exaxe.Apex.Workflow"); 
-		apexWorkflowRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(apexWorkflowRestoreMap);
-
 		//Exaxe.Apex.Workflow  - PublishWebService
 		Map<String,String> apexWorkflowPublishMap = new HashMap<String,String>();
 		apexWorkflowPublishMap.put("Project", "Exaxe.Apex.Workflow"); 
 		apexWorkflowPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(apexWorkflowPublishMap);
-
-		//Exaxe.Apex.Server  - RestoreNuGetPackages
-		Map<String,String> apexServerRestoreMap = new HashMap<String,String>();
-		apexServerRestoreMap.put("Project", "Exaxe.Apex.Server"); 
-		apexServerRestoreMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(apexServerRestoreMap);
 
 		//Exaxe.Apex.Server  - PublishWebService
 		Map<String,String> apexServerPublishMap = new HashMap<String,String>();
