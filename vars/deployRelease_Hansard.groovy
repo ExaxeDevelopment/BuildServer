@@ -51,11 +51,11 @@ class deployRelease_Hansard implements Serializable {
 		agentDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(agentDbMap);
 
-		//Exaxe.`ChannelPlus - BuildDatabase
-		Map<String,String> agentDbMap  = new HashMap<String,String>();
-		agentDbMap.put("Project", "Exaxe.ChannelPlus"); 
-		agentDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(agentDbMap);
+		//Exaxe.ChannelPlus - BuildDatabase
+		Map<String,String> channelPlusDbMap  = new HashMap<String,String>();
+		channelPlusDbMap.put("Project", "Exaxe.ChannelPlus"); 
+		channelPlusDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(channelPlusDbMap);
 
 		//Exaxe.App - BuildDatabase
 		Map<String,String> appDbMap  = new HashMap<String,String>();
