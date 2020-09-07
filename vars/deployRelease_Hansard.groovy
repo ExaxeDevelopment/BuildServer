@@ -51,6 +51,12 @@ class deployRelease_Hansard implements Serializable {
 		agentDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(agentDbMap);
 
+		//Exaxe.Agent - BuildDatabase
+		Map<String,String> authDbMap  = new HashMap<String,String>();
+		authDbMap.put("Project", "Exaxe.Auth"); 
+		authDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(authDbMap);
+
 		//Exaxe.ChannelPlus - BuildDatabase
 		Map<String,String> channelPlusDbMap  = new HashMap<String,String>();
 		channelPlusDbMap.put("Project", "Exaxe.ChannelPlus"); 
@@ -115,6 +121,12 @@ class deployRelease_Hansard implements Serializable {
 		Map<String,String> adminPlusDbMap = new HashMap<String,String>();
 		adminPlusDbMap.put("Project", "Exaxe.AdminPlus"); 
 		adminPlusDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(adminPlusDbMap);
+
+		//Exaxe.AdminPlus - BuildDatabase
+		Map<String,String> authDbMap = new HashMap<String,String>();
+		authDbMap.put("Project", "Exaxe.Auth"); 
+		authDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(adminPlusDbMap);
 
 		//Exaxe.Apex  - BuildDatabase
@@ -257,17 +269,17 @@ class deployRelease_Hansard implements Serializable {
 		channelPlusUIPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(channelPlusUIPublishMap);
 
-		//Hansard.Portals - BuildSolution
-		Map<String,String> hansardPortalClientSolutionMap  = new HashMap<String,String>();
-		hansardPortalClientSolutionMap.put("Project", "Hansard.Portals"); 
-		hansardPortalClientSolutionMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(hansardPortalClientSolutionMap);
-
-		//Hansard.Portals - PublishWebSite
+		//Hansard.Portals.Client - PublishWebSite
 		Map<String,String> hansardPortalClientPublishMap  = new HashMap<String,String>();
-		hansardPortalClientPublishMap.put("Project", "Hansard.Portals"); 
+		hansardPortalClientPublishMap.put("Project", "Hansard.Portals.Broker-WebSite"); 
 		hansardPortalClientPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(hansardPortalClientPublishMap);
+
+		//Hansard.Portals - PublishWebSite
+		Map<String,String> hansardPortalBrokerPublishMap  = new HashMap<String,String>();
+		hansardPortalBrokerPublishMap.put("Project", "Hansard.Portals.Client-WebSite"); 
+		hansardPortalBrokerPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(hansardPortalBrokerPublishMap);
 
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
