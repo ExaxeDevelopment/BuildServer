@@ -1,4 +1,4 @@
-aggregateWsPublishMap class deployRelease_Hansard implements Serializable {
+class deployRelease_Hansard implements Serializable {
     def getDeploySteps() { 
 		
 		List deploySteps = new ArrayList<Map<String,String>>();
