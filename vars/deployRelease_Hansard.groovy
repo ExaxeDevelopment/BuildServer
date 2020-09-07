@@ -57,6 +57,11 @@ class deployRelease_Hansard implements Serializable {
 		quoteDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(quoteDbMap);
 
+		Map<String,String> quoteFFDbMap  = new HashMap<String,String>();
+		quoteFFDbMap.put("Project", "Exaxe.Quote-FactFind"); 
+		quoteFFDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(quoteFFDbMap);
+
 		//Exaxe.Agent - BuildDatabase
 		Map<String,String> authDbMap  = new HashMap<String,String>();
 		authDbMap.put("Project", "Exaxe.Auth"); 
