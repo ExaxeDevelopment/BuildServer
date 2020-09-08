@@ -45,24 +45,25 @@ class deployRelease_Hansard implements Serializable {
 		solutionManagerPublishCreateMap.put("Operation", "PublishInstallApp"); 
 		deploySteps.add(solutionManagerPublishCreateMap);
 
-		//Exaxe.Agent - BuildDatabase
+		//Exaxe.FactFind - BuildDatabase
 		Map<String,String> agentDbMap  = new HashMap<String,String>();
 		agentDbMap.put("Project", "Exaxe.Agent"); 
 		agentDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(agentDbMap);
 
-		//Exaxe.Agent - BuildDatabase
-		Map<String,String> quoteDbMap  = new HashMap<String,String>();
-		quoteDbMap.put("Project", "Exaxe.Quote"); 
-		quoteDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(quoteDbMap);
-
+		//Exaxe.Quote - BuildDatabase
 		Map<String,String> quoteFFDbMap  = new HashMap<String,String>();
 		quoteFFDbMap.put("Project", "Exaxe.Quote-FactFind"); 
 		quoteFFDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(quoteFFDbMap);
 
-		//Exaxe.Agent - BuildDatabase
+		//Exaxe.Quote - BuildDatabase
+		Map<String,String> quoteDbMap  = new HashMap<String,String>();
+		quoteDbMap.put("Project", "Exaxe.Quote"); 
+		quoteDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(quoteDbMap);
+
+		//Exaxe.Auth - BuildDatabase
 		Map<String,String> authDbMap  = new HashMap<String,String>();
 		authDbMap.put("Project", "Exaxe.Auth"); 
 		authDbMap.put("Operation", "BuildDatabase"); 
