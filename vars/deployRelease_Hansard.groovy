@@ -216,7 +216,7 @@ class deployRelease_Hansard implements Serializable {
 
 		//Exaxe.Auth - PublishWebService
 		Map<String,String> authWebApiPublishMap  = new HashMap<String,String>();
-		authWebApiPublishMap.put("Project", "Exaxe.Auth"); 
+		authWebApiPublishMap.put("Project", "Exaxe.Auth-WebAPI"); 
 		authWebApiPublishMap.put("Operation", "DeployWebApi"); 
 		deploySteps.add(authWebApiPublishMap);
 
