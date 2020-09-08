@@ -148,6 +148,31 @@ class deployRelease_Hansard implements Serializable {
 		aggregateWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(aggregateWsPublishMap);
 
+		Map<String,String> aggregateWebAPIPublishMap = new HashMap<String,String>();
+		aggregateWebAPIPublishMap.put("Project", "Exaxe.Aggregate-WebAPI"); 
+		aggregateWebAPIPublishMap.put("Operation", "DeployWebApi"); 
+		deploySteps.add(aggregateWebAPIPublishMap);
+
+		Map<String,String> apexWebAPIPublishMap = new HashMap<String,String>();
+		apexWebAPIPublishMap.put("Project", "Exaxe.Apex-WebAPI"); 
+		apexWebAPIPublishMap.put("Operation", "DeployWebApi"); 
+		deploySteps.add(apexWebAPIPublishMap);
+
+		Map<String,String> clientWebAPIPublishMap = new HashMap<String,String>();
+		clientWebAPIPublishMap.put("Project", "Exaxe.Client-WebAPI"); 
+		clientWebAPIPublishMap.put("Operation", "DeployWebApi"); 
+		deploySteps.add(clientWebAPIPublishMap);
+
+		Map<String,String> configurationWebAPIPublishMap = new HashMap<String,String>();
+		configurationWebAPIPublishMap.put("Project", "Exaxe.Configuration-WebAPI"); 
+		configurationWebAPIPublishMap.put("Operation", "DeployWebApi"); 
+		deploySteps.add(configurationWebAPIPublishMap);
+
+		Map<String,String> policyWebAPIPublishMap = new HashMap<String,String>();
+		policyWebAPIPublishMap.put("Project", "Exaxe.AdminPlus-WebAPI"); 
+		policyWebAPIPublishMap.put("Operation", "DeployWebApi"); 
+		deploySteps.add(policyWebAPIPublishMap);
+
 		//Exaxe.External - PublishWebService
 		Map<String,String> externalWebApiPublishMap  = new HashMap<String,String>();
 		externalWebApiPublishMap.put("Project", "Exaxe.External-WebAPI"); 
