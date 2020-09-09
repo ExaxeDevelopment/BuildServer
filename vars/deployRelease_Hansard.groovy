@@ -15,29 +15,11 @@ class deployRelease_Hansard implements Serializable {
 		getAllCodeMap.put("Operation", "GetAllCodeLatestVersion"); 
 		deploySteps.add(getAllCodeMap);
 
-		//Exaxe.SolutionManager - GetCodeLatestVersion
+		//Exaxe.SolutionManager - Deploy
 		Map<String,String> solutionManagerGetCodeMap  = new HashMap<String,String>();
 		solutionManagerGetCodeMap.put("Project", "Exaxe.SolutionManager-UI"); 
-		solutionManagerGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		solutionManagerGetCodeMap.put("Operation", "DeployInstallApp"); 
 		deploySteps.add(solutionManagerGetCodeMap);
-
-		//Exaxe.SolutionManager - RestoreNuGetPackages
-		Map<String,String> solutionManagerRestoreNuGetMap  = new HashMap<String,String>();
-		solutionManagerRestoreNuGetMap.put("Project", "Exaxe.SolutionManager-UI"); 
-		solutionManagerRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
-		deploySteps.add(solutionManagerRestoreNuGetMap);
-
-		//Exaxe.SolutionManager - BuildSolution
-		Map<String,String> solutionManagerBuildMap  = new HashMap<String,String>();
-		solutionManagerBuildMap.put("Project", "Exaxe.SolutionManager-UI"); 
-		solutionManagerBuildMap.put("Operation", "BuildSolution"); 
-		deploySteps.add(solutionManagerBuildMap);
-
-		//Exaxe.SolutionManager - PublishInstallApp (UPDATE)
-		Map<String,String> solutionManagerPublishUpdateMap  = new HashMap<String,String>();
-		solutionManagerPublishUpdateMap.put("Project", "Exaxe.SolutionManager-UI"); 
-		solutionManagerPublishUpdateMap.put("Operation", "PublishInstallApp"); 
-		deploySteps.add(solutionManagerPublishUpdateMap);
 
 		//Exaxe.FactFind - BuildDatabase
 		Map<String,String> agentDbMap  = new HashMap<String,String>();
