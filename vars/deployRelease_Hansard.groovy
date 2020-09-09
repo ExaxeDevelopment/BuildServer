@@ -39,12 +39,6 @@ class deployRelease_Hansard implements Serializable {
 		solutionManagerPublishUpdateMap.put("Operation", "PublishInstallApp"); 
 		deploySteps.add(solutionManagerPublishUpdateMap);
 
-		//Exaxe.SolutionManager - PublishInstallApp (CREATE)
-		Map<String,String> solutionManagerPublishConsoleMap  = new HashMap<String,String>();
-		solutionManagerPublishConsoleMap.put("Project", "Exaxe.SolutionManager-Console"); 
-		solutionManagerPublishConsoleMap.put("Operation", "PublishInstallApp"); 
-		deploySteps.add(solutionManagerPublishConsoleMap);
-
 		//Exaxe.FactFind - BuildDatabase
 		Map<String,String> agentDbMap  = new HashMap<String,String>();
 		agentDbMap.put("Project", "Exaxe.Agent"); 
