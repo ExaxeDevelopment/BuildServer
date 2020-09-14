@@ -198,11 +198,6 @@ class deployRelease_Hansard implements Serializable {
 		apexWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(apexWsPublishMap);
 
-		Map<String,String> apexWebApiPublishMap = new HashMap<String,String>();
-		apexWebApiPublishMap.put("Project", "Exaxe.Apex-WebAPI"); 
-		apexWebApiPublishMap.put("Operation", "DeployWebApi"); 
-		deploySteps.add(apexWebApiPublishMap);
-
 		//Exaxe.Aggregate  - PublishWebService
 		//Exaxe.Quote - PublishWebService
 		Map<String,String> quotehWebApiPublishMap  = new HashMap<String,String>();
