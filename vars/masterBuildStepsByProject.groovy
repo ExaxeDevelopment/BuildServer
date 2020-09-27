@@ -406,7 +406,7 @@ class masterBuildStepsByProject implements Serializable {
 	private List<String> getMasterBuildReleaseV20_10(){
 		List<String> buildItems = getMasterBuildReleaseVXX_X("20.10");
 	
-		buildItems.add("Build-Hansard.Portals-Release-V20.8"); 	
+		buildItems.add("Build-Hansard.Portals-Release-V20.10"); 	
 
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
