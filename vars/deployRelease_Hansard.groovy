@@ -22,23 +22,11 @@ class deployRelease_Hansard implements Serializable {
 		deploySteps.add(solutionManagerGetCodeMap);
 
 		/// WEB SITES
-		//SystemConfigurationUI - PublishWebSite
-		Map<String,String> systemConfigUIPublishMap  = new HashMap<String,String>();
-		systemConfigUIPublishMap.put("Project", "SystemConfigurationUI"); 
-		systemConfigUIPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(systemConfigUIPublishMap);
-
 		//AdminPlusUI - PublishWebSite
 		Map<String,String> adminPlusUIPublishMap  = new HashMap<String,String>();
 		adminPlusUIPublishMap.put("Project", "AdminPlusUI"); 
 		adminPlusUIPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(adminPlusUIPublishMap);
-
-		//channelPlusUI - PublishWebSite
-		Map<String,String> channelPlusUIPublishMap  = new HashMap<String,String>();
-		channelPlusUIPublishMap.put("Project", "ChannelPlusUI"); 
-		channelPlusUIPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(channelPlusUIPublishMap);
 
 		//Hansard.Portals.Client - PublishWebSite
 		Map<String,String> hansardPortalClientPublishMap  = new HashMap<String,String>();
@@ -51,6 +39,19 @@ class deployRelease_Hansard implements Serializable {
 		hansardPortalBrokerPublishMap.put("Project", "Hansard.Portals.Client-WebSite"); 
 		hansardPortalBrokerPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(hansardPortalBrokerPublishMap);
+
+		//SystemConfigurationUI - PublishWebSite
+		Map<String,String> systemConfigUIPublishMap  = new HashMap<String,String>();
+		systemConfigUIPublishMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigUIPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(systemConfigUIPublishMap);
+
+		//channelPlusUI - PublishWebSite
+		Map<String,String> channelPlusUIPublishMap  = new HashMap<String,String>();
+		channelPlusUIPublishMap.put("Project", "ChannelPlusUI"); 
+		channelPlusUIPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(channelPlusUIPublishMap);
+
 		//Exaxe.FactFind - BuildDatabase
 		Map<String,String> agentDbMap  = new HashMap<String,String>();
 		agentDbMap.put("Project", "Exaxe.Agent"); 
