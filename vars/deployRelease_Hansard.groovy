@@ -22,6 +22,19 @@ class deployRelease_Hansard implements Serializable {
 		deploySteps.add(solutionManagerGetCodeMap);
 
 		/// WEB SITES
+
+		//channelPlusUI - PublishWebSite
+		Map<String,String> channelPlusUIPublishMap  = new HashMap<String,String>();
+		channelPlusUIPublishMap.put("Project", "ChannelPlusUI"); 
+		channelPlusUIPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(channelPlusUIPublishMap);
+
+		//SystemConfigurationUI - PublishWebSite
+		Map<String,String> systemConfigUIPublishMap  = new HashMap<String,String>();
+		systemConfigUIPublishMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigUIPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(systemConfigUIPublishMap);
+
 		//AdminPlusUI - PublishWebSite
 		Map<String,String> adminPlusUIPublishMap  = new HashMap<String,String>();
 		adminPlusUIPublishMap.put("Project", "AdminPlusUI"); 
@@ -39,18 +52,6 @@ class deployRelease_Hansard implements Serializable {
 		hansardPortalBrokerPublishMap.put("Project", "Hansard.Portals.Client-WebSite"); 
 		hansardPortalBrokerPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(hansardPortalBrokerPublishMap);
-
-		//SystemConfigurationUI - PublishWebSite
-		Map<String,String> systemConfigUIPublishMap  = new HashMap<String,String>();
-		systemConfigUIPublishMap.put("Project", "SystemConfigurationUI"); 
-		systemConfigUIPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(systemConfigUIPublishMap);
-
-		//channelPlusUI - PublishWebSite
-		Map<String,String> channelPlusUIPublishMap  = new HashMap<String,String>();
-		channelPlusUIPublishMap.put("Project", "ChannelPlusUI"); 
-		channelPlusUIPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(channelPlusUIPublishMap);
 
 		//Exaxe.FactFind - BuildDatabase
 		Map<String,String> agentDbMap  = new HashMap<String,String>();
