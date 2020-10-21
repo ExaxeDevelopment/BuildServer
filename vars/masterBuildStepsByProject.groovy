@@ -422,6 +422,7 @@ class masterBuildStepsByProject implements Serializable {
 	{
 		List<String> buildItems = new ArrayList<String>()
 		buildItems.add("Build-Exaxe.Types-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Security-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Libraries-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Rest-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Web-Release-V"+version); 
