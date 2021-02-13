@@ -175,6 +175,7 @@ class masterBuildSteps implements Serializable {
 	//// Returns the build items for "ADVICE PLUS" solutions @ DEV001 (UAT/INTEGRATION)
 	private List<String> getMasterBuildAdvicePlusDev001(){
 		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Exaxe.Client-Dev003");
 		buildItems.add("Build-Exaxe.FactFind-Dev001");
 		buildItems.add("Build-Exaxe.Quote.Rules-Dev001");
 		buildItems.add("Build-Exaxe.Quote-Dev001");
