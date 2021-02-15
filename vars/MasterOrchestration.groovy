@@ -246,7 +246,7 @@ def getIntermediateDevelopmentSteps(buildFromStage, buildToStage){
 	map05.put("Build-AdminPlusUI-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map05.put("Build-PointOfSaleUI-Dev002", ADVICE_PLUS_BUILD_SERVER)	
 	map05.put("Build-ChannelPlusUI-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map05.put("Build-Exaxe.Portals-Dev002", API_BUILD_SERVER)
+	//// map05.put("Build-Exaxe.Portals-Dev002", API_BUILD_SERVER)
 	map05.put("Build-Hansard.Portals-Dev002", API_BUILD_SERVER)	
 	steps.put("Web Sites", map05);
 
@@ -287,7 +287,7 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	map05.put("Build-AdminPlusUI-Dev001", ADMIN_PLUS_BUILD_SERVER)
 	map05.put("Build-PointOfSaleUI-Dev001", ADVICE_PLUS_BUILD_SERVER)	
 	map05.put("Build-ChannelPlusUI-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map05.put("Build-Exaxe.Portals-Dev001", API_BUILD_SERVER)
+	//// map05.put("Build-Exaxe.Portals-Dev001", API_BUILD_SERVER)
 	map05.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
 	steps.put("Web Sites", map05);
 
