@@ -174,7 +174,6 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map05.put("Build-AdminPlusUI-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map05.put("Build-PointOfSaleUI-Dev002", ADVICE_PLUS_BUILD_SERVER)	
 	map05.put("Build-ChannelPlusUI-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map05.put("Build-Exaxe.Portals-Dev002", API_BUILD_SERVER)
 	map05.put("Build-Hansard.Portals-Dev002", API_BUILD_SERVER)	
 	steps.put("Web Sites", map05);
 
@@ -396,7 +395,6 @@ def getPortalsKeyBuilds(){
 	keyBuilds.add("MasterBuild-ChannelPlus");
 	keyBuilds.add("MasterBuild-Apex");
 	keyBuilds.add("MasterBuild-WebServices");
-	keyBuilds.add("Build-Exaxe.Portals");
 	keyBuilds.add("Build-Hansard.Portals");
 	
 	keyBuilds;
