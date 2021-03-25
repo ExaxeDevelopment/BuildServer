@@ -295,6 +295,7 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	Map<String,String> map06 = new HashMap<String,String>();
 	map06.put("Deploy-Dev001-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
 	map06.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
+	map06.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	steps.put("Deployments / Exaxe Single", map06);
 
 	// 2. SINGLE SERVER --> CUSTOMER
@@ -307,6 +308,7 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	Map<String,String> map08 = new HashMap<String,String>();
 	map08.put("Deploy-Dev001-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
 	map08.put("Deploy-Dev001-OneFamily-Exaxe-Multi", OF_DEPLOY_SERVER)
+	map06.put("Deploy-Dev001-Acorn-Exaxe-Multi", ACN_DEPLOY_SERVER)
 	steps.put("Deployments / Exaxe Multi", map08);
 
 	// 4. MULTI SERVER --> CUSTOMER
