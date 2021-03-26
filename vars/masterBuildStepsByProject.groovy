@@ -106,6 +106,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV20_10_prod":
                 buildSteps = getMasterBuildReleaseV20_10_prod();
                 break	
+			case "MasterBuildReleaseVACN21_03":
+                buildSteps = getMasterBuildReleaseVACN21_03();
+                break	
 				
 				
             default:
@@ -436,6 +439,21 @@ class masterBuildStepsByProject implements Serializable {
 	
 		return buildItems;		
 	}
+
+		//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
+	private List<String> getMasterBuildReleaseVACN21_03(){
+		List<String> buildItems = getMasterBuildReleaseVXX_X("ACN21.03");
+	
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-Acorn-Exaxe-Multi-VACN21.03");
+		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VACN21.03");
+		buildItems.add("Deploy-Release-Acorn-Multi-VACN21.03");
+		buildItems.add("Deploy-Release-Acorn-Single-VACN21.03");
+	
+		return buildItems;		
+	}
+
 
 	private List<String> getMasterBuildReleaseVXX_X(String version)
 	{
