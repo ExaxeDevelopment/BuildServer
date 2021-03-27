@@ -476,7 +476,6 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Accounting-Release-V"+version);
 		buildItems.add("Build-Exaxe.Auth-Release-V"+version);
 		buildItems.add("Build-Exaxe.UIElements-Release-V"+version);
-		buildItems.add("Build-SystemConfigurationUI-Release-V"+version);
 		buildItems.add("Build-Exaxe.Calculations-Release-V"+version);
 		buildItems.add("Build-Exaxe.CalculationManagers-Release-V"+version);
 		buildItems.add("Build-Exaxe.ChannelPlus-Release-V"+version); 
@@ -493,6 +492,7 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Apex.Workflow-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Apex.Activities-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Apex.Server-Release-V"+version); 
+		buildItems.add("Build-SystemConfigurationUI-Release-V"+version);
 		buildItems.add("Build-PointOfSaleUI-Release-V"+version); 
 		buildItems.add("Build-AdminPlusUI-Release-V"+version); 
 		buildItems.add("Build-ChannelPlusUI-Release-V"+version); 	
