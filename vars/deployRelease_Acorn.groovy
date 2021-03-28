@@ -53,6 +53,25 @@ class deployRelease_Acorn implements Serializable {
 		hansardPortalBrokerPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(hansardPortalBrokerPublishMap);
 
+		//PointOfSaleUI- GetCodeLatestVersion
+		Map<String,String> pointSalesUIWsGetCodeMap  = new HashMap<String,String>();
+		pointSalesUIWsGetCodeMap.put("Project", "PointOfSaleUI"); 
+		pointSalesUIWsGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(pointSalesUIWsGetCodeMap);
+
+		//PointOfSaleUI - RestoreNuGetPackages
+		Map<String,String> pointSalesUIWsRestoreNuGetMap  = new HashMap<String,String>();
+		pointSalesUIWsRestoreNuGetMap.put("Project", "PointOfSaleUI"); 
+		pointSalesUIWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(pointSalesUIWsRestoreNuGetMap);
+
+		//PointOfSaleUI - PublishWebSite
+		Map<String,String> pointSalesUIWsPublishMap  = new HashMap<String,String>();
+		pointSalesUIWsPublishMap.put("Project", "PointOfSaleUI"); 
+		pointSalesUIWsPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(pointSalesUIWsPublishMap);
+
+
 		//Exaxe.FactFind - BuildDatabase
 		Map<String,String> agentDbMap  = new HashMap<String,String>();
 		agentDbMap.put("Project", "Exaxe.Agent"); 
@@ -150,6 +169,13 @@ class deployRelease_Acorn implements Serializable {
 		deploySteps.add(apexDbMap);
 
 		/// WEB SERVICES
+
+		//Exaxe.FactFind  - PublishWebService
+		Map<String,String> factFindWsPublishMap = new HashMap<String,String>();
+		factFindWsPublishMap.put("Project", "Exaxe.FactFind "); 
+		factFindWsPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(factFindWsPublishMap);
+
 
 		//Exaxe.Aggregate  - PublishWebService
 		Map<String,String> aggregateWsPublishMap = new HashMap<String,String>();
