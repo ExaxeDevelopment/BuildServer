@@ -120,6 +120,24 @@ class deployRelease_Acorn implements Serializable {
 		apexDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(apexDbMap);
 
+		//Exaxe.FactFind - BuildDatabase
+		Map<String,String> factFindDbMap = new HashMap<String,String>();
+		factFindDbMap.put("Project", "Exaxe.FactFind"); 
+		factFindDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(factFindDbMap);
+
+		//Exaxe.Quote  - BuildDatabase
+		Map<String,String> quoteDbMap = new HashMap<String,String>();
+		quoteDbMap.put("Project", "Exaxe.Quote "); 
+		quoteDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(quoteDbMap);
+
+		//Exaxe.ExistingBusiness - BuildDatabase
+		Map<String,String> existingBusinessDbMap = new HashMap<String,String>();
+		existingBusinessDbMap.put("Project", "Exaxe.ExistingBusiness"); 
+		existingBusinessDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(existingBusinessDbMap);
+
 		/// WEB SERVICES
 
 		//Exaxe.FactFind  - PublishWebService
