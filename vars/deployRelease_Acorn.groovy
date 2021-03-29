@@ -84,6 +84,18 @@ class deployRelease_Acorn implements Serializable {
 		configurationDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(configurationDbMap);
 
+		//Exaxe.Configuration-Question - BuildDatabase
+		Map<String,String> configurationQuestionDbMap = new HashMap<String,String>();
+		configurationQuestionDbMap.put("Project", "Exaxe.Configuration-Question"); 
+		configurationQuestionDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(configurationQuestionDbMap);
+
+		//Exaxe.Configuration-Reference - BuildDatabase
+		Map<String,String> configurationReferenceDbMap = new HashMap<String,String>();
+		configurationReferenceDbMap.put("Project", "Exaxe.Configuration-Reference"); 
+		configurationReferenceDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(configurationReferenceDbMap);
+
 		//Exaxe.Comment - BuildDatabase
 		Map<String,String> commentDbMap  = new HashMap<String,String>();
 		commentDbMap.put("Project", "Exaxe.Comment"); 
