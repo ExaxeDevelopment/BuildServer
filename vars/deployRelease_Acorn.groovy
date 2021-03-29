@@ -128,12 +128,6 @@ class deployRelease_Acorn implements Serializable {
 		factFindWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(factFindWsPublishMap);
 
-		//Exaxe.Apex  - PublishWebService
-		Map<String,String> apexWsPublishMap = new HashMap<String,String>();
-		apexWsPublishMap.put("Project", "Exaxe.Apex"); 
-		apexWsPublishMap.put("Operation", "PublishWebService"); 
-		deploySteps.add(apexWsPublishMap);
-
 		//Exaxe.Auth - PublishWebService
 		Map<String,String> authWebApiPublishMap  = new HashMap<String,String>();
 		authWebApiPublishMap.put("Project", "Exaxe.Auth-WebAPI"); 
