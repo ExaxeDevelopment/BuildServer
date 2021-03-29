@@ -21,21 +21,6 @@ class deployRelease_Acorn implements Serializable {
 		solutionManagerGetCodeMap.put("Operation", "DeployInstallApp"); 
 		deploySteps.add(solutionManagerGetCodeMap);
 
-		/// WEB SITES
-
-		//SystemConfigurationUI - PublishWebSite
-		Map<String,String> systemConfigUIPublishMap  = new HashMap<String,String>();
-		systemConfigUIPublishMap.put("Project", "SystemConfigurationUI"); 
-		systemConfigUIPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(systemConfigUIPublishMap);
-
-		//PointOfSaleUI - PublishWebSite
-		Map<String,String> pointSalesUIWsPublishMap  = new HashMap<String,String>();
-		pointSalesUIWsPublishMap.put("Project", "PointOfSaleUI"); 
-		pointSalesUIWsPublishMap.put("Operation", "PublishWebSite"); 
-		deploySteps.add(pointSalesUIWsPublishMap);
-
-
 		//Exaxe.FactFind - BuildDatabase
 		Map<String,String> agentDbMap  = new HashMap<String,String>();
 		agentDbMap.put("Project", "Exaxe.Agent"); 
@@ -143,6 +128,20 @@ class deployRelease_Acorn implements Serializable {
 		existingBusinessDbMap.put("Project", "Exaxe.ExistingBusiness"); 
 		existingBusinessDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(existingBusinessDbMap);
+
+		/// WEB SITES
+
+		//SystemConfigurationUI - PublishWebSite
+		Map<String,String> systemConfigUIPublishMap  = new HashMap<String,String>();
+		systemConfigUIPublishMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigUIPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(systemConfigUIPublishMap);
+
+		//PointOfSaleUI - PublishWebSite
+		Map<String,String> pointSalesUIWsPublishMap  = new HashMap<String,String>();
+		pointSalesUIWsPublishMap.put("Project", "PointOfSaleUI"); 
+		pointSalesUIWsPublishMap.put("Operation", "PublishWebSite"); 
+		deploySteps.add(pointSalesUIWsPublishMap);
 
 		/// WEB SERVICES
 
