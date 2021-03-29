@@ -126,12 +126,6 @@ class deployRelease_Acorn implements Serializable {
 		factFindDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(factFindDbMap);
 
-		//Exaxe.Quote  - BuildDatabase
-		Map<String,String> quoteDbMap = new HashMap<String,String>();
-		quoteDbMap.put("Project", "Exaxe.Quote "); 
-		quoteDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(quoteDbMap);
-
 		//Exaxe.ExistingBusiness - BuildDatabase
 		Map<String,String> existingBusinessDbMap = new HashMap<String,String>();
 		existingBusinessDbMap.put("Project", "Exaxe.ExistingBusiness"); 
