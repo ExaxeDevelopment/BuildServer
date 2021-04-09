@@ -131,11 +131,35 @@ class deployRelease_Acorn implements Serializable {
 
 		/// WEB SITES
 
+		//Exaxe.SystemConfigurationUI - GetCodeLatestVersion
+		Map<String,String> systemConfigurationWsGetCodeMap  = new HashMap<String,String>();
+		systemConfigurationWsGetCodeMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigurationWsGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(systemConfigurationWsGetCodeMap);
+
+		//Exaxe.SystemConfigurationUI - RestoreNuGetPackages
+		Map<String,String> systemConfigurationWsRestoreNuGetMap  = new HashMap<String,String>();
+		systemConfigurationWsRestoreNuGetMap.put("Project", "SystemConfigurationUI"); 
+		systemConfigurationWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(systemConfigurationWsRestoreNuGetMap);
+
 		//SystemConfigurationUI - PublishWebSite
 		Map<String,String> systemConfigUIPublishMap  = new HashMap<String,String>();
 		systemConfigUIPublishMap.put("Project", "SystemConfigurationUI"); 
 		systemConfigUIPublishMap.put("Operation", "PublishWebSite"); 
 		deploySteps.add(systemConfigUIPublishMap);
+
+		//PointOfSaleUI- GetCodeLatestVersion
+		Map<String,String> pointSalesUIWsGetCodeMap  = new HashMap<String,String>();
+		pointSalesUIWsGetCodeMap.put("Project", "PointOfSaleUI"); 
+		pointSalesUIWsGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(pointSalesUIWsGetCodeMap);
+
+		//PointOfSaleUI - RestoreNuGetPackages
+		Map<String,String> pointSalesUIWsRestoreNuGetMap  = new HashMap<String,String>();
+		pointSalesUIWsRestoreNuGetMap.put("Project", "PointOfSaleUI"); 
+		pointSalesUIWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(pointSalesUIWsRestoreNuGetMap);
 
 		//PointOfSaleUI - PublishWebSite
 		Map<String,String> pointSalesUIWsPublishMap  = new HashMap<String,String>();
@@ -145,11 +169,35 @@ class deployRelease_Acorn implements Serializable {
 
 		/// WEB SERVICES
 
+		//Exaxe.FactFind - GetCodeLatestVersion
+		Map<String,String> factFindWsGetCodeMap  = new HashMap<String,String>();
+		factFindWsGetCodeMap.put("Project", "Exaxe.FactFind"); 
+		factFindWsGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(factFindWsGetCodeMap);
+
+		//Exaxe.FactFind - RestoreNuGetPackages
+		Map<String,String> factFindWsRestoreNuGetMap  = new HashMap<String,String>();
+		factFindWsRestoreNuGetMap.put("Project", "Exaxe.FactFind"); 
+		factFindWsRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(factFindWsRestoreNuGetMap);
+
 		//Exaxe.FactFind  - PublishWebService
 		Map<String,String> factFindWsPublishMap = new HashMap<String,String>();
 		factFindWsPublishMap.put("Project", "Exaxe.FactFind "); 
 		factFindWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(factFindWsPublishMap);
+
+		//Exaxe.Auth - GetCodeLatestVersion
+		Map<String,String> authWebApiGetCodeMap  = new HashMap<String,String>();
+		authWebApiGetCodeMap.put("Project", "Exaxe.Auth-WebAPI"); 
+		authWebApiGetCodeMap.put("Operation", "GetCodeLatestVersion"); 
+		deploySteps.add(authWebApiGetCodeMap);
+
+		//Exaxe.Auth - RestoreNuGetPackages
+		Map<String,String> authWebApiRestoreNuGetMap  = new HashMap<String,String>();
+		authWebApiRestoreNuGetMap.put("Project", "Exaxe.Auth-WebAPI"); 
+		authWebApiRestoreNuGetMap.put("Operation", "RestoreNuGetPackages"); 
+		deploySteps.add(authWebApiRestoreNuGetMap);
 
 		//Exaxe.Auth - PublishWebService
 		Map<String,String> authWebApiPublishMap  = new HashMap<String,String>();
