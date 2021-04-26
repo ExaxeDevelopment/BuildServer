@@ -1,6 +1,6 @@
 class actionString implements Serializable {
   
-  def stagesWithoutProject = ["GetAllCodeLatestVersion", "Initialisation", "ReleaseContent"] 
+  def stagesWithoutProject = ["GetAllCodeLatestVersion", "Initialisation", "ReleaseContent", "ReleaseEscrowFiles"] 
 
   def createActionString(appRootPath, configFile, projectName, operation) {
     private String actionString;
