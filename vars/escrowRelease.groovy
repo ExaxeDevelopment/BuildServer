@@ -15,23 +15,9 @@ class escrowRelease implements Serializable {
 		getAllCodeMap.put("Operation", "GetAllCodeLatestVersion"); 
 		deploySteps.add(getAllCodeMap);
 
-		// Exaxe.Types Get Latest Code
-		// Exaxe.Types GetEscrow
-		Map<String,String> typesMap  = new HashMap<String,String>();
-		typesMap.put("Project", "Exaxe.Types"); 
-		typesMap.put("Operation", "EscrowFiles"); 
-		deploySteps.add(typesMap);
-
-		// Exaxe.Security GetEscrow
-		Map<String,String> securityMap  = new HashMap<String,String>();
-		securityMap.put("Project", "Exaxe.Security"); 
-		securityMap.put("Operation", "EscrowFiles"); 
-		deploySteps.add(securityMap);
-
-		Map<String,String> librariesMap  = new HashMap<String,String>();
-		librariesMap.put("Project", "Exaxe.Libraries"); 
-		librariesMap.put("Operation", "EscrowFiles"); 
-		deploySteps.add(librariesMap);
+		deploySteps.add(getStep("Exaxe.Types"));
+		deploySteps.add(getStep("Exaxe.Security"));
+		deploySteps.add(getStep("Exaxe.Libraries"));
 
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
@@ -42,4 +28,12 @@ class escrowRelease implements Serializable {
 		//Return All of the defined steps
 		deploySteps
     }
+
+	def getStep(val){
+		Map<String,String> map  = new HashMap<String,String>();
+		map.put("Project", val); 
+		map.put("Operation", "EscrowFiles"); 
+		
+		map
+	}
 }
