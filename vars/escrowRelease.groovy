@@ -15,10 +15,6 @@ class escrowRelease implements Serializable {
 		getAllCodeMap.put("Operation", "GetAllCodeLatestVersion"); 
 		deploySteps.add(getAllCodeMap);
 
-		deploySteps.add(getStep("Exaxe.Types"));
-		deploySteps.add(getStep("Exaxe.Security"));
-		deploySteps.add(getStep("Exaxe.Libraries"));
-
 deploySteps.add(getStep("Exaxe.Types");
 deploySteps.add(getStep("Exaxe.Security");
 deploySteps.add(getStep("Exaxe.Libraries");
@@ -45,7 +41,7 @@ deploySteps.add(getStep("Exaxe.Client");
 deploySteps.add(getStep("Exaxe.AdminPlus");
 deploySteps.add(getStep("Exaxe.Apex");
 deploySteps.add(getStep("Exaxe.Aggregate");
-deploySteps.add(getStep("Exaxe.Client-ADVP")
+deploySteps.add(getStep("Exaxe.Client-ADVP");
 deploySteps.add(getStep("Exaxe.FactFind");
 deploySteps.add(getStep("Exaxe.Quote.Rules");
 deploySteps.add(getStep("Exaxe.Quote");
