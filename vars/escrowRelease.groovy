@@ -15,7 +15,9 @@ class escrowRelease implements Serializable {
 		getAllCodeMap.put("Operation", "GetAllCodeLatestVersion"); 
 		deploySteps.add(getAllCodeMap);
 
-
+		deploySteps.add(getStep("Exaxe.Types");
+		deploySteps.add(getStep("Exaxe.Security");
+		deploySteps.add(getStep("Exaxe.Libraries");
 
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
