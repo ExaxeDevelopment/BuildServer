@@ -9,12 +9,6 @@ class escrowRelease implements Serializable {
 		initialisationMap.put("Operation", "Initialisation"); 
 		deploySteps.add(initialisationMap);
 
-		//Delete Workspace Mappings
-		Map<String,String> typesMapDWM  = new HashMap<String,String>();
-		typesMapDWM.put("Project", "Exaxe.Types"); 
-		typesMapDWM.put("Operation", "DeleteWorkspaceMappings"); 
-		deploySteps.add(typesMapDWM);
-
 		// Exaxe.Types Get Latest Code
 		Map<String,String> typesMap  = new HashMap<String,String>();
 		typesMap.put("Project", "Exaxe.Types"); 
