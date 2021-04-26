@@ -6,7 +6,7 @@ class escrowCommonBuildSteps implements Serializable {
 		switch (val) {
             case "escrowRelease":
                 def escrowReleaseClass = new escrowRelease();
-				commonDeploySteps = escrowRelease.getEscrowSteps();
+				commonDeploySteps = escrowReleaseClass.getEscrowSteps();
                 break
             default:             
                 break
