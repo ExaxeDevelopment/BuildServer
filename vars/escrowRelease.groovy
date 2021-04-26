@@ -9,23 +9,24 @@ class escrowRelease implements Serializable {
 		initialisationMap.put("Operation", "Initialisation"); 
 		deploySteps.add(initialisationMap);
 
-		// Exaxe.Types Get Latest Code
-		Map<String,String> typesMap  = new HashMap<String,String>();
-		typesMap.put("Project", "Exaxe.Types"); 
-		typesMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(typesMap);
-
-		// Exaxe.Types GetEscrow
-		Map<String,String> typesMap2  = new HashMap<String,String>();
-		typesMap2.put("Project", "Exaxe.Types"); 
-		typesMap2.put("Operation", "EscrowFiles"); 
-		deploySteps.add(typesMap2);
-
 		//Delete Workspace Mappings
 		Map<String,String> securityMapDWM  = new HashMap<String,String>();
 		securityMapDWM.put("Project", "Exaxe.Security"); 
 		securityMapDWM.put("Operation", "DeleteWorkspaceMappings"); 
 		deploySteps.add(securityMapDWM);
+
+		//GetAllCodeLatestVersion
+		Map<String,String> getAllCodeMap  = new HashMap<String,String>();
+		getAllCodeMap.put("Project", "GetAllCodeLatestVersion"); 
+		getAllCodeMap.put("Operation", "GetAllCodeLatestVersion"); 
+		deploySteps.add(getAllCodeMap);
+
+		// Exaxe.Types Get Latest Code
+		// Exaxe.Types GetEscrow
+		Map<String,String> typesMap2  = new HashMap<String,String>();
+		typesMap2.put("Project", "Exaxe.Types"); 
+		typesMap2.put("Operation", "EscrowFiles"); 
+		deploySteps.add(typesMap2);
 
 		// Exaxe.Security Get Latest Code
 		Map<String,String> securityMap  = new HashMap<String,String>();
