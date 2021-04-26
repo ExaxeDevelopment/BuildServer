@@ -1,5 +1,5 @@
-class deployRelease_Acorn implements Serializable {
-    def getDeploySteps() { 
+class escrowRelease implements Serializable {
+    def getEscrowSteps() { 
 		
 		List deploySteps = new ArrayList<Map<String,String>>();
 

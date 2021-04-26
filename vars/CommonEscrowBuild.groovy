@@ -23,10 +23,10 @@ try{
 		
 		// PREPARE CLASS OBJECTS
 		def actionStringClass = new actionString();
-	    def deployStepsClass = new deployCommonBuildSteps();
+	    def deployStepsClass = new escrowCommonBuildSteps();
 	    
 	    // START EXECUTION
-        def deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
+        def deployCommonSteps = deployStepsClass.getEscrowCommonBuildSteps(deployConfigurationAction)
 		
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
