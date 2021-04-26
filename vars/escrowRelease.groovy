@@ -9,12 +9,6 @@ class escrowRelease implements Serializable {
 		initialisationMap.put("Operation", "Initialisation"); 
 		deploySteps.add(initialisationMap);
 
-		//Delete Workspace Mappings
-		Map<String,String> securityMapDWM  = new HashMap<String,String>();
-		securityMapDWM.put("Project", "Exaxe.Security"); 
-		securityMapDWM.put("Operation", "DeleteWorkspaceMappings"); 
-		deploySteps.add(securityMapDWM);
-
 		//GetAllCodeLatestVersion
 		Map<String,String> getAllCodeMap  = new HashMap<String,String>();
 		getAllCodeMap.put("Project", "GetAllCodeLatestVersion"); 
@@ -29,10 +23,10 @@ class escrowRelease implements Serializable {
 		deploySteps.add(typesMap2);
 
 		// Exaxe.Security Get Latest Code
-		Map<String,String> securityMap  = new HashMap<String,String>();
-		securityMap.put("Project", "Exaxe.Security"); 
-		securityMap.put("Operation", "GetCodeLatestVersion"); 
-		deploySteps.add(securityMap);
+		//Map<String,String> securityMap  = new HashMap<String,String>();
+		//securityMap.put("Project", "Exaxe.Security"); 
+		//securityMap.put("Operation", "GetCodeLatestVersion"); 
+		//deploySteps.add(securityMap);
 
 		// Exaxe.Security GetEscrow
 		Map<String,String> securityMap2  = new HashMap<String,String>();

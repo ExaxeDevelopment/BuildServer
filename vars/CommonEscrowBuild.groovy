@@ -131,7 +131,7 @@ try{
     } //// end node 
 }
 catch(err){
-    echo "Deployment Failed...";
+    echo "Escrow Creation Failed...";
     
     currentBuild.result = "FAILURE";
     
