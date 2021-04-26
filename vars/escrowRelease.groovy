@@ -69,6 +69,6 @@ class escrowRelease implements Serializable {
 		map.put("Project", val); 
 		map.put("Operation", "EscrowFiles"); 
 		
-		map
+		return map;
 	}
 }
