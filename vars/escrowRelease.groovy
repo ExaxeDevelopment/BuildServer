@@ -4,12 +4,6 @@ class escrowRelease implements Serializable {
 		List deploySteps = new ArrayList<Map<String,String>>();
 
 		//Initialisation
-		Map<String,String> initialisationMapA  = new HashMap<String,String>();
-		initialisationMapA.put("Project", "DeleteWorkspaceMappings"); 
-		initialisationMapA.put("Operation", "DeleteWorkspaceMappings"); 
-		deploySteps.add(initialisationMapA);
-
-		//Initialisation
 		Map<String,String> initialisationMap  = new HashMap<String,String>();
 		initialisationMap.put("Project", "Initialisation"); 
 		initialisationMap.put("Operation", "Initialisation"); 
@@ -20,6 +14,12 @@ class escrowRelease implements Serializable {
 		getAllCodeMap.put("Project", "GetAllCodeLatestVersion"); 
 		getAllCodeMap.put("Operation", "GetAllCodeLatestVersion"); 
 		deploySteps.add(getAllCodeMap);
+
+		//Initialisation
+		Map<String,String> typesMap0  = new HashMap<String,String>();
+		typesMap0.put("Project", "Exaxe.Types"); 
+		typesMap0.put("Operation", "DeleteWorkspaceMappings"); 
+		deploySteps.add(typesMap0);
 
 		// Exaxe.Types Get Latest Code
 		Map<String,String> typesMap  = new HashMap<String,String>();
