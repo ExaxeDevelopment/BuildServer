@@ -64,7 +64,7 @@ class escrowRelease implements Serializable {
 		deploySteps
     }
 
-	def getStep(val){
+	private Map<String,String> getStep(val){
 		Map<String,String> map  = new HashMap<String,String>();
 		map.put("Project", val); 
 		map.put("Operation", "EscrowFiles"); 
