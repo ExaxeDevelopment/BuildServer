@@ -9,11 +9,11 @@ class escrowRelease implements Serializable {
 		initialisationMap.put("Operation", "Initialisation"); 
 		deploySteps.add(initialisationMap);
 
-		//Initialisation
-		Map<String,String> typesMap0  = new HashMap<String,String>();
-		typesMap0.put("Project", "Exaxe.Types"); 
-		typesMap0.put("Operation", "DeleteWorkspaceMappings"); 
-		deploySteps.add(typesMap0);
+		//Delete Workspace Mappings
+		Map<String,String> typesMapDWM  = new HashMap<String,String>();
+		typesMapDWM.put("Project", "Exaxe.Types"); 
+		typesMapDWM.put("Operation", "DeleteWorkspaceMappings"); 
+		deploySteps.add(typesMapDWM);
 
 		// Exaxe.Types Get Latest Code
 		Map<String,String> typesMap  = new HashMap<String,String>();
@@ -26,6 +26,12 @@ class escrowRelease implements Serializable {
 		typesMap2.put("Project", "Exaxe.Types"); 
 		typesMap2.put("Operation", "EscrowFiles"); 
 		deploySteps.add(typesMap2);
+
+		//Delete Workspace Mappings
+		Map<String,String> securityMapDWM  = new HashMap<String,String>();
+		securityMapDWM.put("Project", "Exaxe.Security"); 
+		securityMapDWM.put("Operation", "DeleteWorkspaceMappings"); 
+		deploySteps.add(securityMapDWM);
 
 		// Exaxe.Security Get Latest Code
 		Map<String,String> securityMap  = new HashMap<String,String>();
