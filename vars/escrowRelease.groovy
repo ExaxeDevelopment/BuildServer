@@ -9,12 +9,6 @@ class escrowRelease implements Serializable {
 		initialisationMap.put("Operation", "Initialisation"); 
 		deploySteps.add(initialisationMap);
 
-		//GetAllCodeLatestVersion
-		Map<String,String> getAllCodeMap  = new HashMap<String,String>();
-		getAllCodeMap.put("Project", "GetAllCodeLatestVersion"); 
-		getAllCodeMap.put("Operation", "GetAllCodeLatestVersion"); 
-		deploySteps.add(getAllCodeMap);
-
 		//Initialisation
 		Map<String,String> typesMap0  = new HashMap<String,String>();
 		typesMap0.put("Project", "Exaxe.Types"); 
