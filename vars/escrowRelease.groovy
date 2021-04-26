@@ -28,6 +28,11 @@ class escrowRelease implements Serializable {
 		securityMap2.put("Operation", "EscrowFiles"); 
 		deploySteps.add(securityMap2);
 
+		Map<String,String> securityMap2  = new HashMap<String,String>();
+		securityMap2.put("Project", "Exaxe.Libraries"); 
+		securityMap2.put("Operation", "EscrowFiles"); 
+		deploySteps.add(securityMap2);
+
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
 		releaseContentMap.put("Project", "ReleaseEscrowFiles"); 
