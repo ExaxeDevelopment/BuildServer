@@ -17,21 +17,21 @@ class escrowRelease implements Serializable {
 
 		// Exaxe.Types Get Latest Code
 		// Exaxe.Types GetEscrow
-		Map<String,String> typesMap2  = new HashMap<String,String>();
-		typesMap2.put("Project", "Exaxe.Types"); 
-		typesMap2.put("Operation", "EscrowFiles"); 
-		deploySteps.add(typesMap2);
+		Map<String,String> typesMap  = new HashMap<String,String>();
+		typesMap.put("Project", "Exaxe.Types"); 
+		typesMap.put("Operation", "EscrowFiles"); 
+		deploySteps.add(typesMap);
 
 		// Exaxe.Security GetEscrow
-		Map<String,String> securityMap2  = new HashMap<String,String>();
-		securityMap2.put("Project", "Exaxe.Security"); 
-		securityMap2.put("Operation", "EscrowFiles"); 
-		deploySteps.add(securityMap2);
+		Map<String,String> securityMap  = new HashMap<String,String>();
+		securityMap.put("Project", "Exaxe.Security"); 
+		securityMap.put("Operation", "EscrowFiles"); 
+		deploySteps.add(securityMap);
 
-		Map<String,String> securityMap2  = new HashMap<String,String>();
-		securityMap2.put("Project", "Exaxe.Libraries"); 
-		securityMap2.put("Operation", "EscrowFiles"); 
-		deploySteps.add(securityMap2);
+		Map<String,String> librariesMap  = new HashMap<String,String>();
+		librariesMap.put("Project", "Exaxe.Libraries"); 
+		librariesMap.put("Operation", "EscrowFiles"); 
+		deploySteps.add(librariesMap);
 
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
