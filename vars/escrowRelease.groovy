@@ -53,6 +53,7 @@ class escrowRelease implements Serializable {
 		deploySteps.add(getStep("AdminPlusUI"));
 		deploySteps.add(getStep("ChannelPlusUI"));
 		deploySteps.add(getStep("SystemConfigurationUI"));
+		deploySteps.add(getStep("Exaxe.Product.DatabaseModel"));
 
 		//Release Content
 		Map<String,String> releaseContentMap  = new HashMap<String,String>();
