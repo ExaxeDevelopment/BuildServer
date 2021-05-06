@@ -296,6 +296,7 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	map06.put("Deploy-Dev001-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
 	map06.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map06.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
+	map06.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)
 	steps.put("Deployments / Exaxe Single", map06);
 
 	// 2. SINGLE SERVER --> CUSTOMER
