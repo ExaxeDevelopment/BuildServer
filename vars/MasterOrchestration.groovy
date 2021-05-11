@@ -186,6 +186,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	steps.put("Deployments", map06);
 
 	Map<String,String> map06a = new HashMap<String,String>();
+	map06a.put("Deploy-Dev002-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
 	map06a.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	steps.put("Deployments-a", map06a);
 
