@@ -337,9 +337,9 @@ def getUtilsSteps(buildFromStage, buildToStage){
 	steps.put("Migration", map01);
 	
 	Map<String,String> map02 = new HashMap<String,String>();
-	map02.put("Build-Build-AppMonitor-Main", BASE_BUILD_SERVER); 
+	map02.put("Build-AppMonitor-Main", BASE_BUILD_SERVER); 
 	steps.put("AppMonitor", map02);
-
+	 
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
 	
