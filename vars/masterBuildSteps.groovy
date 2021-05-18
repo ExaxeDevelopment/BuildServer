@@ -61,6 +61,9 @@ class masterBuildSteps implements Serializable {
 			case "IntermediateMasterBuildAdvicePlusDev002":
                 buildSteps = getSequentialMasterBuildAdvicePlusDev002();
                 break
+			case "MasterBuildUtils":
+                buildSteps = getMasterBuildUtils();
+                break
 
             default:
                 break
@@ -319,4 +322,18 @@ class masterBuildSteps implements Serializable {
 	///********************* STEPS FOR THE INTERMEDIATE BUILDS - END *********************
 	///***********************************************************************************
 
+	///******************************************************************************
+	///********************* STEPS FOR THE UTILS BUILDS - START *********************
+	///******************************************************************************
+	private List<String> getMasterBuildUtils(){
+		List<String> buildItems = new ArrayList<String>();
+		buildItems.add("Build-Build-AppMonitor-Main"); 
+		buildItems.add("Build-LifePlus.Migration-Main"); 
+
+		return buildItems;
+	}
+
+	///******************************************************************************
+	///********************* STEPS FOR THE UTILS BUILDS - END *********************
+	///******************************************************************************
 }

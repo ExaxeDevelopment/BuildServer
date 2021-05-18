@@ -33,6 +33,10 @@ try{
 				case "Integration":
 					allSteps = getIntegrationSteps(buildFromStage, buildToStage);
 					break
+
+				case "Utils":
+					allSteps = getUtilsSteps(buildFromStage, buildToStage);
+					break
 			}
 
 			//// Set the default status to 'false' (FAILURE)
@@ -324,6 +328,24 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	
 	finalSteps;	
 }
+
+def getUtilsSteps(buildFromStage, buildToStage){
+	Map<String,Map<String,String>> steps = new LinkedHashMap<String,Map<String,String>>();
+
+	Map<String,String> map01 = new HashMap<String,String>();
+	map01.put("Build-LifePlus.Migration-Main", BASE_BUILD_SERVER); 
+	steps.put("Migration", map01);
+	
+	Map<String,String> map02 = new HashMap<String,String>();
+	map02.put("Build-Build-AppMonitor-Main", BASE_BUILD_SERVER); 
+	steps.put("AppMonitor", map02);
+
+	//// filter the steps/stages
+	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
+	
+	finalSteps;	
+}
+
 
 //// Method that returns the steps filtered by from/to stages
 def getFilteredSteps(steps, buildFromStage, buildToStage){
