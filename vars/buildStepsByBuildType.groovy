@@ -37,6 +37,24 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildRevision.add("CheckNuGetFeed"); 
 		fullBuildRevision.add("PublishNuGetPackagesAzureDevOps");			
 
+        List<String> fullBuildRevisionRelease = new ArrayList<String>()
+		fullBuildRevision.add("GetAllCodeLatestVersion");
+		fullBuildRevision.add("ClearDatabases"); 
+		fullBuildRevision.add("InstallAllDatabases"); 
+		fullBuildRevision.add("CheckOutFiles"); 
+		fullBuildRevision.add("UpdateAssemblyVersionRevisionRelease"); 
+		fullBuildRevision.add("RestoreNuGetPackages"); 
+		fullBuildRevision.add("UpdateNuGetPackages"); 
+		fullBuildRevision.add("CanContinueBuild");
+		fullBuildRevision.add("BuildSolution");
+		fullBuildRevision.add("PublishWebService");
+		fullBuildRevision.add("CheckWorkflowsAsync");
+		fullBuildRevision.add("PerformUnitTests"); 
+		fullBuildRevision.add("CheckInFiles"); 
+		fullBuildRevision.add("PublishNuGetPackages"); 
+		fullBuildRevision.add("CheckNuGetFeed"); 
+		fullBuildRevision.add("PublishNuGetPackagesAzureDevOps");			
+
 		List<String> intermediateBuild = new ArrayList<String>()
 		intermediateBuild.add("GetCodeLatestVersion"); 
 		intermediateBuild.add("CheckOutFiles"); 
@@ -106,6 +124,9 @@ class buildStepsByBuildType implements Serializable {
                 break
             case "FullBuildRevision":
                 buildSteps = fullBuildRevision;
+                break
+            case "FullBuildRevisionRelease":
+                buildSteps = fullBuildRevisionRelease;
                 break
             case "IntermediateBuild":
                 buildSteps = intermediateBuild;
