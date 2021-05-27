@@ -173,7 +173,6 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	steps.put("Web Services", map04);
 
 	Map<String,String> map05 = new HashMap<String,String>();
-	map05.put("Build-Exaxe.ProductDevelopment.UI-Dev001", BASE_BUILD_SERVER)	
 	map05.put("Build-SystemConfigurationUI-Dev002", BASE_BUILD_SERVER)	
 	map05.put("Build-AdminPlusUI-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map05.put("Build-PointOfSaleUI-Dev002", ADVICE_PLUS_BUILD_SERVER)	

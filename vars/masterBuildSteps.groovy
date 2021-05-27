@@ -137,7 +137,6 @@ class masterBuildSteps implements Serializable {
 		buildItems.add("Build-Exaxe.Calculations-Dev001");
 		buildItems.add("Build-Exaxe.CalculationManagers-Dev001");
 		buildItems.add("Build-Exaxe.UIElements-Dev001");
-		buildItems.add("Build-Exaxe.ProductDevelopment-Dev001");
 
 		return buildItems;
 	}
@@ -329,6 +328,8 @@ class masterBuildSteps implements Serializable {
 		List<String> buildItems = new ArrayList<String>();
 		buildItems.add("Build-Build-AppMonitor-Main"); 
 		buildItems.add("Build-LifePlus.Migration-Main"); 
+		buildItems.add("Build-Exaxe.ProductDevelopment-Dev001");
+		buildItems.add("Build-Exaxe.ProductDevelopment.UI-Dev001")	
 
 		return buildItems;
 	}
