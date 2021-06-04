@@ -347,6 +347,10 @@ def getUtilsSteps(buildFromStage, buildToStage){
 	map04.put("Build-Exaxe.ProductDevelopment.UI-Dev001", BASE_BUILD_SERVER); 
 	steps.put("PDA3 UI", map04);
 
+	Map<String,String> map05 = new HashMap<String,String>();
+	map05.put("Build-SolutionManager-Main", BASE_BUILD_SERVER); 
+	steps.put("SolutionManager", map05);
+	 
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
 	
