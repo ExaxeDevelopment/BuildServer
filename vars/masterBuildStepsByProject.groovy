@@ -109,6 +109,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV21_04":
                 buildSteps = getMasterBuildReleaseV21_04();
                 break	
+			case "MasterBuildReleaseV21_5":
+                buildSteps = getMasterBuildReleaseV21_5();
+                break	
 			case "MasterBuildReleaseVACN21_03":
                 buildSteps = getMasterBuildReleaseVACN21_03();
                 break	
@@ -456,6 +459,18 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Multi-V21.04");
 		buildItems.add("Deploy-Release-Hansard-Single-V21.04");
 	
+		return buildItems;		
+	}
+
+	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
+	private List<String> getMasterBuildReleaseV21_5(){
+		List<String> buildItems = getMasterBuildReleaseVXX_X("21.5");
+	
+		
+
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		
 		return buildItems;		
 	}
 
