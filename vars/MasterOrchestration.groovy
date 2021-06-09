@@ -351,6 +351,10 @@ def getUtilsSteps(buildFromStage, buildToStage){
 	map05.put("Build-SolutionManager-Main", BASE_BUILD_SERVER); 
 	steps.put("SolutionManager", map05);
 	 
+	Map<String,String> map06 = new HashMap<String,String>();
+	map06.put("Deploy-Majesco-Migration", BASE_BUILD_SERVER); 
+	steps.put("Deploy LifePlus.Migration", map06);
+	 
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
 	
