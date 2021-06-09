@@ -466,10 +466,11 @@ class masterBuildStepsByProject implements Serializable {
 	private List<String> getMasterBuildReleaseV21_5(){
 		List<String> buildItems = getMasterBuildReleaseVXX_X("21.5");
 	
-		
 
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
+		buildItems.add("Deploy-Release-PoliceMutual-Exaxe-Single-V21.5");
+		
 		
 		return buildItems;		
 	}

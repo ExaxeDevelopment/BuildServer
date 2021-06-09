@@ -28,6 +28,10 @@ class deployCommonBuildSteps implements Serializable {
                 def deployRelease_HansardClass = new deployRelease_Hansard();
 				commonDeploySteps = deployRelease_HansardClass.getDeploySteps();
                 break			
+			case "DeployRelease_PoliceMutual":
+                def deployRelease_PoliceMutualClass = new deployRelease_PoliceMutual();
+				commonDeploySteps = deployRelease_PoliceMutualClass.getDeploySteps();
+                break			
 			case "DeployRelease_Acorn":
                 def deployRelease_AcornClass = new deployRelease_Acorn();
 				commonDeploySteps = deployRelease_AcornClass.getDeploySteps();
