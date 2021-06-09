@@ -1,5 +1,34 @@
 class masterDeploymentSteps implements Serializable {
 
+	def getMasterUtilsDeploymentSteps() { 
+		List deploySteps = new ArrayList<ArrayList<Map<String,String>>>();
+		// Initialisation
+		List initialisationSteps = new ArrayList<Map<String,String>>();
+		Map<String,String> initialisationMap  = new HashMap<String,String>();
+		initialisationMap.put("Project", ""); 
+		initialisationMap.put("Operation", "Initialisation"); 
+		initialisationSteps.add(initialisationMap);
+		deploySteps.add(initialisationSteps);
+
+		// GetAllCodeLatestVersion
+		List getCodeLatestVersionSteps = new ArrayList<Map<String,String>>();
+		Map<String,String> getCodeLatestVersionMap  = new HashMap<String,String>();
+		getCodeLatestVersionMap.put("Project", ""); 
+		getCodeLatestVersionMap.put("Operation", "GetAllCodeLatestVersion"); 
+		getCodeLatestVersionSteps.add(getCodeLatestVersionMap);
+		deploySteps.add(getCodeLatestVersionSteps);
+
+		// DeployInstallApp - Exaxe.SolutionManager-Console
+		List solutionManagerConsoleSteps = new ArrayList<Map<String,String>>();
+		Map<String,String> solutionManagerConsoleMap  = new HashMap<String,String>();
+		solutionManagerConsoleMap.put("Project", "LifePlus.Migration-UI"); 
+		solutionManagerConsoleMap.put("Operation", "DeployInstallApp"); 
+		solutionManagerConsoleSteps.add(solutionManagerConsoleMap);
+		deploySteps.add(solutionManagerConsoleSteps);
+
+		deploySteps;
+	}
+
 	//// Returns all the available steps for deployment within the Exaxe solutions
 	//// The information will be grouped in multiple collections that will contain the Operation and associated Project (if required)
 	//// The operations inside each collection can be triggered in parallel
