@@ -19,12 +19,20 @@ class masterDeploymentSteps implements Serializable {
 		deploySteps.add(getCodeLatestVersionSteps);
 
 		// DeployInstallApp - Exaxe.SolutionManager-Console
-		List solutionManagerConsoleSteps = new ArrayList<Map<String,String>>();
-		Map<String,String> solutionManagerConsoleMap  = new HashMap<String,String>();
-		solutionManagerConsoleMap.put("Project", "LifePlus.Migration-UI"); 
-		solutionManagerConsoleMap.put("Operation", "DeployInstallApp"); 
-		solutionManagerConsoleSteps.add(solutionManagerConsoleMap);
-		deploySteps.add(solutionManagerConsoleSteps);
+		List lifePlusMigrationUISteps = new ArrayList<Map<String,String>>();
+		Map<String,String> lifePlusMigrationUIMap  = new HashMap<String,String>();
+		lifePlusMigrationUIMap.put("Project", "LifePlus.Migration-UI"); 
+		lifePlusMigrationUIMap.put("Operation", "DeployInstallApp"); 
+		lifePlusMigrationUISteps.add(lifePlusMigrationUIMap);
+		deploySteps.add(lifePlusMigrationUISteps);
+
+		//Release Content
+		List releaseContentSteps = new ArrayList<Map<String,String>>();
+		Map<String,String> releaseContentMap  = new HashMap<String,String>();
+		releaseContentMap.put("Project", "ReleaseContent"); 
+		releaseContentMap.put("Operation", "ReleaseContent"); 
+		releaseContentSteps.add(releaseContentMap);
+		deploySteps.add(releaseContentSteps);
 
 		deploySteps;
 	}
