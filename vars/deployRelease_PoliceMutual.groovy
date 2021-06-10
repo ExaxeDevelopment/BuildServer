@@ -41,12 +41,6 @@ class deployRelease_PoliceMutual implements Serializable {
 		agentDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(agentDbMap);
 
-		//Exaxe.Auth - BuildDatabase
-		Map<String,String> authDbMap  = new HashMap<String,String>();
-		authDbMap.put("Project", "Exaxe.Auth"); 
-		authDbMap.put("Operation", "BuildDatabase"); 
-		deploySteps.add(authDbMap);
-
 		//Exaxe.App - BuildDatabase
 		Map<String,String> appDbMap  = new HashMap<String,String>();
 		appDbMap.put("Project", "Exaxe.App"); 
@@ -58,6 +52,11 @@ class deployRelease_PoliceMutual implements Serializable {
 		productDbMap.put("Project", "Exaxe.Product.DatabaseModel"); 
 		productDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(productDbMap);
+
+		Map<String,String> clientDbMap = new HashMap<String,String>();
+		clientDbMap.put("Project", "Exaxe.Client "); 
+		clientDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(clientDbMap);
 
 		//Exaxe.Common - BuildDatabase
 		Map<String,String> commonDbMap  = new HashMap<String,String>();
