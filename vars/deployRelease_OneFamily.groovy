@@ -83,6 +83,11 @@ class deployRelease_OneFamily implements Serializable {
 		systemConfigurationDbMap.put("Operation", "BuildDatabase"); 
 		deploySteps.add(systemConfigurationDbMap);
 
+		Map<String,String> agentDbMap  = new HashMap<String,String>();
+		agentDbMap.put("Project", "Exaxe.Agent"); 
+		agentDbMap.put("Operation", "BuildDatabase"); 
+		deploySteps.add(agentDbMap);
+
 		//Exaxe.Accounting  - BuildDatabase
 		Map<String,String> accountingDbMap = new HashMap<String,String>();
 		accountingDbMap.put("Project", "Exaxe.Accounting "); 
