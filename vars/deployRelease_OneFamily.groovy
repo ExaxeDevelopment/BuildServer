@@ -115,6 +115,12 @@ class deployRelease_OneFamily implements Serializable {
 		aggregateWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(aggregateWsPublishMap);
 
+				//Exaxe.Configuration - PublishWebService
+		Map<String,String> configurationWsPublishMap = new HashMap<String,String>();
+		configurationWsPublishMap.put("Project", "Exaxe.Configuration-Configuration"); 
+		configurationWsPublishMap.put("Operation", "PublishWebService"); 
+		deploySteps.add(configurationWsPublishMap);
+
 		Map<String,String> policyWebAPIPublishMap = new HashMap<String,String>();
 		policyWebAPIPublishMap.put("Project", "Exaxe.AdminPlus-WebAPI"); 
 		policyWebAPIPublishMap.put("Operation", "DeployWebApi"); 
