@@ -1,4 +1,4 @@
-class deployRelease_Hansard implements Serializable {
+class deployRelease_OneFamily implements Serializable {
     def getDeploySteps() { 
 		
 		List deploySteps = new ArrayList<Map<String,String>>();
