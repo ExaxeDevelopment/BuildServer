@@ -459,8 +459,6 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Multi-V21.04");
 		buildItems.add("Deploy-Release-Hansard-Single-V21.04");
 	
-		buildItems.add("MasterBuild-Release-V21.5");
-
 		return buildItems;		
 	}
 
