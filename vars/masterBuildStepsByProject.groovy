@@ -456,9 +456,11 @@ class masterBuildStepsByProject implements Serializable {
 	
 		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V21.04");
 		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V21.04");
-		////buildItems.add("Deploy-Release-Hansard-Multi-V21.04");
-		////buildItems.add("Deploy-Release-Hansard-Single-V21.04");
+		buildItems.add("Deploy-Release-Hansard-Multi-V21.04");
+		buildItems.add("Deploy-Release-Hansard-Single-V21.04");
 	
+		buildItems.add("MasterBuild-Release-V21.5");
+
 		return buildItems;		
 	}
 
@@ -470,7 +472,9 @@ class masterBuildStepsByProject implements Serializable {
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
 		buildItems.add("Deploy-Release-PoliceMutual-Exaxe-Single-V21.5");
-		
+		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V21.5");
+		buildItems.add("Deploy-Release-OneFamily-Multi-V21.5");
+		buildItems.add("Deploy-Release-OneFamily-Single-V21.5");
 		
 		return buildItems;		
 	}
