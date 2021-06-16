@@ -132,6 +132,7 @@ class masterBuildSteps implements Serializable {
 		buildItems.add("Build-Exaxe.Comment-Dev001"); 
 		buildItems.add("Build-Exaxe.Document-Dev001"); 
 		buildItems.add("Build-Exaxe.SystemConfiguration-Dev001"); 
+		buildItems.add("Build-Exaxe.Configuration.WCF-Dev001"); 
 		buildItems.add("Build-Exaxe.Users-Dev001");
 		buildItems.add("Build-Exaxe.Accounting-Dev001");
 		buildItems.add("Build-Exaxe.Calculations-Dev001");
