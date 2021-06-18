@@ -3,14 +3,14 @@ class buildStepsByBuildType implements Serializable {
 
         List<String> fullBuild = new ArrayList<String>()
 		fullBuild.add("GetAllCodeLatestVersion"); 
-		fullBuild.add("ClearDatabases"); 
-		fullBuild.add("InstallAllDatabases"); 
 		fullBuild.add("CheckOutFiles"); 
 		fullBuild.add("UpdateAssemblyVersion"); 
 		fullBuild.add("RestoreNuGetPackages"); 
 		fullBuild.add("UpdateNuGetPackages"); 
 		fullBuild.add("CanContinueBuild");
 		fullBuild.add("BuildSolution");
+		fullBuild.add("ClearDatabases"); 
+		fullBuild.add("InstallAllDatabases"); 
 		fullBuild.add("PublishWebService");
 		fullBuild.add("CheckWorkflowsAsync");
 		fullBuild.add("PerformUnitTests"); 
@@ -21,14 +21,14 @@ class buildStepsByBuildType implements Serializable {
 
         List<String> fullBuildRevision = new ArrayList<String>()
 		fullBuildRevision.add("GetAllCodeLatestVersion");
-		fullBuildRevision.add("ClearDatabases"); 
-		fullBuildRevision.add("InstallAllDatabases"); 
 		fullBuildRevision.add("CheckOutFiles"); 
 		fullBuildRevision.add("UpdateAssemblyVersionRevision"); 
 		fullBuildRevision.add("RestoreNuGetPackages"); 
 		fullBuildRevision.add("UpdateNuGetPackages"); 
 		fullBuildRevision.add("CanContinueBuild");
 		fullBuildRevision.add("BuildSolution");
+		fullBuildRevision.add("ClearDatabases"); 
+		fullBuildRevision.add("InstallAllDatabases"); 
 		fullBuildRevision.add("PublishWebService");
 		fullBuildRevision.add("CheckWorkflowsAsync");
 		fullBuildRevision.add("PerformUnitTests"); 
