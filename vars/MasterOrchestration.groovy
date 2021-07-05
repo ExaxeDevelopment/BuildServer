@@ -339,6 +339,10 @@ def getUtilsSteps(buildFromStage, buildToStage){
 	map02.put("Build-AppMonitor-Main", BASE_BUILD_SERVER); 
 	steps.put("AppMonitor", map02);
 	 
+	Map<String,String> map02a = new HashMap<String,String>();
+	map02a.put("Build-Escrow-Main", BASE_BUILD_SERVER); 
+	steps.put("Escrow", map02a);
+	 
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("Build-Exaxe.ProductDevelopment-Dev001", BASE_BUILD_SERVER); 
 	steps.put("PDA3 Back", map03);

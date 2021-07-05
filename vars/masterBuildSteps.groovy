@@ -329,6 +329,7 @@ class masterBuildSteps implements Serializable {
 		List<String> buildItems = new ArrayList<String>();
 		buildItems.add("Build-Build-AppMonitor-Main"); 
 		buildItems.add("Build-LifePlus.Migration-Main"); 
+		buildItems.add("Build-Build-Escrow-Main"); 
 		buildItems.add("Build-Exaxe.ProductDevelopment-Dev001");
 		buildItems.add("Build-Exaxe.ProductDevelopment.UI-Dev001")	
 
