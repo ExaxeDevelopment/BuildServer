@@ -152,7 +152,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map01.put("MasterBuild-Base-Dev001", BASE_BUILD_SERVER)
 	steps.put("Base/Common", map01);
 
-	Temporary stage to allow integration to be kicked off automatically
+	////Temporary stage to allow integration to be kicked off automatically
 	Map<String,String> mapIntegration = new HashMap<String,String>();
 	mapIntegration.put("MasterBuild-Orchestration-Integration", BASE_BUILD_SERVER)
 	steps.put("Integration", mapIntegration);  
