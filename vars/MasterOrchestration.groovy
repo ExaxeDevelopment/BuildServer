@@ -166,12 +166,12 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	  
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("Build-Exaxe.Apex.Workflow-Dev002", APEX_BUILD_SERVER)	
-	steps.put("APEX", map03);
+	steps.put("APEX Workflow", map03);
 	 
 	Map<String,String> map04 = new HashMap<String,String>();
 	map04.put("MasterBuild-Apex-Dev002", APEX_BUILD_SERVER)	
 	map04.put("MasterBuild-WebServices-Dev002", API_BUILD_SERVER)	
-	steps.put("Web Services", map04);
+	steps.put("APEX/Web Services", map04);
 
 	Map<String,String> map05 = new HashMap<String,String>();
 	map05.put("Build-SystemConfigurationUI-Dev002", BASE_BUILD_SERVER)	
@@ -280,12 +280,12 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	  
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("Build-Exaxe.Apex.Workflow-Dev002", APEX_BUILD_SERVER)	
-	steps.put("APEX", map03);
+	steps.put("APEX Workflow", map03);
 	 
 	Map<String,String> map04 = new HashMap<String,String>();
 	map04.put("MasterBuild-Apex-Dev001", APEX_BUILD_SERVER)	
 	map04.put("MasterBuild-WebServices-Dev001", API_BUILD_SERVER)	
-	steps.put("Web Services", map04);
+	steps.put("APEX/Web Services", map04);
 
 	Map<String,String> map05 = new HashMap<String,String>();
 	map05.put("Build-SystemConfigurationUI-Dev001", BASE_BUILD_SERVER)	
