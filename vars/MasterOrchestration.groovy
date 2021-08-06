@@ -165,10 +165,11 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	steps.put("Backend Services", map02);
 	  
 	Map<String,String> map03 = new HashMap<String,String>();
-	map03.put("MasterBuild-Apex-Dev002", APEX_BUILD_SERVER)	
+	map03.put("Build-Exaxe.Apex.Workflow-Dev002", APEX_BUILD_SERVER)	
 	steps.put("APEX", map03);
 	 
 	Map<String,String> map04 = new HashMap<String,String>();
+	map04.put("MasterBuild-Apex-Dev002", APEX_BUILD_SERVER)	
 	map04.put("MasterBuild-WebServices-Dev002", API_BUILD_SERVER)	
 	steps.put("Web Services", map04);
 
