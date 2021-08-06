@@ -218,7 +218,6 @@ class masterBuildSteps implements Serializable {
 	//// Returns the build items for "APEX SERVER/WORKFLOWS" solutions @ Dev001 (UAT/INTEGRATION)
 	private List<String> getMasterBuildApexDev001(){
 		List<String> buildItems = new ArrayList<String>();
-		buildItems.add("Build-Exaxe.Apex.Workflow-Dev001"); 
 		buildItems.add("Build-Exaxe.Apex.Activities-Dev001"); 
 		buildItems.add("Build-Exaxe.Apex.Server-Dev001"); 
 
@@ -228,7 +227,6 @@ class masterBuildSteps implements Serializable {
 	//// Returns the build items for "APEX SERVER/WORKFLOWS" solutions @ Dev002 (DEVELOPMENT)
 	private List<String> getMasterBuildApexDev002(){
 		List<String> buildItems = new ArrayList<String>();
-		buildItems.add("Build-Exaxe.Apex.Workflow-Dev002"); 
 		buildItems.add("Build-Exaxe.Apex.Activities-Dev002"); 
 		buildItems.add("Build-Exaxe.Apex.Server-Dev002"); 
 
