@@ -561,7 +561,7 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 
 	Map<String,String> map09 = new HashMap<String,String>();
 	map09.put("Build-Hansard.Portals-Dev002", API_BUILD_SERVER)	
-	steps.put("Stage 8", map09);
+	steps.put("Stage 7", map09);
 
 	Map<String,String> map10 = new HashMap<String,String>();
 	map10.put("Build-SystemConfigurationUI-Dev001", BASE_BUILD_SERVER)	
@@ -570,13 +570,14 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map10.put("Build-ChannelPlusUI-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map10.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
 	map10.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
+	map10.put("Deploy-Dev002-Hansard-Exaxe-Multi", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map10.put("Deploy-Dev001-Hansard-Exaxe-Single", ADMIN_PLUS_BUILD_SERVER)
+	map10.put("Deploy-Dev001-Hansard-Exaxe-Multi", ADVICE_PLUS_BUILD_SERVER)
 	map10.put("Deploy-Dev002-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map10.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
 	map10.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map10.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
-	map10.put("Deploy-Dev002-Hansard-Exaxe-Multi", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map10.put("Deploy-Dev001-Hansard-Exaxe-Single", ADMIN_PLUS_BUILD_SERVER)
-	map10.put("Deploy-Dev001-Hansard-Exaxe-Multi", ADVICE_PLUS_BUILD_SERVER)
+
 	steps.put("Deployments Dev002 Single", map10);
 
 	Map<String,String> map13 = new HashMap<String,String>();
