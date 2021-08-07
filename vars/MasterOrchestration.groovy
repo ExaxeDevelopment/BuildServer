@@ -192,12 +192,8 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map06.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
+	map06a.put("Deploy-Dev002-Hansard-Exaxe-Multi", ADMIN_PLUS_BUILD_SERVER)
 	steps.put("Deployments", map06);
-
-	Map<String,String> map06a = new HashMap<String,String>();
-	map06a.put("Deploy-Dev002-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
-	map06a.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
-	steps.put("Deployments-a", map06a);
 
 	Map<String,String> map07 = new HashMap<String,String>();
 	map07.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
@@ -299,35 +295,19 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	map05.put("Build-ChannelPlusUI-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
 	//// map05.put("Build-Exaxe.Portals-Dev001", API_BUILD_SERVER)
 	map05.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
+
 	steps.put("Web Sites", map05);
-
-	//// ***** ADD/REMOVE the customers and respective stages if/when required
-	// 1. SINGLE SERVER --> EXAXE
-	Map<String,String> map06 = new HashMap<String,String>();
-	map06.put("Deploy-Dev001-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
-	map06.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
-	map06.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
-	map06.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)
-	steps.put("Deployments / Exaxe Single", map06);
-
-	// 2. SINGLE SERVER --> CUSTOMER
-	Map<String,String> map07 = new HashMap<String,String>();
-	//map07.put("Deploy-Dev001-Hansard-Single", HD_DEPLOY_SERVER)
-	//map07.put("Deploy-Dev001-OneFamily-Single", OF_DEPLOY_SERVER)
-	steps.put("Deployments / Customer Single", map07);
 
 	// 3. MULTI SERVER --> EXAXE
 	Map<String,String> map08 = new HashMap<String,String>();
 	map08.put("Deploy-Dev001-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
 	map08.put("Deploy-Dev001-OneFamily-Exaxe-Multi", OF_DEPLOY_SERVER)
 	map08.put("Deploy-Dev001-Acorn-Exaxe-Multi", ACN_DEPLOY_SERVER)
+	map08.put("Deploy-Dev001-Hansard-Exaxe-Single", ADMIN_PLUS_BUILD_SERVER)
+	map08.put("Deploy-Dev001-OneFamily-Exaxe-Single", ADVICE_PLUS_BUILD_SERVER)
+	map08.put("Deploy-Dev001-Acorn-Exaxe-Single", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map08.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)	
 	steps.put("Deployments / Exaxe Multi", map08);
-
-	// 4. MULTI SERVER --> CUSTOMER
-	Map<String,String> map09 = new HashMap<String,String>();
-	//map09.put("Deploy-Dev001-Hansard-Multi", HD_DEPLOY_SERVER)
-	//map09.put("Deploy-Dev001-OneFamily-Multi", OF_DEPLOY_SERVER)
-	steps.put("Deployments / Customer Multi", map09);
  
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
@@ -580,32 +560,27 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	steps.put("Stage 6", map08);
 
 	Map<String,String> map09 = new HashMap<String,String>();
-	map09.put("Build-SystemConfigurationUI-Dev001", BASE_BUILD_SERVER)	
-	map09.put("Build-AdminPlusUI-Dev001", ADMIN_PLUS_BUILD_SERVER)
-	map09.put("Build-PointOfSaleUI-Dev001", ADVICE_PLUS_BUILD_SERVER)	
-	map09.put("Build-ChannelPlusUI-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map09.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
-	steps.put("Stage 7", map09);
+	map09.put("Build-Hansard.Portals-Dev002", API_BUILD_SERVER)	
+	steps.put("Stage 8", map09);
 
 	Map<String,String> map10 = new HashMap<String,String>();
-	map10.put("Build-Hansard.Portals-Dev002", API_BUILD_SERVER)	
-	steps.put("Stage 8", map10);
-
-	Map<String,String> map11 = new HashMap<String,String>();
-	map11.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
-	map11.put("Deploy-Dev002-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
-	map11.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
-	map11.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
-	map11.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
-	steps.put("Deployments Dev002 Single", map11);
-
-	Map<String,String> map12 = new HashMap<String,String>();
-	map12.put("Deploy-Dev002-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
-	map12.put("Deploy-Dev002-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
-	steps.put("Deployments Dev002 Multi", map12);
+	map10.put("Build-SystemConfigurationUI-Dev001", BASE_BUILD_SERVER)	
+	map10.put("Build-AdminPlusUI-Dev001", ADMIN_PLUS_BUILD_SERVER)
+	map10.put("Build-PointOfSaleUI-Dev001", ADVICE_PLUS_BUILD_SERVER)	
+	map10.put("Build-ChannelPlusUI-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map10.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
+	map10.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
+	map10.put("Deploy-Dev002-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
+	map10.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
+	map10.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
+	map10.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
+	map10.put("Deploy-Dev002-Hansard-Exaxe-Multi", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map10.put("Deploy-Dev001-Hansard-Exaxe-Single", ADMIN_PLUS_BUILD_SERVER)
+	map10.put("Deploy-Dev001-Hansard-Exaxe-Multi", ADVICE_PLUS_BUILD_SERVER)
+	steps.put("Deployments Dev002 Single", map10);
 
 	Map<String,String> map13 = new HashMap<String,String>();
-	map13.put("Deploy-Dev001-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
+	map13.put("Deploy-Dev002-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)
@@ -613,7 +588,6 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 
 	// 3. MULTI SERVER --> EXAXE
 	Map<String,String> map14 = new HashMap<String,String>();
-	map14.put("Deploy-Dev001-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
 	map14.put("Deploy-Dev001-OneFamily-Exaxe-Multi", OF_DEPLOY_SERVER)
 	map14.put("Deploy-Dev001-Acorn-Exaxe-Multi", ACN_DEPLOY_SERVER)
 	steps.put("Deployments Dev001 Multi", map08);
