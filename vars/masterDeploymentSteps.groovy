@@ -119,20 +119,20 @@ class masterDeploymentSteps implements Serializable {
 		wcfProjects01.add("Exaxe.Configuration-WCF");
 		wcfProjects01.add("Exaxe.Client-WCF");
 		wcfProjects01.add("Exaxe.AdminPlus-WCF");
+		wcfProjects01.add("Exaxe.Apex-WCF");
+		wcfProjects01.add("Exaxe.Aggregate-WCF");
+		wcfProjects01.add("Exaxe.FactFind-WCF");
+		wcfProjects01.add("Exaxe.Apex.Server-WCF");
+		wcfProjects01.add("Exaxe.PolicyEBI-WCF");
 		deploySteps.add(getWcfServiceSteps(wcfProjects01));
 
 		//// Second list with WCF projects that will be triggered in parallel 
-		List wcfProjects02 = new ArrayList<String>();
-		wcfProjects02.add("Exaxe.Apex-WCF");
-		wcfProjects02.add("Exaxe.Aggregate-WCF");
-		wcfProjects02.add("Exaxe.FactFind-WCF");
-		deploySteps.add(getWcfServiceSteps(wcfProjects02));
+		////List wcfProjects02 = new ArrayList<String>();
+		////deploySteps.add(getWcfServiceSteps(wcfProjects02));
 
 		//// Third list with WCF projects that will be triggered in parallel 
-		List wcfProjects03 = new ArrayList<String>();
-		wcfProjects03.add("Exaxe.Apex.Server-WCF");
-		wcfProjects03.add("Exaxe.PolicyEBI-WCF");
-		deploySteps.add(getWcfServiceSteps(wcfProjects03));
+		////List wcfProjects03 = new ArrayList<String>();
+		////deploySteps.add(getWcfServiceSteps(wcfProjects03));
 		//// ********************** WCF SERVICES - END **********************
 
 		//// ********************* WEB API - START *********************
@@ -140,38 +140,38 @@ class masterDeploymentSteps implements Serializable {
 		List apiProjects01 = new ArrayList<String>();
 		apiProjects01.add("Exaxe.External-WebAPI");
 		apiProjects01.add("Exaxe.Configuration-WebAPI");
+		apiProjects01.add("Exaxe.SystemConfiguration-WebAPI");
+		apiProjects01.add("Exaxe.Client-WebAPI");
+		apiProjects01.add("Exaxe.AdminPlus-WebAPI");
+		apiProjects01.add("Exaxe.Users-WebAPI");
+		apiProjects01.add("Exaxe.Quote-WebAPI");
+		apiProjects01.add("Exaxe.ChannelPlus-WebAPI");
+		apiProjects01.add("Exaxe.Auth-WebAPI");		
 		deploySteps.add(getWebApiSteps(apiProjects01));
 
 		//// Second list with Web API projects that will be triggered in parallel 
-		List apiProjects02 = new ArrayList<String>();
-		apiProjects02.add("Exaxe.SystemConfiguration-WebAPI");
-		apiProjects02.add("Exaxe.Client-WebAPI");
-		deploySteps.add(getWebApiSteps(apiProjects02));
+		////List apiProjects02 = new ArrayList<String>();
+		////deploySteps.add(getWebApiSteps(apiProjects02));
 
 		//// Third list with Web API projects that will be triggered in parallel 
-		List apiProjects03 = new ArrayList<String>();
-		apiProjects03.add("Exaxe.AdminPlus-WebAPI");
-		apiProjects03.add("Exaxe.Users-WebAPI");
-		deploySteps.add(getWebApiSteps(apiProjects03));
+		////List apiProjects03 = new ArrayList<String>();
+		////deploySteps.add(getWebApiSteps(apiProjects03));
 
 		//// Fourth list with Web API projects that will be triggered in parallel 
-		List apiProjects04 = new ArrayList<String>();
-		apiProjects04.add("Exaxe.Quote-WebAPI");
-		apiProjects04.add("Exaxe.ChannelPlus-WebAPI");
-		apiProjects04.add("Exaxe.Auth-WebAPI");
-		deploySteps.add(getWebApiSteps(apiProjects04));
+		////List apiProjects04 = new ArrayList<String>();
+		////deploySteps.add(getWebApiSteps(apiProjects04));
 
 		//// Fifth list with Web API projects that will be triggered in parallel 
 		List apiProjects05 = new ArrayList<String>();
 		apiProjects05.add("Exaxe.Apex-WebAPI");
 		apiProjects05.add("Exaxe.Apex.Workflow-WebAPI");
+		apiProjects05.add("Exaxe.Document-WebAPI");
+		apiProjects05.add("Exaxe.Aggregate-WebAPI");
 		deploySteps.add(getWebApiSteps(apiProjects05));
 
 		//// Sixth list with Web API projects that will be triggered in parallel 
-		List apiProjects06 = new ArrayList<String>();
-		apiProjects06.add("Exaxe.Document-WebAPI");
-		apiProjects06.add("Exaxe.Aggregate-WebAPI");
-		deploySteps.add(getWebApiSteps(apiProjects06));
+		////List apiProjects06 = new ArrayList<String>();
+		////deploySteps.add(getWebApiSteps(apiProjects06));
 		//// ********************** WEB API - END **********************
 
 		//// ********************* WEB SITE - START *********************
@@ -180,26 +180,27 @@ class masterDeploymentSteps implements Serializable {
 		siteProjects01.add("AdminPlusUI-WebSite");
 		siteProjects01.add("PointOfSaleUI-WebSite");
 		siteProjects01.add("ChannelPlusUI-WebSite");
+		siteProjects01.add("SystemConfigurationUI-WebSite");
+		siteProjects01.add("ProductDevelopmentApplication-WebSite");
+		siteProjects01.add("ExistingBusinessUI-WebSite");		
 		deploySteps.add(getWebSiteSteps(siteProjects01));
 
 		//// Second list with Web Site projects that will be triggered in parallel 
-		List siteProjects02 = new ArrayList<String>();
-		siteProjects02.add("SystemConfigurationUI-WebSite");
-		siteProjects02.add("ProductDevelopmentApplication-WebSite");
-		siteProjects02.add("ExistingBusinessUI-WebSite");
-		deploySteps.add(getWebSiteSteps(siteProjects02));
+		////List siteProjects02 = new ArrayList<String>();
+
+		////deploySteps.add(getWebSiteSteps(siteProjects02));
 
 		//// Third list with Web Site projects that will be triggered in parallel 
 		List siteProjects03 = new ArrayList<String>();
 		siteProjects03.add("Hansard.Portals.Broker-WebSite");
 		siteProjects03.add("Exaxe.Portals.Broker-WebSite");
+		siteProjects03.add("Hansard.Portals.Client-WebSite");
+		siteProjects03.add("Exaxe.Portals.Client-WebSite");
 		deploySteps.add(getWebSiteSteps(siteProjects03));
 
 		//// Fourth list with Web Site projects that will be triggered in parallel 
-		List siteProjects04 = new ArrayList<String>();
-		siteProjects04.add("Hansard.Portals.Client-WebSite");
-		siteProjects04.add("Exaxe.Portals.Client-WebSite");
-		deploySteps.add(getWebSiteSteps(siteProjects04));
+		////List siteProjects04 = new ArrayList<String>();
+		////deploySteps.add(getWebSiteSteps(siteProjects04));
 
 		//// Fifth list with Web Site projects that will be triggered in parallel 
 		List siteProjects05 = new ArrayList<String>();
