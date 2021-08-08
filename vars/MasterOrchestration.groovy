@@ -533,11 +533,11 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map02.put("MasterBuild-ChannelPlus-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-AdvicePlus-Dev001", ADVICE_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-PolicyEBI-Dev001", BASE_BUILD_SERVER)
-	steps.put("Stage 1", map02);
+	steps.put("Stage 2", map02);
 
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("Build-Exaxe.Apex.Workflow-Dev001", APEX_BUILD_SERVER)	
-	steps.put("Stage 2", map03);
+	steps.put("Stage 3", map03);
 
 	Map<String,String> map04 = new HashMap<String,String>();
 	map04.put("MasterBuild-AdminPlus-Dev002", ADMIN_PLUS_BUILD_SERVER)
@@ -545,11 +545,11 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map04.put("MasterBuild-AdvicePlus-Dev002", ADVICE_PLUS_BUILD_SERVER)
 	map04.put("MasterBuild-Apex-Dev001", APEX_BUILD_SERVER)	
 	map04.put("MasterBuild-WebServices-Dev001", API_BUILD_SERVER)	
-	steps.put("Stage 3", map04);
+	steps.put("Stage 4", map04);
 
 	Map<String,String> map05 = new HashMap<String,String>();
 	map05.put("Build-Exaxe.Apex.Workflow-Dev002", APEX_BUILD_SERVER)	
-	steps.put("Stage 4", map05);
+	steps.put("Stage 5", map05);
 	 
 	Map<String,String> map06 = new HashMap<String,String>();
 	map06.put("MasterBuild-Apex-Dev002", APEX_BUILD_SERVER)	
@@ -558,7 +558,7 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map06.put("Build-AdminPlusUI-Dev001", ADMIN_PLUS_BUILD_SERVER)
 	map06.put("Build-PointOfSaleUI-Dev001", ADVICE_PLUS_BUILD_SERVER)	
 	map06.put("Build-ChannelPlusUI-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
-	steps.put("Stage 5", map06);
+	steps.put("Stage 6", map06);
 
 	Map<String,String> map08 = new HashMap<String,String>();
 	map08.put("Build-SystemConfigurationUI-Dev002", BASE_BUILD_SERVER)	
@@ -566,11 +566,11 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map08.put("Build-PointOfSaleUI-Dev002", ADVICE_PLUS_BUILD_SERVER)	
 	map08.put("Build-ChannelPlusUI-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map08.put("Build-Hansard.Portals-Dev002", API_BUILD_SERVER)	
-	steps.put("Stage 6", map08);
+	steps.put("Stage 7", map08);
 
 	Map<String,String> map09 = new HashMap<String,String>();
 	map09.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
-	steps.put("Stage 7", map09);
+	steps.put("Stage 8", map09);
 
 	Map<String,String> map10 = new HashMap<String,String>();
 	map10.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
@@ -582,29 +582,26 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map10.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map10.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 
-	steps.put("Deployments Dev002 Single", map10);
+	steps.put("Deployments part 1", map10);
 
 	Map<String,String> map13 = new HashMap<String,String>();
 	map13.put("Deploy-Dev002-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)
-	steps.put("Deployments Dev001 Single", map13);
+	steps.put("Deployments part 2", map13);
 
 	// 3. MULTI SERVER --> EXAXE
 	Map<String,String> map14 = new HashMap<String,String>();
 	map14.put("Deploy-Dev001-OneFamily-Exaxe-Multi", OF_DEPLOY_SERVER)
 	map14.put("Deploy-Dev001-Acorn-Exaxe-Multi", ACN_DEPLOY_SERVER)
-	steps.put("Deployments Dev001 Multi", map08);
-
-	Map<String,String> map20 = new HashMap<String,String>();
-	map20.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
-	map20.put("Build-QualityGates-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
-	map20.put("Build-QualityGates-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
-	map20.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map20.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
-	map20.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
-	steps.put("QualityGates", map20);
+	map14.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
+	map14.put("Build-QualityGates-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
+	map14.put("Build-QualityGates-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
+	map14.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map14.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
+	map14.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
+	steps.put("Deployments part 3", map14);
 
 	Map<String,String> map21 = new HashMap<String,String>();
 	map21.put("Build-DeletePackages-exop-base-bld01", BASE_BUILD_SERVER)
