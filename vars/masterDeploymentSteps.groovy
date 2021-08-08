@@ -180,8 +180,8 @@ class masterDeploymentSteps implements Serializable {
 		siteProjects01.add("AdminPlusUI-WebSite");
 		siteProjects01.add("PointOfSaleUI-WebSite");
 		siteProjects01.add("ChannelPlusUI-WebSite");
-		siteProjects03.add("Hansard.Portals.Client-WebSite");
-		siteProjects03.add("Exaxe.Portals.Client-WebSite");
+		siteProjects01.add("Hansard.Portals.Client-WebSite");
+		siteProjects01.add("Exaxe.Portals.Client-WebSite");
 		deploySteps.add(getWebSiteSteps(siteProjects01));
 
 		//// Second list with Web Site projects that will be triggered in parallel 
