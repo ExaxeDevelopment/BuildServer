@@ -85,16 +85,16 @@ class masterDeploymentSteps implements Serializable {
 		dbProjects01.add("Exaxe.Configuration-DB");
 		dbProjects01.add("Exaxe.Configuration-Question-DB");
 		dbProjects01.add("Exaxe.Configuration-Reference-DB");
+		dbProjects01.add("Exaxe.Comment-DB");
+		dbProjects01.add("Exaxe.Document-DB");
+		dbProjects01.add("Exaxe.SystemConfiguration-DB");
+		dbProjects01.add("Exaxe.Accounting-DB");
+		dbProjects01.add("Exaxe.Client-DB");
 		deploySteps.add(getDatabaseSteps(dbProjects01));
 
 		//// Second list with DB projects that will be triggered in parallel 
-		List dbProjects02 = new ArrayList<String>();
-		dbProjects02.add("Exaxe.Comment-DB");
-		dbProjects02.add("Exaxe.Document-DB");
-		dbProjects02.add("Exaxe.SystemConfiguration-DB");
-		dbProjects02.add("Exaxe.Accounting-DB");
-		dbProjects02.add("Exaxe.Client-DB");
-		deploySteps.add(getDatabaseSteps(dbProjects02));
+		////List dbProjects02 = new ArrayList<String>();
+		////deploySteps.add(getDatabaseSteps(dbProjects02));
 
 		//// Third list with DB projects that will be triggered in parallel 
 		List dbProjects03 = new ArrayList<String>();
@@ -102,15 +102,15 @@ class masterDeploymentSteps implements Serializable {
 		dbProjects03.add("Exaxe.Apex-DB");
 		dbProjects03.add("Exaxe.FactFind-DB");
 		dbProjects03.add("Exaxe.Quote-DB");
+		dbProjects03.add("Exaxe.ExistingBusiness-DB");
+		dbProjects03.add("Exaxe.ChannelPlus-DB");
+		dbProjects03.add("Exaxe.Auth-DB");
+		dbProjects03.add("Exaxe.PolicyEBI-DB"); 
 		deploySteps.add(getDatabaseSteps(dbProjects03));
 
 		//// Fourth list with DB projects that will be triggered in parallel 
-		List dbProjects04 = new ArrayList<String>();
-		dbProjects04.add("Exaxe.ExistingBusiness-DB");
-		dbProjects04.add("Exaxe.ChannelPlus-DB");
-		dbProjects04.add("Exaxe.Auth-DB");
-		dbProjects04.add("Exaxe.PolicyEBI-DB"); 
-		deploySteps.add(getDatabaseSteps(dbProjects04));
+		////List dbProjects04 = new ArrayList<String>();
+		////deploySteps.add(getDatabaseSteps(dbProjects04));
 		//// ********************* DATABASES - END *********************
 
 		//// ********************* WCF SERVICES - START *********************
