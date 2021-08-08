@@ -180,9 +180,8 @@ class masterDeploymentSteps implements Serializable {
 		siteProjects01.add("AdminPlusUI-WebSite");
 		siteProjects01.add("PointOfSaleUI-WebSite");
 		siteProjects01.add("ChannelPlusUI-WebSite");
-		siteProjects01.add("SystemConfigurationUI-WebSite");
-		siteProjects01.add("ProductDevelopmentApplication-WebSite");
-		siteProjects01.add("ExistingBusinessUI-WebSite");		
+		siteProjects03.add("Hansard.Portals.Client-WebSite");
+		siteProjects03.add("Exaxe.Portals.Client-WebSite");
 		deploySteps.add(getWebSiteSteps(siteProjects01));
 
 		//// Second list with Web Site projects that will be triggered in parallel 
@@ -194,8 +193,10 @@ class masterDeploymentSteps implements Serializable {
 		List siteProjects03 = new ArrayList<String>();
 		siteProjects03.add("Hansard.Portals.Broker-WebSite");
 		siteProjects03.add("Exaxe.Portals.Broker-WebSite");
-		siteProjects03.add("Hansard.Portals.Client-WebSite");
-		siteProjects03.add("Exaxe.Portals.Client-WebSite");
+		siteProjects03.add("SystemConfigurationUI-WebSite");
+		siteProjects03.add("ProductDevelopmentApplication-WebSite");
+		siteProjects03.add("ExistingBusinessUI-WebSite");		
+		siteProjects03.add("Exaxe.Portals.Court-WebSite");
 		deploySteps.add(getWebSiteSteps(siteProjects03));
 
 		//// Fourth list with Web Site projects that will be triggered in parallel 
@@ -203,9 +204,8 @@ class masterDeploymentSteps implements Serializable {
 		////deploySteps.add(getWebSiteSteps(siteProjects04));
 
 		//// Fifth list with Web Site projects that will be triggered in parallel 
-		List siteProjects05 = new ArrayList<String>();
-		siteProjects05.add("Exaxe.Portals.Court-WebSite");
-		deploySteps.add(getWebSiteSteps(siteProjects05));
+		////List siteProjects05 = new ArrayList<String>();
+		////deploySteps.add(getWebSiteSteps(siteProjects05));
 
 		//// ********************** WEB SITE - END **********************
 
