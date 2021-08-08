@@ -192,7 +192,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map06.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
-	map06a.put("Deploy-Dev002-Hansard-Exaxe-Multi", ADMIN_PLUS_BUILD_SERVER)
+	map06.put("Deploy-Dev002-Hansard-Exaxe-Multi", ADMIN_PLUS_BUILD_SERVER)
 	steps.put("Deployments", map06);
 
 	Map<String,String> map07 = new HashMap<String,String>();
