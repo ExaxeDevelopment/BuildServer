@@ -460,7 +460,9 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V21.04");
 		buildItems.add("Deploy-Release-Hansard-Multi-V21.04");
 		buildItems.add("Deploy-Release-Hansard-Single-V21.04");
-	
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+		
 		return buildItems;		
 	}
 
@@ -475,6 +477,8 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V21.5");
 		buildItems.add("Deploy-Release-OneFamily-Multi-V21.5");
 		buildItems.add("Deploy-Release-OneFamily-Single-V21.5");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
 		
 		return buildItems;		
 	}
@@ -489,6 +493,8 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VACN21.03");
 		buildItems.add("Deploy-Release-Acorn-Multi-VACN21.03");
 		buildItems.add("Deploy-Release-Acorn-Single-VACN21.03");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
 	
 		return buildItems;		
 	}
