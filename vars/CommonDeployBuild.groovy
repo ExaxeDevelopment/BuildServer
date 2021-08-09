@@ -182,7 +182,9 @@ def prepareRestorePackagesStage(Map<String,String>step, String configFile){
 	return {
 		stage("${stageName}"){
 			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
-				
+			
+			echo "Action String ${actionString}"
+
 			def result = bat(returnStatus: true, script: "${actionString}");
 			if(result != 0){
 				failureMessage = "${operation} ${failureMessageSuffix}";
