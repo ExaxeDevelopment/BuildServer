@@ -179,9 +179,9 @@ catch(err){
 
 def prepareRestorePackagesStage(Map<String,String>step){
 	
-	def stageName = "${project} - RestoreNuGetPackages";
 	def operation = step.get("Operation");
 	def project = step.get("Project");
+	def stageName = "${project} - RestoreNuGetPackages";
 
 	return {
 		stage("${stageName}"){
