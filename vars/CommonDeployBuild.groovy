@@ -32,7 +32,7 @@ try{
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
-			if(step.get("Project") == step.get("Operation")){
+			if(step.get("Project") == step.get("Operation") && operation != "ReleaseContent"){
 				stage(step.get("Operation")){
 					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
 
@@ -52,6 +52,8 @@ try{
 			}
 		}		
 
+		parallel(buildParallelMap)
+
 		def deployCommonSteps2 = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
 		for(Map<String,String>step2 : deployCommonSteps2){
@@ -65,6 +67,18 @@ try{
 				stage("${stageName}"){
 					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step2.get("Project"), step2.get("Operation"))
 				
+					def result = bat(returnStatus: true, script: "${actionString}");
+					if(result != 0){
+						failureMessage = "${operation} ${failureMessageSuffix}";
+						echo failureMessage;
+						error(failureMessage);
+					}
+				}
+			}
+			else if(operation != "ReleaseContent"){
+				stage(step2.get("Operation")){
+					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step2.get("Project"), step2.get("Operation"))
+
 					def result = bat(returnStatus: true, script: "${actionString}");
 					if(result != 0){
 						failureMessage = "${operation} ${failureMessageSuffix}";
