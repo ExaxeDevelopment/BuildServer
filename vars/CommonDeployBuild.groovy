@@ -183,16 +183,17 @@ def prepareRestorePackagesStage(Map<String,String>step){
 	def project = step.get("Project");
 	def stageName = "${project} - RestoreNuGetPackages";
 
-	echo "${appRootPath}"
-	echo "${SelectedConfigFile}"
-	echo "${project}"
-
-	def actionString = actionStringClass.createActionString("${appRootPath}", "${SelectedConfigFile}", "${project}", "RestoreNuGetPackages")
+	echo "${appRootPath}";
+	echo "${SelectedConfigFile}";
+	echo "${project}";
 
 
 	return {
 		stage("${stageName}"){
 			
+			def actionStringClass = new actionString();
+			def actionString = actionStringClass.createActionString("${appRootPath}", "${SelectedConfigFile}", "${project}", "RestoreNuGetPackages")
+
 			
 			def result = bat(returnStatus: true, script: "${actionString}");
 			if(result != 0){
