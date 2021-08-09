@@ -47,6 +47,7 @@ try{
 			} 
 
 			if((step.get("Project") != step.get("Operation")) && operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService"){
+				def buildParallelMap = [:]	
 				def n = "${step.get("Project")} - RestoreNuGetPackages"
 				buildParallelMap.put(n, prepareRestorePackagesStage(step))
 			}
