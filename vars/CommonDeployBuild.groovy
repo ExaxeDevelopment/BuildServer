@@ -177,11 +177,12 @@ catch(err){
 
 def prepareRestorePackagesStage(String project){
 	def stageName = "${project} - RestoreNuGetPackages"
+	def actionStringClass = new actionString();
+	def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", project, "RestoreNuGetPackages")
+	echo "${actionString}"
 
 	return {
 		stage("${stageName}"){
-			def actionStringClass = new actionString();
-			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", project, "RestoreNuGetPackages")
 			
 			def result = bat(returnStatus: true, script: "${actionString}");
 			if(result != 0){
