@@ -180,16 +180,16 @@ catch(err){
 def prepareRestorePackagesStage(Map<String,String>step){
 	
 	def stageName = "${project} - RestoreNuGetPackages";
+	def operation = step.get("Operation");
+	def project = step.get("Project");
 
 	return {
 		stage("${stageName}"){
-			def operation = step.get("Operation");
-			def project = step.get("Project");
 			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", "${project}", "RestoreNuGetPackages")
 			
 			def result = bat(returnStatus: true, script: "${actionString}");
 			if(result != 0){
-				failureMessage = "${operation} ${failureMessageSuffix}";
+				failureMessage = "RestoreNuGetPackages ${failureMessageSuffix}";
 				echo failureMessage;
 				error(failureMessage);
 			}
