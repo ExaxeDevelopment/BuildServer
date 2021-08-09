@@ -48,11 +48,12 @@ try{
 			if((step.get("Project") != step.get("Operation")) && (operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService")){
 				def n = "${step.get("Project")}"
 				buildParallelMap = [:]
-				buildParallelMap.put(n, prepareRestorePackagesStage(step))
+				buildParallelMap.put(n, prepareRestorePackagesStage(step.get("Project")))
 				echo "adding ${step}"
 			}
 		}		
-		//parallel(buildParallelMap)
+		
+		parallel(buildParallelMap)
 
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
@@ -73,7 +74,7 @@ try{
 					}
 				}
 			}
-			else if(operation != "ReleaseContent"){
+			else if(operation == "ReleaseContent"){
 				stage(step.get("Operation")){
 					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
 
@@ -175,11 +176,11 @@ catch(err){
     }    
 }
 
-def prepareRestorePackagesStage(Map<String,String>step){
-	def stageName = "${step.get("Project")} - RestoreNuGetPackages"
+def prepareRestorePackagesStage(String project){
+	def stageName = "${project} - RestoreNuGetPackages"
 	return {
 		stage("${stageName}"){
-			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
+			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", project, "RestoreNuGetPackages")
 			
 			def result = bat(returnStatus: true, script: "${actionString}");
 			if(result != 0){
