@@ -49,10 +49,9 @@ try{
 				def n = "${step.get("Project")} - RestoreNuGetPackages"
 				buildParallelMap.put(n, prepareRestorePackagesStage(step))
 				echo "adding ${step}"
+				echo "buildParallelMap ${buildParallelMap}"
 			}
 		}		
-
-		echo "buildParallelMap ${buildParallelMap}"
 
 		stage ("Parallel Restore Packages"){
 			parallel(buildParallelMap)
