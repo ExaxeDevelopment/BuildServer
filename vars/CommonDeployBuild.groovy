@@ -54,7 +54,10 @@ try{
 
 		echo "buildParallelMap ${buildParallelMap}"
 
-		//parallel(buildParallelMap)
+		stage ("Parallel Restore Packages"){
+			parallel(buildParallelMap)
+		}
+		
 
 		deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
