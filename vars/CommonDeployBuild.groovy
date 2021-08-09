@@ -177,14 +177,14 @@ catch(err){
     }    
 }
 
-def prepareRestorePackagesStage(Map<String,String>step, String configFile){
+def prepareRestorePackagesStage(Map<String,String>step, String configFileIn){
 	def stageName = "${step.get("Project")} - RestoreNuGetPackages"
-	def actionStringTemp = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
+	def actionStringTemp = actionStringClass.createActionString("${appRootPath}", "${configFileIn}", step.get("Project"), "RestoreNuGetPackages")
 	echo "Action String ${actionStringTemp}"
 
 	return {
 		stage("${stageName}"){
-			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
+			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFileIn}", step.get("Project"), "RestoreNuGetPackages")
 			
 			def result = bat(returnStatus: true, script: "${actionString}");
 			if(result != 0){
