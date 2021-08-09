@@ -28,7 +28,7 @@ try{
 	    // START EXECUTION
         def deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
-		def buildParallelMap = [:]	
+		def buildParallelMap = []	
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
@@ -56,7 +56,7 @@ try{
 
 		//parallel(buildParallelMap)
 
-		//deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
+		deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
