@@ -48,8 +48,7 @@ try{
 			if((step.get("Project") != step.get("Operation")) && (operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService")){
 				def n = "${step.get("Project")}"
 				buildParallelMap = [:]
-				prepareRestorePackagesStage(step).call()
-				buildParallelMap.put(n, prepareRestorePackagesStage(step))
+				buildParallelMap.put(n, prepareRestorePackagesStage(step, configFile))
 				echo "adding ${step}"
 			}
 		}		
@@ -178,7 +177,7 @@ catch(err){
     }    
 }
 
-def prepareRestorePackagesStage(Map<String,String>step){
+def prepareRestorePackagesStage(Map<String,String>step, String configFile){
 	def stageName = "${step.get("Project")} - RestoreNuGetPackages"
 	return {
 		stage("${stageName}"){
