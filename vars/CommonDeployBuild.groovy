@@ -52,20 +52,18 @@ try{
 				echo "adding ${step}"
 			}
 		}		
-		parallel(buildParallelMap)
+		//parallel(buildParallelMap)
 
-		def deployCommonSteps2 = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
+		for(Map<String,String>step : deployCommonSteps){
+			operation = step.get("Operation");
 
-		for(Map<String,String>step2 : deployCommonSteps2){
-			operation = step2.get("Operation");
-
-			if(step2.get("Project") != step2.get("Operation")){
-				echo "runnig ${step2}"
+			if(step.get("Project") != step.get("Operation")){
+				echo "runnig ${step}"
 			
-				def stageName = "${step2.get("Project")} - ${step2.get("Operation")}"
+				def stageName = "${step.get("Project")} - ${step.get("Operation")}"
 
 				stage("${stageName}"){
-					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step2.get("Project"), step2.get("Operation"))
+					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
 				
 					def result = bat(returnStatus: true, script: "${actionString}");
 					if(result != 0){
@@ -76,8 +74,8 @@ try{
 				}
 			}
 			else if(operation != "ReleaseContent"){
-				stage(step2.get("Operation")){
-					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step2.get("Project"), step2.get("Operation"))
+				stage(step.get("Operation")){
+					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
 
 					def result = bat(returnStatus: true, script: "${actionString}");
 					if(result != 0){
@@ -179,8 +177,6 @@ catch(err){
 
 def prepareRestorePackagesStage(Map<String,String>step){
 	def stageName = "${step.get("Project")} - RestoreNuGetPackages"
-	echo "${actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")}"
-
 	return {
 		stage("${stageName}"){
 			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
