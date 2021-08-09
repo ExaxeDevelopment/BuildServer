@@ -52,6 +52,8 @@ try{
 			}
 		}		
 
+		echo "buildParallelMap ${buildParallelMap}"
+
 		//parallel(buildParallelMap)
 
 		//deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
@@ -63,6 +65,8 @@ try{
 
 			} 
 			else{
+				echo "runnig ${step}"
+			
 				def stageName = "${step.get("Project")} - ${step.get("Operation")}"
 
 				stage("${stageName}"){
