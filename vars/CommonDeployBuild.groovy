@@ -50,11 +50,14 @@ try{
 				def buildParallelMap = [:]	
 				def n = "${step.get("Project")} - RestoreNuGetPackages"
 				buildParallelMap.put(n, prepareRestorePackagesStage(step))
+				echo "adding ${step}"
 				buildStagesList.add(buildParallelMap)
 			}
 		}		
 
 		parallel buildStagesList
+
+		deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
