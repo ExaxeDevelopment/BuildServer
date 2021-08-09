@@ -30,7 +30,8 @@ try{
 	    // START EXECUTION
         def deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
-		def buildParallelMap = [:]	
+		def restoreParallelMap = [:]	
+		def databaseParallelMap = [:]	
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 			
@@ -49,17 +50,23 @@ try{
 
 			if((step.get("Project") != step.get("Operation")) && (operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService")){
 				def n = "${step.get("Project")} RestoreNuGetPackages"
-				buildParallelMap.put(n, prepareRestorePackagesStage(step, configFile, appRootPath))
+				restoreParallelMap.put(n, prepareRestorePackagesStage(step, configFile, appRootPath))
+				echo "adding ${step}"
+			}
+			if((step.get("Project") != step.get("Operation")) && (operation == "BuildDatabase")){
+				def n = "${step.get("Project")} BuildDatabase"
+				databaseParallelMap.put(n, prepareStage(step, configFile, appRootPath))
 				echo "adding ${step}"
 			}
 		}		
 		 
-		parallel(buildParallelMap)
+		parallel(restoreParallelMap)
+		parallel(databaseParallelMap)
 
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
-			if(step.get("Project") != step.get("Operation")){
+			if(step.get("Project") != step.get("Operation") && operation != "BuildDatabase"){
 				echo "runnig ${step}"
 			
 				def stageName = "${step.get("Project")} - ${step.get("Operation")}"
@@ -188,6 +195,29 @@ def prepareRestorePackagesStage(Map<String,String>step, String configFile, Strin
 			
 			def actionStringClass = new actionString();
 			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", "${project}", "RestoreNuGetPackages")
+
+			
+			def result = bat(returnStatus: true, script: "${actionString}");
+			if(result != 0){
+				failureMessage = "RestoreNuGetPackages ${failureMessageSuffix}";
+				echo failureMessage;
+				error(failureMessage);
+			}
+		}
+	}
+}
+
+def prepareStage(Map<String,String>step, String configFile, String appRootPath){
+	
+	def operation = step.get("Operation");
+	def project = step.get("Project");
+	def stageName = "${project} - ${operation}";
+
+	return {
+		stage("${stageName}"){
+			
+			def actionStringClass = new actionString();
+			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", "${project}", "${operation}")
 
 			
 			def result = bat(returnStatus: true, script: "${actionString}");
