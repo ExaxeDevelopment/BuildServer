@@ -28,6 +28,7 @@ try{
 	    // START EXECUTION
         def deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
+		def buildParallelMap = [:]	
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
