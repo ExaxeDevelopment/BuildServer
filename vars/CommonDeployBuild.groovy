@@ -53,13 +53,6 @@ try{
 			}
 		}		
 
-		stage ("Parallel Restore Packages"){
-			parallel(buildParallelMap)
-		}
-		
-
-		deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
-
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
