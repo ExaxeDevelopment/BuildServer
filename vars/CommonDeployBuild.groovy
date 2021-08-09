@@ -28,8 +28,6 @@ try{
 	    // START EXECUTION
         def deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
-		def buildStagesList = []
-
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
@@ -47,15 +45,13 @@ try{
 			} 
 
 			if((step.get("Project") != step.get("Operation")) && (operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService")){
-				def buildParallelMap = [:]	
 				def n = "${step.get("Project")} - RestoreNuGetPackages"
 				buildParallelMap.put(n, prepareRestorePackagesStage(step))
 				echo "adding ${step}"
-				buildStagesList.add(buildParallelMap)
 			}
 		}		
 
-		parallel buildStagesList
+		parallel(buildParallelMap)
 
 		deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
