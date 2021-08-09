@@ -14,6 +14,8 @@ def duration = "";
 def endRow = "\r\n";
 def selectedJiraProjectKey = "";
 
+def actionStringClass;
+
 try{
     node{
 
@@ -22,7 +24,7 @@ try{
 		deployConfigurationAction = SelectedDeployConfiguration; 
 		
 		// PREPARE CLASS OBJECTS
-		def actionStringClass = new actionString();
+		actionStringClass = new actionString();
 	    def deployStepsClass = new deployCommonBuildSteps();
 	    
 	    // START EXECUTION
@@ -177,7 +179,6 @@ catch(err){
 
 def prepareRestorePackagesStage(String project){
 	def stageName = "${project} - RestoreNuGetPackages"
-	def actionStringClass = new actionString();
 	def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", project, "RestoreNuGetPackages")
 	echo "${actionString}"
 
