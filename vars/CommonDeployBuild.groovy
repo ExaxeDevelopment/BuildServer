@@ -180,7 +180,6 @@ catch(err){
 def prepareRestorePackagesStage(Map<String,String>step){
 	
 	def stageName = "${project} - RestoreNuGetPackages";
-	echo "${actionString}"
 
 	return {
 		stage("${stageName}"){
