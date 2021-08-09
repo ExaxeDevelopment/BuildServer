@@ -45,6 +45,21 @@ try{
 			} 
 			else{
 				def stageName = "${step.get("Project")} - ${step.get("Operation")}"
+
+				if(operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService"){
+					def stageName2 = "${step.get("Project")} - RestoreNuGetPacgages"
+					stage("${stageName2}"){
+						def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPacgages")
+				
+						def result = bat(returnStatus: true, script: "${actionString}");
+						if(result != 0){
+							failureMessage = "${operation} ${failureMessageSuffix}";
+							echo failureMessage;
+							error(failureMessage);
+						}
+					}
+				}
+
 				stage("${stageName}"){
 					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
 				
