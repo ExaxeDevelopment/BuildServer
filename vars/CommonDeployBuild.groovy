@@ -27,7 +27,21 @@ try{
 	    
 	    // START EXECUTION
         def deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
-		
+
+		def buildStagesList = []
+
+		for(Map<String,String>step : deployCommonSteps){
+			operation = step.get("Operation");
+
+			if((step.get("Project") != step.get("Operation")) && operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService"){
+				def n = "${step.get("Project")} - RestoreNuGetPackages"
+				buildParallelMap.put(n, prepareRestorePackagesStage(step))
+			}
+			buildStagesList.add(buildParallelMap)
+		}		
+
+		parallel buildStagesList
+
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
@@ -45,20 +59,6 @@ try{
 			} 
 			else{
 				def stageName = "${step.get("Project")} - ${step.get("Operation")}"
-
-				if(operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService"){
-					def stageName2 = "${step.get("Project")} - RestoreNuGetPackages"
-					stage("${stageName2}"){
-						def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
-				
-						def result = bat(returnStatus: true, script: "${actionString}");
-						if(result != 0){
-							failureMessage = "${operation} ${failureMessageSuffix}";
-							echo failureMessage;
-							error(failureMessage);
-						}
-					}
-				}
 
 				stage("${stageName}"){
 					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
@@ -159,4 +159,20 @@ catch(err){
             body: "The build failed on stage: ${operation} \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"      
         }
     }    
+}
+
+def prepareRestorePackagesStage(Map<String,String>step){
+	return {
+		def stageName2 = "${step.get("Project")} - RestoreNuGetPackages"
+		stage("${stageName2}"){
+			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
+				
+			def result = bat(returnStatus: true, script: "${actionString}");
+			if(result != 0){
+				failureMessage = "${operation} ${failureMessageSuffix}";
+				echo failureMessage;
+				error(failureMessage);
+			}
+		}
+	}
 }
