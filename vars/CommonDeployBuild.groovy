@@ -82,14 +82,14 @@ try{
 		 
 		parallel(restoreParallelMap)
 		parallel(databaseParallelMap)
-		parallel(webSiteParallelMap)
+		//parallel(webSiteParallelMap)
 		parallel(webServiceParallelMap)
 		parallel(webApiParallelMap)
 
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
-			if(step.get("Project") != step.get("Operation") && operation != "BuildDatabase" && operation != "PublishWebSite" && operation != "PublishWebService" && operation != "DeployWebApi"){
+			if(step.get("Project") != step.get("Operation") && operation != "BuildDatabase" && operation != "PublishWebService" && operation != "DeployWebApi"){
 				echo "runnig ${step}"
 			
 				def stageName = "${step.get("Project")} - ${step.get("Operation")}"
