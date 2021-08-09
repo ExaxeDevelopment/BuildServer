@@ -52,9 +52,9 @@ try{
 			}
 		}		
 
-		parallel(buildParallelMap)
+		//parallel(buildParallelMap)
 
-		deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
+		//deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
