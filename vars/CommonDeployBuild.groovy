@@ -47,11 +47,11 @@ try{
 
 			if((step.get("Project") != step.get("Operation")) && (operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService")){
 				def n = "${step.get("Project")}"
+				buildParallelMap = [:]
 				buildParallelMap.put(n, prepareRestorePackagesStage(step))
 				echo "adding ${step}"
 			}
 		}		
-
 		parallel(buildParallelMap)
 
 		def deployCommonSteps2 = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
