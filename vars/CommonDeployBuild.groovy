@@ -49,7 +49,7 @@ try{
 				if(operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService"){
 					def stageName2 = "${step.get("Project")} - RestoreNuGetPackages"
 					stage("${stageName2}"){
-						def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPacgages")
+						def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
 				
 						def result = bat(returnStatus: true, script: "${actionString}");
 						if(result != 0){
