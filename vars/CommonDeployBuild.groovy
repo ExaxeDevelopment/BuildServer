@@ -166,9 +166,9 @@ catch(err){
 }
 
 def prepareRestorePackagesStage(Map<String,String>step){
+	def stageName = "${step.get("Project")} - RestoreNuGetPackages"
 	return {
-		def stageName2 = "${step.get("Project")} - RestoreNuGetPackages"
-		stage("${stageName2}"){
+		stage("${stageName}"){
 			def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
 				
 			def result = bat(returnStatus: true, script: "${actionString}");
