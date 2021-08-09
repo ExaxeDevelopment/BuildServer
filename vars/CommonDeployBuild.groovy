@@ -179,7 +179,7 @@ catch(err){
 
 def prepareRestorePackagesStage(Map<String,String>step){
 	def stageName = "${step.get("Project")} - RestoreNuGetPackages"
-	echo actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")
+	echo "${actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), "RestoreNuGetPackages")}"
 
 	return {
 		stage("${stageName}"){
