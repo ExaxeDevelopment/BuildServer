@@ -33,6 +33,20 @@ try{
 			operation = step.get("Operation");
 
 			if(step.get("Project") == step.get("Operation")){
+
+			} 
+
+			if((step.get("Project") != step.get("Operation")) && (operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService")){
+				def n = "${step.get("Project")} - RestoreNuGetPackages"
+				buildParallelMap.put(n, prepareRestorePackagesStage(step))
+				echo "adding ${step}"
+			}
+		}		
+
+		for(Map<String,String>step : deployCommonSteps){
+			operation = step.get("Operation");
+
+			if(step.get("Project") == step.get("Operation")){
 				stage(step.get("Operation")){
 					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
 
@@ -43,21 +57,6 @@ try{
 						error(failureMessage);
 					}
 				}
-			} 
-
-			if((step.get("Project") != step.get("Operation")) && (operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService")){
-				def n = "${step.get("Project")} - RestoreNuGetPackages"
-				buildParallelMap.put(n, prepareRestorePackagesStage(step))
-				echo "adding ${step}"
-				echo "buildParallelMap ${buildParallelMap}"
-			}
-		}		
-
-		for(Map<String,String>step : deployCommonSteps){
-			operation = step.get("Operation");
-
-			if(step.get("Project") == step.get("Operation")){
-
 			} 
 			else{
 				echo "runnig ${step}"
