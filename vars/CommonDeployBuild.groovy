@@ -54,16 +54,16 @@ try{
 
 		def deployCommonSteps2 = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
-		for(Map<String,String>step : deployCommonSteps2){
-			operation = step.get("Operation");
+		for(Map<String,String>step2 : deployCommonSteps2){
+			operation = step2.get("Operation");
 
-			if(step.get("Project") != step.get("Operation")){
-				echo "runnig ${step}"
+			if(step2.get("Project") != step2.get("Operation")){
+				echo "runnig ${step2}"
 			
-				def stageName = "${step.get("Project")} - ${step.get("Operation")}"
+				def stageName = "${step2.get("Project")} - ${step2.get("Operation")}"
 
 				stage("${stageName}"){
-					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
+					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step2.get("Project"), step2.get("Operation"))
 				
 					def result = bat(returnStatus: true, script: "${actionString}");
 					if(result != 0){
