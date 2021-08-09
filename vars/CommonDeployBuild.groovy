@@ -52,7 +52,9 @@ try{
 			}
 		}		
 
-		for(Map<String,String>step : deployCommonSteps){
+		def deployCommonSteps2 = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
+
+		for(Map<String,String>step : deployCommonSteps2){
 			operation = step.get("Operation");
 
 			if(step.get("Project") != step.get("Operation")){
