@@ -33,7 +33,16 @@ try{
 			operation = step.get("Operation");
 
 			if(step.get("Project") == step.get("Operation")){
+				stage(step.get("Operation")){
+					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
 
+					def result = bat(returnStatus: true, script: "${actionString}");
+					if(result != 0){
+						failureMessage = "${operation} ${failureMessageSuffix}";
+						echo failureMessage;
+						error(failureMessage);
+					}
+				}
 			} 
 
 			if((step.get("Project") != step.get("Operation")) && (operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService")){
@@ -46,19 +55,7 @@ try{
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
-			if(step.get("Project") == step.get("Operation")){
-				stage(step.get("Operation")){
-					def actionString = actionStringClass.createActionString("${appRootPath}", "${configFile}", step.get("Project"), step.get("Operation"))
-
-					def result = bat(returnStatus: true, script: "${actionString}");
-					if(result != 0){
-						failureMessage = "${operation} ${failureMessageSuffix}";
-						echo failureMessage;
-						error(failureMessage);
-					}
-				}
-			} 
-			else{
+			if(step.get("Project") != step.get("Operation")){
 				echo "runnig ${step}"
 			
 				def stageName = "${step.get("Project")} - ${step.get("Operation")}"
