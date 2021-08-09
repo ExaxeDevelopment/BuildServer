@@ -32,6 +32,9 @@ try{
 
 		def restoreParallelMap = [:]	
 		def databaseParallelMap = [:]	
+		def webSiteParallelMap = [:]	
+		def webServiceParallelMap = [:]	
+		def webApiParallelMap = [:]	
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 			
@@ -48,25 +51,45 @@ try{
 				} 
 			} 
 
-			if((step.get("Project") != step.get("Operation")) && (operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService")){
-				def n = "${step.get("Project")} RestoreNuGetPackages"
-				restoreParallelMap.put(n, prepareRestorePackagesStage(step, configFile, appRootPath))
-				echo "adding ${step}"
-			}
-			if((step.get("Project") != step.get("Operation")) && (operation == "BuildDatabase")){
-				def n = "${step.get("Project")} BuildDatabase"
-				databaseParallelMap.put(n, prepareStage(step, configFile, appRootPath))
-				echo "adding ${step}"
+			if(step.get("Project") != step.get("Operation")){
+				if(operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService"){
+					def n = "${step.get("Project")} RestoreNuGetPackages"
+					restoreParallelMap.put(n, prepareRestorePackagesStage(step, configFile, appRootPath))
+					echo "adding ${step}"
+				}
+				if(operation == "BuildDatabase"){
+					def n = "${step.get("Project")} BuildDatabase"
+					databaseParallelMap.put(n, prepareStage(step, configFile, appRootPath))
+					echo "adding ${step}"
+				}
+				if(operation == "PublishWebSite"){
+					def n = "${step.get("Project")} PublishWebSite"
+					webSiteParallelMap.put(n, prepareStage(step, configFile, appRootPath))
+					echo "adding ${step}"
+				}
+				if(operation == "PublishWebService"){
+					def n = "${step.get("Project")} PublishWebService"
+					webServiceParallelMap.put(n, prepareStage(step, configFile, appRootPath))
+					echo "adding ${step}"
+				}
+				if(operation == "DeployWebApi"){
+					def n = "${step.get("Project")} DeployWebApi"
+					webApiParallelMap.put(n, prepareStage(step, configFile, appRootPath))
+					echo "adding ${step}"
+				}
 			}
 		}		
 		 
 		parallel(restoreParallelMap)
 		parallel(databaseParallelMap)
+		parallel(webSiteParallelMap)
+		parallel(webServiceParallelMap)
+		parallel(webApiParallelMap)
 
 		for(Map<String,String>step : deployCommonSteps){
 			operation = step.get("Operation");
 
-			if(step.get("Project") != step.get("Operation") && operation != "BuildDatabase"){
+			if(step.get("Project") != step.get("Operation") && operation != "BuildDatabase" && operation != "PublishWebSite" && operation != "PublishWebService" && operation != "DeployWebApi"){
 				echo "runnig ${step}"
 			
 				def stageName = "${step.get("Project")} - ${step.get("Operation")}"
