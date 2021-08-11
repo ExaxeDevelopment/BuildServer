@@ -13,7 +13,6 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("InstallAllDatabases"); 
 		fullBuild.add("PublishWebService");
 		fullBuild.add("CheckWorkflowsAsync");
-		fullBuild.add("CheckWebServicesAsync");
 		fullBuild.add("PerformUnitTests"); 
 		fullBuild.add("CheckInFiles"); 
 		fullBuild.add("PublishNuGetPackages"); 
@@ -32,7 +31,6 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildRevision.add("InstallAllDatabases"); 
 		fullBuildRevision.add("PublishWebService");
 		fullBuildRevision.add("CheckWorkflowsAsync");
-		fullBuildRevision.add("CheckWebServicesAsync");
 		fullBuildRevision.add("PerformUnitTests"); 
 		fullBuildRevision.add("CheckInFiles"); 
 		fullBuildRevision.add("PublishNuGetPackages"); 
