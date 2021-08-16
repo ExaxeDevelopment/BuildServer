@@ -163,11 +163,14 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	////steps.put("Integration", mapIntegration);  
 		 
 	Map<String,String> map02 = new HashMap<String,String>();
-	map02.put("MasterBuild-AdminPlus-Dev002", ADMIN_PLUS_BUILD_SERVER)
-	map02.put("MasterBuild-AdvicePlus-Dev002", ADVICE_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-ChannelPlus-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map02.put("MasterBuild-PolicyEBI-Dev001", BASE_BUILD_SERVER)
-	steps.put("Backend Services", map02);
+	steps.put("Channel Plus", map02);
+
+	Map<String,String> map02a = new HashMap<String,String>();
+	map02a.put("MasterBuild-AdminPlus-Dev002", ADMIN_PLUS_BUILD_SERVER)
+	map02a.put("MasterBuild-AdvicePlus-Dev002", ADVICE_PLUS_BUILD_SERVER)
+	map02a.put("MasterBuild-PolicyEBI-Dev001", BASE_BUILD_SERVER)
+	steps.put("Backend Services", map02a);
 	  
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("Build-Exaxe.Apex.Workflow-Dev002", APEX_BUILD_SERVER)	
@@ -274,10 +277,15 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	steps.put("Base/Common", map01);
 
 	Map<String,String> map02 = new HashMap<String,String>();
-	map02.put("MasterBuild-AdminPlus-Dev001", ADMIN_PLUS_BUILD_SERVER)
-	map02.put("MasterBuild-AdvicePlus-Dev001", ADVICE_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-ChannelPlus-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
-	steps.put("Backend Services", map02);
+	steps.put("Channel Plus", map02);
+
+	Map<String,String> map02a = new HashMap<String,String>();
+	map02a.put("MasterBuild-AdminPlus-Dev001", ADMIN_PLUS_BUILD_SERVER)
+	map02a.put("MasterBuild-AdvicePlus-Dev001", ADVICE_PLUS_BUILD_SERVER)
+	map02a.put("MasterBuild-PolicyEBI-Dev001", BASE_BUILD_SERVER)
+	steps.put("Backend Services", map02a);
+	steps.put("Backend Services", map02a);
 	  
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("Build-Exaxe.Apex.Workflow-Dev001", APEX_BUILD_SERVER)	
@@ -528,12 +536,16 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map01.put("MasterBuild-Base-Dev001", BASE_BUILD_SERVER)
 	steps.put("Base/Common", map01);
 
+	Map<String,String> map02a = new HashMap<String,String>();
+	map02a.put("MasterBuild-ChannelPlus-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
+	steps.put("Stage 2a", map02a);
+
 	Map<String,String> map02 = new HashMap<String,String>();
 	map02.put("MasterBuild-AdminPlus-Dev001", ADMIN_PLUS_BUILD_SERVER)
-	map02.put("MasterBuild-ChannelPlus-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map02.put("MasterBuild-ChannelPlus-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-AdvicePlus-Dev001", ADVICE_PLUS_BUILD_SERVER)
 	map02.put("MasterBuild-PolicyEBI-Dev001", BASE_BUILD_SERVER)
-	steps.put("Stage 2", map02);
+	steps.put("Stage 2b", map02);
 
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("Build-Exaxe.Apex.Workflow-Dev001", APEX_BUILD_SERVER)	
@@ -541,7 +553,6 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 
 	Map<String,String> map04 = new HashMap<String,String>();
 	map04.put("MasterBuild-AdminPlus-Dev002", ADMIN_PLUS_BUILD_SERVER)
-	map04.put("MasterBuild-ChannelPlus-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map04.put("MasterBuild-AdvicePlus-Dev002", ADVICE_PLUS_BUILD_SERVER)
 	map04.put("MasterBuild-Apex-Dev001", APEX_BUILD_SERVER)	
 	map04.put("MasterBuild-WebServices-Dev001", API_BUILD_SERVER)	
