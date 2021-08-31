@@ -42,6 +42,9 @@ try{
 					allSteps = getSuperBuildSteps(buildFromStage, buildToStage);
 					break
 
+				case "StopAllBuilds":
+					allSteps = getStopAllBuilds(buildFromStage, buildToStage);
+					break
 			}
 
 			//// Set the default status to 'false' (FAILURE)
@@ -224,6 +227,30 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map09.put("Build-ShrinkDbLogsScript-exop-apex-bld01", APEX_BUILD_SERVER)
 	map09.put("Build-ShrinkDbLogsScript-exop-api-bld01", API_BUILD_SERVER)
 	steps.put("ShrinkDbLogsScript", map09);
+
+	//// filter the steps/stages
+	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
+
+	finalSteps;	
+}
+
+def getStopAllBuilds(buildFromStage, buildToStage){
+	Map<String,Map<String,String>> steps = new LinkedHashMap<String,Map<String,String>>();
+
+	Map<String,String> map02 = new HashMap<String,String>();
+	map02.put("Stop-All-Jobs-exop-base-bld01", BASE_BUILD_SERVER)
+	map02.put("Stop-All-Jobs-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
+	map02.put("Stop-All-Jobs-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
+	map02.put("Stop-All-Jobs-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map02.put("Stop-All-Jobs-exop-apex-bld01", APEX_BUILD_SERVER)
+	map02.put("Stop-All-Jobs-exop-api-bld01", API_BUILD_SERVER)
+	map02.put("Stop-All-Jobs-exop-hd-deploy1", HD_DEPLOY_SERVER)
+	map02.put("Stop-All-Jobs-exop-of-deploy1", OF_DEPLOY_SERVER)
+	map02.put("Stop-All-Jobs-exop-fs-deploy1", FS_DEPLOY_SERVER)
+	map02.put("Stop-All-Jobs-exop-pm-deploy1", PM_DEPLOY_SERVER)
+	map02.put("Stop-All-Jobs-exop-al-deploy1", ACN_DEPLOY_SERVER)
+	map02.put("Stop-All-Jobs-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
+	steps.put("Stop All Builds", map02);
 
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
