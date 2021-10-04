@@ -582,13 +582,13 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Rules-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Comment-Release-V"+version); 
 		buildItems.add("Build-Exaxe.SystemConfiguration-Release-V"+version); 
-		buildItems.add("Build-Exaxe.Document-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Users-Release-V"+version);
+		buildItems.add("Build-Exaxe.Document-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Configuration.WCF-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Accounting-Release-V"+version);
 		buildItems.add("Build-Exaxe.UIElements-Release-V"+version);
 		buildItems.add("Build-Exaxe.Calculations-Release-V"+version);
 		buildItems.add("Build-Exaxe.CalculationManagers-Release-V"+version);
-		buildItems.add("Build-Exaxe.Configuration.WCF-Release-V"+version); 
 		buildItems.add("Build-Exaxe.ChannelPlus-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Client-Release-V"+version);
 		buildItems.add("Build-Exaxe.AdminPlus-Release-V"+version); 
