@@ -112,6 +112,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV21_5":
                 buildSteps = getMasterBuildReleaseV21_5();
                 break	
+			case "MasterBuildReleaseV21_6":
+                buildSteps = getMasterBuildReleaseV21_6();
+                break	
 			case "MasterBuildReleaseVACN21_03":
                 buildSteps = getMasterBuildReleaseVACN21_03();
                 break	
@@ -484,6 +487,23 @@ class masterBuildStepsByProject implements Serializable {
 	}
 
 	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
+	private List<String> getMasterBuildReleaseV21_6(){
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("21.6");
+	
+
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-PoliceMutual-Exaxe-Single-V21.6");
+		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V21.6");
+		buildItems.add("Deploy-Release-OneFamily-Multi-V21.6");
+		buildItems.add("Deploy-Release-OneFamily-Single-V21.6");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+		
+		return buildItems;		
+	}
+
+	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
 	private List<String> getMasterBuildReleaseVACN21_03(){
 		List<String> buildItems = getMasterBuildReleaseVXX_X("ACN21.03");
 	
@@ -544,6 +564,54 @@ class masterBuildStepsByProject implements Serializable {
 		
 		return buildItems;		
 	}
+
+	private List<String> getMasterBuildV2ReleaseVXX_X(String version)
+	{
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Exaxe.Types-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Security-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Libraries-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Rest-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Web-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Common-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Auth-Release-V"+version);
+		buildItems.add("Build-Exaxe.External-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Agent-Release-V"+version); 
+		buildItems.add("Build-Exaxe.App-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Configuration-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Rules-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Comment-Release-V"+version); 
+		buildItems.add("Build-Exaxe.SystemConfiguration-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Document-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Users-Release-V"+version);
+		buildItems.add("Build-Exaxe.Accounting-Release-V"+version);
+		buildItems.add("Build-Exaxe.UIElements-Release-V"+version);
+		buildItems.add("Build-Exaxe.Calculations-Release-V"+version);
+		buildItems.add("Build-Exaxe.CalculationManagers-Release-V"+version);
+		buildItems.add("Build-Exaxe.Configuration.WCF-Release-V"+version); 
+		buildItems.add("Build-Exaxe.ChannelPlus-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Client-Release-V"+version);
+		buildItems.add("Build-Exaxe.AdminPlus-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Apex-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Aggregate-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Client-Release-VADVP"+version);
+		buildItems.add("Build-Exaxe.FactFind-Release-V"+version);
+		buildItems.add("Build-Exaxe.Quote.Rules-Release-V"+version);
+		buildItems.add("Build-Exaxe.Quote-Release-V"+version);
+		buildItems.add("Build-Exaxe.ExistingBusiness-Release-V"+version);
+		buildItems.add("Build-Exaxe.WCF-Release-V"+version); 
+		buildItems.add("Build-Exaxe.WebApi-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Apex.Workflow-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Apex.Activities-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Apex.Server-Release-V"+version); 
+		buildItems.add("Build-SystemConfigurationUI-Release-V"+version);
+		buildItems.add("Build-PointOfSaleUI-Release-V"+version); 
+		buildItems.add("Build-AdminPlusUI-Release-V"+version); 
+		buildItems.add("Build-ChannelPlusUI-Release-V"+version); 	
+		
+		return buildItems;		
+	}
+
 	//// Returns the build + deploy items for "ADVICE PLUS" solutions @ DEV001 (UAT/INTEGRATION build)
 	private List<String> getMasterBuildAdvicePlusDev001(){
 		List<String> buildItems = new ArrayList<String>()
