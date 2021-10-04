@@ -491,12 +491,14 @@ class masterBuildStepsByProject implements Serializable {
 		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("21.6");
 	
 
+		buildItems.add("Build-Hansard.Portals-Release-V21.6"); 	
+
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
-		buildItems.add("Deploy-Release-PoliceMutual-Exaxe-Single-V21.6");
-		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V21.6");
-		buildItems.add("Deploy-Release-OneFamily-Multi-V21.6");
-		buildItems.add("Deploy-Release-OneFamily-Single-V21.6");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V21.6");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V21.6");
+		buildItems.add("Deploy-Release-Hansard-Multi-V21.6");
+		buildItems.add("Deploy-Release-Hansard-Single-V21.6");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 		
