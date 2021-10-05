@@ -233,7 +233,7 @@ class deployRelease_HansardV2 implements Serializable {
 
 				//Exaxe.Configuration - PublishWebService
 		Map<String,String> configurationWsPublishMap = new HashMap<String,String>();
-		configurationWsPublishMap.put("Project", "Exaxe.Configuration-Configuration"); 
+		configurationWsPublishMap.put("Project", "Exaxe.Configuration.WCF-Configuration"); 
 		configurationWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(configurationWsPublishMap);
 
