@@ -151,6 +151,12 @@ class deployRelease_Hansard implements Serializable {
 
 		/// WEB SERVICES
 
+		//Exaxe.ChannelPlus - PublishWebService
+		Map<String,String> channelPlusWebApiPublishMap  = new HashMap<String,String>();
+		channelPlusWebApiPublishMap.put("Project", "Exaxe.ChannelPlus-WebAPI"); 
+		channelPlusWebApiPublishMap.put("Operation", "DeployWebApi"); 
+		deploySteps.add(channelPlusWebApiPublishMap);
+
 		//Exaxe.Aggregate  - PublishWebService
 		Map<String,String> aggregateWsPublishMap = new HashMap<String,String>();
 		aggregateWsPublishMap.put("Project", "Exaxe.Aggregate"); 
@@ -214,13 +220,13 @@ class deployRelease_Hansard implements Serializable {
 
 		//Exaxe.Client  - PublishWebService
 		Map<String,String> clientWsPublishMap = new HashMap<String,String>();
-		clientWsPublishMap.put("Project", "Exaxe.Client"); 
+		clientWsPublishMap.put("Project", "Exaxe.Client-WCF"); 
 		clientWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(clientWsPublishMap);
 
 		//Exaxe.AdminPlus  - PublishWebService
 		Map<String,String> policyWsPublishMap = new HashMap<String,String>();
-		policyWsPublishMap.put("Project", "Exaxe.AdminPlus"); 
+		policyWsPublishMap.put("Project", "Exaxe.AdminPlus-WCF"); 
 		policyWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(policyWsPublishMap);
 
@@ -229,19 +235,13 @@ class deployRelease_Hansard implements Serializable {
 		apexWsPublishMap.put("Project", "Exaxe.Apex"); 
 		apexWsPublishMap.put("Operation", "PublishWebService"); 
 		deploySteps.add(apexWsPublishMap);
-
+		 
 		//Exaxe.Aggregate  - PublishWebService
 		//Exaxe.Quote - PublishWebService
 		Map<String,String> quotehWebApiPublishMap  = new HashMap<String,String>();
 		quotehWebApiPublishMap.put("Project", "Exaxe.Quote-WebAPI"); 
 		quotehWebApiPublishMap.put("Operation", "DeployWebApi"); 
 		deploySteps.add(quotehWebApiPublishMap);
-
-		//Exaxe.ChannelPlus - PublishWebService
-		Map<String,String> channelPlusWebApiPublishMap  = new HashMap<String,String>();
-		channelPlusWebApiPublishMap.put("Project", "Exaxe.ChannelPlus-WebAPI"); 
-		channelPlusWebApiPublishMap.put("Operation", "DeployWebApi"); 
-		deploySteps.add(channelPlusWebApiPublishMap);
 
 		//Exaxe.Auth - PublishWebService
 		Map<String,String> authWebApiPublishMap  = new HashMap<String,String>();
