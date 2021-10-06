@@ -40,19 +40,19 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildRevision.add("PublishNuGetPackagesAzureDevOps");			
 
         List<String> fullBuildCore = new ArrayList<String>()
-		fullBuildRevision.add("GetAllCodeLatestVersion");
-		fullBuildRevision.add("RestoreNuGetPackages"); 
-		fullBuildRevision.add("CanContinueBuild");
-		fullBuildRevision.add("BuildSolution");
-		fullBuildRevision.add("ClearDatabases"); 
-		fullBuildRevision.add("InstallAllDatabases"); 
-		fullBuildRevision.add("PublishWebService");
-		fullBuildRevision.add("CheckWorkflowsAsync");
-		fullBuildRevision.add("CheckWebServicesAsync");
-		fullBuildRevision.add("PerformUnitTests"); 
-		fullBuildRevision.add("PublishNuGetPackages"); 
-		fullBuildRevision.add("CheckNuGetFeed"); 
-		fullBuildRevision.add("PublishNuGetPackagesAzureDevOps");			
+		fullBuildCore.add("GetAllCodeLatestVersion");
+		fullBuildCore.add("RestoreNuGetPackages"); 
+		fullBuildCore.add("CanContinueBuild");
+		fullBuildCore.add("BuildSolution");
+		fullBuildCore.add("ClearDatabases"); 
+		fullBuildCore.add("InstallAllDatabases"); 
+		fullBuildCore.add("PublishWebService");
+		fullBuildCore.add("CheckWorkflowsAsync");
+		fullBuildCore.add("CheckWebServicesAsync");
+		fullBuildCore.add("PerformUnitTests"); 
+		fullBuildCore.add("PublishNuGetPackages"); 
+		fullBuildCore.add("CheckNuGetFeed"); 
+		fullBuildCore.add("PublishNuGetPackagesAzureDevOps");			
 
 
 		List<String> intermediateBuild = new ArrayList<String>()
