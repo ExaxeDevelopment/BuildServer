@@ -623,7 +623,7 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	steps.put("Deployments part 1", map10);
 
 	Map<String,String> map13 = new HashMap<String,String>();
-	map13.put("Deploy-Dev002-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
+	map13.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)
