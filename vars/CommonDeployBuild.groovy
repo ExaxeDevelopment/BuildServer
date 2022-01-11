@@ -80,7 +80,7 @@ try{
 			}
 		}		
 		 
-		parallel(restoreParallelMap)
+		//parallel(restoreParallelMap)
 		parallel(databaseParallelMap)
 		//parallel(webSiteParallelMap)
 		//parallel(webServiceParallelMap)
