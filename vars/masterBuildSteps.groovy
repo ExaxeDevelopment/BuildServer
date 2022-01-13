@@ -237,6 +237,7 @@ class masterBuildSteps implements Serializable {
 	private List<String> getMasterBuildWebServicesDev001(){
 		List<String> buildItems = new ArrayList<String>();
 		buildItems.add("Build-Exaxe.WebApi-Dev001"); 
+		buildItems.add("Build-Exaxe.WCF-Dev001"); 
 
 		return buildItems;		
 	}
