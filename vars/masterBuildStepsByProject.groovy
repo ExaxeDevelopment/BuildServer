@@ -115,6 +115,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV21_6":
                 buildSteps = getMasterBuildReleaseV21_6();
                 break	
+			case "MasterBuildReleaseV21_6h":
+                buildSteps = getMasterBuildReleaseV21_6h();
+                break	
 			case "MasterBuildReleaseVACN21_03":
                 buildSteps = getMasterBuildReleaseVACN21_03();
                 break	
@@ -500,6 +503,26 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Multi-V21.6");
 		buildItems.add("Deploy-Release-Hansard-Single-V21.6");
 		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V21.6");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+		
+		return buildItems;		
+	}
+
+	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
+	private List<String> getMasterBuildReleaseV21_6h(){
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("21.6h");
+	
+
+		buildItems.add("Build-Hansard.Portals-Release-V21.6h"); 	
+
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V21.6h");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V21.6h");
+		buildItems.add("Deploy-Release-Hansard-Multi-V21.6h");
+		buildItems.add("Deploy-Release-Hansard-Single-V21.6h");
+		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V21.6h");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 		
