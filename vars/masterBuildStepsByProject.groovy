@@ -503,6 +503,7 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Multi-V21.6");
 		buildItems.add("Deploy-Release-Hansard-Single-V21.6");
 		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V21.6");
+		buildItems.add("Deploy-Release-PoliceMutual-Exaxe-Single-V21.6");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 		
