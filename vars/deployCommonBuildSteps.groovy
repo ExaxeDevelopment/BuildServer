@@ -44,6 +44,10 @@ class deployCommonBuildSteps implements Serializable {
                 def deployRelease_PoliceMutualClass = new deployRelease_PoliceMutual();
 				commonDeploySteps = deployRelease_PoliceMutualClass.getDeploySteps();
                 break			
+			case "DeployRelease_PoliceMutualV2":
+                def deployRelease_PoliceMutualV2Class = new deployRelease_PoliceMutualV2();
+				commonDeploySteps = deployRelease_PoliceMutualV2Class.getDeploySteps();
+                break			
 			case "DeployRelease_Acorn":
                 def deployRelease_AcornClass = new deployRelease_Acorn();
 				commonDeploySteps = deployRelease_AcornClass.getDeploySteps();
