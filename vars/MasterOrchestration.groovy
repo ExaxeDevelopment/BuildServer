@@ -619,12 +619,9 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map08.put("Build-AdminPlusUI-Dev002", ADMIN_PLUS_BUILD_SERVER)
 	map08.put("Build-PointOfSaleUI-Dev002", ADVICE_PLUS_BUILD_SERVER)	
 	map08.put("Build-ChannelPlusUI-Dev002", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map09.put("Build-Hansard.Portals-Dev001", API_BUILD_I_SERVER)	
 	map08.put("Build-Hansard.Portals-Dev002", API_BUILD_SERVER)	
 	steps.put("Stage 7", map08);
-
-	Map<String,String> map09 = new HashMap<String,String>();
-	map09.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
-	steps.put("Stage 8", map09);
 
 	Map<String,String> map10 = new HashMap<String,String>();
 	map10.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
@@ -655,6 +652,8 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map14.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
+	map14.put("Build-QualityGates-exop-apex-bld-i", APEX_BUILD_I_SERVER)
+	map14.put("Build-QualityGates-exop-api-bld-i", API_BUILD_I_SERVER)
 	steps.put("Deployments part 3", map14);
 
 	Map<String,String> map21 = new HashMap<String,String>();
@@ -664,6 +663,8 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map21.put("Build-DeletePackages-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map21.put("Build-DeletePackages-exop-apex-bld01", APEX_BUILD_SERVER)
 	map21.put("Build-DeletePackages-exop-api-bld01", API_BUILD_SERVER)
+	map21.put("Build-DeletePackages-exop-apex-bld-i", APEX_BUILD_I_SERVER)
+	map21.put("Build-DeletePackages-exop-api-bld-i", API_BUILD_I_SERVER)
 	steps.put("DeletePackages", map21);
 	
 	Map<String,String> map22 = new HashMap<String,String>();
@@ -673,6 +674,8 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map22.put("Build-ShrinkDbLogsScript-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map22.put("Build-ShrinkDbLogsScript-exop-apex-bld01", APEX_BUILD_SERVER)
 	map22.put("Build-ShrinkDbLogsScript-exop-api-bld01", API_BUILD_SERVER)
+	map22.put("Build-ShrinkDbLogsScript-exop-apex-bld-i", APEX_BUILD_I_SERVER)
+	map22.put("Build-ShrinkDbLogsScript-exop-api-bld-i", API_BUILD_I_SERVER)
 	steps.put("ShrinkDbLogsScript", map22);
 
 	//// filter the steps/stages
