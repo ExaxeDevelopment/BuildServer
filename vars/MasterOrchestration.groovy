@@ -348,7 +348,7 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	map05.put("Build-PointOfSaleUI-Dev001", ADVICE_PLUS_BUILD_SERVER)	
 	map05.put("Build-ChannelPlusUI-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
 	//// map05.put("Build-Exaxe.Portals-Dev001", API_BUILD_SERVER)
-	map05.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
+	map05.put("Build-Hansard.Portals-Dev001", API_BUILD_I_SERVER)	
 
 	steps.put("Web Sites", map05);
 
