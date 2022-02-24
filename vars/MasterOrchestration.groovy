@@ -338,8 +338,8 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	steps.put("APEX Workflow", map03);
 	 
 	Map<String,String> map04 = new HashMap<String,String>();
-	map04.put("MasterBuild-Apex-Dev001", APPEX_I_BUILD_SERVER)	
-	map04.put("MasterBuild-WebServices-Dev001", API_I_BUILD_SERVER)	
+	map04.put("MasterBuild-Apex-Dev001", APEX_BUILD_I_SERVER)	
+	map04.put("MasterBuild-WebServices-Dev001", API_BUILD_I_SERVER)	
 	steps.put("APEX/Web Services", map04);
 
 	Map<String,String> map05 = new HashMap<String,String>();
