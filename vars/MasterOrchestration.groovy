@@ -400,17 +400,21 @@ def getUtilsSteps(buildFromStage, buildToStage){
 	map05.put("Build-SolutionManager-Main", BASE_BUILD_SERVER); 
 	steps.put("SolutionManager", map05);
 
-	Map<String,String> map08 = new HashMap<String,String>();
-	map08.put("Build-NuGetCleaner-Main", BASE_BUILD_SERVER); 
-	steps.put("NuGetCleaner", map08);
-	
 	Map<String,String> map06 = new HashMap<String,String>();
-	map06.put("Deploy-Majesco-Migration", BASE_BUILD_SERVER); 
-	steps.put("Deploy LifePlus.Migration", map06);
-	 
+	map06.put("Build-NuGetCleaner-Main", BASE_BUILD_SERVER); 
+	steps.put("NuGetCleaner", map06);
+	
 	Map<String,String> map07 = new HashMap<String,String>();
-	map07.put("Deploy Build App", BASE_BUILD_SERVER); 
-	steps.put("Deploy BuildApp", map07);	
+	map07.put("Deploy-Majesco-Migration", BASE_BUILD_SERVER); 
+	steps.put("Deploy LifePlus.Migration", map07);
+	 
+	Map<String,String> map08 = new HashMap<String,String>();
+	map08.put("Deploy Build App", BASE_BUILD_SERVER); 
+	steps.put("Deploy BuildApp", map08);	
+
+	Map<String,String> map09 = new HashMap<String,String>();
+	map09.put("Deploy NuGetCleaner", BASE_BUILD_SERVER); 
+	steps.put("Deploy NuGetCleaner", map09);	
 
 
 	//// filter the steps/stages
