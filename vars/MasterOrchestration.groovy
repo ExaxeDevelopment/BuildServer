@@ -366,6 +366,11 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	map09.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)	
 	steps.put("Deployments / Single", map09);
 
+	Map<String,String> map10 = new HashMap<String,String>();
+	map10.put("Deploy-Dev001-Hansard-Multi", HD_DEPLOY_SERVER)
+	map10.put("Deploy-Dev001-Hansard-Single", ADMIN_PLUS_BUILD_SERVER)
+	steps.put("Deployments / External", map10);
+
  
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
