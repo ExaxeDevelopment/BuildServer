@@ -357,13 +357,13 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	map08.put("Deploy-Dev001-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
 	map08.put("Deploy-Dev001-OneFamily-Exaxe-Multi", OF_DEPLOY_SERVER)
 	map08.put("Deploy-Dev001-Acorn-Exaxe-Multi", ACN_DEPLOY_SERVER)
-	map08.put("Deploy-Dev001-Hansard-Exaxe-Single", ADMIN_PLUS_BUILD_SERVER)
 	steps.put("Deployments / Multi", map08);
 
 	Map<String,String> map09 = new HashMap<String,String>();
 	map09.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map09.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	map09.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)	
+	map09.put("Deploy-Dev001-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
 	steps.put("Deployments / Single", map09);
 
 	Map<String,String> map10 = new HashMap<String,String>();
