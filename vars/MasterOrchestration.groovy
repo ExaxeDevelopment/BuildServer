@@ -657,6 +657,8 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map13.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)
+	map13.put("Deploy-Dev001-Hansard-Single", HD_DEPLOY_SERVER)
+	map13.put("Deploy-Dev001-Hansard-Multi", ADVICE_PLUS_BUILD_SERVER)
 	steps.put("Deployments part 2", map13);
 
 	// 3. MULTI SERVER --> EXAXE
