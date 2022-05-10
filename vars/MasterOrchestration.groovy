@@ -76,7 +76,31 @@ try{
 			def stableMessage = "";
 			def mailTo = "${DEV_TEAM_EMAIL}";
 			
-			if(productsStability.size() > 0){
+			if(productsStability.size() > 4){
+				////Prepares message indicating the products stability
+				stableMessage = """
+				****************************************************
+				
+				DEV001
+
+				ADMIN PLUS STABLE? ${productsStability.get(0)}
+				ADVICE PLUS STABLE? ${productsStability.get(1)}
+				DISTRIBUTION PLUS STABLE? ${productsStability.get(2)}
+				PORTALS STABLE? ${productsStability.get(3)}
+				****************************************************
+
+				DEV002
+
+				ADMIN PLUS STABLE? ${productsStability.get(4)}
+				ADVICE PLUS STABLE? ${productsStability.get(4)}
+				DISTRIBUTION PLUS STABLE? ${productsStability.get(5)}
+				PORTALS STABLE? ${productsStability.get(6)}
+				****************************************************
+				"""
+				
+				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
+			}
+ 			else if(productsStability.size() > 0){
 				////Prepares message indicating the products stability
 				stableMessage = """
 				****************************************************
@@ -524,12 +548,22 @@ def getProductsStability(mapStatuses){
 	//// Check if we have deployments	
 	Boolean hasDeployments = false;
 
+	Boolean includesDev001 = false;
+	Boolean includesDev002 = false;
+
+
 	echo "GETTING PRODUCTS STABILITY..." 
 
 	mapStatuses.each{key, value ->
 		echo "KEY:${key} / VALUE:${value}" 
 		if(key.startsWith("Deploy")){
 			hasDeployments = true;
+		}
+		if(key.contains("Dev001")){
+			includesDev001 = true;
+		}
+		if(key.contains("Dev002")){
+			includesDev002 = true;
 		}
 	}
 	
@@ -549,6 +583,22 @@ def getProductsStability(mapStatuses){
 
 	//// Portals
 	productsStability.add(true);
+
+	if(includesDev001 && includesDev002){
+		//// Admin Plus Dev002
+		productsStability.add(true);
+
+		//// Advice Plus Dev002
+		productsStability.add(true);
+
+		//// Distribution Plus Dev002
+		productsStability.add(true);
+
+		//// Portals Dev002
+		productsStability.add(true);
+
+	}
+
 	
 	//// Get the key builds for the different products
 	List adminPlusKeyBuilds = getAdminPlusKeyBuilds();
@@ -556,34 +606,51 @@ def getProductsStability(mapStatuses){
 	List distributionPlusKeyBuilds = getDistributionPlusKeyBuilds();
 	List portalsKeyBuilds = getPortalsKeyBuilds();
 	
+
+
 	//// Check for failures 
 	mapStatuses.each{key, value ->
 		if(value == false){
+			int offset =0;
 			adminPlusKeyBuilds.each{ str -> 
 				if(key.startsWith(str)){
+					if(includesDev001 && includesDev002 && (key.contains("Dev002")){
+						offset = 4;
+					}
 					echo "ADMIN PLUS NOT STABLE (${key}/${str})."
-					productsStability.set(0, false);
+					productsStability.set(0+offset, false);
 				}
 			};
 			
 			advicePlusKeyBuilds.each{ str -> 
 				if(key.startsWith(str)){
+					if(includesDev001 && includesDev002 && (key.contains("Dev002")){
+						offset = 4;
+					}
 					echo "ADVICE PLUS NOT STABLE (${key}/${str})."
-					productsStability.set(1, false);
+					productsStability.set(1+offset, false);
 				}
 			};
 			
 			distributionPlusKeyBuilds.each{ str -> 
 				echo "DISTRIBUTION PLUS NOT STABLE (${key}/${str})."
 				if(key.startsWith(str)){
-					productsStability.set(2, false);
+					if(includesDev001 && includesDev002 && (key.contains("Dev002")){
+						offset = 4;
+					}
+
+					productsStability.set(2+offset, false);
 				}
 			};
 			
 			portalsKeyBuilds.each{ str -> 
 				echo "PORTALS NOT STABLE (${key}/${str})."
 				if(key.startsWith(str)){
-					productsStability.set(3, false);
+					if(includesDev001 && includesDev002 && (key.contains("Dev002")){
+						offset = 4;
+					}
+
+					productsStability.set(3+offset, false);
 				}
 			};
 		}
