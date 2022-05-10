@@ -128,7 +128,7 @@ try{
 					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
 					body: "${env.BUILD_URL} \r\n ${duration} \r\n ${stableMessage}"  
 				}
-				stage("Status Notification 2"){
+				stage("Success Notification 2"){
 					echo duration;
 				
 					emailext to: "${DEV_TEAM_EMAIL}", 
