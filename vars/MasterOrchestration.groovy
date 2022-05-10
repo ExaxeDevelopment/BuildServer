@@ -129,11 +129,11 @@ try{
 				////Prepares message indicating the products stability
 				stableMessage = """
 				<div class=""${dev001Banner} banner"">&nbsp;</div>
-				ADMIN PLUS STABLE? <span class=""${class1}"">${productsStability.get(0)}</span><br/>
-				<br/>ADVICE PLUS STABLE? <span class=""${class2}"">${productsStability.get(1)}</span><br/>
-				DISTRIBUTION PLUS STABLE? <span class=""${class3}"">${productsStability.get(2)}</span><br/>
-				PORTALS STABLE? <span class=""${class4}"">${productsStability.get(3)}</span><br/>
-				<div class=""${dev001Banner} banner"">&nbsp;</div>
+				ADMIN PLUS STABLE? <span class='${class1}'>${productsStability.get(0)}</span><br/>
+				<br/>ADVICE PLUS STABLE? <span class='${class2}'>${productsStability.get(1)}</span><br/>
+				DISTRIBUTION PLUS STABLE? <span class='${class3}'>${productsStability.get(2)}</span><br/>
+				PORTALS STABLE? <span class='${class4}'>${productsStability.get(3)}</span><br/>
+				<div class='${dev001Banner} banner'>&nbsp;</div>
 				"""
 				
 				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
