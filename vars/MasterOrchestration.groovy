@@ -4,6 +4,15 @@ def duration = "";
 def buildFromStage = "#";
 def buildToStage = "#";
 def orchestrationType = "#"
+def css = ".good{color:green}.bad{color:red}"
+def class1 = "good";
+def class2 = "good";
+def class3 = "good";
+def class4= "good";
+def class5 = "good";
+def class6 = "good";
+def class7 = "good";
+def class8 = "good";
 
 try{
 	
@@ -79,36 +88,49 @@ try{
 			if(productsStability.size() > 4){
 				////Prepares message indicating the products stability
 				stableMessage = """
-				****************************************************
-				
-				DEV001
-
-				ADMIN PLUS STABLE? ${productsStability.get(0)}
-				ADVICE PLUS STABLE? ${productsStability.get(1)}
-				DISTRIBUTION PLUS STABLE? ${productsStability.get(2)}
-				PORTALS STABLE? ${productsStability.get(3)}
-				****************************************************
-
-				DEV002
-
-				ADMIN PLUS STABLE? ${productsStability.get(4)}
-				ADVICE PLUS STABLE? ${productsStability.get(4)}
-				DISTRIBUTION PLUS STABLE? ${productsStability.get(5)}
-				PORTALS STABLE? ${productsStability.get(6)}
-				****************************************************
+				****************************************************<br/>
+				<br/>
+				<p>DEV001</p>
+<br/>
+				ADMIN PLUS STABLE? ${productsStability.get(0)}<br/>
+				ADVICE PLUS STABLE? ${productsStability.get(1)}<br/>
+				DISTRIBUTION PLUS STABLE? ${productsStability.get(2)}<br/>
+				PORTALS STABLE? ${productsStability.get(3)}<br/>
+				****************************************************<br/>
+<br/>
+				<p>DEV002</p>
+<br/>
+				ADMIN PLUS STABLE? ${productsStability.get(4)}<br/>
+				ADVICE PLUS STABLE? ${productsStability.get(4)}<br/>
+				DISTRIBUTION PLUS STABLE? ${productsStability.get(5)}<br/>
+				PORTALS STABLE? ${productsStability.get(6)}<br/>
+				****************************************************<br/>
 				"""
 				
 				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
 			}
  			else if(productsStability.size() > 0){
+				 if(!productsStability.get(0)){
+					 class1 = "bad";
+				 }
+				 if(!productsStability.get(1)){
+					 class2 = "bad";
+				 }
+				 if(!productsStability.get(2)){
+					 class3 = "bad";
+				 }
+				 if(!productsStability.get(3)){
+					 class4 = "bad";
+				 }
+
 				////Prepares message indicating the products stability
 				stableMessage = """
-				****************************************************
-				ADMIN PLUS STABLE? ${productsStability.get(0)}
-				ADVICE PLUS STABLE? ${productsStability.get(1)}
-				DISTRIBUTION PLUS STABLE? ${productsStability.get(2)}
-				PORTALS STABLE? ${productsStability.get(3)}
-				****************************************************
+				****************************************************<br/>
+				ADMIN PLUS STABLE? <span class=""${class1}"">${productsStability.get(0)}</span><br/>
+				<br/>ADVICE PLUS STABLE? <span class=""${class2}"">${productsStability.get(1)}</span><br/>
+				DISTRIBUTION PLUS STABLE? <span class=""${class3}"">${productsStability.get(2)}</span><br/>
+				PORTALS STABLE? <span class=""${class4}"">${productsStability.get(3)}</span><br/>
+				****************************************************<br/>
 				"""
 				
 				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
@@ -126,7 +148,8 @@ try{
 				
 					mail to: "${mailTo}", 
 					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-					body: "${env.BUILD_URL} \r\n ${duration} \r\n ${stableMessage}"  
+					body: "<html><body>${css}${env.BUILD_URL} <br/> ${duration} <br/> ${stableMessage}</body></html>",
+					mimeType: "text/html"
 				}
 			}
 			catch(err){
@@ -145,7 +168,8 @@ catch(err){
         stage("Error Notification"){
             mail to: "${DEV_TEAM_EMAIL}", 
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-            body: "The deployment failed \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"
+            body: "The deployment failed <br/>Error: ${err} <br/>URL: ${env.BUILD_URL}",
+			mimeType: "text/html"
         }
     }	
 }

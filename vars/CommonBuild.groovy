@@ -70,7 +70,7 @@ try{
 				
                 mail to: "${DEV_TEAM_EMAIL}", 
                 subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-                body: "<html><body><a href=""${env.BUILD_URL}"">BUILD LOCATION</a><br/> ${duration} <br/> Build Type: ${buildTypeAction}</body></html>",
+                body: "<html><body><a href='${env.BUILD_URL}'>BUILD LOCATION</a><br/> ${duration} <br/> Build Type: ${buildTypeAction}</body></html>",
 				mimeType: 'text/html'
             }
         }
