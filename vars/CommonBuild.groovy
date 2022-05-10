@@ -110,7 +110,8 @@ catch(err){
 			stage("Error Notification"){
 				mail to: "${DEV_TEAM_EMAIL}", 
 				subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-				body: "The build failed on stage: ${operation} \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"      
+				body: "<html><body>The build failed on stage: ${operation} <br/>Error: ${err} <br/><a href='${env.BUILD_URL}'>${currentBuild.displayName} / ${currentBuild.result}</a></body></html>",
+				mimeType: 'text/html'      
 			}
 		}
 	}
