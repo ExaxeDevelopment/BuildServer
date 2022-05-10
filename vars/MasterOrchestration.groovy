@@ -466,6 +466,7 @@ def getAdminPlusKeyBuilds()	{
 	List keyBuilds = new ArrayList<String>();
 	keyBuilds.add("MasterBuild-AdminPlus");
 	keyBuilds.add("MasterBuild-ChannelPlus");
+	keyBuilds.add("Build-Exaxe.Apex.Workflow");
 	keyBuilds.add("MasterBuild-Apex");
 	keyBuilds.add("Build-AdminPlusUI");
 	
@@ -477,6 +478,7 @@ def getAdminPlusKeyBuilds()	{
 def getAdvicePlusKeyBuilds(){
 	List keyBuilds = new ArrayList<String>();
 	keyBuilds.add("MasterBuild-AdvicePlus");
+	keyBuilds.add("Build-Exaxe.Apex.Workflow");
 	keyBuilds.add("Build-PointOfSaleUI");
 	
 	keyBuilds;
@@ -489,6 +491,7 @@ def getDistributionPlusKeyBuilds(){
 	keyBuilds.add("MasterBuild-ChannelPlus");
 	keyBuilds.add("Build-ChannelPlusUI");
 	keyBuilds.add("MasterBuild-WebServices");
+	keyBuilds.add("Build-Exaxe.Apex.Workflow");
 	keyBuilds.add("MasterBuild-Apex");
 	
 	keyBuilds;
@@ -502,6 +505,7 @@ def getPortalsKeyBuilds(){
 	keyBuilds.add("MasterBuild-AdvicePlus");
 	keyBuilds.add("MasterBuild-ChannelPlus");
 	keyBuilds.add("MasterBuild-Apex");
+	keyBuilds.add("Build-Exaxe.Apex.Workflow");
 	keyBuilds.add("MasterBuild-WebServices");
 	keyBuilds.add("Build-Hansard.Portals");
 	
