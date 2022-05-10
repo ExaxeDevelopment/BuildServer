@@ -87,7 +87,7 @@ try{
 				****************************************************
 				"""
 				
-				mailTo += ",${QA_TEAM_EMAIL}"
+				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
 			}
  			
 			echo stableMessage
