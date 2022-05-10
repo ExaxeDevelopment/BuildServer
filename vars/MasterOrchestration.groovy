@@ -128,13 +128,6 @@ try{
 					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
 					body: "${env.BUILD_URL} \r\n ${duration} \r\n ${stableMessage}"  
 				}
-				stage("Success Notification 2"){
-					echo duration;
-				
-					emailext to: "${DEV_TEAM_EMAIL}", 
-					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-					body: "${JELLY_SCRIPT,template="html"}"  
-				}
 			}
 			catch(err){
 				echo "Notification stage failed, but build was successful.";
@@ -154,13 +147,6 @@ catch(err){
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
             body: "The deployment failed \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"
         }
-		stage("Error Notification 2"){
-					echo duration;
-				
-					emailext to: "${DEV_TEAM_EMAIL}", 
-					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-					body: "${JELLY_SCRIPT,template="html"}"  
-				}
     }	
 }
 
