@@ -4,15 +4,15 @@ def duration = "";
 def buildFromStage = "#";
 def buildToStage = "#";
 def orchestrationType = "#"
-def css = "<style>.good{background-color:#7FD400}.bad{background-color:#F15D22}.banner{width: 100%; min-height: 20px}</style>"
-def class1 = "good";
-def class2 = "good";
-def class3 = "good";
-def class4= "good";
-def class5 = "good";
-def class6 = "good";
-def class7 = "good";
-def class8 = "good";
+def css = "<style>.good-text{color:#7FD400}.bad-text{color:#F15D22}.good{background-color:#7FD400}.bad{background-color:#F15D22}.banner{width: 100%; min-height: 20px}</style>"
+def class1 = "good-text";
+def class2 = "good-text";
+def class3 = "good-text";
+def class4= "good-text";
+def class5 = "good-text";
+def class6 = "good-text";
+def class7 = "good-text";
+def class8 = "good-text";
 
 def dev001Banner = "good"
 def dev002Banner = "good"
@@ -114,16 +114,16 @@ try{
 			}
  			else if(productsStability.size() > 0){
 				 if(!productsStability.get(0)){
-					 class1 = "bad";
+					 class1 = "bad-text";
 				 }
 				 if(!productsStability.get(1)){
-					 class2 = "bad";
+					 class2 = "bad-text";
 				 }
 				 if(!productsStability.get(2)){
-					 class3 = "bad";
+					 class3 = "bad-text";
 				 }
 				 if(!productsStability.get(3)){
-					 class4 = "bad";
+					 class4 = "bad-text";
 				 }
 
 				////Prepares message indicating the products stability
