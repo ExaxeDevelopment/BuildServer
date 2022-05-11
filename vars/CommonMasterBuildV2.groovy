@@ -38,7 +38,7 @@ try{
                 mail to: "${DEV_TEAM_EMAIL}", 
                 subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
                 body: "<html><body>${css}<div class='good banner'>&nbsp;</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> ${duration}</body></html>",
-				mimiType: "text/html"
+				mimeType: "text/html"
             }
         }
         catch(err){
