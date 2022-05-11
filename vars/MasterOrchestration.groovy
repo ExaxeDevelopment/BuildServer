@@ -641,28 +641,28 @@ def getProductsStability(mapStatuses){
 			int offset =0;
 			adminPlusKeyBuilds.each{ str -> 
 				if(key.startsWith(str)){
-					if(includesDev001 && includesDev002 && (key.contains("Dev002")){
+					if(includesDev001 && includesDev002 && (key.contains("Dev002"))){
 						offset = 4;
 					}
-					echo "ADMIN PLUS NOT STABLE (${key}/${str})."
+					echo "ADMIN PLUS NOT STABLE (${key}/${str}).";
 					productsStability.set(0+offset, false);
 				}
 			};
 			
 			advicePlusKeyBuilds.each{ str -> 
 				if(key.startsWith(str)){
-					if(includesDev001 && includesDev002 && (key.contains("Dev002")){
+					if(includesDev001 && includesDev002 && (key.contains("Dev002"))){
 						offset = 4;
 					}
-					echo "ADVICE PLUS NOT STABLE (${key}/${str})."
+					echo "ADVICE PLUS NOT STABLE (${key}/${str}).";
 					productsStability.set(1+offset, false);
 				}
 			};
 			
 			distributionPlusKeyBuilds.each{ str -> 
-				echo "DISTRIBUTION PLUS NOT STABLE (${key}/${str})."
+				echo "DISTRIBUTION PLUS NOT STABLE (${key}/${str}).";
 				if(key.startsWith(str)){
-					if(includesDev001 && includesDev002 && (key.contains("Dev002")){
+					if(includesDev001 && includesDev002 && (key.contains("Dev002"))){
 						offset = 4;
 					}
 
@@ -671,9 +671,9 @@ def getProductsStability(mapStatuses){
 			};
 			
 			portalsKeyBuilds.each{ str -> 
-				echo "PORTALS NOT STABLE (${key}/${str})."
+				echo "PORTALS NOT STABLE (${key}/${str}).";
 				if(key.startsWith(str)){
-					if(includesDev001 && includesDev002 && (key.contains("Dev002")){
+					if(includesDev001 && includesDev002 && (key.contains("Dev002"))){
 						offset = 4;
 					}
 
