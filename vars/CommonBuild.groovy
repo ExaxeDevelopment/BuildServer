@@ -13,7 +13,7 @@ def buildTypeAction = "#";
 def configFile = "#";
 def projectName = "#";
 
-def css = "<style>.good{background-color:green}.bad{background-color:red}.banner{width: 100%; min-height: 20px}</style>"
+def css = "<style>.good{background-color:#7FD400}.bad{background-color:#F15D22}.banner{width: 100%; min-height: 20px}</style>"
 
 try{
 

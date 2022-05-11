@@ -11,8 +11,10 @@ def deployConfigurationAction = "#";
 
 def duration = "";
 
-def endRow = "\r\n";
+def endRow = "<br/>";
 def selectedJiraProjectKey = "";
+
+def css = "<style>.good{background-color:#7FD400}.bad{background-color:#F15D22}.banner{width: 100%; min-height: 20px}</style>"
 
 def actionStringClass;
 
@@ -127,7 +129,7 @@ try{
             stage("Success Notification"){
                 echo duration;
                 
-				def body = "${env.BUILD_URL} \r\n ${duration}" 
+				def body = "${env.BUILD_URL} ${endRow} ${duration}" 
 
 				envVars = env.getEnvironment()
 				if(envVars.containsKey("SelectedJiraProjectKey")){
@@ -149,7 +151,7 @@ try{
 					def jql = "project = " + selectedJiraProjectKey + " AND " + jiraStatuses;
 					def issues = jiraJqlSearch jql: jql, site: 'exaxejira', failOnError: true;
 		
-					body = "${env.BUILD_URL} \r\n ${duration}" + "\r\n\r\n" + "JIRA RELEASE NOTES" + "\r\n\r\n";
+					body = "<html><body>${css}${env.BUILD_URL} ${endRow} ${duration} ${endRow} JIRA RELEASE NOTES${endRow}";
 					def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 
 					for(def issue in issues.data.issues){
@@ -179,9 +181,12 @@ try{
 					}
 				}
 
+				body = body + "</body></html>";
+
                 mail to: "${DEV_TEAM_EMAIL},${QA_TEAM_EMAIL},${BA_TEAM_EMAIL},${PM_TEAM_EMAIL}", 
                 subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-                body: body;
+                body: body,
+				mimeType: "text/html";
             }
         }
         catch(err){

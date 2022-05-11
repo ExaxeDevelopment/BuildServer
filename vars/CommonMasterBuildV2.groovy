@@ -4,6 +4,8 @@ def jobBuild = "";
 
 def duration = "";
 
+def css = "<style>.good{background-color:#7FD400}.bad{background-color:#F15D22}.banner{width: 100%; min-height: 20px}</style>"
+
 try{
 	
     node{
@@ -35,7 +37,8 @@ try{
 				
                 mail to: "${DEV_TEAM_EMAIL}", 
                 subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-                body: "${env.BUILD_URL} \r\n ${duration}" 
+                body: "<html><body>${css}<div class='good banner'>&nbsp;</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> ${duration}</body></html>",
+				mimiType: "text/html"
             }
         }
         catch(err){
@@ -54,7 +57,8 @@ catch(err){
         stage("Error Notification"){
             mail to: "${DEV_TEAM_EMAIL}", 
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-            body: "The build failed on stage: ${jobBuild} \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"      
+            body: "<html><body>${css}<div class='bad banner'>&nbsp;</div>The build failed on stage: ${operation} <br/>Error: ${err} <br/><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a></body></html>",
+			mimeType: 'text/html'      
         }
     }
 }
