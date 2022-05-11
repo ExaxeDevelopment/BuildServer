@@ -14,7 +14,7 @@ def duration = "";
 def endRow = "<br/>";
 def selectedJiraProjectKey = "";
 
-def css = "<style>body{font-size: 60px}img{width: 50%;height:auto}.good-text{color:#7FD400}.bad-text{color:#F15D22}.good{background-color:#7FD400}.bad{background-color:#F15D22}.banner{width: 100%; min-height: 20px}</style>";
+def css = "<style>body{font-size: 3em}img{width: 50%;height:auto}.good-text{color:#7FD400}.bad-text{color:#F15D22}.good{background-color:#7FD400}.bad{background-color:#F15D22}.banner{width: 100%; min-height: 20px}</style>";
 
 def actionStringClass;
 
