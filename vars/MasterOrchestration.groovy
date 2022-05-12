@@ -174,7 +174,6 @@ catch(err){
         stage("Error Notification"){
             mail to: "${DEV_TEAM_EMAIL}", 
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-            body: " <br/>Error: ${err} <br/>URL: ${env.BUILD_URL}",
 			body: "<html><body>${css}<div class='bad banner'>${embeddedImage}</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> The deployment failed <br/> Build Type: ${buildTypeAction}<br/> ${err}</body></html>",
 			mimeType: "text/html"
         }
