@@ -203,7 +203,8 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses){
 
 			mail to: "${DEV_TEAM_EMAIL}",
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / FAILURE)", 
-            body: "The remote build (${job} @ ${serverName}) failed \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"
+			body: "<html><body>${css}<div class='bad banner'>${embeddedImage}</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> The remote build (${job} @ ${serverName}) failed<br/> ${err}</body></html>",
+			mimeType: "text/html"
 		}
 	}
 			
