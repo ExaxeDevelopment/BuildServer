@@ -91,7 +91,7 @@ try{
 			def stableMessage = "";
 			def mailTo = "${DEV_TEAM_EMAIL}";
 			
-			if(productsStability.size() > 4){
+			if(productsStability.size() > 40){
 				////Prepares message indicating the products stability
 				stableMessage = """
 				****************************************************<br/>
