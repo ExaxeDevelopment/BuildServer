@@ -154,7 +154,7 @@ try{
 				
 					mail to: "${mailTo}", 
 					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-					body: "<html><body>${css}<div class='good banner'>${embeddedImage}</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> ${duration} <br/> Build Type: ${buildTypeAction}<br/> ${stableMessage}</body></html>",
+					body: "<html><body>${css}<div class='good banner'>${embeddedImage}</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> ${duration} <br/> ${stableMessage}</body></html>",
 					mimeType: "text/html"
 				}
 			}
@@ -174,7 +174,7 @@ catch(err){
         stage("Error Notification"){
             mail to: "${DEV_TEAM_EMAIL}", 
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-			body: "<html><body>${css}<div class='bad banner'>${embeddedImage}</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> The deployment failed <br/> Build Type: ${buildTypeAction}<br/> ${err}</body></html>",
+			body: "<html><body>${css}<div class='bad banner'>${embeddedImage}</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> The deployment failed <br/> ${err}</body></html>",
 			mimeType: "text/html"
         }
     }	
