@@ -715,8 +715,8 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	steps.put("Stage 3", map03);
 
 	Map<String,String> map04 = new HashMap<String,String>();
-	map04.put("Build-Exaxe.Apex.Workflow-Dev001", APEX_BUILD_I_SERVER)	
-	map04.put("Build-Exaxe.Apex.Workflow-Dev002", APEX_BUILD_SERVER)	
+	map04.put("MasterBuild-ApexWorkflow-Dev002", APEX_BUILD_I_SERVER)	
+	map04.put("MasterBuild-ApexWorkflow-Dev002", APEX_BUILD_SERVER)	
 	steps.put("Stage 4", map04);
 
 	Map<String,String> map05 = new HashMap<String,String>();
