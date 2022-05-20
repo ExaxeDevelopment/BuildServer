@@ -80,7 +80,7 @@ try{
 
 				innerSteps.each{job, serverName ->
 					echo "Server:${serverName} / Pipeline:${job}" 
-					parallelBuildJobs[job] = getRemoteJobRequest(serverName, job, REMOTE_TOKEN, mapStatuses)
+					parallelBuildJobs[job] = getRemoteJobRequest(serverName, job, REMOTE_TOKEN, mapStatuses, css, embeddedImage)
 				}
 				
 				parallel parallelBuildJobs;
@@ -181,7 +181,7 @@ catch(err){
 }
 
 /// Method that returns a remote request job ready to be executed.
-def getRemoteJobRequest(serverName, job, token, mapStatuses){
+def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage){
 	
 	def remoteRequest = {
 		try{
