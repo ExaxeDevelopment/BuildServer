@@ -732,7 +732,7 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map06.put("Build-AdminPlusUI-Dev001", ADMIN_PLUS_BUILD_SERVER)
 	map06.put("Build-PointOfSaleUI-Dev001", ADVICE_PLUS_BUILD_SERVER)	
 	map06.put("Build-ChannelPlusUI-Dev001", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map06.put("Build-Hansard.Portals-Dev001", API_BUILD_I_SERVER)	
+	map06.put("Build-Hansard.Portals-Dev001", API_BUILD_SERVER)	
 	steps.put("Stage 6", map06);
 
 	Map<String,String> map08 = new HashMap<String,String>();
@@ -774,8 +774,6 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map14.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
-	map14.put("Build-QualityGates-exop-apex-bld-i", APEX_BUILD_I_SERVER)
-	map14.put("Build-QualityGates-exop-api-bld-i", API_BUILD_I_SERVER)
 	steps.put("Deployments part 3", map14);
 
 	Map<String,String> map21 = new HashMap<String,String>();
