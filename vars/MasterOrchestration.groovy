@@ -637,7 +637,8 @@ def getProductsStability(mapStatuses){
 	List distributionPlusKeyBuilds = getDistributionPlusKeyBuilds();
 	List portalsKeyBuilds = getPortalsKeyBuilds();
 	
-
+	echo "Considering: ";
+	mapStatuses.each{key, value -> echo "(${key}/${value})."};
 
 	//// Check for failures 
 	mapStatuses.each{key, value ->
