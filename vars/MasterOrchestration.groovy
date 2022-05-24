@@ -91,7 +91,7 @@ try{
 			def stableMessage = "";
 			def mailTo = "${DEV_TEAM_EMAIL}";
 			
-			if(productsStability.size() > 40){
+			if(productsStability.size() > 5){
 				////Prepares message indicating the products stability
 				stableMessage = """
 				****************************************************<br/>
@@ -187,7 +187,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 		try{
 			stage("${job}"){
 				echo "Trigering job: ${job}"
-				def handle = triggerRemoteJob(remoteJenkinsName: serverName, job: job, token: token, pollInterval: 30, blockBuildUntilComplete: true);
+				def handle = triggerRemoteJob(remoteJenkinsName: serverName, job: job, token: token, pollInterval: 30, blockBuildUntilComplete: true, connectionRetryLimit: 15 );
 				def status = handle.getBuildStatus();
 				echo "Remote status from ${job}: ${status.toString()}";
 				def result = handle.getBuildResult();
@@ -590,10 +590,10 @@ def getProductsStability(mapStatuses){
 		if(key.startsWith("Deploy")){
 			hasDeployments = true;
 		}
-		if(key.contains("Dev001")){
+		if(key.contains("AdminPlus-Dev001")){
 			includesDev001 = true;
 		}
-		if(key.contains("Dev002")){
+		if(key.contains("AdminPlus-Dev002")){
 			includesDev002 = true;
 		}
 	}
@@ -687,7 +687,9 @@ def getProductsStability(mapStatuses){
 			};
 		}
 	}	
-	
+
+	echo "Results: ${productsStability}";
+
 	productsStability
 }
 
