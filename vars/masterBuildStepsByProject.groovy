@@ -526,8 +526,7 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V22.6");
 		buildItems.add("Deploy-Release-Hansard-Multi-V22.6");
 		buildItems.add("Deploy-Release-Hansard-Single-V22.6");
-		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V22.6");
-		buildItems.add("Deploy-Release-PoliceMutual-Exaxe-Single-V22.6");
+
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 		
