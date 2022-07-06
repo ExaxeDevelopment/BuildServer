@@ -107,9 +107,9 @@ try{
 				<p>DEV002</p>
 <br/>
 				ADMIN PLUS STABLE? ${productsStability.get(4)}<br/>
-				ADVICE PLUS STABLE? ${productsStability.get(4)}<br/>
-				DISTRIBUTION PLUS STABLE? ${productsStability.get(5)}<br/>
-				PORTALS STABLE? ${productsStability.get(6)}<br/>
+				ADVICE PLUS STABLE? ${productsStability.get(5)}<br/>
+				DISTRIBUTION PLUS STABLE? ${productsStability.get(6)}<br/>
+				PORTALS STABLE? ${productsStability.get(7)}<br/>
 				****************************************************<br/>
 				"""
 				
