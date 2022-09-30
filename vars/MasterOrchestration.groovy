@@ -60,8 +60,8 @@ try{
 				case "SuperBuild":
 					allSteps = getSuperBuildSteps(buildFromStage, buildToStage);
 					break
-				case "HansardDev001Deploys":
-					allSteps = getHansardDev001Deploys(buildFromStage, buildToStage);
+				case "HansardDeployments":
+					allSteps = getHansardDeployments(buildFromStage, buildToStage);
 					break
 				case "StopAllBuilds":
 					allSteps = getStopAllBuilds(buildFromStage, buildToStage);
@@ -695,7 +695,7 @@ def getProductsStability(mapStatuses){
 	productsStability
 }
 
-def getHansardDeploysments(buildFromStage, buildToStage){
+def getHansardDeployments(buildFromStage, buildToStage){
 	Map<String,Map<String,String>> steps = new LinkedHashMap<String,Map<String,String>>();
 
 	Map<String,String> map01 = new HashMap<String,String>();
