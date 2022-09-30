@@ -695,7 +695,7 @@ def getProductsStability(mapStatuses){
 	productsStability
 }
 
-def getHansardDev001Deploys(buildFromStage, buildToStage){
+def getHansardDeploysments(buildFromStage, buildToStage){
 	Map<String,Map<String,String>> steps = new LinkedHashMap<String,Map<String,String>>();
 
 	Map<String,String> map01 = new HashMap<String,String>();
@@ -704,7 +704,14 @@ def getHansardDev001Deploys(buildFromStage, buildToStage){
 	map01.put("Deploy-Dev001-Hansard-Single", HD_DEPLOY_SERVER)
 	map01.put("Deploy-Dev001-Hansard-Multi", ADVICE_PLUS_BUILD_SERVER)
 
-	steps.put("Deploys", map01);
+	steps.put("Dev001", map01);
+		
+	Map<String,String> map02 = new HashMap<String,String>();
+	map02.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
+	map02.put("Deploy-Dev002-Hansard-Exaxe-Multi", DISTRIBUTION_PLUS_BUILD_SERVER)
+
+
+	steps.put("Dev002", map02);
 		
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
