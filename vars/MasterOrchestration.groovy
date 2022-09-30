@@ -60,7 +60,9 @@ try{
 				case "SuperBuild":
 					allSteps = getSuperBuildSteps(buildFromStage, buildToStage);
 					break
-
+				case "HansardDev001Deploys":
+					allSteps = getHansardDev001Deploys(buildFromStage, buildToStage);
+					break
 				case "StopAllBuilds":
 					allSteps = getStopAllBuilds(buildFromStage, buildToStage);
 					break
@@ -691,6 +693,23 @@ def getProductsStability(mapStatuses){
 	echo "Results: ${productsStability}";
 
 	productsStability
+}
+
+def getHansardDev001Deploys(buildFromStage, buildToStage){
+	Map<String,Map<String,String>> steps = new LinkedHashMap<String,Map<String,String>>();
+
+	Map<String,String> map01 = new HashMap<String,String>();
+	map01.put("Deploy-Dev001-Hansard-Exaxe-Single", ADMIN_PLUS_BUILD_SERVER)
+	map01.put("Deploy-Dev001-Hansard-Exaxe-Multi", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map01.put("Deploy-Dev001-Hansard-Single", HD_DEPLOY_SERVER)
+	map01.put("Deploy-Dev001-Hansard-Multi", ADVICE_PLUS_BUILD_SERVER)
+
+	steps.put("Deploys", map01);
+		
+	//// filter the steps/stages
+	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
+
+	finalSteps;	
 }
 
 /// Method that returns the development steps for Build, Deploy, Analysis, etc.
