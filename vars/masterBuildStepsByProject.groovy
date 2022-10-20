@@ -124,6 +124,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV22_6":
                 buildSteps = getMasterBuildReleaseV22_6();
                 break	
+			case "MasterBuildReleaseV22_10":
+                buildSteps = getMasterBuildReleaseV22_10();
+                break	
 				
 				
             default:
@@ -513,7 +516,7 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;		
 	}
 
-		//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
+	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
 	private List<String> getMasterBuildReleaseV22_6(){
 		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("22.6");
 	
@@ -532,6 +535,27 @@ class masterBuildStepsByProject implements Serializable {
 		
 		return buildItems;		
 	}
+
+	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
+	private List<String> getMasterBuildReleaseV22_6(){
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("22.10");
+	
+
+		buildItems.add("Build-Hansard.Portals-Release-V22.10"); 	
+
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V22.10");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V22.10");
+		buildItems.add("Deploy-Release-Hansard-Multi-V22.10");
+		buildItems.add("Deploy-Release-Hansard-Single-V22.10");
+
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+		
+		return buildItems;		
+	}
+
 
 	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
 	private List<String> getMasterBuildReleaseV21_6h(){
