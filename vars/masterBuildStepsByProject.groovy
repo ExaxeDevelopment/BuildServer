@@ -537,7 +537,7 @@ class masterBuildStepsByProject implements Serializable {
 	}
 
 	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
-	private List<String> getMasterBuildReleaseV22_6(){
+	private List<String> getMasterBuildReleaseV22_10(){
 		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("22.10");
 	
 
