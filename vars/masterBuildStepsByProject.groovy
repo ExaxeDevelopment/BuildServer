@@ -673,11 +673,11 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Quote.Rules-Release-V"+version);
 		buildItems.add("Build-Exaxe.Quote-Release-V"+version);
 		buildItems.add("Build-Exaxe.ExistingBusiness-Release-V"+version);
-		buildItems.add("Build-Exaxe.WCF-Release-V"+version); 
-		buildItems.add("Build-Exaxe.WebApi-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Apex.Workflow-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Apex.Activities-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Apex.Server-Release-V"+version); 
+		buildItems.add("Build-Exaxe.WCF-Release-V"+version); 
+		buildItems.add("Build-Exaxe.WebApi-Release-V"+version); 
 		buildItems.add("Build-SystemConfigurationUI-Release-V"+version);
 		buildItems.add("Build-PointOfSaleUI-Release-V"+version); 
 		buildItems.add("Build-AdminPlusUI-Release-V"+version); 
