@@ -813,6 +813,12 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map21.put("Build-DeletePackages-exop-api-bld01", API_BUILD_SERVER)
 	map21.put("Build-DeletePackages-exop-apex-bld-i", APEX_BUILD_I_SERVER)
 	map21.put("Build-DeletePackages-exop-api-bld-i", API_BUILD_I_SERVER)
+	map21.put("DeletePackages-exop-hd-deploy1", HD_DEPLOY_SERVER)
+	map21.put("DeletePackages-exop-pm-deploy1", PM_DEPLOY_SERVER)
+	map21.put("DeletePackages-exop-of-deploy1", OF_DEPLOY_SERVER)
+	map21.put("DeletePackages-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
+	map21.put("DeletePackages-exop-al-deploy1", ACN_DEPLOY_SERVER)
+	map21.put("DeletePackages-exop-of-deploy1", OF_DEPLOY_SERVER)
 	steps.put("DeletePackages", map21);
 	
 	Map<String,String> map22 = new HashMap<String,String>();
