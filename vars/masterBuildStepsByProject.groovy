@@ -127,6 +127,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV22_10":
                 buildSteps = getMasterBuildReleaseV22_10();
                 break	
+			case "MasterBuildReleaseV22_10h":
+                buildSteps = getMasterBuildReleaseV22_10h();
+                break	
 				
 				
             default:
@@ -578,6 +581,26 @@ class masterBuildStepsByProject implements Serializable {
 	}
 
 	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
+	private List<String> getMasterBuildReleaseV22_10h(){
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("22.10h");
+	
+
+		buildItems.add("Build-Hansard.Portals-Release-V22.10h"); 	
+
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V22.10h");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V22.10h");
+		buildItems.add("Deploy-Release-Hansard-Multi-V22.10h");
+		buildItems.add("Deploy-Release-Hansard-Single-V22.10h");
+		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V22.10h");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+		
+		return buildItems;		
+	}
+
+	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
 	private List<String> getMasterBuildReleaseVACN21_03(){
 		List<String> buildItems = getMasterBuildReleaseVXX_X("ACN21.03");
 	
@@ -602,8 +625,8 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Libraries-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Rest-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Web-Release-V"+version); 
-		buildItems.add("Build-Exaxe.Common-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Auth-Release-V"+version);
+		buildItems.add("Build-Exaxe.Common-Release-V"+version); 
 		buildItems.add("Build-Exaxe.External-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Agent-Release-V"+version); 
 		buildItems.add("Build-Exaxe.App-Release-V"+version); 
@@ -611,12 +634,12 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Rules-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Comment-Release-V"+version); 
 		buildItems.add("Build-Exaxe.SystemConfiguration-Release-V"+version); 
-		buildItems.add("Build-Exaxe.Document-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Users-Release-V"+version);
+		buildItems.add("Build-Exaxe.Document-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Accounting-Release-V"+version);
-		buildItems.add("Build-Exaxe.UIElements-Release-V"+version);
 		buildItems.add("Build-Exaxe.Calculations-Release-V"+version);
 		buildItems.add("Build-Exaxe.CalculationManagers-Release-V"+version);
+		buildItems.add("Build-Exaxe.UIElements-Release-V"+version);
 		buildItems.add("Build-Exaxe.ChannelPlus-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Client-Release-V"+version);
 		buildItems.add("Build-Exaxe.AdminPlus-Release-V"+version); 
@@ -627,10 +650,10 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Quote.Rules-Release-V"+version);
 		buildItems.add("Build-Exaxe.Quote-Release-V"+version);
 		buildItems.add("Build-Exaxe.ExistingBusiness-Release-V"+version);
-		buildItems.add("Build-Exaxe.WebApi-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Apex.Workflow-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Apex.Activities-Release-V"+version); 
 		buildItems.add("Build-Exaxe.Apex.Server-Release-V"+version); 
+		buildItems.add("Build-Exaxe.WebApi-Release-V"+version); 
 		buildItems.add("Build-SystemConfigurationUI-Release-V"+version);
 		buildItems.add("Build-PointOfSaleUI-Release-V"+version); 
 		buildItems.add("Build-AdminPlusUI-Release-V"+version); 
