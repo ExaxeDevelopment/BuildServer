@@ -452,7 +452,7 @@ class masterBuildStepsByProject implements Serializable {
 
 	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
 	private List<String> getMasterBuildReleaseV23_2(){
-		List<String> buildItems = getMasterBuildReleaseVXX_X("23.2");
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("23.2");
 	
 		buildItems.add("Build-Hansard.Portals-Release-V23.2"); 	
 
