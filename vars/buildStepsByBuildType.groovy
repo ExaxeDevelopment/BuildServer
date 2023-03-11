@@ -1,6 +1,25 @@
 class buildStepsByBuildType implements Serializable {
     def createBuildStepsByBuildType(val) { 
 
+        List<String> forceFullBuild = new ArrayList<String>()
+		fullBuild.add("GetAllCodeLatestVersion"); 
+		fullBuild.add("CheckOutFiles"); 
+		fullBuild.add("UpdateAssemblyVersion"); 
+		fullBuild.add("RestoreNuGetPackages"); 
+		fullBuild.add("UpdateNuGetPackages"); 
+		fullBuild.add("ForceContinueBuild");
+		fullBuild.add("BuildSolution");
+		fullBuild.add("ClearDatabases"); 
+		fullBuild.add("InstallAllDatabases"); 
+		fullBuild.add("PublishWebService");
+		fullBuild.add("CheckWorkflowsAsync");
+		fullBuild.add("CheckWebServicesAsync");
+		fullBuild.add("PerformUnitTests"); 
+		fullBuild.add("CheckInFiles"); 
+		fullBuild.add("PublishNuGetPackages"); 
+		fullBuild.add("CheckNuGetFeed");
+		fullBuild.add("PublishNuGetPackagesAzureDevOps");			
+
         List<String> fullBuild = new ArrayList<String>()
 		fullBuild.add("GetAllCodeLatestVersion"); 
 		fullBuild.add("CheckOutFiles"); 
