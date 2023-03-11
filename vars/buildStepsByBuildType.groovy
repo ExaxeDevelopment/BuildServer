@@ -2,23 +2,23 @@ class buildStepsByBuildType implements Serializable {
     def createBuildStepsByBuildType(val) { 
 
         List<String> forceFullBuild = new ArrayList<String>()
-		fullBuild.add("GetAllCodeLatestVersion"); 
-		fullBuild.add("CheckOutFiles"); 
-		fullBuild.add("UpdateAssemblyVersion"); 
-		fullBuild.add("RestoreNuGetPackages"); 
-		fullBuild.add("UpdateNuGetPackages"); 
-		fullBuild.add("ForceContinueBuild");
-		fullBuild.add("BuildSolution");
-		fullBuild.add("ClearDatabases"); 
-		fullBuild.add("InstallAllDatabases"); 
-		fullBuild.add("PublishWebService");
-		fullBuild.add("CheckWorkflowsAsync");
-		fullBuild.add("CheckWebServicesAsync");
-		fullBuild.add("PerformUnitTests"); 
-		fullBuild.add("CheckInFiles"); 
-		fullBuild.add("PublishNuGetPackages"); 
-		fullBuild.add("CheckNuGetFeed");
-		fullBuild.add("PublishNuGetPackagesAzureDevOps");			
+		forceFullBuild.add("GetAllCodeLatestVersion"); 
+		forceFullBuild.add("CheckOutFiles"); 
+		forceFullBuild.add("UpdateAssemblyVersion"); 
+		forceFullBuild.add("RestoreNuGetPackages"); 
+		forceFullBuild.add("UpdateNuGetPackages"); 
+		forceFullBuild.add("ForceContinueBuild");
+		forceFullBuild.add("BuildSolution");
+		forceFullBuild.add("ClearDatabases"); 
+		forceFullBuild.add("InstallAllDatabases"); 
+		forceFullBuild.add("PublishWebService");
+		forceFullBuild.add("CheckWorkflowsAsync");
+		forceFullBuild.add("CheckWebServicesAsync");
+		forceFullBuild.add("PerformUnitTests"); 
+		forceFullBuild.add("CheckInFiles"); 
+		forceFullBuild.add("PublishNuGetPackages"); 
+		forceFullBuild.add("CheckNuGetFeed");
+		forceFullBuild.add("PublishNuGetPackagesAzureDevOps");			
 
         List<String> fullBuild = new ArrayList<String>()
 		fullBuild.add("GetAllCodeLatestVersion"); 
