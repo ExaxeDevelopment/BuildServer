@@ -141,6 +141,9 @@ class buildStepsByBuildType implements Serializable {
             case "FullBuild":
                 buildSteps = fullBuild;
                 break
+            case "ForceFullBuild":
+                buildSteps = forceFullBuild;
+                break
             case "FullBuildRevision":
                 buildSteps = fullBuildRevision;
                 break
