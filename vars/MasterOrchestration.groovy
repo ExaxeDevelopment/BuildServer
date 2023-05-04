@@ -797,6 +797,7 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map13.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-Hansard-Single", HD_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-Hansard-Multi", ADVICE_PLUS_BUILD_SERVER)
+	map13.put("Build-QualityGates-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
 	steps.put("Deployments part 2", map13);
 
 	// 3. MULTI SERVER --> EXAXE
@@ -804,7 +805,6 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map14.put("Deploy-Dev001-OneFamily-Exaxe-Multi", OF_DEPLOY_SERVER)
 	map14.put("Deploy-Dev001-Acorn-Exaxe-Multi", ACN_DEPLOY_SERVER)
 	map14.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
-	map14.put("Build-QualityGates-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
