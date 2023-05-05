@@ -265,7 +265,6 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 
 	Map<String,String> map07 = new HashMap<String,String>();
 	map07.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
-	map07.put("Build-QualityGates-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
