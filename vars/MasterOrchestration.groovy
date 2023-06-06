@@ -264,6 +264,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	steps.put("Deployments", map06);
 
 	Map<String,String> map07 = new HashMap<String,String>();
+	map07.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	map07.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
