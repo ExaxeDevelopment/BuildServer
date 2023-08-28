@@ -255,7 +255,6 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 
 	Map<String,String> map06 = new HashMap<String,String>();
 	map06.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
-	map06.put("Deploy-Dev002-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
@@ -281,10 +280,8 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map08.put("Build-DeletePackages-exop-api-bld01", API_BUILD_SERVER)
 	map08.put("DeletePackages-exop-hd-deploy1", HD_DEPLOY_SERVER)
 	map08.put("DeletePackages-exop-pm-deploy1", PM_DEPLOY_SERVER)
-	map08.put("DeletePackages-exop-of-deploy1", OF_DEPLOY_SERVER)
 	map08.put("DeletePackages-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
 	map08.put("DeletePackages-exop-al-deploy1", ACN_DEPLOY_SERVER)
-	map08.put("DeletePackages-exop-of-deploy1", OF_DEPLOY_SERVER)
 	steps.put("DeletePackages", map08);
 	
 	Map<String,String> map09 = new HashMap<String,String>();
@@ -419,12 +416,10 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	// 3. MULTI SERVER --> EXAXE
 	Map<String,String> map08 = new HashMap<String,String>();
 	map08.put("Deploy-Dev001-Hansard-Exaxe-Multi", HD_DEPLOY_SERVER)
-	map08.put("Deploy-Dev001-OneFamily-Exaxe-Multi", OF_DEPLOY_SERVER)
 	map08.put("Deploy-Dev001-Acorn-Exaxe-Multi", ACN_DEPLOY_SERVER)
 	steps.put("Deployments / Multi", map08);
 
 	Map<String,String> map09 = new HashMap<String,String>();
-	map09.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map09.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	map09.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)	
 	map09.put("Deploy-Dev001-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
@@ -783,7 +778,6 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map10.put("Deploy-Dev002-Hansard-Exaxe-Multi", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map10.put("Deploy-Dev001-Hansard-Exaxe-Single", ADMIN_PLUS_BUILD_SERVER)
 	map10.put("Deploy-Dev001-Hansard-Exaxe-Multi", ADVICE_PLUS_BUILD_SERVER)
-	map10.put("Deploy-Dev002-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map10.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
 	map10.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map10.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
@@ -792,7 +786,6 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 
 	Map<String,String> map13 = new HashMap<String,String>();
 	map13.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
-	map13.put("Deploy-Dev001-OneFamily-Exaxe-Single", OF_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-PoliceMutual-Single", PM_DEPLOY_SERVER)
 	map13.put("Deploy-Dev001-Hansard-Single", HD_DEPLOY_SERVER)
@@ -802,7 +795,6 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 
 	// 3. MULTI SERVER --> EXAXE
 	Map<String,String> map14 = new HashMap<String,String>();
-	map14.put("Deploy-Dev001-OneFamily-Exaxe-Multi", OF_DEPLOY_SERVER)
 	map14.put("Deploy-Dev001-Acorn-Exaxe-Multi", ACN_DEPLOY_SERVER)
 	map14.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
@@ -822,10 +814,8 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map21.put("Build-DeletePackages-exop-api-bld-i", API_BUILD_I_SERVER)
 	map21.put("DeletePackages-exop-hd-deploy1", HD_DEPLOY_SERVER)
 	map21.put("DeletePackages-exop-pm-deploy1", PM_DEPLOY_SERVER)
-	map21.put("DeletePackages-exop-of-deploy1", OF_DEPLOY_SERVER)
 	map21.put("DeletePackages-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
 	map21.put("DeletePackages-exop-al-deploy1", ACN_DEPLOY_SERVER)
-	map21.put("DeletePackages-exop-of-deploy1", OF_DEPLOY_SERVER)
 	steps.put("DeletePackages", map21);
 	
 	Map<String,String> map22 = new HashMap<String,String>();
