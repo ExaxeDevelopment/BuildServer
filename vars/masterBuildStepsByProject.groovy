@@ -133,6 +133,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV22_10h":
                 buildSteps = getMasterBuildReleaseV22_10h();
                 break	
+			case "MasterBuildReleaseV23_9":
+                buildSteps = getMasterBuildReleaseV23_9();
+                break	
 				
 				
             default:
@@ -618,6 +621,26 @@ class masterBuildStepsByProject implements Serializable {
 		
 		return buildItems;		
 	}
+
+	private List<String> getMasterBuildReleaseV23_9(){
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("23.9");
+	
+
+		buildItems.add("Build-Hansard.Portals-Release-V23.9"); 	
+
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V23.9");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V23.9");
+		buildItems.add("Deploy-Release-Hansard-Multi-V23.9");
+		buildItems.add("Deploy-Release-Hansard-Single-V23.9");
+		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V23.9");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+		
+		return buildItems;		
+	}
+	
 
 	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
 	private List<String> getMasterBuildReleaseVACN21_03(){
