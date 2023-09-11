@@ -615,7 +615,6 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V22.10h");
 		buildItems.add("Deploy-Release-Hansard-Multi-V22.10h");
 		buildItems.add("Deploy-Release-Hansard-Single-V22.10h");
-		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V22.10h");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 		
@@ -634,7 +633,6 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V23.9");
 		buildItems.add("Deploy-Release-Hansard-Multi-V23.9");
 		buildItems.add("Deploy-Release-Hansard-Single-V23.9");
-		buildItems.add("Deploy-Release-OneFamily-Exaxe-Single-V23.9");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 		
