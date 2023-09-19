@@ -154,7 +154,7 @@ class buildStepsByBuildType implements Serializable {
                 buildSteps = fullBuildRevision;
                 break
 			case "IncreaseVersionResetMinorVersion":
-				buildSteps = "increaseVersionResetMinorVersion";
+				buildSteps = increaseVersionResetMinorVersion;
 				break
             case "FullBuildCore":
                 buildSteps = fullBuildCore;
