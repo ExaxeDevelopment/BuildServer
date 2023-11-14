@@ -139,6 +139,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseVp23_9":
                 buildSteps = getMasterBuildReleaseVp23_9();
                 break	
+			case "MasterBuildReleaseV23_11":
+                buildSteps = getMasterBuildReleaseV23_11();
+                break	
 				
 				
             default:
@@ -641,6 +644,25 @@ class masterBuildStepsByProject implements Serializable {
 		
 		return buildItems;		
 	}
+	
+
+	private List<String> getMasterBuildReleaseV23_11(){
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("23.11");
+	
+
+		buildItems.add("Build-Hansard.Portals-Release-V23.9"); 	
+
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V23.11");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V23.11");
+		buildItems.add("Deploy-Release-Hansard-Multi-V23.11");
+		buildItems.add("Deploy-Release-Hansard-Single-V23.11");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+		
+		return buildItems;		
+	}	
 	
 	private List<String> getMasterBuildReleaseVp23_9(){
 		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("p23.9");
