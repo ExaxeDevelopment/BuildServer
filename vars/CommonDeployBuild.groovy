@@ -203,14 +203,15 @@ catch(err){
     echo "Deployment Failed...";
     
     currentBuild.result = "FAILURE";
-    
+	url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");    
+
     node{
         stage("Error Notification"){
             echo duration;
 
             mail to: "${DEV_TEAM_EMAIL}", 
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-            body: "<html><body>${css}<div class='bad banner'>&nbsp;&nbsp;${embeddedImage}</div>The build failed on stage: ${operation} <br/>Error: ${err} <br/><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a></body></html>",
+            body: "<html><body>${css}<div class='bad banner'>&nbsp;&nbsp;${embeddedImage}</div>The build failed on stage: ${operation} <br/>Error: ${err} <br/><a href='${url}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a></body></html>",
 			mimeType: 'text/html'            
         }
     }    
