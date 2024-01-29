@@ -145,6 +145,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV23_11":
                 buildSteps = getMasterBuildReleaseV23_11();
                 break	
+			case "MasterBuildReleaseV24_1":
+                buildSteps = getMasterBuildReleaseV24_1();
+                break	
 				
 				
             default:
@@ -648,7 +651,6 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;		
 	}
 	
-
 	private List<String> getMasterBuildReleaseV23_11(){
 		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("23.11");
 	
@@ -661,6 +663,24 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V23.11");
 		buildItems.add("Deploy-Release-Hansard-Multi-V23.11");
 		buildItems.add("Deploy-Release-Hansard-Single-V23.11");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+		
+		return buildItems;		
+	}	
+	
+	private List<String> getMasterBuildReleaseV24_1(){
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("24.1");
+	
+
+		buildItems.add("Build-Hansard.Portals-Release-V24.1"); 	
+
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V24.1");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V24.1");
+		buildItems.add("Deploy-Release-Hansard-Multi-V24.1");
+		buildItems.add("Deploy-Release-Hansard-Single-V24.1");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 		
