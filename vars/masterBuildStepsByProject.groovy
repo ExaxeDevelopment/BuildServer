@@ -157,6 +157,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV24_3":
                 buildSteps = getMasterBuildReleaseV24_3();
                 break	
+			case "MasterBuildReleaseVh24_3":
+                buildSteps = getMasterBuildReleaseVh24_3();
+                break	
 				
             default:
                 buildSteps.add("MasterBuildNotDefined");
@@ -725,6 +728,24 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V24.3");
 		buildItems.add("Deploy-Release-Hansard-Multi-V24.3");
 		buildItems.add("Deploy-Release-Hansard-Single-V24.3");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+		
+		return buildItems;		
+	}	
+	
+	private List<String> getMasterBuildReleaseVh24_3(){
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("h24.3");
+	
+
+		buildItems.add("Build-Hansard.Portals-Release-Vh24.3"); 	
+
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-Vh24.3");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-Vh24.3");
+		buildItems.add("Deploy-Release-Hansard-Multi-Vh24.3");
+		buildItems.add("Deploy-Release-Hansard-Single-Vh24.3");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 		
