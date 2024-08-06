@@ -121,6 +121,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildReleaseV21_6h":
                 buildSteps = getMasterBuildReleaseV21_6h();
                 break	
+			case "MasterBuildReleaseVSP_ACN21_03":
+                buildSteps = getMasterBuildReleaseVSP_ACN21_03();
+                break	
 			case "MasterBuildReleaseVACN21_03":
                 buildSteps = getMasterBuildReleaseVACN21_03();
                 break	
@@ -841,6 +844,22 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VACN21.03");
 		buildItems.add("Deploy-Release-Acorn-Multi-VACN21.03");
 		buildItems.add("Deploy-Release-Acorn-Single-VACN21.03");
+		buildItems.add("DeletePackages");
+		buildItems.add("ClearNuGetCachePackages");
+	
+		return buildItems;		
+	}
+
+	//// Returns the build + deploy items for "ADMIN PLUS" solutions @ LATEST PRODUCTION RELEASE
+	private List<String> getMasterBuildReleaseVSP_ACN21_03(){
+		List<String> buildItems = getMasterBuildReleaseVXX_X("SPRING_ACN21.03");
+	
+		//// Commented deployments can be re-added if the customer/environment must be included.
+	
+		buildItems.add("Deploy-Release-Acorn-Exaxe-Multi-VSPRING_ACN21.03");
+		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VSPRING_ACN21.03");
+		buildItems.add("Deploy-Release-Acorn-Multi-VSPRING_ACN21.03");
+		buildItems.add("Deploy-Release-Acorn-Single-VSPRING_ACN21.03");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 	
