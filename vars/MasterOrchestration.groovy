@@ -257,7 +257,6 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	Map<String,String> map06 = new HashMap<String,String>();
 	map06.put("Deploy-Dev002-Hansard-Exaxe-Single", HD_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
-	map06.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 	map06.put("Deploy-Dev002-Hansard-Exaxe-Multi", DISTRIBUTION_PLUS_BUILD_SERVER)
 	map06.put("Build-QualityGates-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
@@ -780,7 +779,6 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map10.put("Deploy-Dev001-Hansard-Exaxe-Single", ADMIN_PLUS_BUILD_SERVER)
 	map10.put("Deploy-Dev001-Hansard-Exaxe-Multi", ADVICE_PLUS_BUILD_SERVER)
 	map10.put("Deploy-Dev002-PoliceMutual-Single", PM_DEPLOY_SERVER)
-	map10.put("Deploy-Dev002-SalesDemo-AdvicePlus-Single", DEMO_DEPLOY_SERVER)
 	map10.put("Deploy-Dev002-Acorn-Exaxe-Single", ACN_DEPLOY_SERVER)
 
 	steps.put("Deployments part 1", map10);

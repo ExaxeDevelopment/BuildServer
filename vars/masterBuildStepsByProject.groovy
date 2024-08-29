@@ -862,9 +862,8 @@ class masterBuildStepsByProject implements Serializable {
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
 		buildItems.add("Deploy-Release-Acorn-Exaxe-Multi-VACN21.03");
-		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VACN21.03");
 		buildItems.add("Deploy-Release-Acorn-Multi-VACN21.03");
-		buildItems.add("Deploy-Release-Acorn-Single-VACN21.03");
+		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VACN21.03");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 	
@@ -878,9 +877,8 @@ class masterBuildStepsByProject implements Serializable {
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
 		buildItems.add("Deploy-Release-Acorn-Exaxe-Multi-VSPRING_ACN21.03");
-		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VSPRING_ACN21.03");
 		buildItems.add("Deploy-Release-Acorn-Multi-VSPRING_ACN21.03");
-		buildItems.add("Deploy-Release-Acorn-Single-VSPRING_ACN21.03");
+		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VSPRING_ACN21.03");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 	
@@ -894,9 +892,8 @@ class masterBuildStepsByProject implements Serializable {
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
 		buildItems.add("Deploy-Release-Acorn-Exaxe-Multi-VSCV21.03");
-		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VSCV21.03");
 		buildItems.add("Deploy-Release-Acorn-Multi-VSCV21.03");
-		buildItems.add("Deploy-Release-Acorn-Single-VSCV21.03");
+		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VSCV21.03");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
 	
