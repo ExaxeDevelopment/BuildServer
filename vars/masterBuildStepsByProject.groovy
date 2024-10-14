@@ -879,7 +879,7 @@ class masterBuildStepsByProject implements Serializable {
 	
 		//// Commented deployments can be re-added if the customer/environment must be included.
 	
-		buildItems.add("Deploy-Release-Acorn-Exaxe-Multi-V21.03.1");
+		buildItems.add("Deploy-Release-Acorn-Exaxe-Multi-VA21.03.1");
 		buildItems.add("Deploy-Release-Acorn-Multi-VA21.03.1");
 		buildItems.add("Deploy-Release-Acorn-Exaxe-Single-VA21.03.1");
 		buildItems.add("DeletePackages");
