@@ -266,7 +266,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map07.put("Deploy-Dev001-Aviva-Exaxe-Single", AVIVA_DEPLOY_SERVER)
 	map07.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
 	map07.put("Build-QualityGates-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
-	//// - SONAR REMOVE map07.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map07.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	//// - SONAR REMOVE map07.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
 	//// - SONAR REMOVE map07.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
 	steps.put("QualityGates", map07);
@@ -797,7 +797,7 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map14.put("Deploy-Dev001-Acorn-Exaxe-Multi", ACN_DEPLOY_SERVER)
 	map14.put("Build-QualityGates-exop-base-bld01", BASE_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-advp-bld01", ADVICE_PLUS_BUILD_SERVER)
-	//// - SONAR REMOVE map14.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map14.put("Build-QualityGates-exop-dp-bld01", DISTRIBUTION_PLUS_BUILD_SERVER)
 	//// - SONAR REMOVE map14.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
 	//// - SONAR REMOVE map14.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
 	steps.put("Deployments part 3", map14);
