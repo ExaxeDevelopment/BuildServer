@@ -186,7 +186,7 @@ try{
 
 				body = body + "</body></html>";
 
-                mail to: "${DEV_TEAM_EMAIL},${QA_TEAM_EMAIL},${BA_TEAM_EMAIL},${PM_TEAM_EMAIL}", 
+                mail to: "${DEV_TEAM_EMAIL},${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}", 
                 subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
                 body: body,
 				mimeType: "text/html";
