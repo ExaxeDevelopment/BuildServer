@@ -112,7 +112,9 @@ catch(err){
 	else{
 		currentBuild.result = "FAILURE";
 	
-		url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+		if(index(url, ".azure.com:8080") = -1){
+			url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+		}
 
 		node{
 			stage("Error Notification"){
