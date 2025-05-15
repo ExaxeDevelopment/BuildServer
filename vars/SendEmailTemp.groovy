@@ -6,7 +6,14 @@ def selectedJiraProjectKey = "";
 node{
 
     stage("Success Notification"){
-		def body = "${env.BUILD_URL}"; 
+		
+		url = env.BUILD_URL;
+
+		if(!env.BUILD_URL.contains(".azure.com:8080")){
+			url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+		}
+
+		def body = "${url}"; 
 
 		envVars = env.getEnvironment()
 		if(envVars.containsKey("SelectedJiraProjectKey")){

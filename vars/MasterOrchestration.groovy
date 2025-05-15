@@ -150,13 +150,19 @@ try{
 		
 			duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
 		
+			url = env.BUILD_URL;
+
+			if(!env.BUILD_URL.contains(".azure.com:8080")){
+				url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+			}
+
 			try{
 				stage("Success Notification"){
 					echo duration;
 				
 					mail to: "${mailTo}", 
 					subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-					body: "<html><body>${css}<div class='good banner'>&nbsp;&nbsp;${embeddedImage}</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> ${duration} <br/> ${stableMessage}</body></html>",
+					body: "<html><body>${css}<div class='good banner'>&nbsp;&nbsp;${embeddedImage}</div><a href='${url}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> ${duration} <br/> ${stableMessage}</body></html>",
 					mimeType: "text/html"
 				}
 			}
@@ -171,7 +177,12 @@ catch(err){
     echo "Build Failed...";
 	
     currentBuild.result = "FAILURE";
-	url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+	url = env.BUILD_URL;
+
+	if(!env.BUILD_URL.contains(".azure.com:8080")){
+		url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+	}
+
 	
     node{
         stage("Error Notification"){
@@ -204,9 +215,15 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 		catch(err){
 			echo "Build ${job} failed... ${err}";
 
+			url = env.BUILD_URL;
+
+			if(!env.BUILD_URL.contains(".azure.com:8080")){
+				url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+			}
+
 			mail to: "${DEV_TEAM_EMAIL}",
             subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / FAILURE)", 
-			body: "<html><body>${css}<div class='bad banner'>&nbsp;&nbsp;${embeddedImage}</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> The remote build (${job} @ ${serverName}) failed<br/> ${err}</body></html>",
+			body: "<html><body>${css}<div class='bad banner'>&nbsp;&nbsp;${embeddedImage}</div><a href='${url}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> The remote build (${job} @ ${serverName}) failed<br/> ${err}</body></html>",
 			mimeType: "text/html"
 		}
 	}

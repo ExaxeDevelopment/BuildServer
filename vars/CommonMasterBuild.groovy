@@ -78,7 +78,12 @@ try{
 
 		currentBuild.result = "SUCCESS";
 		duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
-		url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+		url = env.BUILD_URL;
+
+		if(!env.BUILD_URL.contains(".azure.com:8080")){
+			url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+		}
+
 
 		try{
 			stage("Success Notification"){
@@ -101,7 +106,11 @@ catch(err){
     echo "Build Failed...";
 	
     currentBuild.result = "FAILURE";
-	url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");	
+	url = env.BUILD_URL;
+
+	if(!env.BUILD_URL.contains(".azure.com:8080")){
+		url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+	}
 
     node{
         stage("Error Notification"){

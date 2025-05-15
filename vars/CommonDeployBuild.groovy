@@ -132,6 +132,12 @@ try{
             stage("Success Notification"){
                 echo duration;
                 
+				url = env.BUILD_URL;
+
+				if(!env.BUILD_URL.contains(".azure.com:8080")){
+					url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+				}
+
 				def body = "${env.BUILD_URL} ${endRow} ${duration}" 
 
 				envVars = env.getEnvironment()
@@ -154,7 +160,7 @@ try{
 					def jql = "project = " + selectedJiraProjectKey + " AND " + jiraStatuses;
 					def issues = jiraJqlSearch jql: jql, site: 'exaxejira', failOnError: true;
 		
-					body = "<html><body>${css}<div class='good banner'>&nbsp;&nbsp;${embeddedImage}</div><a href='${env.BUILD_URL}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a> ${endRow} ${duration} ${endRow} JIRA RELEASE NOTES${endRow}";
+					body = "<html><body>${css}<div class='good banner'>&nbsp;&nbsp;${embeddedImage}</div><a href='${url}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a> ${endRow} ${duration} ${endRow} JIRA RELEASE NOTES${endRow}";
 					def jiraUrl = "https://exaxejira.atlassian.net/browse/"
 
 					for(def issue in issues.data.issues){
