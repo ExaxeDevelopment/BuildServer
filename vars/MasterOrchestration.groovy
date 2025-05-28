@@ -256,6 +256,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	  
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("MasterBuild-ApexWorkflow-Dev002", APEX_BUILD_SERVER)	
+	map03.put("Build-ExcelCalculationManagers-Dev002", BASE_BUILD_SERVER)
 	steps.put("APEX Workflow", map03);
 	 
 	Map<String,String> map04 = new HashMap<String,String>();
@@ -413,6 +414,7 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	  
 	Map<String,String> map03 = new HashMap<String,String>();
 	map03.put("MasterBuild-ApexWorkflow-Dev001", APEX_BUILD_I_SERVER)	
+	map03.put("Build-ExcelCalculationManagers-Dev001", BASE_BUILD_SERVER)
 	steps.put("APEX Workflow", map03);
 	 
 	Map<String,String> map04 = new HashMap<String,String>();
@@ -765,9 +767,11 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	Map<String,String> map04 = new HashMap<String,String>();
 	map04.put("MasterBuild-ApexWorkflow-Dev001", APEX_BUILD_I_SERVER)	
 	map04.put("MasterBuild-ApexWorkflow-Dev002", APEX_BUILD_SERVER)	
+	map03.put("Build-ExcelCalculationManagers-Dev001", BASE_BUILD_SERVER)
 	steps.put("Stage 4", map04);
 
 	Map<String,String> map05 = new HashMap<String,String>();
+	map03.put("Build-ExcelCalculationManagers-Dev002", BASE_BUILD_SERVER)
 	map05.put("MasterBuild-Apex-Dev001", APEX_BUILD_I_SERVER)	
 	map05.put("MasterBuild-WebServices-Dev001", API_BUILD_I_SERVER)	
 	map05.put("MasterBuild-Apex-Dev002", APEX_BUILD_SERVER)	
