@@ -298,7 +298,7 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map08.put("Build-DeletePackages-exop-api-bld01", API_BUILD_SERVER)
 	map08.put("DeletePackages-exop-hd-deploy1", HD_DEPLOY_SERVER)
 	map08.put("DeletePackages-exop-pm-deploy1", PM_DEPLOY_SERVER)
-	map08.put("DeletePackages-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
+///	map08.put("DeletePackages-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
 	map08.put("DeletePackages-exop-al-deploy1", ACN_DEPLOY_SERVER)
 	steps.put("DeletePackages", map08);
 	
@@ -332,7 +332,7 @@ def getStopAllBuilds(buildFromStage, buildToStage){
 	map02.put("Stop-All-Jobs-exop-fs-deploy1", FS_DEPLOY_SERVER)
 	map02.put("Stop-All-Jobs-exop-pm-deploy1", PM_DEPLOY_SERVER)
 	map02.put("Stop-All-Jobs-exop-al-deploy1", ACN_DEPLOY_SERVER)
-	map02.put("Stop-All-Jobs-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
+///	map02.put("Stop-All-Jobs-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
 	steps.put("Stop All Builds", map02);
 
 	//// filter the steps/stages
@@ -834,7 +834,7 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map21.put("Build-DeletePackages-exop-api-bld-i", API_BUILD_I_SERVER)
 	map21.put("DeletePackages-exop-hd-deploy1", HD_DEPLOY_SERVER)
 	map21.put("DeletePackages-exop-pm-deploy1", PM_DEPLOY_SERVER)
-	map21.put("DeletePackages-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
+///	map21.put("DeletePackages-exop-bd-deploy1", DEMO_DEPLOY_SERVER)
 	map21.put("DeletePackages-exop-al-deploy1", ACN_DEPLOY_SERVER)
 	steps.put("DeletePackages", map21);
 	
