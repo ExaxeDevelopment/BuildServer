@@ -878,7 +878,7 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;		
 	}	
 	
-	private List<String> getMasterBuildReleaseV25_9(){
+	private List<String> getMasterBuildReleaseV25_12(){
 		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("25.12");
 
 		buildItems.add("Build-Hansard.Portals-Release-V25.12"); 	
