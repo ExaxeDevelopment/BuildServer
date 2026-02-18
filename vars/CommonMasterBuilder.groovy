@@ -62,37 +62,10 @@ try{
 		currentBuild.result = "SUCCESS";
 		duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
 
-		try{
-			stage("Success Notification"){
-                echo duration;
-				
-                mail to: "${DEV_TEAM_EMAIL}", 
-                subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-                body: "${env.BUILD_URL} \r\n ${duration}" 
-            }
-        }
-        catch(err){
-            echo "Notification stage failed, but build was successful.";
-            echo "Error: ${err}"
-        }
-
 	} // END NODE
 }
 catch(err){
     echo "Build Failed...";
 	
     currentBuild.result = "FAILURE";
-	url = env.BUILD_URL;
-
-	if(!env.BUILD_URL.contains(".azure.com:8080")){
-		url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
-	}
-
-    node{
-        stage("Error Notification"){
-            mail to: "${DEV_TEAM_EMAIL}", 
-            subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-            body: "The build failed on stage: ${jobBuild} \r\nError: ${err} \r\nURL: ${url}"      
-        }
-    }
 }
