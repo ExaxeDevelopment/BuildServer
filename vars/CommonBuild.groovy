@@ -68,26 +68,26 @@ try{
 		
         duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
 		
-        try{
-			url = env.BUILD_URL;
-
-			if(!env.BUILD_URL.contains(".azure.com:8080")){
-				url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
-			}
-
-            stage("Success Notification"){
-                echo duration;
-				
-                mail to: "${DEV_TEAM_EMAIL}", 
-                subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-                body: "<html><body>${css}<div class='good banner'>&nbsp;&nbsp;${embeddedImage}</div><a href='${url}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> ${duration} <br/> Build Type: ${buildTypeAction}</body></html>",
-				mimeType: 'text/html'
-            }
-        }
-        catch(err){
-            echo "Notification stage failed, but build was successful.";
-            echo "Error: ${err}"
-        }
+////        try{
+////			url = env.BUILD_URL;
+////
+////			if(!env.BUILD_URL.contains(".azure.com:8080")){
+////				url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+////			}
+////
+////            stage("Success Notification"){
+////                echo duration;
+////				
+////                mail to: "${DEV_TEAM_EMAIL}", 
+////                subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
+////                body: "<html><body>${css}<div class='good banner'>&nbsp;&nbsp;${embeddedImage}</div><a href='${url}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> ${duration} <br/> Build Type: ${buildTypeAction}</body></html>",
+////				mimeType: 'text/html'
+////            }
+////        }
+////        catch(err){
+////            echo "Notification stage failed, but build was successful.";
+////            echo "Error: ${err}"
+////        }
 
     } //// end node
 }
@@ -113,24 +113,24 @@ catch(err){
 		//// This operation checks if the build can continue, based on changes in the solution or new packages. 
 		currentBuild.result = "SUCCESS";
 	}
-	else{
-		currentBuild.result = "FAILURE";
-	
-		url = env.BUILD_URL;
-
-		if(!env.BUILD_URL.contains(".azure.com:8080")){
-			url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
-		}
-
-		node{
-			stage("Error Notification"){
-				mail to: "${DEV_TEAM_EMAIL}", 
-				subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-				body: "<html><body>${css}<div class='bad banner'>&nbsp;&nbsp;${embeddedImage}</div>The build failed on stage: ${operation} <br/>Error: ${err} <br/><a href='${url}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a></body></html>",
-				mimeType: 'text/html'      
-			}
-		}
-	}
+////	else{
+////		currentBuild.result = "FAILURE";
+////	
+////		url = env.BUILD_URL;
+////
+////		if(!env.BUILD_URL.contains(".azure.com:8080")){
+////			url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
+////		}
+////
+////		node{
+////			stage("Error Notification"){
+////				mail to: "${DEV_TEAM_EMAIL}", 
+////				subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
+////				body: "<html><body>${css}<div class='bad banner'>&nbsp;&nbsp;${embeddedImage}</div>The build failed on stage: ${operation} <br/>Error: ${err} <br/><a href='${url}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a></body></html>",
+////				mimeType: 'text/html'      
+////			}
+////		}
+////	}
 
 }
 
