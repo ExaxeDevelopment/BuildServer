@@ -186,16 +186,6 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 		catch(err){
 			echo "Build ${job} failed... ${err}";
 
-			url = env.BUILD_URL;
-
-			if(!env.BUILD_URL.contains(".azure.com:8080")){
-				url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
-			}
-
-			mail to: "${DEV_TEAM_EMAIL}",
-            subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / FAILURE)", 
-			body: "<html><body>${css}<div class='bad banner'>&nbsp;&nbsp;${embeddedImage}</div><a href='${url}'>${JOB_NAME} ${currentBuild.displayName} / ${currentBuild.result}</a><br/> The remote build (${job} @ ${serverName}) failed<br/> ${err}</body></html>",
-			mimeType: "text/html"
 		}
 	}
 			
