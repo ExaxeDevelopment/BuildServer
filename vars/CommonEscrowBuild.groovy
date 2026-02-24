@@ -70,13 +70,4 @@ catch(err){
     
     currentBuild.result = "FAILURE";
     
-    node{
-        stage("Error Notification"){
-            echo duration;
-
-            mail to: "${DEV_TEAM_EMAIL}", 
-            subject: " ${JOB_NAME} (Build ${currentBuild.displayName} / ${currentBuild.result})", 
-            body: "The build failed on stage: ${operation} \r\nError: ${err} \r\nURL: ${env.BUILD_URL}"      
-        }
-    }    
 }
