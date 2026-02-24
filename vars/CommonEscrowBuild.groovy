@@ -61,7 +61,10 @@ try{
         currentBuild.result = "SUCCESS";
 
         duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
-        
+
+        stage("Success"){
+            echo duration;
+		}
         
     } //// end node 
 }
@@ -70,4 +73,9 @@ catch(err){
     
     currentBuild.result = "FAILURE";
     
+    node{
+        stage("Error"){
+            echo duration;
+        }
+    }    
 }
