@@ -191,7 +191,7 @@ class masterBuildStepsByProject implements Serializable {
                 buildSteps = getMasterBuildReleaseV25_12();
                 break	
 			case "MasterBuildReleaseV26_3":
-                buildSteps = getMasterBuildReleaseV26_3);
+                buildSteps = getMasterBuildReleaseV26_3();
                 break	
 				
             default:
