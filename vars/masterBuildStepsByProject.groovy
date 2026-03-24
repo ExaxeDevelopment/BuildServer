@@ -886,9 +886,9 @@ class masterBuildStepsByProject implements Serializable {
 
 		buildItems.add("Build-Hansard.Portals-Release-V25.12"); 	
 
-		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V25.12");
-		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V25.12");
 		buildItems.add("Deploy-Release-Hansard-Multi-V25.12");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Multi-V25.12");
+		buildItems.add("Deploy-Release-Hansard-Exaxe-Single-V25.12");
 		buildItems.add("Deploy-Release-Hansard-Single-V25.12");
 		buildItems.add("DeletePackages");
 		buildItems.add("ClearNuGetCachePackages");
