@@ -35,7 +35,9 @@ try{
 	    // START EXECUTION
         def deployCommonSteps = deployStepsClass.getDeployCommonBuildSteps(deployConfigurationAction)
 
-		def restoreParallelMap = [:]	
+		def restoreParallelMap1 = [:]	
+		def restoreParallelMap2 = [:]	
+		def restoreParallelMap3 = [:]	
 		def databaseParallelMap = [:]	
 		def webSiteParallelMap = [:]	
 		def webServiceParallelMap = [:]	
@@ -57,9 +59,19 @@ try{
 			} 
 
 			if(step.get("Project") != step.get("Operation")){
-				if(operation == "PublishWebSite" || operation == "DeployWebApi" || operation == "PublishWebService"){
+				if(operation == "PublishWebSite"){
 					def n = "${step.get("Project")} RestoreNuGetPackages"
-					restoreParallelMap.put(n, prepareRestorePackagesStage(step, configFile, appRootPath))
+					restoreParallelMap1.put(n, prepareRestorePackagesStage(step, configFile, appRootPath))
+					echo "adding ${step}"
+				}
+				if(operation == "DeployWebApi" ){
+					def n = "${step.get("Project")} RestoreNuGetPackages"
+					restoreParallelMap2.put(n, prepareRestorePackagesStage(step, configFile, appRootPath))
+					echo "adding ${step}"
+				}
+				if(operation == "PublishWebService"){
+					def n = "${step.get("Project")} RestoreNuGetPackages"
+					restoreParallelMap3.put(n, prepareRestorePackagesStage(step, configFile, appRootPath))
 					echo "adding ${step}"
 				}
 				if(operation == "BuildDatabase"){
@@ -85,7 +97,9 @@ try{
 			}
 		}		
 		 
-		parallel(restoreParallelMap)
+		parallel(restoreParallelMap1)
+		parallel(restoreParallelMap2)
+		parallel(restoreParallelMap3)
 		parallel(databaseParallelMap)
 		//parallel(webSiteParallelMap)
 		//parallel(webServiceParallelMap)
