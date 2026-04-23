@@ -169,7 +169,7 @@ class buildStepsByBuildType implements Serializable {
             case "ForceFullBuild":
                 buildSteps = forceFullBuild;
                 break
-            case "fullBuildDotNet":
+            case "FullBuildDotNet":
                 buildSteps = fullBuildDotNet;
                 break
             case "FullBuildRevision":
