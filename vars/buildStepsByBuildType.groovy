@@ -58,6 +58,14 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildDotNet.add("CheckNuGetFeed");
 		fullBuildDotNet.add("PublishNuGetPackagesAzureDevOps");			
 
+		List<String> updatePackagesWithoutBuildDotNet = new ArrayList<String>()
+		updatePackagesWithoutBuildDotNet.add("GetCodeLatestVersion"); 
+		updatePackagesWithoutBuildDotNet.add("CheckOutFiles"); 
+		updatePackagesWithoutBuildDotNet.add("RestoreNuGetPackagesDotNet"); 
+		updatePackagesWithoutBuildDotNet.add("UpdateNuGetPackagesDotNet");
+		updatePackagesWithoutBuildDotNet.add("CheckInFiles"); 
+		updatePackagesWithoutBuildDotNet.add("PublishNuGetPackagesAzureDevOps"); 
+
         List<String> increaseVersionResetMinorVersion = new ArrayList<String>()
 		increaseVersionResetMinorVersion.add("GetAllCodeLatestVersion"); 
 		increaseVersionResetMinorVersion.add("CheckOutFiles"); 
@@ -186,6 +194,9 @@ class buildStepsByBuildType implements Serializable {
                 break
 			case "UpdatePackagesWithoutBuild":
                 buildSteps = updatePackagesWithoutBuild;
+                break
+			case "UpdatePackagesWithoutBuildDotNet":
+                buildSteps = updatePackagesWithoutBuildDotNet;
                 break
 			case "UpdatePackagesWithBuild":
                 buildSteps = updatePackagesWithBuild;
