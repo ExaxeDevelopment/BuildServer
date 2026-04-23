@@ -39,6 +39,25 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("CheckNuGetFeed");
 		fullBuild.add("PublishNuGetPackagesAzureDevOps");			
 
+        List<String> fullBuildDotNet = new ArrayList<String>()
+		fullBuildDotNet.add("GetAllCodeLatestVersion"); 
+		fullBuildDotNet.add("CheckOutFiles"); 
+		fullBuildDotNet.add("UpdateVersionNumber"); 
+		fullBuildDotNet.add("RestoreNuGetPackages"); 
+		fullBuildDotNet.add("UpdateNuGetPackages"); 
+		fullBuildDotNet.add("CanContinueBuild");
+		fullBuildDotNet.add("BuildSolution");
+		fullBuildDotNet.add("ClearDatabases"); 
+		fullBuildDotNet.add("InstallAllDatabases"); 
+		fullBuildDotNet.add("PublishWebService");
+		fullBuildDotNet.add("CheckWorkflowsAsync");
+		fullBuildDotNet.add("CheckWebServicesAsync");
+		fullBuildDotNet.add("PerformUnitTests"); 
+		fullBuildDotNet.add("CheckInFiles"); 
+		fullBuildDotNet.add("PublishNuGetPackages"); 
+		fullBuildDotNet.add("CheckNuGetFeed");
+		fullBuildDotNet.add("PublishNuGetPackagesAzureDevOps");			
+
         List<String> increaseVersionResetMinorVersion = new ArrayList<String>()
 		increaseVersionResetMinorVersion.add("GetAllCodeLatestVersion"); 
 		increaseVersionResetMinorVersion.add("CheckOutFiles"); 
@@ -149,6 +168,9 @@ class buildStepsByBuildType implements Serializable {
                 break
             case "ForceFullBuild":
                 buildSteps = forceFullBuild;
+                break
+            case "fullBuildDotNet":
+                buildSteps = fullBuildDotNet;
                 break
             case "FullBuildRevision":
                 buildSteps = fullBuildRevision;
