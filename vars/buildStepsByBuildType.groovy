@@ -24,10 +24,10 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("GetAllCodeLatestVersion"); 
 		fullBuild.add("CheckOutFiles"); 
 		fullBuild.add("UpdateAssemblyVersion"); 
-		fullBuild.add("RestoreNuGetPackages"); 
-		fullBuild.add("UpdateNuGetPackages"); 
+		fullBuild.add("RestoreNuGetPackagesDotNet"); 
+		fullBuild.add("UpdateNuGetPackagesDotNet"); 
 		fullBuild.add("CanContinueBuild");
-		fullBuild.add("BuildSolution");
+		fullBuild.add("BuildSolutionDotNet");
 		fullBuild.add("ClearDatabases"); 
 		fullBuild.add("InstallAllDatabases"); 
 		fullBuild.add("PublishWebService");
