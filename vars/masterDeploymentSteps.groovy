@@ -184,6 +184,12 @@ class masterDeploymentSteps implements Serializable {
 		siteProjects01.add("Hansard.Portals.Client-WebSite");
 		deploySteps.add(getWebSiteSteps(siteProjects01));
 
+		//// ********************* DOT NET APP - START *********************
+		//// First list with DOT NET APP projects that will be triggered in parallel 
+		List dotnetAppProjects01 = new ArrayList<String>();
+		dotnetAppProjects01.add("Majesco.MessageQueue");
+		deploySteps.add(getDotNetAppSteps(dotnetAppProjects01));
+
 		//// Second list with Web Site projects that will be triggered in parallel 
 		////List siteProjects02 = new ArrayList<String>();
 
@@ -256,6 +262,13 @@ class masterDeploymentSteps implements Serializable {
 	//// Get the Web Site steps for the passed in projects 
 	def getWebSiteSteps(List<String> projects){	
 		List steps = getSteps(projects, "DeployWebSite");
+
+		steps;
+	}
+
+	//// Get the DOT NET APP steps for the passed in projects 
+	def getDotNetAppSteps(List<String> projects){	
+		List steps = getSteps(projects, "DeployDotNetApp");
 
 		steps;
 	}
