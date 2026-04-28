@@ -10,6 +10,10 @@ class masterBuildSteps implements Serializable {
                 buildSteps = getMasterBuildBaseDev001();
                 break
 
+			case "MasterBuildBaseDotNet":
+				buildSteps = getMasterBuildBaseDotNet();
+				break;
+
 			case "MasterBuildPolicyEBIDev001":
                 buildSteps = getMasterBuildPolicyEBIDev001();
 				break
@@ -147,6 +151,17 @@ class masterBuildSteps implements Serializable {
 		buildItems.add("Build-Exaxe.CalculationManagers-Dev001");
 		buildItems.add("Build-Exaxe.UIElements-Dev001");
 		buildItems.add("Build-Majesco.MessageQueue-Dev001");
+
+		return buildItems;
+	}
+ 
+	//// Returns the build items for "COMMON/BASE" solutions @ DotNet (DEVELOPMENT + UAT/INTEGRATION)
+	private List<String> getMasterBuildBaseDotNet(){
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Exaxe.Types-DotNet"); 
+		buildItems.add("Build-Exaxe.Security-DotNet"); 
+		buildItems.add("Build-Exaxe.Libraries-DotNet"); 
+		buildItems.add("Build-Exaxe.Rest-DotNet"); 
 
 		return buildItems;
 	}

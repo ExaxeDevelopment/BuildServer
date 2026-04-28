@@ -9,6 +9,9 @@ class masterBuildStepsByProject implements Serializable {
 			case "MasterBuildBaseDev001":
                 buildSteps = getMasterBuildBaseDev001();
                 break
+			case "MasterBuildBaseDotNet":
+				buildSteps = getMasterBuildBaseDotNet();
+				break;
             case "MasterBuildSystemConfigurationDev001":
                 buildSteps = getMasterBuildSystemConfigurationDev001();
                 break
@@ -267,6 +270,17 @@ class masterBuildStepsByProject implements Serializable {
 		return buildItems;
 	}
 
+	//// Returns the build items for "COMMON/BASE" solutions @ DotNet (DEVELOPMENT + UAT/INTEGRATION)
+	private List<String> getMasterBuildBaseDotNet(){
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Exaxe.Types-DotNet"); 
+		buildItems.add("Build-Exaxe.Security-DotNet"); 
+		buildItems.add("Build-Exaxe.Libraries-DotNet"); 
+		buildItems.add("Build-Exaxe.Rest-DotNet"); 
+
+		return buildItems;
+	}
+ 
 	//// Returns the build for "SYSTEM CONFIGURATION UI" @ DEV001 (UAT/INTEGRATION)
 	private List<String> getMasterBuildSystemConfigurationDev001(){
 
