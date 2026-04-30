@@ -265,7 +265,7 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.Calculations-Dev001");
 		buildItems.add("Build-Exaxe.CalculationManagers-Dev001");
 		buildItems.add("Build-Exaxe.UIElements-Dev001");
-		buildItems.add("Build-Majesco.MessageQueue-Dev001");
+		//// buildItems.add("Build-Majesco.MessageQueue-Dev001");
 
 		return buildItems;
 	}
