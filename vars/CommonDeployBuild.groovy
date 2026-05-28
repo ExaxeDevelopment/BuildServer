@@ -142,6 +142,17 @@ try{
 
         duration = "Build duration: ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}";
         
+        try{
+            stage("Success"){
+                echo duration;
+            }
+        }
+        catch(err){
+            echo "Success stage failed, but build was successful.";
+            echo "Error: ${err}"
+        }
+        
+
     } //// end node 
 }
 catch(err){
