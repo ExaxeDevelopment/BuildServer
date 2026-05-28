@@ -67,10 +67,25 @@ try{
 			url = env.BUILD_URL.replace(":8080", ".northeurope.cloudapp.azure.com:8080");
 		}
 
+        try{
+
+            stage("Success"){
+                echo duration;
+            }
+        }
+        catch(err){
+            echo "Success stage failed, but build was successful.";
+            echo "Error: ${err}"
+        }
+
 	} // END NODE
 }
 catch(err){
     echo "Build Failed...";
+	
+	stage("Error"){
+		echo duration;
+	}
 	
     currentBuild.result = "FAILURE";
 }
