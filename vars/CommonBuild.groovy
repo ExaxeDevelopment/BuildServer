@@ -98,6 +98,7 @@ catch(err){
 				else{
 					echo "Changes undone successfully.";
 				}
+			}
 		}
     }
 	
