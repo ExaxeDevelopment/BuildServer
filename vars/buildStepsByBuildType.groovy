@@ -18,7 +18,7 @@ class buildStepsByBuildType implements Serializable {
 		forceFullBuild.add("CheckInFiles"); 
 		forceFullBuild.add("PublishNuGetPackages"); 
 		forceFullBuild.add("CheckNuGetFeed");
-		forceFullBuild.add("PublishNuGetPackagesAzureDevOps");			
+//		forceFullBuild.add("PublishNuGetPackagesAzureDevOps");			
 
         List<String> fullBuild = new ArrayList<String>()
 		fullBuild.add("GetAllCodeLatestVersion"); 
@@ -37,7 +37,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuild.add("CheckInFiles"); 
 		fullBuild.add("PublishNuGetPackages"); 
 		fullBuild.add("CheckNuGetFeed");
-		fullBuild.add("PublishNuGetPackagesAzureDevOps");			
+//		fullBuild.add("PublishNuGetPackagesAzureDevOps");			
 
         List<String> fullBuildDotNet = new ArrayList<String>()
 		fullBuildDotNet.add("GetAllCodeLatestVersion"); 
@@ -56,7 +56,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildDotNet.add("CheckInFiles"); 
 		fullBuildDotNet.add("PublishNuGetPackages"); 
 		fullBuildDotNet.add("CheckNuGetFeed");
-		fullBuildDotNet.add("PublishNuGetPackagesAzureDevOps");			
+//		fullBuildDotNet.add("PublishNuGetPackagesAzureDevOps");			
 
 		List<String> updatePackagesWithoutBuildDotNet = new ArrayList<String>()
 		updatePackagesWithoutBuildDotNet.add("GetCodeLatestVersion"); 
@@ -89,7 +89,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildRevision.add("CheckInFiles"); 
 		fullBuildRevision.add("PublishNuGetPackages"); 
 		fullBuildRevision.add("CheckNuGetFeed"); 
-		fullBuildRevision.add("PublishNuGetPackagesAzureDevOps");			
+//		fullBuildRevision.add("PublishNuGetPackagesAzureDevOps");			
 
         List<String> fullBuildCore = new ArrayList<String>()
 		fullBuildCore.add("GetAllCodeLatestVersion");
@@ -104,7 +104,7 @@ class buildStepsByBuildType implements Serializable {
 		fullBuildCore.add("PerformUnitTests"); 
 		fullBuildCore.add("PublishNuGetPackages"); 
 		fullBuildCore.add("CheckNuGetFeed"); 
-		fullBuildCore.add("PublishNuGetPackagesAzureDevOps");			
+//		fullBuildCore.add("PublishNuGetPackagesAzureDevOps");			
 
 
 		List<String> intermediateBuild = new ArrayList<String>()
@@ -139,7 +139,7 @@ class buildStepsByBuildType implements Serializable {
 		updatePackagesWithoutBuild.add("RestoreNuGetPackages"); 
 		updatePackagesWithoutBuild.add("UpdateNuGetPackages");
 		updatePackagesWithoutBuild.add("CheckInFiles"); 
-		updatePackagesWithoutBuild.add("PublishNuGetPackagesAzureDevOps"); 
+//		updatePackagesWithoutBuild.add("PublishNuGetPackagesAzureDevOps"); 
 
 		List<String> updatePackagesWithBuild = new ArrayList<String>()
 		updatePackagesWithBuild.add("GetCodeLatestVersion"); 
@@ -148,7 +148,7 @@ class buildStepsByBuildType implements Serializable {
 		updatePackagesWithBuild.add("UpdateNuGetPackages");
 		updatePackagesWithBuild.add("BuildSolution");
 		updatePackagesWithBuild.add("CheckInFiles"); 
-		updatePackagesWithBuild.add("PublishNuGetPackagesAzureDevOps"); 
+//		updatePackagesWithBuild.add("PublishNuGetPackagesAzureDevOps"); 
 
 		List<String> fullDatabaseReconciliation = new ArrayList<String>()
 		fullDatabaseReconciliation.add("GetAllCodeLatestVersion"); 
