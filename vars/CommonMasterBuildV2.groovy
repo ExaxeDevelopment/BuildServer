@@ -47,10 +47,8 @@ try{
 }
 catch(err){
     echo "Build Failed...";
-	
 
-        stage("Error"){
-        }
+    stage("Error"){
     }
 
     currentBuild.result = "FAILURE";
