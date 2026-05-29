@@ -95,24 +95,15 @@ catch(err){
                     failureMessage = "${undoOperation} ${failureMessageSuffix}";
                     echo failureMessage;
                 }
-				else{
-					echo "Changes undone successfully.";
-				}
-			}
+            }
 		}
     }
 	
 	if(operation == "CanContinueBuild"){
 		//// This operation checks if the build can continue, based on changes in the solution or new packages. 
 		currentBuild.result = "SUCCESS";
-		stage("Success"){
-			echo duration;
-		}
 	}
 	else{
-			stage("Error"){
-				echo duration;
-			}
 			currentBuild.result = "FAILURE";
 	}
 
