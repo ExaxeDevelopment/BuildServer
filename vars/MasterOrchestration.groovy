@@ -92,6 +92,12 @@ try{
 				parallel parallelBuildJobs;
 			} 			
 
+			if(orchestrationType == "PingAll" && mapStatuses.containsValue(false)){
+				error("One or more jobs have failed. Please check the logs for details.")
+			}
+
+			List failedJobs = getPingFailedJobs(mapStatuses);
+
 			List productsStability = getProductsStability(mapStatuses);
 			
 			def stableMessage = "";
@@ -346,33 +352,20 @@ def getIntermediateDevelopmentSteps(buildFromStage, buildToStage){
 def getPingAllSteps(buildFromStage, buildToStage){
 	Map<String,Map<String,String>> steps = new LinkedHashMap<String,Map<String,String>>();
 	Map<String,String> map01 = new HashMap<String,String>();
-	Map<String,String> map02 = new HashMap<String,String>();
-	Map<String,String> map03 = new HashMap<String,String>();
-	Map<String,String> map04 = new HashMap<String,String>();
-	Map<String,String> map05 = new HashMap<String,String>();
-	Map<String,String> map06 = new HashMap<String,String>();
-	Map<String,String> map07 = new HashMap<String,String>();
-	Map<String,String> map08 = new HashMap<String,String>();
-	Map<String,String> map09 = new HashMap<String,String>();
-	map01.put("Ping", APEX_BUILD_SERVER)
-	map02.put("Ping", ADMIN_PLUS_BUILD_SERVER)
-	map03.put("Ping", ADVICE_PLUS_BUILD_SERVER)
-	map04.put("Ping", DISTRIBUTION_PLUS_BUILD_SERVER)
-	map05.put("Ping", API_BUILD_SERVER)
-	map06.put("Ping", APEX_BUILD_I_SERVER)
-	map07.put("Ping", HD_DEPLOY_SERVER)
-	map08.put("Ping", PM_DEPLOY_SERVER)
-	map09.put("Ping", ACN_DEPLOY_SERVER)
+	map01.put("Ping002", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map01.put("Ping003", ADVICE_PLUS_BUILD_SERVER)
+	map01.put("Ping004", ADMIN_PLUS_BUILD_SERVER)
+	map01.put("Ping005", APEX_BUILD_SERVER)
+	map01.put("Ping006", API_BUILD_SERVER)
 
-	steps.put("Ping 1", map01);
-	steps.put("Ping 2", map02);
-	steps.put("Ping 3", map03);
-	steps.put("Ping 4", map04);
-	steps.put("Ping 5", map05);
-	steps.put("Ping 6", map06);
-	steps.put("Ping 7", map07);
-	steps.put("Ping 8", map08);
-	steps.put("Ping 9", map09);
+	map01.put("Ping007", APEX_BUILD_I_SERVER)
+	map01.put("Ping008", API_BUILD_I_SERVER)
+
+	map01.put("Ping009", ACN_DEPLOY_SERVER)
+	map01.put("Ping012", HD_DEPLOY_SERVER)
+	map01.put("Ping013", PM_DEPLOY_SERVER)
+
+	steps.put("PingAll", map01);
 
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
 
@@ -589,6 +582,9 @@ def getPortalsKeyBuilds(){
 	keyBuilds.add("Build-Hansard.Portals");
 	
 	keyBuilds;
+}
+
+def getPingFailedJobs(mapStatuses){	
 }
 
 //// Method that returns the stability of the products:
