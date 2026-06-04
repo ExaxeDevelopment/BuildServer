@@ -45,6 +45,10 @@ try{
 					allSteps = getDatabaseReconciliationSteps(buildFromStage, buildToStage);
 
 					break
+				case "PingAll":
+					allSteps = getPingAllSteps(buildFromStage, buildToStage);
+
+					break
 				case "IntermediateDevelopment":
 					allSteps = getIntermediateDevelopmentSteps(buildFromStage, buildToStage);
 					break
@@ -334,6 +338,26 @@ def getIntermediateDevelopmentSteps(buildFromStage, buildToStage){
 	steps.put("Database Reconciliation", map06);
 
 	//// filter the steps/stages
+	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
+
+	finalSteps;	
+}
+
+def getPingAllSteps(buildFromStage, buildToStage){
+	Map<String,Map<String,String>> steps = new LinkedHashMap<String,Map<String,String>>();
+	Map<String,String> map01 = new HashMap<String,String>();
+	map01.put("Ping", APEX_BUILD_SERVER)
+	map01.put("Ping", ADMIN_PLUS_BUILD_SERVER)
+	map01.put("Ping", ADVICE_PLUS_BUILD_SERVER)
+	map01.put("Ping", DISTRIBUTION_PLUS_BUILD_SERVER)
+	map01.put("Ping", API_BUILD_SERVER)
+	map01.put("Ping", APEX_BUILD_I_SERVER)
+	map01.put("Ping", HD_DEPLOY_SERVER)
+	map01.put("Ping", PM_DEPLOY_SERVER)
+	map01.put("Ping", ACN_DEPLOY_SERVER)
+
+	steps.put("Ping All", map01);
+
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
 
 	finalSteps;	
