@@ -8,6 +8,10 @@ class escrowCommonBuildSteps implements Serializable {
                 def escrowReleaseClass = new escrowRelease();
 				commonDeploySteps = escrowReleaseClass.getEscrowSteps();
                 break
+            case "escrowReleaseV2":
+                def escrowReleaseV2Class = new escrowReleaseV2();
+				commonDeploySteps = escrowReleaseV2Class.getEscrowSteps();
+                break
             default:             
                 break
         }  

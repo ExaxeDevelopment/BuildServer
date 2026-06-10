@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11822.322 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PipelineBase", "PipelineBase", "{46C9246D-9EFE-4F4D-AC4B-E285D86FE584}"
 EndProject
@@ -32,6 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CE151E
 	ProjectSection(SolutionItems) = preProject
 		CommonBuild.groovy = CommonBuild.groovy
 		CommonDeployBuild.groovy = CommonDeployBuild.groovy
+		CommonEscrowBuild.groovy = CommonEscrowBuild.groovy
 		CommonMasterBuild.groovy = CommonMasterBuild.groovy
 		CommonMasterBuilder.groovy = CommonMasterBuilder.groovy
 		CommonMasterBuildV2.groovy = CommonMasterBuildV2.groovy
@@ -110,6 +111,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		deployRelease_PoliceMutualV2.groovy = deployRelease_PoliceMutualV2.groovy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Escrow", "Escrow", "{E5641963-57AC-4559-A325-220935060046}"
+	ProjectSection(SolutionItems) = preProject
+		escrowCommonBuildSteps.groovy = escrowCommonBuildSteps.groovy
+		escrowRelease.groovy = escrowRelease.groovy
+		escrowReleaseV2.groovy = escrowReleaseV2.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,6 +138,7 @@ Global
 		{F51D6CC3-2527-4B0D-87F6-87A62C70C23C} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{DDCADB45-566F-4B0B-B645-F50DB9307851} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 		{1FC1E09A-9326-444F-8EB6-1C2EE5023EB2} = {EBCAA7D9-3C49-4745-AE4A-6556F35091C7}
+		{E5641963-57AC-4559-A325-220935060046} = {4392F170-1C95-43E8-B24D-BAA451E1F3EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AEF62-0292-4158-A644-206C38E869DE}
