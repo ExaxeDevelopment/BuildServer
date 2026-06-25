@@ -930,7 +930,7 @@ class masterBuildStepsByProject implements Serializable {
 	}	
 	
 	private List<String> getMasterBuildReleaseV26_7(){
-		List<String> buildItems = getMasterBuildV2ReleaseVXX_X("26.7");
+		List<String> buildItems = getMasterBuildV2ReleaseVXX_X_2("26.7");
 	
 		buildItems.add("Build-Hansard.Portals-Release-V26.7"); 	
 
@@ -1145,6 +1145,52 @@ class masterBuildStepsByProject implements Serializable {
 		buildItems.add("Build-Exaxe.WebApi-Release-V"+version); 
 		buildItems.add("Build-SystemConfigurationUI-Release-V"+version);
 		buildItems.add("Build-PointOfSaleUI-Release-V"+version); 
+		buildItems.add("Build-AdminPlusUI-Release-V"+version); 
+		buildItems.add("Build-ChannelPlusUI-Release-V"+version); 	
+		
+		return buildItems;		
+	}
+
+	private List<String> getMasterBuildV2ReleaseVXX_X_2(String version)
+	{
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("Build-Exaxe.Types-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Security-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Libraries-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Rest-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Web-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Common-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Auth-Release-V"+version);
+		buildItems.add("Build-Exaxe.External-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Agent-Release-V"+version); 
+		buildItems.add("Build-Exaxe.App-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Configuration-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Rules-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Comment-Release-V"+version); 
+		buildItems.add("Build-Exaxe.SystemConfiguration-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Users-Release-V"+version);
+		buildItems.add("Build-Exaxe.Document-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Configuration.WCF-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Accounting-Release-V"+version);
+		buildItems.add("Build-Exaxe.UIElements-Release-V"+version);
+		buildItems.add("Build-Exaxe.Calculations-Release-V"+version);
+		buildItems.add("Build-Exaxe.CalculationManagers-Release-V"+version);
+		buildItems.add("Build-Exaxe.ChannelPlus-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Client-Release-V"+version);
+		buildItems.add("Build-Exaxe.AdminPlus-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Apex-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Aggregate-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Client-Release-VADVP"+version);
+		buildItems.add("Build-Exaxe.FactFind-Release-V"+version);
+		buildItems.add("Build-Exaxe.Quote.Rules-Release-V"+version);
+		buildItems.add("Build-Exaxe.Quote-Release-V"+version);
+		buildItems.add("Build-Exaxe.ExistingBusiness-Release-V"+version);
+		buildItems.add("Build-Exaxe.Apex.Workflow-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Apex.Activities-Release-V"+version); 
+		buildItems.add("Build-Exaxe.Apex.Server-Release-V"+version); 
+		buildItems.add("Build-Exaxe.WCF-Release-V"+version); 
+		buildItems.add("Build-Exaxe.WebApi-Release-V"+version); 
+		buildItems.add("Build-SystemConfigurationUI-Release-V"+version);
 		buildItems.add("Build-AdminPlusUI-Release-V"+version); 
 		buildItems.add("Build-ChannelPlusUI-Release-V"+version); 	
 		
