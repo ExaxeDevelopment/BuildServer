@@ -366,6 +366,8 @@ def getPingAllSteps(buildFromStage, buildToStage){
 	map01.put("Ping012", HD_DEPLOY_SERVER)
 	map01.put("Ping013", PM_DEPLOY_SERVER)
 
+	map01.put("PingRelease", EXOP_RELEASE01)
+
 	steps.put("PingAll", map01);
 
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
