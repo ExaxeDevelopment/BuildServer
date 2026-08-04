@@ -138,6 +138,7 @@ try{
 				lastMasterBuild = [
 					buildName: currentBuild.displayName,
 					buildNumber: currentBuild.number,
+					productsStability: productsStability,
 					stableMessage: stableMessage,
 					dateTime: new Date().format("yyyy-MM-dd hh:mm:ss")
 				]
@@ -173,6 +174,7 @@ try{
 				lastMasterBuild = [
 					buildName: currentBuild.displayName,
 					buildNumber: currentBuild.number,
+					productsStability: productsStability,
 					stableMessage: stableMessage,
 					dateTime: new Date().format("yyyy-MM-dd hh:mm:ss")
 				]
