@@ -1,4 +1,5 @@
 import hudson.Util;
+import groovy.json.JsonOutput;
 
 def duration = "";
 def buildFromStage = "#";
@@ -152,9 +153,19 @@ try{
 				"""
 				
 				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
+
+
 			}
  			
 			echo stableMessage
+
+			def lastMasterBuild = [
+				buildName: currentBuild.displayName,
+				buildNumber: currentBuild.number,
+				stableMessage: stableMessage,
+				dateTime: new Date().format("yyyy-MM-dd hh:mm:ss")
+			]
+			writeFile file: 'c:\\ExaxeLogs\\build\\lastmasterbuild.json', text: JsonOutput.toJson(lastMasterBuild)
 
 			currentBuild.result = "SUCCESS";
 		
