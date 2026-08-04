@@ -25,6 +25,11 @@ try{
 	
 	node {
 		stage("Orchestration - ${OrchestrationType}"){
+
+			def lastMasterBuildFile = new File('c:\\ExaxeLogs\\build\\lastmasterbuild.json')
+			if(lastMasterBuildFile.exists()){
+				lastMasterBuildFile.delete()
+			}
 			
 			// Input parameters
 			buildFromStage = FromStage
