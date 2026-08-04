@@ -132,6 +132,15 @@ try{
 				"""
 				
 				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
+
+				def lastMasterBuild = [
+					buildName: currentBuild.displayName,
+					buildNumber: currentBuild.number,
+					stableMessage: stableMessage,
+					dateTime: new Date().format("yyyy-MM-dd hh:mm:ss")
+				]
+				writeFile file: 'c:\\ExaxeLogs\\build\\lastmasterbuild.json', text: JsonOutput.toJson(lastMasterBuild)
+
 			}
  			else if(productsStability.size() > 0){
 				 if(!productsStability.get(0)){
@@ -159,18 +168,17 @@ try{
 				
 				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
 
+				def lastMasterBuild = [
+					buildName: currentBuild.displayName,
+					buildNumber: currentBuild.number,
+					stableMessage: stableMessage,
+					dateTime: new Date().format("yyyy-MM-dd hh:mm:ss")
+				]
+				writeFile file: 'c:\\ExaxeLogs\\build\\lastmasterbuild.json', text: JsonOutput.toJson(lastMasterBuild)
 
 			}
  			
 			echo stableMessage
-
-			def lastMasterBuild = [
-				buildName: currentBuild.displayName,
-				buildNumber: currentBuild.number,
-				stableMessage: stableMessage,
-				dateTime: new Date().format("yyyy-MM-dd hh:mm:ss")
-			]
-			writeFile file: 'c:\\ExaxeLogs\\build\\lastmasterbuild.json', text: JsonOutput.toJson(lastMasterBuild)
 
 			currentBuild.result = "SUCCESS";
 		
