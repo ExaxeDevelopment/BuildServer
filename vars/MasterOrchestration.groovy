@@ -26,6 +26,8 @@ try{
 	node {
 		stage("Orchestration - ${OrchestrationType}"){
 
+			def lastMasterBuild = ""
+
 			def lastMasterBuildFile = new File('c:\\ExaxeLogs\\build\\lastmasterbuild.json')
 			if(lastMasterBuildFile.exists()){
 				lastMasterBuildFile.delete()
@@ -133,7 +135,7 @@ try{
 				
 				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
 
-				def lastMasterBuild = [
+				lastMasterBuild = [
 					buildName: currentBuild.displayName,
 					buildNumber: currentBuild.number,
 					stableMessage: stableMessage,
@@ -168,7 +170,7 @@ try{
 				
 				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
 
-				def lastMasterBuild = [
+				lastMasterBuild = [
 					buildName: currentBuild.displayName,
 					buildNumber: currentBuild.number,
 					stableMessage: stableMessage,
