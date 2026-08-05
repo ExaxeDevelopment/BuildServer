@@ -6,10 +6,13 @@ class masterBuildSteps implements Serializable {
 		List<String> buildSteps = new ArrayList<String>();
 
         switch (masterBuildType) {
+			case "SendStatusEmail":
+                buildSteps = getSendStatusEmail();
+                break
+
 			case "MasterBuildBaseDev001":
                 buildSteps = getMasterBuildBaseDev001();
                 break
-
 			case "MasterBuildBaseDotNet":
 				buildSteps = getMasterBuildBaseDotNet();
 				break;
@@ -125,6 +128,12 @@ class masterBuildSteps implements Serializable {
 
 		buildSteps
     } 
+
+	private List<String> getSendStatusEmail() {
+		List<String> buildItems = new ArrayList<String>()
+		buildItems.add("SendStatusEmail"); 
+		return buildItems
+	}
 
 	//// Returns the build items for "COMMON/BASE" solutions @ DEV001 (DEVELOPMENT + UAT/INTEGRATION)
 	private List<String> getMasterBuildBaseDev001(){
