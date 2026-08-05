@@ -166,11 +166,11 @@ class buildStepsByBuildType implements Serializable {
 		List<String> buildClearNuGetCachePackages = new ArrayList<String>()
 		buildClearNuGetCachePackages.add("ClearNuGetCachePackages");
 
+		List<String> buildUpdateQualityGates = new ArrayList<String>()
+		buildUpdateQualityGates.add("UpdateQualityGates"); 
+
 		List<String> sendStatusEmail = new ArrayList<String>()
 		sendStatusEmail.add("SendStatusEmail"); 
-
-		List<String> buildClearNuGetCachePackages = new ArrayList<String>()
-		buildClearNuGetCachePackages.add("ClearNuGetCachePackages");
 
 		List<String> buildSteps = new ArrayList<String>();
         switch (val) {
