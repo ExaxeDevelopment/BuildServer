@@ -294,10 +294,6 @@ def getDevelopmentSteps(buildFromStage, buildToStage){
 	map07.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
 	steps.put("QualityGates", map07);
 
-	Map<String,String> map07a = new HashMap<String,String>();
-	map07a.put("SendStatusEmail", BASE_BUILD_SERVER)
-	steps.put("SendStatusEmail", map07a);
-
 	Map<String,String> map08 = new HashMap<String,String>();
 	map08.put("Build-DeletePackages-exop-base-bld01", BASE_BUILD_SERVER)
 	map08.put("Build-DeletePackages-exop-ap-bld01", ADMIN_PLUS_BUILD_SERVER)
@@ -482,11 +478,6 @@ def getIntegrationSteps(buildFromStage, buildToStage){
 	map10.put("Deploy-Dev001-Hansard-Multi", HD_DEPLOY_SERVER)
 	map10.put("Deploy-Dev001-Hansard-Single", ADMIN_PLUS_BUILD_SERVER)
 	steps.put("Deployments / External", map10);
-
- 	Map<String,String> map07a = new HashMap<String,String>();
-	map07a.put("SendStatusEmail", BASE_BUILD_SERVER)
-	steps.put("SendStatusEmail", map07a);
-
 
 	//// filter the steps/stages
 	Map<String,Map<String,String>> finalSteps = getFilteredSteps(steps, buildFromStage, buildToStage);
@@ -864,10 +855,6 @@ def getSuperBuildSteps(buildFromStage, buildToStage){
 	map14.put("Build-QualityGates-exop-apex-bld01", APEX_BUILD_SERVER)
 	map14.put("Build-QualityGates-exop-api-bld01", API_BUILD_SERVER)
 	steps.put("Deployments part 3", map14);
-
-	Map<String,String> map15 = new HashMap<String,String>();
-	map15.put("SendStatusEmail", BASE_BUILD_SERVER)
-	steps.put("SendStatusEmail", map15);
 
 	Map<String,String> map21 = new HashMap<String,String>();
 	map21.put("Build-DeletePackages-exop-base-bld01", BASE_BUILD_SERVER)
