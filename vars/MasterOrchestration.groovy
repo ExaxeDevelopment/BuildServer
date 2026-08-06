@@ -177,11 +177,12 @@ try{
 				mailTo += ",${QA_TEAM_EMAIL},${BA_TEAM_EMAIL}"
 
 				lastMasterBuild = [
-					buildName: currentBuild.displayName,
-					buildNumber: currentBuild.number,
-					productsStability: productsStability,
-					stableMessage: stableMessage,
-					dateTime: new Date().format("yyyy-MM-dd hh:mm:ss")
+					Description: description,
+					BuildName: currentBuild.displayName,
+					BuildNumber: currentBuild.number,
+					ProductsStability: productsStability,
+					StableMessage: stableMessage,
+					DateTime: new Date().format("yyyy-MM-dd hh:mm:ss")
 				]
 				writeFile file: 'c:\\ExaxeLogs\\build\\lastmasterbuild.json', text: JsonOutput.toJson(lastMasterBuild)
 
