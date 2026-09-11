@@ -220,7 +220,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 				def handle = triggerRemoteJob(remoteJenkinsName: serverName,
 					job: job, 
 					////token: token, 
-					pollInterval: 30, 
+					////pollInterval: 30, 
 					blockBuildUntilComplete: true);
 				def status = handle.getBuildStatus();
 				echo "Remote status from ${job}: ${status.toString()}";
