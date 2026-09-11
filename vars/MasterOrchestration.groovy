@@ -219,7 +219,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 				def handle = triggerRemoteJob(remoteJenkinsName: serverName,
 					job: job, 
 					auth: TokenAuth(
-						apiToken: Secret.fromString(token), 
+						apiToken: hudson.util.Secret.fromString(token)(token), 
 						userName: "admin"
 					), 					
 					////token: token, 
