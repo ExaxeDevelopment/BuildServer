@@ -209,7 +209,7 @@ catch(err){
     currentBuild.result = "FAILURE";
 }
 
-def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage){
+def getRemoteJobRequest_mad(serverName, job, token, mapStatuses, css, embeddedImage){
 	
 	def remoteRequest = {
 		try{
@@ -268,7 +268,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 }
 
 /// Method that returns a remote request job ready to be executed.
-def getRemoteJobRequest_old(serverName, job, token, mapStatuses, css, embeddedImage){
+def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage){
 	
 	def remoteRequest = {
 		try{
@@ -281,12 +281,9 @@ def getRemoteJobRequest_old(serverName, job, token, mapStatuses, css, embeddedIm
 
 				def handle = triggerRemoteJob(remoteJenkinsName: serverName,
 					job: job, 
-					auth: myAuth,
-					remoteJenkinsUrl: "http://${serverName}:8080",
-
-					////token: token, 
-					////pollInterval: 30, 
-					////blockBuildUntilComplete: true
+					token: token, 
+					pollInterval: 30, 
+					blockBuildUntilComplete: true
 				);
 				def status = handle.getBuildStatus();
 				echo "Remote status from ${job}: ${status.toString()}";
