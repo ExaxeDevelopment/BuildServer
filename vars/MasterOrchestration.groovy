@@ -209,8 +209,47 @@ catch(err){
     currentBuild.result = "FAILURE";
 }
 
-/// Method that returns a remote request job ready to be executed.
 def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage){
+	
+	def remoteRequest = {
+		try{
+			stage("${job}"){
+				echo "Triggering job natively via HTTP REST API: ${job} on ${serverName}"
+				
+				// 🛠️ Construct the direct Jenkins Remote Build API url
+				// Adjust http/https or custom port (like :8080) if required for your fleet
+				def remoteUrl = "http://${serverName}:8080/job/${job}/buildWithParameters?token=${token}"
+				
+				// 🛠️ Execute via standard curl bypassing all plugin data-binding structures
+				// -s (silent), -I (fetch headers), -w "%{http_code}" (extract status code response)
+				def statusCode = sh(
+					script: "curl -s -o /dev/null -w '%{http_code}' -X POST '${remoteUrl}'", 
+					returnStdout: true
+				).trim()
+				
+				echo "Remote target server responded with HTTP status code: ${statusCode}"
+				
+				// Jenkins API returns 201 (Created) or 200 (OK) when a build is successfully queued
+				if(statusCode == "201" || statusCode == "200"){
+					echo "Successfully triggered build queue on ${job}!"
+					if(mapStatuses.containsKey(job)){
+						mapStatuses.put(job, true);
+					}
+				} else {
+					error("Remote execution rejected. Server returned status code: ${statusCode}")
+				}
+			}
+		}
+		catch(err){
+			echo "Build ${job} failed... ${err}";
+		}
+	}
+			
+	remoteRequest
+}
+
+/// Method that returns a remote request job ready to be executed.
+def getRemoteJobRequest_old(serverName, job, token, mapStatuses, css, embeddedImage){
 	
 	def remoteRequest = {
 		try{
