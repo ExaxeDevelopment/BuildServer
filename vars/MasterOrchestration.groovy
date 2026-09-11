@@ -214,52 +214,46 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 	def remoteRequest = {
 		try{
 			stage("${job}"){
-				echo "Triggering job natively via Authenticated Windows PowerShell: ${job} on ${serverName}"
+				echo "Triggering job natively via Windows PowerShell: ${job} on ${serverName}"
 				
-				// 1. Construct the target Jenkins Core REST API URL
+				// 🛠️ 1. Construct the target Jenkins Core REST API URL
 				def remoteUrl = "http://${serverName}:8080/job/${job}/buildWithParameters?token=${token}"
 				
-				// 2. Wrap the execution in a string token context (requires NO sandbox approvals)
-				// We map the raw token parameter string directly to a temporary env credential block
-				withCredentials([string(credentialsId: '', text: token)]) {
-					
-					// 3. Pass the username and token cleanly into Windows PowerShell using environment variables
-					// This prevents string stripping, truncation, or spacing bugs from throwing 401s!
-					def statusCode = powershell(
-						script: """
-							\$username = "admin"
-							\$tokenValue = "${token}"
-							
-							\$authPair = "\$username:\$tokenValue"
-							\$encodedAuth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(\$authPair))
-							\$headers = @{ "Authorization" = "Basic \$encodedAuth" }
-							
-							try {
-								\$response = Invoke-WebRequest -Uri '${remoteUrl}' -Method Post -Headers \$headers -UseBasicParsing
-								Write-Output \$response.StatusCode
-							} catch {
-								# Captures the response code even if PowerShell treats a 201 Created redirection as a catchable web exception
-								if (\$_.Exception.Response) {
-									Write-Output [int]\$_.Exception.Response.StatusCode
-								} else {
-									Write-Output 500
-								}
+				// 🛠️ 2. Execute directly via native Windows PowerShell using your raw function variables
+				def statusCode = powershell(
+					script: """
+						\$username = "admin"
+						\$tokenValue = "${token}"
+						
+						\$authPair = "\$username:\$tokenValue"
+						\$encodedAuth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(\$authPair))
+						\$headers = @{ "Authorization" = "Basic \$encodedAuth" }
+						
+						try {
+							\$response = Invoke-WebRequest -Uri '${remoteUrl}' -Method Post -Headers \$headers -UseBasicParsing
+							Write-Output \$response.StatusCode
+						} catch {
+							# Captures the response code even if PowerShell treats a 201 Created redirection as a catchable web exception
+							if (\$_.Exception.Response) {
+								Write-Output [int]\$_.Exception.Response.StatusCode
+							} else {
+								Write-Output 500
 							}
-						""", 
-						returnStdout: true
-					).trim()
-					
-					echo "Remote target server responded with HTTP status code: ${statusCode}"
-					
-					// Jenkins API returns 201 (Created) or 200 (OK) when a build is successfully queued
-					if(statusCode == "201" || statusCode == "200"){
-						echo "Successfully triggered build queue on ${job}!"
-						if(mapStatuses.containsKey(job)){
-							mapStatuses.put(job, true);
 						}
-					} else {
-						error("Remote execution rejected. Server returned status code: ${statusCode}")
+					""", 
+					returnStdout: true
+				).trim()
+				
+				echo "Remote target server responded with HTTP status code: ${statusCode}"
+				
+				// Jenkins API returns 201 (Created) or 200 (OK) when a build is successfully queued
+				if(statusCode == "201" || statusCode == "200"){
+					echo "Successfully triggered build queue on ${job}!"
+					if(mapStatuses.containsKey(job)){
+						mapStatuses.put(job, true);
 					}
+				} else {
+					error("Remote execution rejected. Server returned status code: ${statusCode}")
 				}
 			}
 		}
