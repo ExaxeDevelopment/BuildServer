@@ -223,7 +223,9 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 
 				def handle = triggerRemoteJob(remoteJenkinsName: serverName,
 					job: job, 
-					auth: myAuth
+					auth: myAuth,
+					remoteJenkinsUrl: "http://${serverName}:8080",
+
 					////token: token, 
 					////pollInterval: 30, 
 					////blockBuildUntilComplete: true
