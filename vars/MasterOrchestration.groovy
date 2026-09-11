@@ -217,6 +217,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 			stage("${job}"){
 				echo "Trigering job: ${job}"
 				hudson.util.Secret secureToken = hudson.util.Secret.fromString(token)
+				String remoteUser = "admin"
 				def handle = triggerRemoteJob(remoteJenkinsName: serverName,
 					job: job, 
 					auth: new org.jenkinsci.plugins.ParameterizedRemoteTrigger.auth2.TokenAuth(
