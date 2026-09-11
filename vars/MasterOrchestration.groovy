@@ -214,16 +214,15 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 	def remoteRequest = {
 		try{
 			stage("${job}"){
-				echo "Triggering job natively via HTTP REST API: ${job} on ${serverName}"
+				echo "Triggering job natively via Windows PowerShell API: ${job} on ${serverName}"
 				
-				// 🛠️ Construct the direct Jenkins Remote Build API url
-				// Adjust http/https or custom port (like :8080) if required for your fleet
+				// 🛠️ Construct the direct Jenkins Remote Build API URL
+				// Change 'http' to 'https' or update port ':8080' if your fleet uses a custom configuration
 				def remoteUrl = "http://${serverName}:8080/job/${job}/buildWithParameters?token=${token}"
 				
-				// 🛠️ Execute via standard curl bypassing all plugin data-binding structures
-				// -s (silent), -I (fetch headers), -w "%{http_code}" (extract status code response)
-				def statusCode = sh(
-					script: "curl -s -o /dev/null -w '%{http_code}' -X POST '${remoteUrl}'", 
+				// 🛠️ Run via native Windows PowerShell to execute a POST and return the HTTP Status Code
+				def statusCode = powershell(
+					script: "(Invoke-WebRequest -Uri '${remoteUrl}' -Method Post -UseBasicParsing).StatusCode", 
 					returnStdout: true
 				).trim()
 				
