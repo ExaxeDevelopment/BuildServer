@@ -216,12 +216,11 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 		try{
 			stage("${job}"){
 				echo "Trigering job: ${job}"
-				def myAuth = new org.jenkinsci.plugins.ParameterizedRemoteTrigger.auth2.TokenAuth()
-				
-				// 🛠️ 2. Apply properties using setters (expects typed Secret)
-				myAuth.setUserName("admin")
-				myAuth.setApiToken(hudson.util.Secret.fromString(token))
-				
+				def myAuth = new org.jenkinsci.plugins.ParameterizedRemoteTrigger.auth2.TokenAuth(
+					userName: "admin",
+					apiToken: hudson.util.Secret.fromString(token)
+				);
+
 				def handle = triggerRemoteJob(remoteJenkinsName: serverName,
 					job: job, 
 					auth: myAuth
