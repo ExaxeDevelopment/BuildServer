@@ -214,48 +214,29 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 	def remoteRequest = {
 		try{
 			stage("${job}"){
-				echo "Triggering job securely via authenticated PowerShell REST API: ${job} on ${serverName}"
+				echo "Triggering remote build via native HTTP Request step: ${job} on ${serverName}"
 				
-				// 🛠️ 1. Construct the direct Jenkins Remote Build API URL
+				// 🛠️ 1. Construct the direct core REST API url
 				def remoteUrl = "http://${serverName}:8080/job/${job}/buildWithParameters?token=${token}"
 				
-				// 🛠️ 2. Set up the authorization payload using standard Jenkins Basic Auth
-				String username = "admin"
+				// 🛠️ 2. Execute using native Jenkins HTTP utility step
+				// This automatically handles Base64 encoding, basic auth, and CSRF Crumb handshakes!
+				def response = httpRequest(
+					url: remoteUrl,
+					httpMode: 'POST',
+					authentication: 'remote-jenkins-credentials-id', // 👈 Enter your Jenkins Username/Password or Token Credential ID here
+					validResponseCodes: '200,201'
+				)
 				
-				// 🛠️ 3. Format the PowerShell script to safely build the Base64 header and make the web request
-				// Re-building the auth header inside the script forces Jenkins to bypass CSRF crumb checks!
-				def statusCode = powershell(
-					script: """
-						\$authPair = "${username}:${token}"
-						\$encodedAuth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(\$authPair))
-						\$headers = @{ "Authorization" = "Basic \$encodedAuth" }
-						
-						try {
-							\$response = Invoke-WebRequest -Uri '${remoteUrl}' -Method Post -Headers \$headers -UseBasicParsing
-							Write-Output \$response.StatusCode
-						} catch {
-							# If Jenkins returns a 201 Created header, PowerShell occasionally catches it as an exception. 
-							# We inspect the underlying response to pull the real status code out.
-							if (\$_.Exception.Response) {
-								Write-Output [int]\$_.Exception.Response.StatusCode
-							} else {
-								Write-Output 500
-							}
-						}
-					""", 
-					returnStdout: true
-				).trim()
+				echo "Remote target server responded with HTTP status code: ${response.status}"
 				
-				echo "Remote target server responded with HTTP status code: ${statusCode}"
-				
-				// Jenkins API returns 201 (Created) or 200 (OK) when a build is successfully queued
-				if(statusCode == "201" || statusCode == "200"){
+				if(response.status == 201 || response.status == 200){
 					echo "Successfully triggered build queue on ${job}!"
 					if(mapStatuses.containsKey(job)){
 						mapStatuses.put(job, true);
 					}
 				} else {
-					error("Remote execution rejected. Server returned status code: ${statusCode}")
+					error("Remote execution rejected. Server returned status code: ${response.status}")
 				}
 			}
 		}
