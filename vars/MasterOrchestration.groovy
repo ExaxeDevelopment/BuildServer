@@ -216,7 +216,15 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 		try{
 			stage("${job}"){
 				echo "Trigering job: ${job}"
-				def handle = triggerRemoteJob(remoteJenkinsName: serverName, job: job, token: token, pollInterval: 30, blockBuildUntilComplete: true);
+				def handle = triggerRemoteJob(remoteJenkinsName: serverName,
+					job: job, 
+					auth: TokenAuth(
+						apiToken: Secret.fromString(token), 
+						userName: "admin"
+					), 					
+					////token: token, 
+					pollInterval: 30, 
+					blockBuildUntilComplete: true);
 				def status = handle.getBuildStatus();
 				echo "Remote status from ${job}: ${status.toString()}";
 				def result = handle.getBuildResult();
