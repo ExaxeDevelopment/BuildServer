@@ -219,10 +219,6 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 				hudson.util.Secret secureToken = hudson.util.Secret.fromString(token)
 				def handle = triggerRemoteJob(remoteJenkinsName: serverName,
 					job: job, 
-					auth: TokenAuth(
-						apiToken: secureToken, 
-						userName: "admin"
-					), 					
 					////token: token, 
 					pollInterval: 30, 
 					blockBuildUntilComplete: true);
