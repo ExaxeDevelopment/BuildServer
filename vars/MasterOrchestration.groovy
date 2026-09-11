@@ -220,10 +220,11 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 				String remoteUser = "admin"
 				def handle = triggerRemoteJob(remoteJenkinsName: serverName,
 					job: job, 
-					auth: new org.jenkinsci.plugins.ParameterizedRemoteTrigger.auth2.TokenAuth(
-						secureToken, // First argument expected by constructor
-						remoteUser   // Second argument expected by constructor
-					)
+					auth: [
+						$class: 'TokenAuth',
+						apiToken: secureToken,
+						userName: localUser
+					]
 					////token: token, 
 					////pollInterval: 30, 
 					////blockBuildUntilComplete: true
