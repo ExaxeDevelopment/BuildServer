@@ -221,7 +221,8 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 					job: job, 
 					////token: token, 
 					////pollInterval: 30, 
-					blockBuildUntilComplete: true);
+					////blockBuildUntilComplete: true
+				);
 				def status = handle.getBuildStatus();
 				echo "Remote status from ${job}: ${status.toString()}";
 				def result = handle.getBuildResult();
