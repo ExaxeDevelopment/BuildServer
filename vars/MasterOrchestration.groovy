@@ -219,13 +219,15 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 				// 🛠️ 1. Construct the target Jenkins Core REST API URL
 				def remoteUrl = "http://${serverName}:8080/job/${job}/buildWithParameters?token=${token}"
 				
-				// 🛠️ 2. Execute directly via native Windows PowerShell using your raw function variables
+				// 🛠️ 2. Execute via native Windows PowerShell with explicit variable isolation delimiters
 				def statusCode = powershell(
 					script: """
 						\$username = "admin"
 						\$tokenValue = "${token}"
 						
-						\$authPair = "\$username:\$tokenValue"
+						# 🛠️ Fixed line: Using \${} prevents PowerShell from misinterpreting the colon as a drive letter
+						\$authPair = "\${username}:\$tokenValue"
+						
 						\$encodedAuth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(\$authPair))
 						\$headers = @{ "Authorization" = "Basic \$encodedAuth" }
 						
@@ -233,7 +235,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 							\$response = Invoke-WebRequest -Uri '${remoteUrl}' -Method Post -Headers \$headers -UseBasicParsing
 							Write-Output \$response.StatusCode
 						} catch {
-							# Captures the response code even if PowerShell treats a 201 Created redirection as a catchable web exception
+							# Captures the response code even if PowerShell treats a 201 Created redirection as an exception
 							if (\$_.Exception.Response) {
 								Write-Output [int]\$_.Exception.Response.StatusCode
 							} else {
