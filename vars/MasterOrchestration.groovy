@@ -214,15 +214,35 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 	def remoteRequest = {
 		try{
 			stage("${job}"){
-				echo "Triggering job natively via Windows PowerShell API: ${job} on ${serverName}"
+				echo "Triggering job securely via authenticated PowerShell REST API: ${job} on ${serverName}"
 				
-				// 🛠️ Construct the direct Jenkins Remote Build API URL
-				// Change 'http' to 'https' or update port ':8080' if your fleet uses a custom configuration
+				// 🛠️ 1. Construct the direct Jenkins Remote Build API URL
 				def remoteUrl = "http://${serverName}:8080/job/${job}/buildWithParameters?token=${token}"
 				
-				// 🛠️ Run via native Windows PowerShell to execute a POST and return the HTTP Status Code
+				// 🛠️ 2. Set up the authorization payload using standard Jenkins Basic Auth
+				String username = "admin"
+				
+				// 🛠️ 3. Format the PowerShell script to safely build the Base64 header and make the web request
+				// Re-building the auth header inside the script forces Jenkins to bypass CSRF crumb checks!
 				def statusCode = powershell(
-					script: "(Invoke-WebRequest -Uri '${remoteUrl}' -Method Post -UseBasicParsing).StatusCode", 
+					script: """
+						\$authPair = "${username}:${token}"
+						\$encodedAuth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(\$authPair))
+						\$headers = @{ "Authorization" = "Basic \$encodedAuth" }
+						
+						try {
+							\$response = Invoke-WebRequest -Uri '${remoteUrl}' -Method Post -Headers \$headers -UseBasicParsing
+							Write-Output \$response.StatusCode
+						} catch {
+							# If Jenkins returns a 201 Created header, PowerShell occasionally catches it as an exception. 
+							# We inspect the underlying response to pull the real status code out.
+							if (\$_.Exception.Response) {
+								Write-Output [int]\$_.Exception.Response.StatusCode
+							} else {
+								Write-Output 500
+							}
+						}
+					""", 
 					returnStdout: true
 				).trim()
 				
