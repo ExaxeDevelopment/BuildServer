@@ -223,7 +223,7 @@ def getRemoteJobRequest(serverName, job, token, mapStatuses, css, embeddedImage)
 					auth: [
 						$class: 'TokenAuth',
 						apiToken: secureToken,
-						userName: localUser
+						userName: remoteUser
 					]
 					////token: token, 
 					////pollInterval: 30, 
